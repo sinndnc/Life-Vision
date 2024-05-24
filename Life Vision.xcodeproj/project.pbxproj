@@ -37,6 +37,20 @@
 		99EBE9D42C008A4900789C9F /* TermsAndConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9C72C008A4900789C9F /* TermsAndConditionsView.swift */; };
 		99EBE9D52C008A4900789C9F /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9C92C008A4900789C9F /* AccountView.swift */; };
 		99EBE9D62C008A4900789C9F /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9CA2C008A4900789C9F /* AccountViewModel.swift */; };
+		99EBE9E02C008BD900789C9F /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9DF2C008BD900789C9F /* View+Extension.swift */; };
+		99EBE9E32C008C3E00789C9F /* TabEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9E22C008C3E00789C9F /* TabEnum.swift */; };
+		99EBE9E72C008C5100789C9F /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9E42C008C5100789C9F /* CalendarView.swift */; };
+		99EBE9E82C008C5100789C9F /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9E52C008C5100789C9F /* CalendarViewModel.swift */; };
+		99EBE9EC2C008C6F00789C9F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9E92C008C6F00789C9F /* SearchView.swift */; };
+		99EBE9ED2C008C6F00789C9F /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9EA2C008C6F00789C9F /* SearchViewModel.swift */; };
+		99EBE9F82C008C7700789C9F /* TaskSectionConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9EE2C008C7700789C9F /* TaskSectionConstant.swift */; };
+		99EBE9F92C008C7700789C9F /* TaskDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9F02C008C7700789C9F /* TaskDestination.swift */; };
+		99EBE9FA2C008C7700789C9F /* RepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9F22C008C7700789C9F /* RepeatView.swift */; };
+		99EBE9FB2C008C7700789C9F /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9F32C008C7700789C9F /* TagsView.swift */; };
+		99EBE9FC2C008C7700789C9F /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9F52C008C7700789C9F /* TaskView.swift */; };
+		99EBE9FD2C008C7700789C9F /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9F62C008C7700789C9F /* TaskViewModel.swift */; };
+		99EBEA022C008CFA00789C9F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9FF2C008CFA00789C9F /* HomeView.swift */; };
+		99EBEA032C008CFA00789C9F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA002C008CFA00789C9F /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +105,20 @@
 		99EBE9C92C008A4900789C9F /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		99EBE9CA2C008A4900789C9F /* AccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		99EBE9DD2C008AEB00789C9F /* Theme+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+Extension.swift"; sourceTree = "<group>"; };
-		99EBE9DE2C008AEB00789C9F /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		99EBE9DF2C008BD900789C9F /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		99EBE9E22C008C3E00789C9F /* TabEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabEnum.swift; sourceTree = "<group>"; };
+		99EBE9E42C008C5100789C9F /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		99EBE9E52C008C5100789C9F /* CalendarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		99EBE9E92C008C6F00789C9F /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		99EBE9EA2C008C6F00789C9F /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		99EBE9EE2C008C7700789C9F /* TaskSectionConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskSectionConstant.swift; sourceTree = "<group>"; };
+		99EBE9F02C008C7700789C9F /* TaskDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDestination.swift; sourceTree = "<group>"; };
+		99EBE9F22C008C7700789C9F /* RepeatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatView.swift; sourceTree = "<group>"; };
+		99EBE9F32C008C7700789C9F /* TagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
+		99EBE9F52C008C7700789C9F /* TaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		99EBE9F62C008C7700789C9F /* TaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		99EBE9FF2C008CFA00789C9F /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		99EBEA002C008CFA00789C9F /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,8 +215,12 @@
 		99EBE97B2C00846800789C9F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				99EBE9F72C008C7700789C9F /* Task */,
 				99EBE97E2C00849000789C9F /* Root */,
+				99EBEA012C008CFA00789C9F /* Home */,
+				99EBE9EB2C008C6F00789C9F /* Search */,
 				99EBE9CB2C008A4900789C9F /* Account */,
+				99EBE9E62C008C5100789C9F /* Calendar */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -218,6 +249,7 @@
 		99EBE97E2C00849000789C9F /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				99EBE9E12C008C3500789C9F /* Enum */,
 				99EBE97F2C00849C00789C9F /* RootView.swift */,
 				99EBE9812C0084DB00789C9F /* RootViewModel.swift */,
 			);
@@ -356,11 +388,11 @@
 		99EBE9C82C008A4900789C9F /* Link */ = {
 			isa = PBXGroup;
 			children = (
+				99EBE9C62C008A4900789C9F /* ProfileView.swift */,
 				99EBE9C22C008A4900789C9F /* AboutUsView.swift */,
 				99EBE9C32C008A4900789C9F /* LanguageView.swift */,
 				99EBE9C42C008A4900789C9F /* NotificationView.swift */,
 				99EBE9C52C008A4900789C9F /* PrivacyAndPolicyView.swift */,
-				99EBE9C62C008A4900789C9F /* ProfileView.swift */,
 				99EBE9C72C008A4900789C9F /* TermsAndConditionsView.swift */,
 			);
 			path = Link;
@@ -382,10 +414,86 @@
 		99EBE9DC2C008AEB00789C9F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				99EBE9DE2C008AEB00789C9F /* View+Extension.swift */,
 				99EBE9DD2C008AEB00789C9F /* Theme+Extension.swift */,
+				99EBE9DF2C008BD900789C9F /* View+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		99EBE9E12C008C3500789C9F /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE9E22C008C3E00789C9F /* TabEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		99EBE9E62C008C5100789C9F /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE9E42C008C5100789C9F /* CalendarView.swift */,
+				99EBE9E52C008C5100789C9F /* CalendarViewModel.swift */,
+			);
+			name = Calendar;
+			path = "../../../../../../Desktop/Default App/Feature/Presentation/Calendar";
+			sourceTree = "<group>";
+		};
+		99EBE9EB2C008C6F00789C9F /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE9E92C008C6F00789C9F /* SearchView.swift */,
+				99EBE9EA2C008C6F00789C9F /* SearchViewModel.swift */,
+			);
+			name = Search;
+			path = "../../../../../../Desktop/Default App/Feature/Presentation/Search";
+			sourceTree = "<group>";
+		};
+		99EBE9EF2C008C7700789C9F /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE9EE2C008C7700789C9F /* TaskSectionConstant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		99EBE9F12C008C7700789C9F /* Destination */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE9F02C008C7700789C9F /* TaskDestination.swift */,
+			);
+			path = Destination;
+			sourceTree = "<group>";
+		};
+		99EBE9F42C008C7700789C9F /* Link */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE9F22C008C7700789C9F /* RepeatView.swift */,
+				99EBE9F32C008C7700789C9F /* TagsView.swift */,
+			);
+			path = Link;
+			sourceTree = "<group>";
+		};
+		99EBE9F72C008C7700789C9F /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE9EF2C008C7700789C9F /* Constant */,
+				99EBE9F12C008C7700789C9F /* Destination */,
+				99EBE9F42C008C7700789C9F /* Link */,
+				99EBE9F52C008C7700789C9F /* TaskView.swift */,
+				99EBE9F62C008C7700789C9F /* TaskViewModel.swift */,
+			);
+			name = Task;
+			path = "../../../../../../Desktop/Default App/Feature/Presentation/Task";
+			sourceTree = "<group>";
+		};
+		99EBEA012C008CFA00789C9F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE9FF2C008CFA00789C9F /* HomeView.swift */,
+				99EBEA002C008CFA00789C9F /* HomeViewModel.swift */,
+			);
+			name = Home;
+			path = "../../../../../../Desktop/Default App/Feature/Presentation/Home";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -519,31 +627,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99EBE9E32C008C3E00789C9F /* TabEnum.swift in Sources */,
 				99EBE97A2C00845300789C9F /* LifeVisionAppDelegate.swift in Sources */,
 				99EBE9BB2C0088F200789C9F /* SectionItemEnum.swift in Sources */,
 				99EBE9D42C008A4900789C9F /* TermsAndConditionsView.swift in Sources */,
 				99EBE9D12C008A4900789C9F /* NotificationView.swift in Sources */,
 				99EBE9A72C0088B500789C9F /* ToggleDisclosureGroupView.swift in Sources */,
+				99EBE9F82C008C7700789C9F /* TaskSectionConstant.swift in Sources */,
 				99EBE9CC2C008A4900789C9F /* AccountSectionConstant.swift in Sources */,
 				99EBE9D02C008A4900789C9F /* LanguageView.swift in Sources */,
 				99EBE94F2C0083A200789C9F /* LifeVisionApp.swift in Sources */,
 				99EBE9CD2C008A4900789C9F /* AccountDestination.swift in Sources */,
+				99EBE9EC2C008C6F00789C9F /* SearchView.swift in Sources */,
 				99EBE9B02C0088C400789C9F /* ToggleItemView.swift in Sources */,
+				99EBE9E02C008BD900789C9F /* View+Extension.swift in Sources */,
 				99EBE9AE2C0088C400789C9F /* NavigationLinkItemView.swift in Sources */,
 				99EBE9822C0084DB00789C9F /* RootViewModel.swift in Sources */,
+				99EBE9FB2C008C7700789C9F /* TagsView.swift in Sources */,
 				99EBE99F2C00876200789C9F /* Language.swift in Sources */,
 				99EBE99D2C00872800789C9F /* Theme.swift in Sources */,
+				99EBE9F92C008C7700789C9F /* TaskDestination.swift in Sources */,
+				99EBE9FA2C008C7700789C9F /* RepeatView.swift in Sources */,
 				99EBE9852C00864000789C9F /* UserDefaults+Extension.swift in Sources */,
 				99EBE9D22C008A4900789C9F /* PrivacyAndPolicyView.swift in Sources */,
 				99EBE9CF2C008A4900789C9F /* AboutUsView.swift in Sources */,
 				99EBE9D32C008A4900789C9F /* ProfileView.swift in Sources */,
 				99EBE9D52C008A4900789C9F /* AccountView.swift in Sources */,
 				99EBE9AF2C0088C400789C9F /* TitleItemView.swift in Sources */,
+				99EBE9FC2C008C7700789C9F /* TaskView.swift in Sources */,
+				99EBE9E72C008C5100789C9F /* CalendarView.swift in Sources */,
+				99EBE9ED2C008C6F00789C9F /* SearchViewModel.swift in Sources */,
 				99EBE9AD2C0088C400789C9F /* MenuItemView.swift in Sources */,
 				99EBE9B32C0088CA00789C9F /* DefaultView.swift in Sources */,
 				99EBE9BA2C0088F200789C9F /* SectionItem.swift in Sources */,
 				99EBE9D62C008A4900789C9F /* AccountViewModel.swift in Sources */,
+				99EBEA032C008CFA00789C9F /* HomeViewModel.swift in Sources */,
+				99EBE9E82C008C5100789C9F /* CalendarViewModel.swift in Sources */,
+				99EBE9FD2C008C7700789C9F /* TaskViewModel.swift in Sources */,
 				99EBE9802C00849C00789C9F /* RootView.swift in Sources */,
+				99EBEA022C008CFA00789C9F /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
