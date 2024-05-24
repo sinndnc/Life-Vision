@@ -8,10 +8,13 @@
 import SwiftUI
 
 @main
-struct Life_VisionApp: App {
+struct LifeVisionApp: App {
+    
+    @UIApplicationDelegateAdaptor(LifeVisionAppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
     }
 }

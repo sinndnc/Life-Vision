@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		99EBE94F2C0083A200789C9F /* Life_VisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE94E2C0083A200789C9F /* Life_VisionApp.swift */; };
-		99EBE9512C0083A200789C9F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9502C0083A200789C9F /* ContentView.swift */; };
+		99EBE94F2C0083A200789C9F /* LifeVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE94E2C0083A200789C9F /* LifeVisionApp.swift */; };
 		99EBE9532C0083A300789C9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EBE9522C0083A300789C9F /* Assets.xcassets */; };
 		99EBE9562C0083A300789C9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EBE9552C0083A300789C9F /* Preview Assets.xcassets */; };
 		99EBE9602C0083A300789C9F /* Life_VisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE95F2C0083A300789C9F /* Life_VisionTests.swift */; };
 		99EBE96A2C0083A300789C9F /* Life_VisionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9692C0083A300789C9F /* Life_VisionUITests.swift */; };
 		99EBE96C2C0083A300789C9F /* Life_VisionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE96B2C0083A300789C9F /* Life_VisionUITestsLaunchTests.swift */; };
+		99EBE97A2C00845300789C9F /* LifeVisionAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9792C00845300789C9F /* LifeVisionAppDelegate.swift */; };
+		99EBE9802C00849C00789C9F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE97F2C00849C00789C9F /* RootView.swift */; };
+		99EBE9822C0084DB00789C9F /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9812C0084DB00789C9F /* RootViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +37,7 @@
 
 /* Begin PBXFileReference section */
 		99EBE94B2C0083A200789C9F /* Life Vision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Life Vision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		99EBE94E2C0083A200789C9F /* Life_VisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_VisionApp.swift; sourceTree = "<group>"; };
-		99EBE9502C0083A200789C9F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		99EBE94E2C0083A200789C9F /* LifeVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeVisionApp.swift; sourceTree = "<group>"; };
 		99EBE9522C0083A300789C9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99EBE9552C0083A300789C9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		99EBE95B2C0083A300789C9F /* Life VisionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Life VisionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +45,9 @@
 		99EBE9652C0083A300789C9F /* Life VisionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Life VisionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99EBE9692C0083A300789C9F /* Life_VisionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_VisionUITests.swift; sourceTree = "<group>"; };
 		99EBE96B2C0083A300789C9F /* Life_VisionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_VisionUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		99EBE9792C00845300789C9F /* LifeVisionAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeVisionAppDelegate.swift; sourceTree = "<group>"; };
+		99EBE97F2C00849C00789C9F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		99EBE9812C0084DB00789C9F /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +98,9 @@
 		99EBE94D2C0083A200789C9F /* Life Vision */ = {
 			isa = PBXGroup;
 			children = (
-				99EBE94E2C0083A200789C9F /* Life_VisionApp.swift */,
-				99EBE9502C0083A200789C9F /* ContentView.swift */,
+				99EBE97D2C00847E00789C9F /* Core */,
+				99EBE9782C00844100789C9F /* App */,
+				99EBE97C2C00847000789C9F /* Feature */,
 				99EBE9522C0083A300789C9F /* Assets.xcassets */,
 				99EBE9542C0083A300789C9F /* Preview Content */,
 			);
@@ -125,6 +130,47 @@
 				99EBE96B2C0083A300789C9F /* Life_VisionUITestsLaunchTests.swift */,
 			);
 			path = "Life VisionUITests";
+			sourceTree = "<group>";
+		};
+		99EBE9782C00844100789C9F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE94E2C0083A200789C9F /* LifeVisionApp.swift */,
+				99EBE9792C00845300789C9F /* LifeVisionAppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		99EBE97B2C00846800789C9F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE97E2C00849000789C9F /* Root */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		99EBE97C2C00847000789C9F /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE97B2C00846800789C9F /* Presentation */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		99EBE97D2C00847E00789C9F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		99EBE97E2C00849000789C9F /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE97F2C00849C00789C9F /* RootView.swift */,
+				99EBE9812C0084DB00789C9F /* RootViewModel.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +303,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99EBE9512C0083A200789C9F /* ContentView.swift in Sources */,
-				99EBE94F2C0083A200789C9F /* Life_VisionApp.swift in Sources */,
+				99EBE97A2C00845300789C9F /* LifeVisionAppDelegate.swift in Sources */,
+				99EBE94F2C0083A200789C9F /* LifeVisionApp.swift in Sources */,
+				99EBE9822C0084DB00789C9F /* RootViewModel.swift in Sources */,
+				99EBE9802C00849C00789C9F /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
