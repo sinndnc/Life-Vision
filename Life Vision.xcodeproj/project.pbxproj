@@ -55,6 +55,13 @@
 		99EBEA0C2C013A1700789C9F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 99EBEA0B2C013A1700789C9F /* FirebaseFirestore */; };
 		99EBEA0E2C013A1700789C9F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 99EBEA0D2C013A1700789C9F /* FirebaseStorage */; };
 		99EBEA102C013AC700789C9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99EBEA0F2C013AC700789C9F /* GoogleService-Info.plist */; };
+		99EBEA152C013FFF00789C9F /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA142C013FFF00789C9F /* UserService.swift */; };
+		99EBEA1C2C0140EF00789C9F /* Theme+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9DD2C008AEB00789C9F /* Theme+Extension.swift */; };
+		99EBEA1E2C01417500789C9F /* UserServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA1D2C01417500789C9F /* UserServiceProtocol.swift */; };
+		99EBEA202C01420000789C9F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA1F2C01420000789C9F /* User.swift */; };
+		99EBEA222C01428E00789C9F /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA212C01428E00789C9F /* ServiceType.swift */; };
+		99EBEA242C0142A800789C9F /* ServiceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA232C0142A700789C9F /* ServiceContainer.swift */; };
+		99EBEA262C0142D500789C9F /* DependencyPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA252C0142D500789C9F /* DependencyPropertyWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +131,12 @@
 		99EBEA042C00CF4C00789C9F /* LifeVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeVisionApp.swift; sourceTree = "<group>"; };
 		99EBEA062C01352700789C9F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		99EBEA0F2C013AC700789C9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		99EBEA142C013FFF00789C9F /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		99EBEA1D2C01417500789C9F /* UserServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceProtocol.swift; sourceTree = "<group>"; };
+		99EBEA1F2C01420000789C9F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		99EBEA212C01428E00789C9F /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
+		99EBEA232C0142A700789C9F /* ServiceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceContainer.swift; sourceTree = "<group>"; };
+		99EBEA252C0142D500789C9F /* DependencyPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyPropertyWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +191,7 @@
 		99EBE94D2C0083A200789C9F /* Life Vision */ = {
 			isa = PBXGroup;
 			children = (
+				99EBEA122C013FE700789C9F /* DI */,
 				99EBE9782C00844100789C9F /* App */,
 				99EBE97D2C00847E00789C9F /* Core */,
 				99EBE97C2C00847000789C9F /* Feature */,
@@ -248,9 +262,9 @@
 		99EBE97D2C00847E00789C9F /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				99EBE9832C00860B00789C9F /* Extension */,
-				99EBE99B2C00870E00789C9F /* Service */,
 				99EBE9862C00868F00789C9F /* Utils */,
+				99EBE99B2C00870E00789C9F /* Service */,
+				99EBE9832C00860B00789C9F /* Extension */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -268,6 +282,7 @@
 		99EBE9832C00860B00789C9F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				99EBE9DD2C008AEB00789C9F /* Theme+Extension.swift */,
 				99EBE9842C00864000789C9F /* UserDefaults+Extension.swift */,
 			);
 			path = Extension;
@@ -301,6 +316,7 @@
 		99EBE99B2C00870E00789C9F /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				99EBEA112C013FE100789C9F /* Firebase */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -326,10 +342,10 @@
 		99EBE9AC2C0088C400789C9F /* Section */ = {
 			isa = PBXGroup;
 			children = (
-				99EBE9A82C0088C400789C9F /* MenuItemView.swift */,
-				99EBE9A92C0088C400789C9F /* NavigationLinkItemView.swift */,
 				99EBE9AA2C0088C400789C9F /* TitleItemView.swift */,
+				99EBE9A82C0088C400789C9F /* MenuItemView.swift */,
 				99EBE9AB2C0088C400789C9F /* ToggleItemView.swift */,
+				99EBE9A92C0088C400789C9F /* NavigationLinkItemView.swift */,
 			);
 			name = Section;
 			path = "../../../../../../Desktop/Default App/Feature/Component/Section";
@@ -424,7 +440,6 @@
 			isa = PBXGroup;
 			children = (
 				99EBE9DF2C008BD900789C9F /* View+Extension.swift */,
-				99EBE9DD2C008AEB00789C9F /* Theme+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -503,6 +518,35 @@
 			);
 			name = Home;
 			path = "../../../../../../Desktop/Default App/Feature/Presentation/Home";
+			sourceTree = "<group>";
+		};
+		99EBEA112C013FE100789C9F /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				99EBEA132C013FF200789C9F /* User */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		99EBEA122C013FE700789C9F /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				99EBEA212C01428E00789C9F /* ServiceType.swift */,
+				99EBEA232C0142A700789C9F /* ServiceContainer.swift */,
+				99EBEA252C0142D500789C9F /* DependencyPropertyWrapper.swift */,
+			);
+			name = DI;
+			path = "Dİ";
+			sourceTree = "<group>";
+		};
+		99EBEA132C013FF200789C9F /* User */ = {
+			isa = PBXGroup;
+			children = (
+				99EBEA1F2C01420000789C9F /* User.swift */,
+				99EBEA142C013FFF00789C9F /* UserService.swift */,
+				99EBEA1D2C01417500789C9F /* UserServiceProtocol.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -649,7 +693,10 @@
 				99EBE97A2C00845300789C9F /* LifeVisionAppDelegate.swift in Sources */,
 				99EBE9BB2C0088F200789C9F /* SectionItemEnum.swift in Sources */,
 				99EBE9D42C008A4900789C9F /* TermsAndConditionsView.swift in Sources */,
+				99EBEA262C0142D500789C9F /* DependencyPropertyWrapper.swift in Sources */,
 				99EBE9D12C008A4900789C9F /* NotificationView.swift in Sources */,
+				99EBEA242C0142A800789C9F /* ServiceContainer.swift in Sources */,
+				99EBEA1E2C01417500789C9F /* UserServiceProtocol.swift in Sources */,
 				99EBE9A72C0088B500789C9F /* ToggleDisclosureGroupView.swift in Sources */,
 				99EBE9F82C008C7700789C9F /* TaskSectionConstant.swift in Sources */,
 				99EBE9CC2C008A4900789C9F /* AccountSectionConstant.swift in Sources */,
@@ -665,6 +712,8 @@
 				99EBE9F92C008C7700789C9F /* TaskDestination.swift in Sources */,
 				99EBE9FA2C008C7700789C9F /* RepeatView.swift in Sources */,
 				99EBE9852C00864000789C9F /* UserDefaults+Extension.swift in Sources */,
+				99EBEA202C01420000789C9F /* User.swift in Sources */,
+				99EBEA222C01428E00789C9F /* ServiceType.swift in Sources */,
 				99EBE9D22C008A4900789C9F /* PrivacyAndPolicyView.swift in Sources */,
 				99EBE9CF2C008A4900789C9F /* AboutUsView.swift in Sources */,
 				99EBE9D32C008A4900789C9F /* ProfileView.swift in Sources */,
@@ -679,8 +728,10 @@
 				99EBE9B32C0088CA00789C9F /* DefaultView.swift in Sources */,
 				99EBE9BA2C0088F200789C9F /* SectionItem.swift in Sources */,
 				99EBE9D62C008A4900789C9F /* AccountViewModel.swift in Sources */,
+				99EBEA1C2C0140EF00789C9F /* Theme+Extension.swift in Sources */,
 				99EBEA032C008CFA00789C9F /* HomeViewModel.swift in Sources */,
 				99EBE9E82C008C5100789C9F /* CalendarViewModel.swift in Sources */,
+				99EBEA152C013FFF00789C9F /* UserService.swift in Sources */,
 				99EBE9FD2C008C7700789C9F /* TaskViewModel.swift in Sources */,
 				99EBE9802C00849C00789C9F /* RootView.swift in Sources */,
 				99EBEA022C008CFA00789C9F /* HomeView.swift in Sources */,

@@ -11,7 +11,6 @@ import SwiftUI
 @main
 struct LifeVisionApp : App {
     
-    
     @Environment(\.colorScheme) private var colorScheme
     @StateObject private var viewModel : RootViewModel = RootViewModel()
     @AppStorage(Theme.key) private var theme : Theme = UserDefaults.standard.theme
@@ -20,7 +19,7 @@ struct LifeVisionApp : App {
     var body: some Scene {
         WindowGroup {
             RootView(viewModel: viewModel)
-                .preferredColorScheme(theme == .dark ? .dark : .light)
+                .preferredColorScheme(theme.toColorScheme(colorScheme))
         }
     }
     

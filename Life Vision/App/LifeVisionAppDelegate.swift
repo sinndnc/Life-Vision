@@ -29,6 +29,8 @@ extension LifeVisionAppDelegate : UNUserNotificationCenterDelegate{
     func setupDependencyContainer() {
         FirebaseApp.configure()
         
+        ServiceContainer.register(type: UserServiceProtocol.self, UserService())
+        
     }
     
 }
