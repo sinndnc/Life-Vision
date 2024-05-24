@@ -16,6 +16,9 @@
 		99EBE97A2C00845300789C9F /* LifeVisionAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9792C00845300789C9F /* LifeVisionAppDelegate.swift */; };
 		99EBE9802C00849C00789C9F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE97F2C00849C00789C9F /* RootView.swift */; };
 		99EBE9822C0084DB00789C9F /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9812C0084DB00789C9F /* RootViewModel.swift */; };
+		99EBE9852C00864000789C9F /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9842C00864000789C9F /* UserDefaults+Extension.swift */; };
+		99EBE99D2C00872800789C9F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE99C2C00872800789C9F /* Theme.swift */; };
+		99EBE99F2C00876200789C9F /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE99E2C00876200789C9F /* Language.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		99EBE9792C00845300789C9F /* LifeVisionAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeVisionAppDelegate.swift; sourceTree = "<group>"; };
 		99EBE97F2C00849C00789C9F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		99EBE9812C0084DB00789C9F /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		99EBE9842C00864000789C9F /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		99EBE99C2C00872800789C9F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		99EBE99E2C00876200789C9F /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +166,9 @@
 		99EBE97D2C00847E00789C9F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				99EBE9832C00860B00789C9F /* Extension */,
+				99EBE99B2C00870E00789C9F /* Service */,
+				99EBE9862C00868F00789C9F /* Utils */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -171,6 +180,46 @@
 				99EBE9812C0084DB00789C9F /* RootViewModel.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		99EBE9832C00860B00789C9F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE9842C00864000789C9F /* UserDefaults+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		99EBE9862C00868F00789C9F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE99A2C0086EF00789C9F /* Theme */,
+				99EBE9992C0086DB00789C9F /* Language */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		99EBE9992C0086DB00789C9F /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE99E2C00876200789C9F /* Language.swift */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
+		99EBE99A2C0086EF00789C9F /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE99C2C00872800789C9F /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		99EBE99B2C00870E00789C9F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +308,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = 99EBE9422C0083A200789C9F;
 			productRefGroup = 99EBE94C2C0083A200789C9F /* Products */;
@@ -306,6 +356,9 @@
 				99EBE97A2C00845300789C9F /* LifeVisionAppDelegate.swift in Sources */,
 				99EBE94F2C0083A200789C9F /* LifeVisionApp.swift in Sources */,
 				99EBE9822C0084DB00789C9F /* RootViewModel.swift in Sources */,
+				99EBE99F2C00876200789C9F /* Language.swift in Sources */,
+				99EBE99D2C00872800789C9F /* Theme.swift in Sources */,
+				99EBE9852C00864000789C9F /* UserDefaults+Extension.swift in Sources */,
 				99EBE9802C00849C00789C9F /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
