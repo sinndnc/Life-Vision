@@ -62,6 +62,9 @@
 		99EBEA222C01428E00789C9F /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA212C01428E00789C9F /* ServiceType.swift */; };
 		99EBEA242C0142A800789C9F /* ServiceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA232C0142A700789C9F /* ServiceContainer.swift */; };
 		99EBEA262C0142D500789C9F /* DependencyPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA252C0142D500789C9F /* DependencyPropertyWrapper.swift */; };
+		99EBEA292C0144A800789C9F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA282C0144A800789C9F /* AuthService.swift */; };
+		99EBEA2B2C0144AF00789C9F /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA2A2C0144AF00789C9F /* AuthServiceProtocol.swift */; };
+		99EBEA2D2C0146EC00789C9F /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA2C2C0146EC00789C9F /* Auth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +140,9 @@
 		99EBEA212C01428E00789C9F /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
 		99EBEA232C0142A700789C9F /* ServiceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceContainer.swift; sourceTree = "<group>"; };
 		99EBEA252C0142D500789C9F /* DependencyPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyPropertyWrapper.swift; sourceTree = "<group>"; };
+		99EBEA282C0144A800789C9F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		99EBEA2A2C0144AF00789C9F /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
+		99EBEA2C2C0146EC00789C9F /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -523,6 +529,7 @@
 		99EBEA112C013FE100789C9F /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				99EBEA272C0144A000789C9F /* Auth */,
 				99EBEA132C013FF200789C9F /* User */,
 			);
 			path = Firebase;
@@ -547,6 +554,16 @@
 				99EBEA1D2C01417500789C9F /* UserServiceProtocol.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		99EBEA272C0144A000789C9F /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				99EBEA2C2C0146EC00789C9F /* Auth.swift */,
+				99EBEA282C0144A800789C9F /* AuthService.swift */,
+				99EBEA2A2C0144AF00789C9F /* AuthServiceProtocol.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -707,18 +724,21 @@
 				99EBE9E02C008BD900789C9F /* View+Extension.swift in Sources */,
 				99EBE9AE2C0088C400789C9F /* NavigationLinkItemView.swift in Sources */,
 				99EBE9822C0084DB00789C9F /* RootViewModel.swift in Sources */,
+				99EBEA292C0144A800789C9F /* AuthService.swift in Sources */,
 				99EBE9FB2C008C7700789C9F /* TagsView.swift in Sources */,
 				99EBE99F2C00876200789C9F /* Language.swift in Sources */,
 				99EBE9F92C008C7700789C9F /* TaskDestination.swift in Sources */,
 				99EBE9FA2C008C7700789C9F /* RepeatView.swift in Sources */,
 				99EBE9852C00864000789C9F /* UserDefaults+Extension.swift in Sources */,
 				99EBEA202C01420000789C9F /* User.swift in Sources */,
+				99EBEA2B2C0144AF00789C9F /* AuthServiceProtocol.swift in Sources */,
 				99EBEA222C01428E00789C9F /* ServiceType.swift in Sources */,
 				99EBE9D22C008A4900789C9F /* PrivacyAndPolicyView.swift in Sources */,
 				99EBE9CF2C008A4900789C9F /* AboutUsView.swift in Sources */,
 				99EBE9D32C008A4900789C9F /* ProfileView.swift in Sources */,
 				99EBE9D52C008A4900789C9F /* AccountView.swift in Sources */,
 				99EBE9AF2C0088C400789C9F /* TitleItemView.swift in Sources */,
+				99EBEA2D2C0146EC00789C9F /* Auth.swift in Sources */,
 				99EBE9FC2C008C7700789C9F /* TaskView.swift in Sources */,
 				99EBEA052C00CF4C00789C9F /* LifeVisionApp.swift in Sources */,
 				99EBE9E72C008C5100789C9F /* CalendarView.swift in Sources */,

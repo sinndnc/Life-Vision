@@ -7,7 +7,8 @@
 
 import SwiftUI
 import FirebaseCore
-
+import FirebaseAuth
+import FirebaseFirestore
 
 class LifeVisionAppDelegate : NSObject, UIApplicationDelegate {
     
@@ -28,6 +29,9 @@ extension LifeVisionAppDelegate : UNUserNotificationCenterDelegate{
     //TODO: setup initializer
     func setupDependencyContainer() {
         FirebaseApp.configure()
+        
+        let auth = FirebaseAuth.Auth.auth()
+        let firestore = Firestore.firestore()
         
         ServiceContainer.register(type: UserServiceProtocol.self, UserService())
         

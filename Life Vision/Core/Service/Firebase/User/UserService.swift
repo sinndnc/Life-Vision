@@ -6,9 +6,14 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 
 final class UserService : UserServiceProtocol {
     
+   
+    func fetchUser(){
+        
+    }
     
 }
