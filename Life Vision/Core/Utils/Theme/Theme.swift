@@ -5,8 +5,7 @@
 //  Created by Sinan Dinç on 24.05.2024.
 //
 
-import Foundation
-
+import SwiftUI
 
 enum Theme : Int , CaseIterable{
     

@@ -21,19 +21,19 @@ struct RootView: View {
     var body: some View {
         TabView(selection: tabSelection()) {
             HomeView(viewModel: homeViewModel)
-                .tabView(tag: .home, text: "Home",image : "house")
+                .tabview(tag: .home, text: "Home", image: "house")
             SearchView(viewModel: searchViewModel)
-                .tabView(tag: .search, text: "Search",image : "magnifyingglass")
+                .tabview(tag: .search, text: "Search", image: "magnifyingglass")
             CalendarView(viewModel: calendarViewModel)
-                .tabView(tag: .calendar, text: "Calendar",image : "calendar")
+                .tabview(tag: .calendar, text: "Calendar", image: "calendar")
             AccountView(viewModel : accountViewModel)
-                .tabView(tag: .account, text: "Account",image : "person")
+                .tabview(tag: .account, text: "Account", image: "person.fill")
         }
     }
 }
 
 private extension View {
-    func tabView(tag: TabEnum,text: String,image : String) -> some View {
+    func tabview(tag: TabEnum,text: String,image : String) -> some View {
         modifier(tabViewModifier(tag: tag, text: text,image: image))
     }
 }
@@ -48,7 +48,7 @@ fileprivate extension RootView {
     }
 }
 
-struct TabViewModifier : ViewModifier {
+struct tabViewModifier : ViewModifier {
     
     var tag : TabEnum
     var text : String

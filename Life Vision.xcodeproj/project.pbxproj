@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		99EBE94F2C0083A200789C9F /* LifeVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE94E2C0083A200789C9F /* LifeVisionApp.swift */; };
 		99EBE9532C0083A300789C9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EBE9522C0083A300789C9F /* Assets.xcassets */; };
 		99EBE9562C0083A300789C9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EBE9552C0083A300789C9F /* Preview Assets.xcassets */; };
 		99EBE9602C0083A300789C9F /* Life_VisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE95F2C0083A300789C9F /* Life_VisionTests.swift */; };
@@ -17,7 +16,6 @@
 		99EBE9802C00849C00789C9F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE97F2C00849C00789C9F /* RootView.swift */; };
 		99EBE9822C0084DB00789C9F /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9812C0084DB00789C9F /* RootViewModel.swift */; };
 		99EBE9852C00864000789C9F /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9842C00864000789C9F /* UserDefaults+Extension.swift */; };
-		99EBE99D2C00872800789C9F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE99C2C00872800789C9F /* Theme.swift */; };
 		99EBE99F2C00876200789C9F /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE99E2C00876200789C9F /* Language.swift */; };
 		99EBE9A72C0088B500789C9F /* ToggleDisclosureGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9A62C0088B500789C9F /* ToggleDisclosureGroupView.swift */; };
 		99EBE9AD2C0088C400789C9F /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9A82C0088C400789C9F /* MenuItemView.swift */; };
@@ -51,6 +49,8 @@
 		99EBE9FD2C008C7700789C9F /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9F62C008C7700789C9F /* TaskViewModel.swift */; };
 		99EBEA022C008CFA00789C9F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9FF2C008CFA00789C9F /* HomeView.swift */; };
 		99EBEA032C008CFA00789C9F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA002C008CFA00789C9F /* HomeViewModel.swift */; };
+		99EBEA052C00CF4C00789C9F /* LifeVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA042C00CF4C00789C9F /* LifeVisionApp.swift */; };
+		99EBEA072C01352700789C9F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA062C01352700789C9F /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +72,6 @@
 
 /* Begin PBXFileReference section */
 		99EBE94B2C0083A200789C9F /* Life Vision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Life Vision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		99EBE94E2C0083A200789C9F /* LifeVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeVisionApp.swift; sourceTree = "<group>"; };
 		99EBE9522C0083A300789C9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99EBE9552C0083A300789C9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		99EBE95B2C0083A300789C9F /* Life VisionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Life VisionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,7 +83,6 @@
 		99EBE97F2C00849C00789C9F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		99EBE9812C0084DB00789C9F /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		99EBE9842C00864000789C9F /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
-		99EBE99C2C00872800789C9F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		99EBE99E2C00876200789C9F /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		99EBE9A62C0088B500789C9F /* ToggleDisclosureGroupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToggleDisclosureGroupView.swift; path = "../../../../../../../Desktop/Default App/Feature/Component/DisclosureGroup/ToggleDisclosureGroupView.swift"; sourceTree = "<group>"; };
 		99EBE9A82C0088C400789C9F /* MenuItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
@@ -119,6 +117,8 @@
 		99EBE9F62C008C7700789C9F /* TaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		99EBE9FF2C008CFA00789C9F /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		99EBEA002C008CFA00789C9F /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		99EBEA042C00CF4C00789C9F /* LifeVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeVisionApp.swift; sourceTree = "<group>"; };
+		99EBEA062C01352700789C9F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,7 +206,7 @@
 		99EBE9782C00844100789C9F /* App */ = {
 			isa = PBXGroup;
 			children = (
-				99EBE94E2C0083A200789C9F /* LifeVisionApp.swift */,
+				99EBEA042C00CF4C00789C9F /* LifeVisionApp.swift */,
 				99EBE9792C00845300789C9F /* LifeVisionAppDelegate.swift */,
 			);
 			path = App;
@@ -284,7 +284,7 @@
 		99EBE99A2C0086EF00789C9F /* Theme */ = {
 			isa = PBXGroup;
 			children = (
-				99EBE99C2C00872800789C9F /* Theme.swift */,
+				99EBEA062C01352700789C9F /* Theme.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -414,8 +414,8 @@
 		99EBE9DC2C008AEB00789C9F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				99EBE9DD2C008AEB00789C9F /* Theme+Extension.swift */,
 				99EBE9DF2C008BD900789C9F /* View+Extension.swift */,
+				99EBE9DD2C008AEB00789C9F /* Theme+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -636,7 +636,6 @@
 				99EBE9F82C008C7700789C9F /* TaskSectionConstant.swift in Sources */,
 				99EBE9CC2C008A4900789C9F /* AccountSectionConstant.swift in Sources */,
 				99EBE9D02C008A4900789C9F /* LanguageView.swift in Sources */,
-				99EBE94F2C0083A200789C9F /* LifeVisionApp.swift in Sources */,
 				99EBE9CD2C008A4900789C9F /* AccountDestination.swift in Sources */,
 				99EBE9EC2C008C6F00789C9F /* SearchView.swift in Sources */,
 				99EBE9B02C0088C400789C9F /* ToggleItemView.swift in Sources */,
@@ -645,7 +644,6 @@
 				99EBE9822C0084DB00789C9F /* RootViewModel.swift in Sources */,
 				99EBE9FB2C008C7700789C9F /* TagsView.swift in Sources */,
 				99EBE99F2C00876200789C9F /* Language.swift in Sources */,
-				99EBE99D2C00872800789C9F /* Theme.swift in Sources */,
 				99EBE9F92C008C7700789C9F /* TaskDestination.swift in Sources */,
 				99EBE9FA2C008C7700789C9F /* RepeatView.swift in Sources */,
 				99EBE9852C00864000789C9F /* UserDefaults+Extension.swift in Sources */,
@@ -655,9 +653,11 @@
 				99EBE9D52C008A4900789C9F /* AccountView.swift in Sources */,
 				99EBE9AF2C0088C400789C9F /* TitleItemView.swift in Sources */,
 				99EBE9FC2C008C7700789C9F /* TaskView.swift in Sources */,
+				99EBEA052C00CF4C00789C9F /* LifeVisionApp.swift in Sources */,
 				99EBE9E72C008C5100789C9F /* CalendarView.swift in Sources */,
 				99EBE9ED2C008C6F00789C9F /* SearchViewModel.swift in Sources */,
 				99EBE9AD2C0088C400789C9F /* MenuItemView.swift in Sources */,
+				99EBEA072C01352700789C9F /* Theme.swift in Sources */,
 				99EBE9B32C0088CA00789C9F /* DefaultView.swift in Sources */,
 				99EBE9BA2C0088F200789C9F /* SectionItem.swift in Sources */,
 				99EBE9D62C008A4900789C9F /* AccountViewModel.swift in Sources */,
