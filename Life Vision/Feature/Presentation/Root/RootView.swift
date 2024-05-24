@@ -48,7 +48,7 @@ fileprivate extension RootView {
     }
 }
 
-struct tabViewModifier : ViewModifier {
+struct TabViewModifier : ViewModifier {
     
     var tag : TabEnum
     var text : String
