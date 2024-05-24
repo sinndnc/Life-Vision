@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 
 class LifeVisionAppDelegate : NSObject, UIApplicationDelegate {
@@ -26,7 +27,7 @@ extension LifeVisionAppDelegate : UNUserNotificationCenterDelegate{
     
     //TODO: setup initializer
     func setupDependencyContainer() {
-      
+        FirebaseApp.configure()
         
     }
     

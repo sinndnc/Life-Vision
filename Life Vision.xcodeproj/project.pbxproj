@@ -51,6 +51,10 @@
 		99EBEA032C008CFA00789C9F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA002C008CFA00789C9F /* HomeViewModel.swift */; };
 		99EBEA052C00CF4C00789C9F /* LifeVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA042C00CF4C00789C9F /* LifeVisionApp.swift */; };
 		99EBEA072C01352700789C9F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA062C01352700789C9F /* Theme.swift */; };
+		99EBEA0A2C013A1700789C9F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 99EBEA092C013A1700789C9F /* FirebaseAuth */; };
+		99EBEA0C2C013A1700789C9F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 99EBEA0B2C013A1700789C9F /* FirebaseFirestore */; };
+		99EBEA0E2C013A1700789C9F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 99EBEA0D2C013A1700789C9F /* FirebaseStorage */; };
+		99EBEA102C013AC700789C9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99EBEA0F2C013AC700789C9F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +123,7 @@
 		99EBEA002C008CFA00789C9F /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		99EBEA042C00CF4C00789C9F /* LifeVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeVisionApp.swift; sourceTree = "<group>"; };
 		99EBEA062C01352700789C9F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		99EBEA0F2C013AC700789C9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +131,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99EBEA0A2C013A1700789C9F /* FirebaseAuth in Frameworks */,
+				99EBEA0C2C013A1700789C9F /* FirebaseFirestore in Frameworks */,
+				99EBEA0E2C013A1700789C9F /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +157,7 @@
 		99EBE9422C0083A200789C9F = {
 			isa = PBXGroup;
 			children = (
+				99EBEA0F2C013AC700789C9F /* GoogleService-Info.plist */,
 				99EBE94D2C0083A200789C9F /* Life Vision */,
 				99EBE95E2C0083A300789C9F /* Life VisionTests */,
 				99EBE9682C0083A300789C9F /* Life VisionUITests */,
@@ -512,6 +521,11 @@
 			dependencies = (
 			);
 			name = "Life Vision";
+			packageProductDependencies = (
+				99EBEA092C013A1700789C9F /* FirebaseAuth */,
+				99EBEA0B2C013A1700789C9F /* FirebaseFirestore */,
+				99EBEA0D2C013A1700789C9F /* FirebaseStorage */,
+			);
 			productName = "Life Vision";
 			productReference = 99EBE94B2C0083A200789C9F /* Life Vision.app */;
 			productType = "com.apple.product-type.application";
@@ -585,6 +599,9 @@
 				tr,
 			);
 			mainGroup = 99EBE9422C0083A200789C9F;
+			packageReferences = (
+				99EBEA082C013A1700789C9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 99EBE94C2C0083A200789C9F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -603,6 +620,7 @@
 			files = (
 				99EBE9562C0083A300789C9F /* Preview Assets.xcassets in Resources */,
 				99EBE9532C0083A300789C9F /* Assets.xcassets in Resources */,
+				99EBEA102C013AC700789C9F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -995,6 +1013,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		99EBEA082C013A1700789C9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.26.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		99EBEA092C013A1700789C9F /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99EBEA082C013A1700789C9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		99EBEA0B2C013A1700789C9F /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99EBEA082C013A1700789C9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		99EBEA0D2C013A1700789C9F /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99EBEA082C013A1700789C9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 99EBE9432C0083A200789C9F /* Project object */;
 }
