@@ -19,6 +19,14 @@
 		99EBE9852C00864000789C9F /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9842C00864000789C9F /* UserDefaults+Extension.swift */; };
 		99EBE99D2C00872800789C9F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE99C2C00872800789C9F /* Theme.swift */; };
 		99EBE99F2C00876200789C9F /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE99E2C00876200789C9F /* Language.swift */; };
+		99EBE9A72C0088B500789C9F /* ToggleDisclosureGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9A62C0088B500789C9F /* ToggleDisclosureGroupView.swift */; };
+		99EBE9AD2C0088C400789C9F /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9A82C0088C400789C9F /* MenuItemView.swift */; };
+		99EBE9AE2C0088C400789C9F /* NavigationLinkItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9A92C0088C400789C9F /* NavigationLinkItemView.swift */; };
+		99EBE9AF2C0088C400789C9F /* TitleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9AA2C0088C400789C9F /* TitleItemView.swift */; };
+		99EBE9B02C0088C400789C9F /* ToggleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9AB2C0088C400789C9F /* ToggleItemView.swift */; };
+		99EBE9B32C0088CA00789C9F /* DefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9B12C0088CA00789C9F /* DefaultView.swift */; };
+		99EBE9BA2C0088F200789C9F /* SectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9B52C0088F200789C9F /* SectionItem.swift */; };
+		99EBE9BB2C0088F200789C9F /* SectionItemEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9B72C0088F200789C9F /* SectionItemEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +62,14 @@
 		99EBE9842C00864000789C9F /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		99EBE99C2C00872800789C9F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		99EBE99E2C00876200789C9F /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		99EBE9A62C0088B500789C9F /* ToggleDisclosureGroupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToggleDisclosureGroupView.swift; path = "../../../../../../../Desktop/Default App/Feature/Component/DisclosureGroup/ToggleDisclosureGroupView.swift"; sourceTree = "<group>"; };
+		99EBE9A82C0088C400789C9F /* MenuItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		99EBE9A92C0088C400789C9F /* NavigationLinkItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationLinkItemView.swift; sourceTree = "<group>"; };
+		99EBE9AA2C0088C400789C9F /* TitleItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleItemView.swift; sourceTree = "<group>"; };
+		99EBE9AB2C0088C400789C9F /* ToggleItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleItemView.swift; sourceTree = "<group>"; };
+		99EBE9B12C0088CA00789C9F /* DefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultView.swift; sourceTree = "<group>"; };
+		99EBE9B52C0088F200789C9F /* SectionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionItem.swift; sourceTree = "<group>"; };
+		99EBE9B72C0088F200789C9F /* SectionItemEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionItemEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +174,8 @@
 		99EBE97C2C00847000789C9F /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				99EBE9B92C0088F200789C9F /* Utils */,
+				99EBE9A02C00885C00789C9F /* Component */,
 				99EBE97B2C00846800789C9F /* Presentation */,
 			);
 			path = Feature;
@@ -220,6 +238,79 @@
 			children = (
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		99EBE9A02C00885C00789C9F /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE9B22C0088CA00789C9F /* View */,
+				99EBE9AC2C0088C400789C9F /* Section */,
+				99EBE9A12C00886D00789C9F /* DisclosureGroup */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		99EBE9A12C00886D00789C9F /* DisclosureGroup */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE9A62C0088B500789C9F /* ToggleDisclosureGroupView.swift */,
+			);
+			path = DisclosureGroup;
+			sourceTree = "<group>";
+		};
+		99EBE9AC2C0088C400789C9F /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE9A82C0088C400789C9F /* MenuItemView.swift */,
+				99EBE9A92C0088C400789C9F /* NavigationLinkItemView.swift */,
+				99EBE9AA2C0088C400789C9F /* TitleItemView.swift */,
+				99EBE9AB2C0088C400789C9F /* ToggleItemView.swift */,
+			);
+			name = Section;
+			path = "../../../../../../Desktop/Default App/Feature/Component/Section";
+			sourceTree = "<group>";
+		};
+		99EBE9B22C0088CA00789C9F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE9B12C0088CA00789C9F /* DefaultView.swift */,
+			);
+			name = View;
+			path = "../../../../../../Desktop/Default App/Feature/Component/View";
+			sourceTree = "<group>";
+		};
+		99EBE9B42C0088F200789C9F /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		99EBE9B62C0088F200789C9F /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE9B52C0088F200789C9F /* SectionItem.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		99EBE9B82C0088F200789C9F /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE9B72C0088F200789C9F /* SectionItemEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		99EBE9B92C0088F200789C9F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				99EBE9B42C0088F200789C9F /* Constant */,
+				99EBE9B62C0088F200789C9F /* Entities */,
+				99EBE9B82C0088F200789C9F /* Enum */,
+			);
+			name = Utils;
+			path = "../../../../../Desktop/Default App/Feature/Utils";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,11 +445,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				99EBE97A2C00845300789C9F /* LifeVisionAppDelegate.swift in Sources */,
+				99EBE9BB2C0088F200789C9F /* SectionItemEnum.swift in Sources */,
+				99EBE9A72C0088B500789C9F /* ToggleDisclosureGroupView.swift in Sources */,
 				99EBE94F2C0083A200789C9F /* LifeVisionApp.swift in Sources */,
+				99EBE9B02C0088C400789C9F /* ToggleItemView.swift in Sources */,
+				99EBE9AE2C0088C400789C9F /* NavigationLinkItemView.swift in Sources */,
 				99EBE9822C0084DB00789C9F /* RootViewModel.swift in Sources */,
 				99EBE99F2C00876200789C9F /* Language.swift in Sources */,
 				99EBE99D2C00872800789C9F /* Theme.swift in Sources */,
 				99EBE9852C00864000789C9F /* UserDefaults+Extension.swift in Sources */,
+				99EBE9AF2C0088C400789C9F /* TitleItemView.swift in Sources */,
+				99EBE9AD2C0088C400789C9F /* MenuItemView.swift in Sources */,
+				99EBE9B32C0088CA00789C9F /* DefaultView.swift in Sources */,
+				99EBE9BA2C0088F200789C9F /* SectionItem.swift in Sources */,
 				99EBE9802C00849C00789C9F /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

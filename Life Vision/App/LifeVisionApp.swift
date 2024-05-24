@@ -1,5 +1,5 @@
 //
-//  Life_VisionApp.swift
+//  LifeVisionApp.swift
 //  Life Vision
 //
 //  Created by Sinan Dinç on 24.05.2024.
