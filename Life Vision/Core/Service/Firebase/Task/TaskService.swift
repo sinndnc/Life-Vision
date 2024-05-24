@@ -1,5 +1,5 @@
 //
-//  UserService.swift
+//  TaskService.swift
 //  Life Vision
 //
 //  Created by Sinan Dinç on 25.05.2024.
@@ -8,8 +8,7 @@
 import Foundation
 import FirebaseFirestore
 
-
-final class UserService : UserServiceProtocol {
+final class TaskService : TaskServiceProtocol{
     
     var firestore: Firestore
     
@@ -20,6 +19,7 @@ final class UserService : UserServiceProtocol {
     func fetch() {
         
     }
+    
     
     
 }

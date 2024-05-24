@@ -65,6 +65,9 @@
 		99EBEA292C0144A800789C9F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA282C0144A800789C9F /* AuthService.swift */; };
 		99EBEA2B2C0144AF00789C9F /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA2A2C0144AF00789C9F /* AuthServiceProtocol.swift */; };
 		99EBEA2D2C0146EC00789C9F /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA2C2C0146EC00789C9F /* Auth.swift */; };
+		99EBEA302C014D8000789C9F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA2F2C014D8000789C9F /* Task.swift */; };
+		99EBEA322C014D9D00789C9F /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA312C014D9D00789C9F /* TaskService.swift */; };
+		99EBEA342C014DA400789C9F /* TaskServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA332C014DA400789C9F /* TaskServiceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +146,9 @@
 		99EBEA282C0144A800789C9F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		99EBEA2A2C0144AF00789C9F /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
 		99EBEA2C2C0146EC00789C9F /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		99EBEA2F2C014D8000789C9F /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		99EBEA312C014D9D00789C9F /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
+		99EBEA332C014DA400789C9F /* TaskServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -531,6 +537,7 @@
 			children = (
 				99EBEA272C0144A000789C9F /* Auth */,
 				99EBEA132C013FF200789C9F /* User */,
+				99EBEA2E2C014D7300789C9F /* Task */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -564,6 +571,16 @@
 				99EBEA2A2C0144AF00789C9F /* AuthServiceProtocol.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		99EBEA2E2C014D7300789C9F /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				99EBEA2F2C014D8000789C9F /* Task.swift */,
+				99EBEA312C014D9D00789C9F /* TaskService.swift */,
+				99EBEA332C014DA400789C9F /* TaskServiceProtocol.swift */,
+			);
+			path = Task;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -718,6 +735,7 @@
 				99EBE9F82C008C7700789C9F /* TaskSectionConstant.swift in Sources */,
 				99EBE9CC2C008A4900789C9F /* AccountSectionConstant.swift in Sources */,
 				99EBE9D02C008A4900789C9F /* LanguageView.swift in Sources */,
+				99EBEA302C014D8000789C9F /* Task.swift in Sources */,
 				99EBE9CD2C008A4900789C9F /* AccountDestination.swift in Sources */,
 				99EBE9EC2C008C6F00789C9F /* SearchView.swift in Sources */,
 				99EBE9B02C0088C400789C9F /* ToggleItemView.swift in Sources */,
@@ -734,6 +752,8 @@
 				99EBEA2B2C0144AF00789C9F /* AuthServiceProtocol.swift in Sources */,
 				99EBEA222C01428E00789C9F /* ServiceType.swift in Sources */,
 				99EBE9D22C008A4900789C9F /* PrivacyAndPolicyView.swift in Sources */,
+				99EBEA322C014D9D00789C9F /* TaskService.swift in Sources */,
+				99EBEA342C014DA400789C9F /* TaskServiceProtocol.swift in Sources */,
 				99EBE9CF2C008A4900789C9F /* AboutUsView.swift in Sources */,
 				99EBE9D32C008A4900789C9F /* ProfileView.swift in Sources */,
 				99EBE9D52C008A4900789C9F /* AccountView.swift in Sources */,
