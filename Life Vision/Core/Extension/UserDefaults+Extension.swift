@@ -29,4 +29,15 @@ extension UserDefaults {
         }
     }
     
+    //TODO: düzeltilecek
+    var image : Data {
+        get {
+            UserDefaults.standard.data(forKey: Preferences.image) ?? Data()
+        }
+        set{
+            UserDefaults.standard.set(newValue, forKey: Preferences.image)
+
+        }
+    }
+    
 }

@@ -71,6 +71,7 @@
 		99F8B38A2C01CC610082A453 /* FirebaseConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3892C01CC610082A453 /* FirebaseConstant.swift */; };
 		99F8B38D2C01D2660082A453 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B38C2C01D2660082A453 /* StorageService.swift */; };
 		99F8B38F2C01D2720082A453 /* StorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B38E2C01D2720082A453 /* StorageServiceProtocol.swift */; };
+		99F8B3922C01E0FC0082A453 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3912C01E0FC0082A453 /* Preferences.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		99F8B3892C01CC610082A453 /* FirebaseConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstant.swift; sourceTree = "<group>"; };
 		99F8B38C2C01D2660082A453 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		99F8B38E2C01D2720082A453 /* StorageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceProtocol.swift; sourceTree = "<group>"; };
+		99F8B3912C01E0FC0082A453 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +314,7 @@
 			children = (
 				99EBE99A2C0086EF00789C9F /* Theme */,
 				99EBE9992C0086DB00789C9F /* Language */,
+				99F8B3902C01E0A80082A453 /* Preferences */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -608,6 +611,14 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
+		99F8B3902C01E0A80082A453 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				99F8B3912C01E0FC0082A453 /* Preferences.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -770,6 +781,7 @@
 				99EBE9AE2C0088C400789C9F /* NavigationLinkItemView.swift in Sources */,
 				99EBE9822C0084DB00789C9F /* RootViewModel.swift in Sources */,
 				99EBEA292C0144A800789C9F /* AuthService.swift in Sources */,
+				99F8B3922C01E0FC0082A453 /* Preferences.swift in Sources */,
 				99EBE9FB2C008C7700789C9F /* TagsView.swift in Sources */,
 				99EBE99F2C00876200789C9F /* Language.swift in Sources */,
 				99EBE9F92C008C7700789C9F /* TaskDestination.swift in Sources */,

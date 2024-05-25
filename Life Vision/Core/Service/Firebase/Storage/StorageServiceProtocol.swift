@@ -13,9 +13,9 @@ protocol StorageServiceProtocol {
  
     var storage : Storage { get }
     var firestore : Firestore { get }
-    
-    
-    func image()
-    
-    
+        
+    func uploadImage()
+
+    func downloadImage()
+            
 }

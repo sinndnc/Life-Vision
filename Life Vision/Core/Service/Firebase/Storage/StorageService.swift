@@ -19,10 +19,14 @@ final class StorageService : StorageServiceProtocol{
         self.firestore = firestore
     }
     
-    func image() {
+    func downloadImage() {
         
     }
     
+    
+    func uploadImage(){
+        
+    }
     
     
     

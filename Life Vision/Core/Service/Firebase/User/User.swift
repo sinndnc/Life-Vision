@@ -9,6 +9,7 @@ import Foundation
 
 
 struct User {
-    var name : String = ""
-    var surname : String = ""
+    var name : String
+    var surname : String
+    var image : Data
 }

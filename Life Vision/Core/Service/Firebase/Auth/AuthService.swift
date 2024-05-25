@@ -16,10 +16,8 @@ final class AuthService : AuthServiceProtocol {
         self.auth = auth
     }
     
-    func authenticate(_ model : Auth){
-        auth.signIn(withEmail: model.email, password: model.password){ completion , error  in
-            print(completion?.user.uid)
-        }
+    func authenticate(_ model : Auth) {
+        auth.signIn(withEmail: model.email, password: model.password)
     }
     
 }
