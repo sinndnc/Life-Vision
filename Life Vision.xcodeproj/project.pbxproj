@@ -68,6 +68,9 @@
 		99EBEA302C014D8000789C9F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA2F2C014D8000789C9F /* Task.swift */; };
 		99EBEA322C014D9D00789C9F /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA312C014D9D00789C9F /* TaskService.swift */; };
 		99EBEA342C014DA400789C9F /* TaskServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA332C014DA400789C9F /* TaskServiceProtocol.swift */; };
+		99F8B38A2C01CC610082A453 /* FirebaseConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3892C01CC610082A453 /* FirebaseConstant.swift */; };
+		99F8B38D2C01D2660082A453 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B38C2C01D2660082A453 /* StorageService.swift */; };
+		99F8B38F2C01D2720082A453 /* StorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B38E2C01D2720082A453 /* StorageServiceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +152,9 @@
 		99EBEA2F2C014D8000789C9F /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		99EBEA312C014D9D00789C9F /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
 		99EBEA332C014DA400789C9F /* TaskServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskServiceProtocol.swift; sourceTree = "<group>"; };
+		99F8B3892C01CC610082A453 /* FirebaseConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstant.swift; sourceTree = "<group>"; };
+		99F8B38C2C01D2660082A453 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		99F8B38E2C01D2720082A453 /* StorageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +282,7 @@
 			children = (
 				99EBE9862C00868F00789C9F /* Utils */,
 				99EBE99B2C00870E00789C9F /* Service */,
+				99F8B3882C01CC480082A453 /* Constant */,
 				99EBE9832C00860B00789C9F /* Extension */,
 			);
 			path = Core;
@@ -538,6 +545,7 @@
 				99EBEA272C0144A000789C9F /* Auth */,
 				99EBEA132C013FF200789C9F /* User */,
 				99EBEA2E2C014D7300789C9F /* Task */,
+				99F8B38B2C01D2580082A453 /* Storage */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -581,6 +589,23 @@
 				99EBEA332C014DA400789C9F /* TaskServiceProtocol.swift */,
 			);
 			path = Task;
+			sourceTree = "<group>";
+		};
+		99F8B3882C01CC480082A453 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				99F8B3892C01CC610082A453 /* FirebaseConstant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		99F8B38B2C01D2580082A453 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				99F8B38C2C01D2660082A453 /* StorageService.swift */,
+				99F8B38E2C01D2720082A453 /* StorageServiceProtocol.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -730,7 +755,9 @@
 				99EBEA262C0142D500789C9F /* DependencyPropertyWrapper.swift in Sources */,
 				99EBE9D12C008A4900789C9F /* NotificationView.swift in Sources */,
 				99EBEA242C0142A800789C9F /* ServiceContainer.swift in Sources */,
+				99F8B38D2C01D2660082A453 /* StorageService.swift in Sources */,
 				99EBEA1E2C01417500789C9F /* UserServiceProtocol.swift in Sources */,
+				99F8B38F2C01D2720082A453 /* StorageServiceProtocol.swift in Sources */,
 				99EBE9A72C0088B500789C9F /* ToggleDisclosureGroupView.swift in Sources */,
 				99EBE9F82C008C7700789C9F /* TaskSectionConstant.swift in Sources */,
 				99EBE9CC2C008A4900789C9F /* AccountSectionConstant.swift in Sources */,
@@ -763,6 +790,7 @@
 				99EBEA052C00CF4C00789C9F /* LifeVisionApp.swift in Sources */,
 				99EBE9E72C008C5100789C9F /* CalendarView.swift in Sources */,
 				99EBE9ED2C008C6F00789C9F /* SearchViewModel.swift in Sources */,
+				99F8B38A2C01CC610082A453 /* FirebaseConstant.swift in Sources */,
 				99EBE9AD2C0088C400789C9F /* MenuItemView.swift in Sources */,
 				99EBEA072C01352700789C9F /* Theme.swift in Sources */,
 				99EBE9B32C0088CA00789C9F /* DefaultView.swift in Sources */,

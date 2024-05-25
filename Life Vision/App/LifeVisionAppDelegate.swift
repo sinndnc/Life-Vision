@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseCore
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseStorage
 
 class LifeVisionAppDelegate : NSObject, UIApplicationDelegate {
     
@@ -26,15 +27,17 @@ class LifeVisionAppDelegate : NSObject, UIApplicationDelegate {
 
 extension LifeVisionAppDelegate : UNUserNotificationCenterDelegate{
     
-    //TODO: setup initializer
     func setupDependencyContainer() {
         FirebaseApp.configure()
         
+        let storage = Storage.storage()
         let auth = FirebaseAuth.Auth.auth()
         let firestore = Firestore.firestore()
         
-        ServiceContainer.register(type: UserServiceProtocol.self, UserService())
-        
+        ServiceContainer.register(type: AuthServiceProtocol.self, AuthService(auth: auth))
+        ServiceContainer.register(type: UserServiceProtocol.self, UserService(auth: auth,firestore: firestore))
+        ServiceContainer.register(type: TaskServiceProtocol.self, TaskService(auth: auth,firestore: firestore))
+        ServiceContainer.register(type: StorageServiceProtocol.self, StorageService(storage: storage, firestore: firestore))
     }
     
 }

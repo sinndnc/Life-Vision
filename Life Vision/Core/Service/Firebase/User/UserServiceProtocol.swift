@@ -12,6 +12,6 @@ protocol UserServiceProtocol{
     
     var firestore: Firestore { get }
     
-    func fetch()
+    func fetch() -> DocumentReference
     
 }

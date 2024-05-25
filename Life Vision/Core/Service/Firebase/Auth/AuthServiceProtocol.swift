@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 protocol AuthServiceProtocol{
     
     var auth : FirebaseAuth.Auth { get }
 
-    func auth(_ auth : FirebaseAuth.Auth)
+    func authenticate(_ auth : Auth)
 
 }

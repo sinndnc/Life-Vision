@@ -7,12 +7,15 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseAuth
 
 final class TaskService : TaskServiceProtocol{
     
-    var firestore: Firestore
+    let auth : FirebaseAuth.Auth
+    let firestore: Firestore
     
-    init(firestore: Firestore) {
+    init(auth : FirebaseAuth.Auth,firestore: Firestore) {
+        self.auth = auth
         self.firestore = firestore
     }
     

@@ -10,14 +10,16 @@ import FirebaseAuth
 
 final class AuthService : AuthServiceProtocol {
     
-    var auth : FirebaseAuth.Auth
+    let auth : FirebaseAuth.Auth
     
     init(auth: FirebaseAuth.Auth) {
         self.auth = auth
     }
     
-    func auth(_ auth : FirebaseAuth.Auth){
-        
+    func authenticate(_ model : Auth){
+        auth.signIn(withEmail: model.email, password: model.password){ completion , error  in
+            print(completion?.user.uid)
+        }
     }
     
 }
