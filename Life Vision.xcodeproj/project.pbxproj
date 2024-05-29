@@ -83,6 +83,8 @@
 		99F8B3B22C0681DA0082A453 /* TaskLocalServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3B12C0681DA0082A453 /* TaskLocalServiceProtocol.swift */; };
 		99F8B3B42C0681E50082A453 /* TaskLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3B32C0681E50082A453 /* TaskLocalService.swift */; };
 		99F8B3B72C06820F0082A453 /* StorageErrorCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3B62C06820F0082A453 /* StorageErrorCallback.swift */; };
+		99F8B3BB2C0738150082A453 /* StorageLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3BA2C0738150082A453 /* StorageLocalService.swift */; };
+		99F8B3BD2C07381F0082A453 /* StorageLocalServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3BC2C07381F0082A453 /* StorageLocalServiceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +181,8 @@
 		99F8B3B12C0681DA0082A453 /* TaskLocalServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskLocalServiceProtocol.swift; sourceTree = "<group>"; };
 		99F8B3B32C0681E50082A453 /* TaskLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskLocalService.swift; sourceTree = "<group>"; };
 		99F8B3B62C06820F0082A453 /* StorageErrorCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageErrorCallback.swift; sourceTree = "<group>"; };
+		99F8B3BA2C0738150082A453 /* StorageLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageLocalService.swift; sourceTree = "<group>"; };
+		99F8B3BC2C07381F0082A453 /* StorageLocalServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageLocalServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -569,7 +573,6 @@
 		99EBEA112C013FE100789C9F /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				99F8B38B2C01D2580082A453 /* Storage */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -654,7 +657,7 @@
 				99EBEA272C0144A000789C9F /* Auth */,
 				99EBEA132C013FF200789C9F /* User */,
 				99EBEA2E2C014D7300789C9F /* Task */,
-				99F8B3B92C0737C80082A453 /* Storage */,
+				99F8B38B2C01D2580082A453 /* Storage */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -753,13 +756,8 @@
 		99F8B3B82C0737BF0082A453 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Storage;
-			sourceTree = "<group>";
-		};
-		99F8B3B92C0737C80082A453 /* Storage */ = {
-			isa = PBXGroup;
-			children = (
+				99F8B3BA2C0738150082A453 /* StorageLocalService.swift */,
+				99F8B3BC2C07381F0082A453 /* StorageLocalServiceProtocol.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -940,6 +938,7 @@
 				99EBE9FA2C008C7700789C9F /* RepeatView.swift in Sources */,
 				99EBE9852C00864000789C9F /* UserDefaults+Extension.swift in Sources */,
 				99EBEA202C01420000789C9F /* User.swift in Sources */,
+				99F8B3BD2C07381F0082A453 /* StorageLocalServiceProtocol.swift in Sources */,
 				99EBEA2B2C0144AF00789C9F /* AuthRemoteServiceProtocol.swift in Sources */,
 				99EBEA222C01428E00789C9F /* ServiceType.swift in Sources */,
 				99EBE9D22C008A4900789C9F /* PrivacyAndPolicyView.swift in Sources */,
@@ -953,6 +952,7 @@
 				99EBE9FC2C008C7700789C9F /* TaskView.swift in Sources */,
 				99F8B3AC2C067F510082A453 /* UserLocalServiceProtocol.swift in Sources */,
 				99EBEA052C00CF4C00789C9F /* LifeVisionApp.swift in Sources */,
+				99F8B3BB2C0738150082A453 /* StorageLocalService.swift in Sources */,
 				99EBE9E72C008C5100789C9F /* CalendarView.swift in Sources */,
 				99EBE9ED2C008C6F00789C9F /* SearchViewModel.swift in Sources */,
 				99F8B38A2C01CC610082A453 /* FirebaseConstant.swift in Sources */,
