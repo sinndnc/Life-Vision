@@ -40,4 +40,17 @@ extension UserDefaults {
         }
     }
     
+    var user : User {
+        get{
+            let userData = UserDefaults.standard.value(forKey: User.key) as? Data
+            let user = try! PropertyListDecoder().decode(User.self, from: userData!)
+            return user
+        }
+        set{
+            if let data = try? PropertyListEncoder().encode(newValue) {
+                UserDefaults.standard.set(data,forKey: User.key)
+            }
+        }
+    }
+    
 }

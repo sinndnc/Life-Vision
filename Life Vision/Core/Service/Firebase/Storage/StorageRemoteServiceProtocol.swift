@@ -9,7 +9,7 @@ import Foundation
 import FirebaseStorage
 import FirebaseFirestore
 
-protocol StorageServiceProtocol {
+protocol StorageRemoteServiceProtocol {
  
     var storage : Storage { get }
     var firestore : Firestore { get }

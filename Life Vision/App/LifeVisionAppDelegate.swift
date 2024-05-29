@@ -34,10 +34,10 @@ extension LifeVisionAppDelegate : UNUserNotificationCenterDelegate{
         let auth = FirebaseAuth.Auth.auth()
         let firestore = Firestore.firestore()
         
-        ServiceContainer.register(type: AuthServiceProtocol.self, AuthService(auth: auth))
-        ServiceContainer.register(type: UserServiceProtocol.self, UserService(auth: auth,firestore: firestore))
-        ServiceContainer.register(type: TaskServiceProtocol.self, TaskService(auth: auth,firestore: firestore))
-        ServiceContainer.register(type: StorageServiceProtocol.self, StorageService(storage: storage, firestore: firestore))
+        ServiceContainer.register(type: AuthRemoteServiceProtocol.self, AuthService(auth: auth))
+        ServiceContainer.register(type: UserRemoteServiceProtocol.self, UserRemoteService(auth: auth,firestore: firestore))
+        ServiceContainer.register(type: TaskRemoteServiceProtocol.self, TaskRemoteService(auth: auth,firestore: firestore))
+        ServiceContainer.register(type: StorageServiceProtocol.self, StorageService(auth: auth, storage: storage, firestore: firestore))
     }
     
 }

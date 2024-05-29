@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Task{
+struct Mission {
     var title : String
     var description : String
 }

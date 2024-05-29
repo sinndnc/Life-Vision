@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 import FirebaseAuth
 
-final class TaskService : TaskServiceProtocol{
+final class TaskRemoteService : TaskRemoteServiceProtocol{
     
     let auth : FirebaseAuth.Auth
     let firestore: Firestore

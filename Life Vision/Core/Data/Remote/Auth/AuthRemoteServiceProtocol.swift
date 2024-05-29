@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseAuth
 
-protocol AuthServiceProtocol{
+protocol AuthRemoteServiceProtocol{
     
     var auth : FirebaseAuth.Auth { get }
 

@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseAuth
 
-final class AuthService : AuthServiceProtocol {
+final class AuthRemoteService : AuthRemoteServiceProtocol {
     
     let auth : FirebaseAuth.Auth
     

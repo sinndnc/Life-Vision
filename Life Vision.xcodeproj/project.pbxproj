@@ -55,23 +55,34 @@
 		99EBEA0C2C013A1700789C9F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 99EBEA0B2C013A1700789C9F /* FirebaseFirestore */; };
 		99EBEA0E2C013A1700789C9F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 99EBEA0D2C013A1700789C9F /* FirebaseStorage */; };
 		99EBEA102C013AC700789C9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99EBEA0F2C013AC700789C9F /* GoogleService-Info.plist */; };
-		99EBEA152C013FFF00789C9F /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA142C013FFF00789C9F /* UserService.swift */; };
+		99EBEA152C013FFF00789C9F /* UserRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA142C013FFF00789C9F /* UserRemoteService.swift */; };
 		99EBEA1C2C0140EF00789C9F /* Theme+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9DD2C008AEB00789C9F /* Theme+Extension.swift */; };
-		99EBEA1E2C01417500789C9F /* UserServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA1D2C01417500789C9F /* UserServiceProtocol.swift */; };
+		99EBEA1E2C01417500789C9F /* UserRemoteServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA1D2C01417500789C9F /* UserRemoteServiceProtocol.swift */; };
 		99EBEA202C01420000789C9F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA1F2C01420000789C9F /* User.swift */; };
 		99EBEA222C01428E00789C9F /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA212C01428E00789C9F /* ServiceType.swift */; };
 		99EBEA242C0142A800789C9F /* ServiceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA232C0142A700789C9F /* ServiceContainer.swift */; };
 		99EBEA262C0142D500789C9F /* DependencyPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA252C0142D500789C9F /* DependencyPropertyWrapper.swift */; };
-		99EBEA292C0144A800789C9F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA282C0144A800789C9F /* AuthService.swift */; };
-		99EBEA2B2C0144AF00789C9F /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA2A2C0144AF00789C9F /* AuthServiceProtocol.swift */; };
+		99EBEA292C0144A800789C9F /* AuthRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA282C0144A800789C9F /* AuthRemoteService.swift */; };
+		99EBEA2B2C0144AF00789C9F /* AuthRemoteServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA2A2C0144AF00789C9F /* AuthRemoteServiceProtocol.swift */; };
 		99EBEA2D2C0146EC00789C9F /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA2C2C0146EC00789C9F /* Auth.swift */; };
 		99EBEA302C014D8000789C9F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA2F2C014D8000789C9F /* Task.swift */; };
-		99EBEA322C014D9D00789C9F /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA312C014D9D00789C9F /* TaskService.swift */; };
-		99EBEA342C014DA400789C9F /* TaskServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA332C014DA400789C9F /* TaskServiceProtocol.swift */; };
+		99EBEA322C014D9D00789C9F /* TaskRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA312C014D9D00789C9F /* TaskRemoteService.swift */; };
+		99EBEA342C014DA400789C9F /* TaskRemoteServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA332C014DA400789C9F /* TaskRemoteServiceProtocol.swift */; };
 		99F8B38A2C01CC610082A453 /* FirebaseConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3892C01CC610082A453 /* FirebaseConstant.swift */; };
-		99F8B38D2C01D2660082A453 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B38C2C01D2660082A453 /* StorageService.swift */; };
-		99F8B38F2C01D2720082A453 /* StorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B38E2C01D2720082A453 /* StorageServiceProtocol.swift */; };
+		99F8B38D2C01D2660082A453 /* StorageRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B38C2C01D2660082A453 /* StorageRemoteService.swift */; };
+		99F8B38F2C01D2720082A453 /* StorageRemoteServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B38E2C01D2720082A453 /* StorageRemoteServiceProtocol.swift */; };
 		99F8B3922C01E0FC0082A453 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3912C01E0FC0082A453 /* Preferences.swift */; };
+		99F8B3942C0210C60082A453 /* ProfileItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3932C0210C60082A453 /* ProfileItemView.swift */; };
+		99F8B3992C0237B90082A453 /* UserErrorCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3982C0237B90082A453 /* UserErrorCallback.swift */; };
+		99F8B3A12C067DDB0082A453 /* AuthLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3A02C067DDB0082A453 /* AuthLocalService.swift */; };
+		99F8B3A32C067DF00082A453 /* AuthLocalServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3A22C067DF00082A453 /* AuthLocalServiceProtocol.swift */; };
+		99F8B3A62C067E9B0082A453 /* AuthErrorCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3A52C067E9B0082A453 /* AuthErrorCallback.swift */; };
+		99F8B3AA2C067F420082A453 /* UserLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3A92C067F420082A453 /* UserLocalService.swift */; };
+		99F8B3AC2C067F510082A453 /* UserLocalServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3AB2C067F510082A453 /* UserLocalServiceProtocol.swift */; };
+		99F8B3AF2C0681810082A453 /* TaskErrorCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3AE2C0681810082A453 /* TaskErrorCallback.swift */; };
+		99F8B3B22C0681DA0082A453 /* TaskLocalServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3B12C0681DA0082A453 /* TaskLocalServiceProtocol.swift */; };
+		99F8B3B42C0681E50082A453 /* TaskLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3B32C0681E50082A453 /* TaskLocalService.swift */; };
+		99F8B3B72C06820F0082A453 /* StorageErrorCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3B62C06820F0082A453 /* StorageErrorCallback.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,22 +152,33 @@
 		99EBEA042C00CF4C00789C9F /* LifeVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeVisionApp.swift; sourceTree = "<group>"; };
 		99EBEA062C01352700789C9F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		99EBEA0F2C013AC700789C9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		99EBEA142C013FFF00789C9F /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		99EBEA1D2C01417500789C9F /* UserServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceProtocol.swift; sourceTree = "<group>"; };
+		99EBEA142C013FFF00789C9F /* UserRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRemoteService.swift; sourceTree = "<group>"; };
+		99EBEA1D2C01417500789C9F /* UserRemoteServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRemoteServiceProtocol.swift; sourceTree = "<group>"; };
 		99EBEA1F2C01420000789C9F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		99EBEA212C01428E00789C9F /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
 		99EBEA232C0142A700789C9F /* ServiceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceContainer.swift; sourceTree = "<group>"; };
 		99EBEA252C0142D500789C9F /* DependencyPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyPropertyWrapper.swift; sourceTree = "<group>"; };
-		99EBEA282C0144A800789C9F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		99EBEA2A2C0144AF00789C9F /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
+		99EBEA282C0144A800789C9F /* AuthRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRemoteService.swift; sourceTree = "<group>"; };
+		99EBEA2A2C0144AF00789C9F /* AuthRemoteServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRemoteServiceProtocol.swift; sourceTree = "<group>"; };
 		99EBEA2C2C0146EC00789C9F /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		99EBEA2F2C014D8000789C9F /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		99EBEA312C014D9D00789C9F /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
-		99EBEA332C014DA400789C9F /* TaskServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskServiceProtocol.swift; sourceTree = "<group>"; };
+		99EBEA312C014D9D00789C9F /* TaskRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRemoteService.swift; sourceTree = "<group>"; };
+		99EBEA332C014DA400789C9F /* TaskRemoteServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRemoteServiceProtocol.swift; sourceTree = "<group>"; };
 		99F8B3892C01CC610082A453 /* FirebaseConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstant.swift; sourceTree = "<group>"; };
-		99F8B38C2C01D2660082A453 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
-		99F8B38E2C01D2720082A453 /* StorageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceProtocol.swift; sourceTree = "<group>"; };
+		99F8B38C2C01D2660082A453 /* StorageRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRemoteService.swift; sourceTree = "<group>"; };
+		99F8B38E2C01D2720082A453 /* StorageRemoteServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRemoteServiceProtocol.swift; sourceTree = "<group>"; };
 		99F8B3912C01E0FC0082A453 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		99F8B3932C0210C60082A453 /* ProfileItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItemView.swift; sourceTree = "<group>"; };
+		99F8B3982C0237B90082A453 /* UserErrorCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserErrorCallback.swift; sourceTree = "<group>"; };
+		99F8B3A02C067DDB0082A453 /* AuthLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLocalService.swift; sourceTree = "<group>"; };
+		99F8B3A22C067DF00082A453 /* AuthLocalServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLocalServiceProtocol.swift; sourceTree = "<group>"; };
+		99F8B3A52C067E9B0082A453 /* AuthErrorCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorCallback.swift; sourceTree = "<group>"; };
+		99F8B3A92C067F420082A453 /* UserLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalService.swift; sourceTree = "<group>"; };
+		99F8B3AB2C067F510082A453 /* UserLocalServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalServiceProtocol.swift; sourceTree = "<group>"; };
+		99F8B3AE2C0681810082A453 /* TaskErrorCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskErrorCallback.swift; sourceTree = "<group>"; };
+		99F8B3B12C0681DA0082A453 /* TaskLocalServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskLocalServiceProtocol.swift; sourceTree = "<group>"; };
+		99F8B3B32C0681E50082A453 /* TaskLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskLocalService.swift; sourceTree = "<group>"; };
+		99F8B3B62C06820F0082A453 /* StorageErrorCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageErrorCallback.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +304,7 @@
 		99EBE97D2C00847E00789C9F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				99F8B39C2C067C540082A453 /* Data */,
 				99EBE9862C00868F00789C9F /* Utils */,
 				99EBE99B2C00870E00789C9F /* Service */,
 				99F8B3882C01CC480082A453 /* Constant */,
@@ -366,6 +389,7 @@
 			children = (
 				99EBE9AA2C0088C400789C9F /* TitleItemView.swift */,
 				99EBE9A82C0088C400789C9F /* MenuItemView.swift */,
+				99F8B3932C0210C60082A453 /* ProfileItemView.swift */,
 				99EBE9AB2C0088C400789C9F /* ToggleItemView.swift */,
 				99EBE9A92C0088C400789C9F /* NavigationLinkItemView.swift */,
 			);
@@ -545,9 +569,6 @@
 		99EBEA112C013FE100789C9F /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				99EBEA272C0144A000789C9F /* Auth */,
-				99EBEA132C013FF200789C9F /* User */,
-				99EBEA2E2C014D7300789C9F /* Task */,
 				99F8B38B2C01D2580082A453 /* Storage */,
 			);
 			path = Firebase;
@@ -567,9 +588,8 @@
 		99EBEA132C013FF200789C9F /* User */ = {
 			isa = PBXGroup;
 			children = (
-				99EBEA1F2C01420000789C9F /* User.swift */,
-				99EBEA142C013FFF00789C9F /* UserService.swift */,
-				99EBEA1D2C01417500789C9F /* UserServiceProtocol.swift */,
+				99EBEA142C013FFF00789C9F /* UserRemoteService.swift */,
+				99EBEA1D2C01417500789C9F /* UserRemoteServiceProtocol.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -577,9 +597,8 @@
 		99EBEA272C0144A000789C9F /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				99EBEA2C2C0146EC00789C9F /* Auth.swift */,
-				99EBEA282C0144A800789C9F /* AuthService.swift */,
-				99EBEA2A2C0144AF00789C9F /* AuthServiceProtocol.swift */,
+				99EBEA282C0144A800789C9F /* AuthRemoteService.swift */,
+				99EBEA2A2C0144AF00789C9F /* AuthRemoteServiceProtocol.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -587,9 +606,8 @@
 		99EBEA2E2C014D7300789C9F /* Task */ = {
 			isa = PBXGroup;
 			children = (
-				99EBEA2F2C014D8000789C9F /* Task.swift */,
-				99EBEA312C014D9D00789C9F /* TaskService.swift */,
-				99EBEA332C014DA400789C9F /* TaskServiceProtocol.swift */,
+				99EBEA312C014D9D00789C9F /* TaskRemoteService.swift */,
+				99EBEA332C014DA400789C9F /* TaskRemoteServiceProtocol.swift */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -605,8 +623,8 @@
 		99F8B38B2C01D2580082A453 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				99F8B38C2C01D2660082A453 /* StorageService.swift */,
-				99F8B38E2C01D2720082A453 /* StorageServiceProtocol.swift */,
+				99F8B38C2C01D2660082A453 /* StorageRemoteService.swift */,
+				99F8B38E2C01D2720082A453 /* StorageRemoteServiceProtocol.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -617,6 +635,133 @@
 				99F8B3912C01E0FC0082A453 /* Preferences.swift */,
 			);
 			path = Preferences;
+			sourceTree = "<group>";
+		};
+		99F8B39A2C067C3E0082A453 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				99F8B39F2C067DCF0082A453 /* Auth */,
+				99F8B3A82C067F270082A453 /* User */,
+				99F8B3B02C0681C70082A453 /* Task */,
+				99F8B3B82C0737BF0082A453 /* Storage */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		99F8B39B2C067C440082A453 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				99EBEA272C0144A000789C9F /* Auth */,
+				99EBEA132C013FF200789C9F /* User */,
+				99EBEA2E2C014D7300789C9F /* Task */,
+				99F8B3B92C0737C80082A453 /* Storage */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		99F8B39C2C067C540082A453 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				99F8B39E2C067DB00082A453 /* Entities */,
+				99F8B39A2C067C3E0082A453 /* Local */,
+				99F8B39B2C067C440082A453 /* Remote */,
+				99F8B39D2C067CDB0082A453 /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		99F8B39D2C067CDB0082A453 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		99F8B39E2C067DB00082A453 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				99F8B3A42C067E8F0082A453 /* Auth */,
+				99F8B3A72C067EA00082A453 /* User */,
+				99F8B3AD2C06816F0082A453 /* Task */,
+				99F8B3B52C0681FE0082A453 /* Storage */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		99F8B39F2C067DCF0082A453 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				99F8B3A02C067DDB0082A453 /* AuthLocalService.swift */,
+				99F8B3A22C067DF00082A453 /* AuthLocalServiceProtocol.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		99F8B3A42C067E8F0082A453 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				99EBEA2C2C0146EC00789C9F /* Auth.swift */,
+				99F8B3A52C067E9B0082A453 /* AuthErrorCallback.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		99F8B3A72C067EA00082A453 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				99EBEA1F2C01420000789C9F /* User.swift */,
+				99F8B3982C0237B90082A453 /* UserErrorCallback.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		99F8B3A82C067F270082A453 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				99F8B3A92C067F420082A453 /* UserLocalService.swift */,
+				99F8B3AB2C067F510082A453 /* UserLocalServiceProtocol.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		99F8B3AD2C06816F0082A453 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				99EBEA2F2C014D8000789C9F /* Task.swift */,
+				99F8B3AE2C0681810082A453 /* TaskErrorCallback.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		99F8B3B02C0681C70082A453 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				99F8B3B32C0681E50082A453 /* TaskLocalService.swift */,
+				99F8B3B12C0681DA0082A453 /* TaskLocalServiceProtocol.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		99F8B3B52C0681FE0082A453 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				99F8B3B62C06820F0082A453 /* StorageErrorCallback.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		99F8B3B82C0737BF0082A453 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		99F8B3B92C0737C80082A453 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -766,11 +911,15 @@
 				99EBEA262C0142D500789C9F /* DependencyPropertyWrapper.swift in Sources */,
 				99EBE9D12C008A4900789C9F /* NotificationView.swift in Sources */,
 				99EBEA242C0142A800789C9F /* ServiceContainer.swift in Sources */,
-				99F8B38D2C01D2660082A453 /* StorageService.swift in Sources */,
-				99EBEA1E2C01417500789C9F /* UserServiceProtocol.swift in Sources */,
-				99F8B38F2C01D2720082A453 /* StorageServiceProtocol.swift in Sources */,
+				99F8B38D2C01D2660082A453 /* StorageRemoteService.swift in Sources */,
+				99EBEA1E2C01417500789C9F /* UserRemoteServiceProtocol.swift in Sources */,
+				99F8B38F2C01D2720082A453 /* StorageRemoteServiceProtocol.swift in Sources */,
+				99F8B3B72C06820F0082A453 /* StorageErrorCallback.swift in Sources */,
 				99EBE9A72C0088B500789C9F /* ToggleDisclosureGroupView.swift in Sources */,
 				99EBE9F82C008C7700789C9F /* TaskSectionConstant.swift in Sources */,
+				99F8B3AA2C067F420082A453 /* UserLocalService.swift in Sources */,
+				99F8B3A62C067E9B0082A453 /* AuthErrorCallback.swift in Sources */,
+				99F8B3992C0237B90082A453 /* UserErrorCallback.swift in Sources */,
 				99EBE9CC2C008A4900789C9F /* AccountSectionConstant.swift in Sources */,
 				99EBE9D02C008A4900789C9F /* LanguageView.swift in Sources */,
 				99EBEA302C014D8000789C9F /* Task.swift in Sources */,
@@ -779,40 +928,47 @@
 				99EBE9B02C0088C400789C9F /* ToggleItemView.swift in Sources */,
 				99EBE9E02C008BD900789C9F /* View+Extension.swift in Sources */,
 				99EBE9AE2C0088C400789C9F /* NavigationLinkItemView.swift in Sources */,
+				99F8B3A32C067DF00082A453 /* AuthLocalServiceProtocol.swift in Sources */,
 				99EBE9822C0084DB00789C9F /* RootViewModel.swift in Sources */,
-				99EBEA292C0144A800789C9F /* AuthService.swift in Sources */,
+				99EBEA292C0144A800789C9F /* AuthRemoteService.swift in Sources */,
 				99F8B3922C01E0FC0082A453 /* Preferences.swift in Sources */,
 				99EBE9FB2C008C7700789C9F /* TagsView.swift in Sources */,
+				99F8B3AF2C0681810082A453 /* TaskErrorCallback.swift in Sources */,
 				99EBE99F2C00876200789C9F /* Language.swift in Sources */,
+				99F8B3B42C0681E50082A453 /* TaskLocalService.swift in Sources */,
 				99EBE9F92C008C7700789C9F /* TaskDestination.swift in Sources */,
 				99EBE9FA2C008C7700789C9F /* RepeatView.swift in Sources */,
 				99EBE9852C00864000789C9F /* UserDefaults+Extension.swift in Sources */,
 				99EBEA202C01420000789C9F /* User.swift in Sources */,
-				99EBEA2B2C0144AF00789C9F /* AuthServiceProtocol.swift in Sources */,
+				99EBEA2B2C0144AF00789C9F /* AuthRemoteServiceProtocol.swift in Sources */,
 				99EBEA222C01428E00789C9F /* ServiceType.swift in Sources */,
 				99EBE9D22C008A4900789C9F /* PrivacyAndPolicyView.swift in Sources */,
-				99EBEA322C014D9D00789C9F /* TaskService.swift in Sources */,
-				99EBEA342C014DA400789C9F /* TaskServiceProtocol.swift in Sources */,
+				99EBEA322C014D9D00789C9F /* TaskRemoteService.swift in Sources */,
+				99EBEA342C014DA400789C9F /* TaskRemoteServiceProtocol.swift in Sources */,
 				99EBE9CF2C008A4900789C9F /* AboutUsView.swift in Sources */,
 				99EBE9D32C008A4900789C9F /* ProfileView.swift in Sources */,
 				99EBE9D52C008A4900789C9F /* AccountView.swift in Sources */,
 				99EBE9AF2C0088C400789C9F /* TitleItemView.swift in Sources */,
 				99EBEA2D2C0146EC00789C9F /* Auth.swift in Sources */,
 				99EBE9FC2C008C7700789C9F /* TaskView.swift in Sources */,
+				99F8B3AC2C067F510082A453 /* UserLocalServiceProtocol.swift in Sources */,
 				99EBEA052C00CF4C00789C9F /* LifeVisionApp.swift in Sources */,
 				99EBE9E72C008C5100789C9F /* CalendarView.swift in Sources */,
 				99EBE9ED2C008C6F00789C9F /* SearchViewModel.swift in Sources */,
 				99F8B38A2C01CC610082A453 /* FirebaseConstant.swift in Sources */,
 				99EBE9AD2C0088C400789C9F /* MenuItemView.swift in Sources */,
 				99EBEA072C01352700789C9F /* Theme.swift in Sources */,
+				99F8B3942C0210C60082A453 /* ProfileItemView.swift in Sources */,
 				99EBE9B32C0088CA00789C9F /* DefaultView.swift in Sources */,
 				99EBE9BA2C0088F200789C9F /* SectionItem.swift in Sources */,
 				99EBE9D62C008A4900789C9F /* AccountViewModel.swift in Sources */,
 				99EBEA1C2C0140EF00789C9F /* Theme+Extension.swift in Sources */,
 				99EBEA032C008CFA00789C9F /* HomeViewModel.swift in Sources */,
+				99F8B3A12C067DDB0082A453 /* AuthLocalService.swift in Sources */,
 				99EBE9E82C008C5100789C9F /* CalendarViewModel.swift in Sources */,
-				99EBEA152C013FFF00789C9F /* UserService.swift in Sources */,
+				99EBEA152C013FFF00789C9F /* UserRemoteService.swift in Sources */,
 				99EBE9FD2C008C7700789C9F /* TaskViewModel.swift in Sources */,
+				99F8B3B22C0681DA0082A453 /* TaskLocalServiceProtocol.swift in Sources */,
 				99EBE9802C00849C00789C9F /* RootView.swift in Sources */,
 				99EBEA022C008CFA00789C9F /* HomeView.swift in Sources */,
 			);

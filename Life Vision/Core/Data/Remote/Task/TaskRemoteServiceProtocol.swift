@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestore
 
-protocol TaskServiceProtocol {
+protocol TaskRemoteServiceProtocol {
     
     var firestore : Firestore { get }
     

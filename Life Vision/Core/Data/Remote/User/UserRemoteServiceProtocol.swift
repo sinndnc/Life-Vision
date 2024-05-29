@@ -8,10 +8,10 @@
 import Foundation
 import FirebaseFirestore
 
-protocol UserServiceProtocol{
-    
+protocol UserRemoteServiceProtocol{
+        
     var firestore: Firestore { get }
     
-    func fetch() -> DocumentReference
+    func fetch() async throws -> User?
     
 }
