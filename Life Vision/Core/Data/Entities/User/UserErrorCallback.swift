@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum UserErrorCallback : Error{
+enum UserErrorCallback : Error {
     case invalidUser
-    case invalidForm
+    case noConnection
 }

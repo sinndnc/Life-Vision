@@ -42,9 +42,10 @@ extension UserDefaults {
     
     var user : User {
         get{
+            let defaultUser = User(mail: "default@mail.com", name: "default", surname: "")
             let userData = UserDefaults.standard.value(forKey: User.key) as? Data
-            let user = try! PropertyListDecoder().decode(User.self, from: userData!)
-            return user
+            let user = try? PropertyListDecoder().decode(User.self, from: userData!)
+            return user ?? defaultUser
         }
         set{
             if let data = try? PropertyListEncoder().encode(newValue) {

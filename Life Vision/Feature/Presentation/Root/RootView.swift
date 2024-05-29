@@ -21,7 +21,7 @@ struct RootView: View {
     var body: some View {
         TabView(selection: tabSelection()) {
             HomeView(viewModel: homeViewModel)
-                .tabview(tag: .home, text: "Home", image: "house")
+                .tabview(tag: .home, text: viewModel.user.name, image: "house")
             SearchView(viewModel: searchViewModel)
                 .tabview(tag: .search, text: "Search", image: "magnifyingglass")
             CalendarView(viewModel: calendarViewModel)

@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseStorage
 import FirebaseFirestore
 
-final class StorageRemoteService : StorageServiceProtocol{
+final class StorageRemoteService : StorageRemoteServiceProtocol{
     
     let storage: Storage
     let firestore: Firestore

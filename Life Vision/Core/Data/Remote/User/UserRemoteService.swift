@@ -20,17 +20,20 @@ final class UserRemoteService : UserRemoteServiceProtocol {
         self.firestore = firestore
     }
     
-    func fetch() async throws -> User? {
-        if let user = auth.currentUser{
+    func fetch() async throws -> Result<User,UserErrorCallback> {
+        
+        guard let auth = auth.currentUser else { throw UserErrorCallback.invalidUser }
+        
+        do{
             let user = try await firestore.collection(FirebaseConstant.users)
-                .document(user.uid)
+                .document(auth.uid)
                 .getDocument()
                 .data(as: User.self)
-            return user
-        }else {
-            return nil
+            return .success(user)
         }
+        catch{
+            return .failure(.noConnection)
+        }
+     
     }
-    
-    
 }

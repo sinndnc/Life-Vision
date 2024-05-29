@@ -11,6 +11,12 @@ import Foundation
 final class UserLocalService : UserLocalServiceProtocol{
     
     
+    func fetch() -> User {
+       return UserDefaults.standard.user
+        
+        
+        
+    }
     
     
 }

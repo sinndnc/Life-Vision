@@ -85,6 +85,10 @@
 		99F8B3B72C06820F0082A453 /* StorageErrorCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3B62C06820F0082A453 /* StorageErrorCallback.swift */; };
 		99F8B3BB2C0738150082A453 /* StorageLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3BA2C0738150082A453 /* StorageLocalService.swift */; };
 		99F8B3BD2C07381F0082A453 /* StorageLocalServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3BC2C07381F0082A453 /* StorageLocalServiceProtocol.swift */; };
+		99F8B3BF2C07398E0082A453 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3BE2C07398E0082A453 /* UserRepository.swift */; };
+		99F8B3C22C0739B20082A453 /* UserRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3C12C0739B20082A453 /* UserRepositoryProtocol.swift */; };
+		99F8B3C52C073DB10082A453 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3C42C073DB10082A453 /* TaskRepository.swift */; };
+		99F8B3C72C073DBA0082A453 /* TaskRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3C62C073DBA0082A453 /* TaskRepositoryProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +187,10 @@
 		99F8B3B62C06820F0082A453 /* StorageErrorCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageErrorCallback.swift; sourceTree = "<group>"; };
 		99F8B3BA2C0738150082A453 /* StorageLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageLocalService.swift; sourceTree = "<group>"; };
 		99F8B3BC2C07381F0082A453 /* StorageLocalServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageLocalServiceProtocol.swift; sourceTree = "<group>"; };
+		99F8B3BE2C07398E0082A453 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		99F8B3C12C0739B20082A453 /* UserRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryProtocol.swift; sourceTree = "<group>"; };
+		99F8B3C42C073DB10082A453 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
+		99F8B3C62C073DBA0082A453 /* TaskRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepositoryProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,7 +318,6 @@
 			children = (
 				99F8B39C2C067C540082A453 /* Data */,
 				99EBE9862C00868F00789C9F /* Utils */,
-				99EBE99B2C00870E00789C9F /* Service */,
 				99F8B3882C01CC480082A453 /* Constant */,
 				99EBE9832C00860B00789C9F /* Extension */,
 			);
@@ -360,14 +367,6 @@
 				99EBEA062C01352700789C9F /* Theme.swift */,
 			);
 			path = Theme;
-			sourceTree = "<group>";
-		};
-		99EBE99B2C00870E00789C9F /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				99EBEA112C013FE100789C9F /* Firebase */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		99EBE9A02C00885C00789C9F /* Component */ = {
@@ -570,13 +569,6 @@
 			path = "../../../../../../Desktop/Default App/Feature/Presentation/Home";
 			sourceTree = "<group>";
 		};
-		99EBEA112C013FE100789C9F /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
 		99EBEA122C013FE700789C9F /* DI */ = {
 			isa = PBXGroup;
 			children = (
@@ -676,6 +668,8 @@
 		99F8B39D2C067CDB0082A453 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				99F8B3C02C0739A70082A453 /* User */,
+				99F8B3C32C073DA20082A453 /* Task */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -760,6 +754,24 @@
 				99F8B3BC2C07381F0082A453 /* StorageLocalServiceProtocol.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		99F8B3C02C0739A70082A453 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				99F8B3BE2C07398E0082A453 /* UserRepository.swift */,
+				99F8B3C12C0739B20082A453 /* UserRepositoryProtocol.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		99F8B3C32C073DA20082A453 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				99F8B3C42C073DB10082A453 /* TaskRepository.swift */,
+				99F8B3C62C073DBA0082A453 /* TaskRepositoryProtocol.swift */,
+			);
+			path = Task;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -940,11 +952,14 @@
 				99EBEA202C01420000789C9F /* User.swift in Sources */,
 				99F8B3BD2C07381F0082A453 /* StorageLocalServiceProtocol.swift in Sources */,
 				99EBEA2B2C0144AF00789C9F /* AuthRemoteServiceProtocol.swift in Sources */,
+				99F8B3BF2C07398E0082A453 /* UserRepository.swift in Sources */,
 				99EBEA222C01428E00789C9F /* ServiceType.swift in Sources */,
 				99EBE9D22C008A4900789C9F /* PrivacyAndPolicyView.swift in Sources */,
 				99EBEA322C014D9D00789C9F /* TaskRemoteService.swift in Sources */,
+				99F8B3C52C073DB10082A453 /* TaskRepository.swift in Sources */,
 				99EBEA342C014DA400789C9F /* TaskRemoteServiceProtocol.swift in Sources */,
 				99EBE9CF2C008A4900789C9F /* AboutUsView.swift in Sources */,
+				99F8B3C22C0739B20082A453 /* UserRepositoryProtocol.swift in Sources */,
 				99EBE9D32C008A4900789C9F /* ProfileView.swift in Sources */,
 				99EBE9D52C008A4900789C9F /* AccountView.swift in Sources */,
 				99EBE9AF2C0088C400789C9F /* TitleItemView.swift in Sources */,
@@ -959,6 +974,7 @@
 				99EBE9AD2C0088C400789C9F /* MenuItemView.swift in Sources */,
 				99EBEA072C01352700789C9F /* Theme.swift in Sources */,
 				99F8B3942C0210C60082A453 /* ProfileItemView.swift in Sources */,
+				99F8B3C72C073DBA0082A453 /* TaskRepositoryProtocol.swift in Sources */,
 				99EBE9B32C0088CA00789C9F /* DefaultView.swift in Sources */,
 				99EBE9BA2C0088F200789C9F /* SectionItem.swift in Sources */,
 				99EBE9D62C008A4900789C9F /* AccountViewModel.swift in Sources */,

@@ -6,12 +6,15 @@
 //
 
 import Foundation
+import FirebaseAuth
 import FirebaseFirestore
 
 protocol UserRemoteServiceProtocol{
         
     var firestore: Firestore { get }
     
-    func fetch() async throws -> User?
+    var auth : FirebaseAuth.Auth { get }
+
+    func fetch() async throws ->  Result<User,UserErrorCallback>
     
 }
