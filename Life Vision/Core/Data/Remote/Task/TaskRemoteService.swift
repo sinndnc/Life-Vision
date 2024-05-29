@@ -1,13 +1,13 @@
 //
-//  TaskService.swift
+//  TaskRemoteService.swift
 //  Life Vision
 //
-//  Created by Sinan Dinç on 25.05.2024.
+//  Created by Sinan Dinç on 29.05.2024.
 //
 
 import Foundation
-import FirebaseFirestore
 import FirebaseAuth
+import FirebaseFirestore
 
 final class TaskRemoteService : TaskRemoteServiceProtocol{
     
@@ -22,7 +22,5 @@ final class TaskRemoteService : TaskRemoteServiceProtocol{
     func fetch() {
         
     }
-    
-    
     
 }

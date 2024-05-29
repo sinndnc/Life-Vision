@@ -66,7 +66,6 @@
 		99EBEA2B2C0144AF00789C9F /* AuthRemoteServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA2A2C0144AF00789C9F /* AuthRemoteServiceProtocol.swift */; };
 		99EBEA2D2C0146EC00789C9F /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA2C2C0146EC00789C9F /* Auth.swift */; };
 		99EBEA302C014D8000789C9F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA2F2C014D8000789C9F /* Task.swift */; };
-		99EBEA322C014D9D00789C9F /* TaskRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA312C014D9D00789C9F /* TaskRemoteService.swift */; };
 		99EBEA342C014DA400789C9F /* TaskRemoteServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA332C014DA400789C9F /* TaskRemoteServiceProtocol.swift */; };
 		99F8B38A2C01CC610082A453 /* FirebaseConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3892C01CC610082A453 /* FirebaseConstant.swift */; };
 		99F8B38D2C01D2660082A453 /* StorageRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B38C2C01D2660082A453 /* StorageRemoteService.swift */; };
@@ -89,6 +88,7 @@
 		99F8B3C22C0739B20082A453 /* UserRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3C12C0739B20082A453 /* UserRepositoryProtocol.swift */; };
 		99F8B3C52C073DB10082A453 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3C42C073DB10082A453 /* TaskRepository.swift */; };
 		99F8B3C72C073DBA0082A453 /* TaskRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3C62C073DBA0082A453 /* TaskRepositoryProtocol.swift */; };
+		99F8B3C92C0750B00082A453 /* TaskRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3C82C0750B00082A453 /* TaskRemoteService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,7 +168,6 @@
 		99EBEA2A2C0144AF00789C9F /* AuthRemoteServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRemoteServiceProtocol.swift; sourceTree = "<group>"; };
 		99EBEA2C2C0146EC00789C9F /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		99EBEA2F2C014D8000789C9F /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		99EBEA312C014D9D00789C9F /* TaskRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRemoteService.swift; sourceTree = "<group>"; };
 		99EBEA332C014DA400789C9F /* TaskRemoteServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRemoteServiceProtocol.swift; sourceTree = "<group>"; };
 		99F8B3892C01CC610082A453 /* FirebaseConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstant.swift; sourceTree = "<group>"; };
 		99F8B38C2C01D2660082A453 /* StorageRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRemoteService.swift; sourceTree = "<group>"; };
@@ -191,6 +190,7 @@
 		99F8B3C12C0739B20082A453 /* UserRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryProtocol.swift; sourceTree = "<group>"; };
 		99F8B3C42C073DB10082A453 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 		99F8B3C62C073DBA0082A453 /* TaskRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepositoryProtocol.swift; sourceTree = "<group>"; };
+		99F8B3C82C0750B00082A453 /* TaskRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRemoteService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -601,7 +601,7 @@
 		99EBEA2E2C014D7300789C9F /* Task */ = {
 			isa = PBXGroup;
 			children = (
-				99EBEA312C014D9D00789C9F /* TaskRemoteService.swift */,
+				99F8B3C82C0750B00082A453 /* TaskRemoteService.swift */,
 				99EBEA332C014DA400789C9F /* TaskRemoteServiceProtocol.swift */,
 			);
 			path = Task;
@@ -955,7 +955,6 @@
 				99F8B3BF2C07398E0082A453 /* UserRepository.swift in Sources */,
 				99EBEA222C01428E00789C9F /* ServiceType.swift in Sources */,
 				99EBE9D22C008A4900789C9F /* PrivacyAndPolicyView.swift in Sources */,
-				99EBEA322C014D9D00789C9F /* TaskRemoteService.swift in Sources */,
 				99F8B3C52C073DB10082A453 /* TaskRepository.swift in Sources */,
 				99EBEA342C014DA400789C9F /* TaskRemoteServiceProtocol.swift in Sources */,
 				99EBE9CF2C008A4900789C9F /* AboutUsView.swift in Sources */,
@@ -973,6 +972,7 @@
 				99F8B38A2C01CC610082A453 /* FirebaseConstant.swift in Sources */,
 				99EBE9AD2C0088C400789C9F /* MenuItemView.swift in Sources */,
 				99EBEA072C01352700789C9F /* Theme.swift in Sources */,
+				99F8B3C92C0750B00082A453 /* TaskRemoteService.swift in Sources */,
 				99F8B3942C0210C60082A453 /* ProfileItemView.swift in Sources */,
 				99F8B3C72C073DBA0082A453 /* TaskRepositoryProtocol.swift in Sources */,
 				99EBE9B32C0088CA00789C9F /* DefaultView.swift in Sources */,
