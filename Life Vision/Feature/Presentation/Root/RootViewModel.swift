@@ -17,7 +17,13 @@ final class RootViewModel : ObservableObject{
     
     init() {
         Task{ @MainActor in
-            self.user =  try await userRepository.fetch().get()
+            let result = await userRepository.fetch()
+            switch result {
+            case .success(let success):
+                self.user = user
+            case .failure(let failure):
+                print(failure)
+            }
                 
         }
     }

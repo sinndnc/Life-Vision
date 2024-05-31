@@ -8,12 +8,11 @@
 import Foundation
 
 
-final class UserRepository : UserRepositoryProtocol {
+final class UserRepository : UserRepositoryProtocol , ObservableObject {
     
     @Service private var userLocalService : UserLocalServiceProtocol
     @Service private var userRemoteService : UserRemoteServiceProtocol
     
-
     func fetch() async -> Result<User,UserErrorCallback> {
         do{
             let result = try await userRemoteService.fetch()

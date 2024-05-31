@@ -8,7 +8,8 @@
 import Foundation
 
 
-struct Mission {
+struct Mission : Codable {
     var title : String
     var description : String
+    var date : Date
 }
