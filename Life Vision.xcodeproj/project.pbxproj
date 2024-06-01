@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		995B09B22C08B412009A4FAC /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B09B12C08B412009A4FAC /* TimelineView.swift */; };
+		9904E3F42C0B431400172593 /* TimelineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9904E3F32C0B431400172593 /* TimelineHeaderView.swift */; };
+		995B09B22C08B412009A4FAC /* TimelineGraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B09B12C08B412009A4FAC /* TimelineGraphicView.swift */; };
 		995B09B42C09089F009A4FAC /* TimelineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B09B32C09089F009A4FAC /* TimelineLayout.swift */; };
 		995B09B62C091D92009A4FAC /* TimelineHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B09B52C091D92009A4FAC /* TimelineHourView.swift */; };
 		995B09BE2C0A84B0009A4FAC /* TimelineTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B09BD2C0A84B0009A4FAC /* TimelineTaskView.swift */; };
@@ -114,7 +115,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		995B09B12C08B412009A4FAC /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		9904E3F32C0B431400172593 /* TimelineHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineHeaderView.swift; sourceTree = "<group>"; };
+		995B09B12C08B412009A4FAC /* TimelineGraphicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGraphicView.swift; sourceTree = "<group>"; };
 		995B09B32C09089F009A4FAC /* TimelineLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineLayout.swift; sourceTree = "<group>"; };
 		995B09B52C091D92009A4FAC /* TimelineHourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineHourView.swift; sourceTree = "<group>"; };
 		995B09BD2C0A84B0009A4FAC /* TimelineTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTaskView.swift; sourceTree = "<group>"; };
@@ -231,6 +233,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9904E3F22C0B430A00172593 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9904E3F32C0B431400172593 /* TimelineHeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		995B09AF2C08B38C009A4FAC /* Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,9 +252,10 @@
 		995B09B02C08B405009A4FAC /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				9904E3F22C0B430A00172593 /* View */,
 				995B09B72C0925FE009A4FAC /* Layout */,
 				995B09B82C092607009A4FAC /* Component */,
-				995B09B12C08B412009A4FAC /* TimelineView.swift */,
+				995B09B12C08B412009A4FAC /* TimelineGraphicView.swift */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -971,6 +982,7 @@
 				99F8B38D2C01D2660082A453 /* StorageRemoteService.swift in Sources */,
 				99EBEA1E2C01417500789C9F /* UserRemoteServiceProtocol.swift in Sources */,
 				99F8B38F2C01D2720082A453 /* StorageRemoteServiceProtocol.swift in Sources */,
+				9904E3F42C0B431400172593 /* TimelineHeaderView.swift in Sources */,
 				99F8B3B72C06820F0082A453 /* StorageErrorCallback.swift in Sources */,
 				99EBE9A72C0088B500789C9F /* ToggleDisclosureGroupView.swift in Sources */,
 				99EBE9F82C008C7700789C9F /* TaskSectionConstant.swift in Sources */,
@@ -1000,7 +1012,7 @@
 				99EBEA202C01420000789C9F /* User.swift in Sources */,
 				99F8B3BD2C07381F0082A453 /* StorageLocalServiceProtocol.swift in Sources */,
 				995B09B62C091D92009A4FAC /* TimelineHourView.swift in Sources */,
-				995B09B22C08B412009A4FAC /* TimelineView.swift in Sources */,
+				995B09B22C08B412009A4FAC /* TimelineGraphicView.swift in Sources */,
 				99EBEA2B2C0144AF00789C9F /* AuthRemoteServiceProtocol.swift in Sources */,
 				99F8B3BF2C07398E0082A453 /* UserRepository.swift in Sources */,
 				99EBEA222C01428E00789C9F /* ServiceType.swift in Sources */,
