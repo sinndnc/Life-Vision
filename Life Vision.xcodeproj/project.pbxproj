@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9904E3F42C0B431400172593 /* TimelineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9904E3F32C0B431400172593 /* TimelineHeaderView.swift */; };
+		9904E3F62C0B8E1C00172593 /* Calendar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9904E3F52C0B8E1C00172593 /* Calendar+Extension.swift */; };
+		9904E3F82C0B915500172593 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9904E3F72C0B915500172593 /* Date+Extension.swift */; };
+		9904E3FB2C0D2B5900172593 /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9904E3FA2C0D2B5900172593 /* CalendarService.swift */; };
+		9904E3FD2C0D2B6F00172593 /* CalendarServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9904E3FC2C0D2B6F00172593 /* CalendarServiceProtocol.swift */; };
 		995B09B22C08B412009A4FAC /* TimelineGraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B09B12C08B412009A4FAC /* TimelineGraphicView.swift */; };
 		995B09B42C09089F009A4FAC /* TimelineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B09B32C09089F009A4FAC /* TimelineLayout.swift */; };
 		995B09B62C091D92009A4FAC /* TimelineHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B09B52C091D92009A4FAC /* TimelineHourView.swift */; };
@@ -116,6 +120,10 @@
 
 /* Begin PBXFileReference section */
 		9904E3F32C0B431400172593 /* TimelineHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineHeaderView.swift; sourceTree = "<group>"; };
+		9904E3F52C0B8E1C00172593 /* Calendar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extension.swift"; sourceTree = "<group>"; };
+		9904E3F72C0B915500172593 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		9904E3FA2C0D2B5900172593 /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
+		9904E3FC2C0D2B6F00172593 /* CalendarServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarServiceProtocol.swift; sourceTree = "<group>"; };
 		995B09B12C08B412009A4FAC /* TimelineGraphicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGraphicView.swift; sourceTree = "<group>"; };
 		995B09B32C09089F009A4FAC /* TimelineLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineLayout.swift; sourceTree = "<group>"; };
 		995B09B52C091D92009A4FAC /* TimelineHourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineHourView.swift; sourceTree = "<group>"; };
@@ -239,6 +247,15 @@
 				9904E3F32C0B431400172593 /* TimelineHeaderView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9904E3F92C0D2B3900172593 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				9904E3FA2C0D2B5900172593 /* CalendarService.swift */,
+				9904E3FC2C0D2B6F00172593 /* CalendarServiceProtocol.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		995B09AF2C08B38C009A4FAC /* Component */ = {
@@ -404,6 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				99EBE99A2C0086EF00789C9F /* Theme */,
+				9904E3F92C0D2B3900172593 /* Calendar */,
 				99EBE9992C0086DB00789C9F /* Language */,
 				99F8B3902C01E0A80082A453 /* Preferences */,
 			);
@@ -545,7 +563,9 @@
 		99EBE9DC2C008AEB00789C9F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9904E3F72C0B915500172593 /* Date+Extension.swift */,
 				99EBE9DF2C008BD900789C9F /* View+Extension.swift */,
+				9904E3F52C0B8E1C00172593 /* Calendar+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1007,6 +1027,8 @@
 				995B09C02C0A8956009A4FAC /* TimelineDividerView.swift in Sources */,
 				99F8B3B42C0681E50082A453 /* TaskLocalService.swift in Sources */,
 				99EBE9F92C008C7700789C9F /* TaskDestination.swift in Sources */,
+				9904E3F82C0B915500172593 /* Date+Extension.swift in Sources */,
+				9904E3FD2C0D2B6F00172593 /* CalendarServiceProtocol.swift in Sources */,
 				99EBE9FA2C008C7700789C9F /* RepeatView.swift in Sources */,
 				99EBE9852C00864000789C9F /* UserDefaults+Extension.swift in Sources */,
 				99EBEA202C01420000789C9F /* User.swift in Sources */,
@@ -1026,6 +1048,7 @@
 				99EBE9AF2C0088C400789C9F /* TitleItemView.swift in Sources */,
 				99EBEA2D2C0146EC00789C9F /* Auth.swift in Sources */,
 				99EBE9FC2C008C7700789C9F /* TaskView.swift in Sources */,
+				9904E3FB2C0D2B5900172593 /* CalendarService.swift in Sources */,
 				99F8B3AC2C067F510082A453 /* UserLocalServiceProtocol.swift in Sources */,
 				99EBEA052C00CF4C00789C9F /* LifeVisionApp.swift in Sources */,
 				99F8B3BB2C0738150082A453 /* StorageLocalService.swift in Sources */,
@@ -1041,6 +1064,7 @@
 				99F8B3C72C073DBA0082A453 /* TaskRepositoryProtocol.swift in Sources */,
 				99EBE9B32C0088CA00789C9F /* DefaultView.swift in Sources */,
 				99EBE9BA2C0088F200789C9F /* SectionItem.swift in Sources */,
+				9904E3F62C0B8E1C00172593 /* Calendar+Extension.swift in Sources */,
 				99EBE9D62C008A4900789C9F /* AccountViewModel.swift in Sources */,
 				99EBEA1C2C0140EF00789C9F /* Theme+Extension.swift in Sources */,
 				99EBEA032C008CFA00789C9F /* HomeViewModel.swift in Sources */,
