@@ -8,8 +8,8 @@
 import Foundation
 
 
-struct Mission : Codable {
+struct Reminder : Codable , Hashable {
     var title : String
-    var description : String
-    var date : Date
+    var start_date : Date
+    var finish_date : Date
 }

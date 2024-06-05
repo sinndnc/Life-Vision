@@ -11,6 +11,6 @@ import Foundation
 struct FirebaseConstant {
     
     static let users = "users"
-    static let tasks = "tasks"
+    static let reminders = "reminders"
     
 }

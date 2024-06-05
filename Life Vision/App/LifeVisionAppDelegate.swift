@@ -45,9 +45,9 @@ extension LifeVisionAppDelegate : UNUserNotificationCenterDelegate{
         ServiceContainer.register(type: UserLocalServiceProtocol.self, UserLocalService())
         ServiceContainer.register(type: UserRemoteServiceProtocol.self, UserRemoteService(auth: auth,firestore: firestore))
         //Task
-        ServiceContainer.register(type: TaskRepositoryProtocol.self, TaskRepository())
-        ServiceContainer.register(type: TaskLocalServiceProtocol.self, TaskLocalService())
-        ServiceContainer.register(type: TaskRemoteServiceProtocol.self, TaskRemoteService(auth: auth,firestore: firestore))
+        ServiceContainer.register(type: ReminderRepositoryProtocol.self, ReminderRepository())
+        ServiceContainer.register(type: ReminderLocalServiceProtocol.self, ReminderLocalService())
+        ServiceContainer.register(type: ReminderRemoteServiceProtocol.self, ReminderRemoteService(auth: auth,firestore: firestore))
         //Storage
         ServiceContainer.register(type: StorageRemoteServiceProtocol.self, StorageRemoteService(auth: auth, storage: storage, firestore: firestore))
     }

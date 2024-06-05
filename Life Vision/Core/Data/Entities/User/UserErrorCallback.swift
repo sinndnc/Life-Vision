@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 enum UserErrorCallback : Error {
     case invalidUser
     case noConnection

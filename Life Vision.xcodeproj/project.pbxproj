@@ -12,6 +12,8 @@
 		9904E3F82C0B915500172593 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9904E3F72C0B915500172593 /* Date+Extension.swift */; };
 		9904E3FB2C0D2B5900172593 /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9904E3FA2C0D2B5900172593 /* CalendarService.swift */; };
 		9904E3FD2C0D2B6F00172593 /* CalendarServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9904E3FC2C0D2B6F00172593 /* CalendarServiceProtocol.swift */; };
+		9904E3FF2C0F17C400172593 /* TimelineNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9904E3FE2C0F17C400172593 /* TimelineNowView.swift */; };
+		9904E4032C0F8DAD00172593 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9904E4022C0F8DAD00172593 /* Timeline.swift */; };
 		995B09B22C08B412009A4FAC /* TimelineGraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B09B12C08B412009A4FAC /* TimelineGraphicView.swift */; };
 		995B09B42C09089F009A4FAC /* TimelineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B09B32C09089F009A4FAC /* TimelineLayout.swift */; };
 		995B09B62C091D92009A4FAC /* TimelineHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B09B52C091D92009A4FAC /* TimelineHourView.swift */; };
@@ -51,12 +53,12 @@
 		99EBE9E82C008C5100789C9F /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9E52C008C5100789C9F /* CalendarViewModel.swift */; };
 		99EBE9EC2C008C6F00789C9F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9E92C008C6F00789C9F /* SearchView.swift */; };
 		99EBE9ED2C008C6F00789C9F /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9EA2C008C6F00789C9F /* SearchViewModel.swift */; };
-		99EBE9F82C008C7700789C9F /* TaskSectionConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9EE2C008C7700789C9F /* TaskSectionConstant.swift */; };
-		99EBE9F92C008C7700789C9F /* TaskDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9F02C008C7700789C9F /* TaskDestination.swift */; };
+		99EBE9F82C008C7700789C9F /* ReminderSectionConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9EE2C008C7700789C9F /* ReminderSectionConstant.swift */; };
+		99EBE9F92C008C7700789C9F /* ReminderDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9F02C008C7700789C9F /* ReminderDestination.swift */; };
 		99EBE9FA2C008C7700789C9F /* RepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9F22C008C7700789C9F /* RepeatView.swift */; };
 		99EBE9FB2C008C7700789C9F /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9F32C008C7700789C9F /* TagsView.swift */; };
-		99EBE9FC2C008C7700789C9F /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9F52C008C7700789C9F /* TaskView.swift */; };
-		99EBE9FD2C008C7700789C9F /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9F62C008C7700789C9F /* TaskViewModel.swift */; };
+		99EBE9FC2C008C7700789C9F /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9F52C008C7700789C9F /* ReminderView.swift */; };
+		99EBE9FD2C008C7700789C9F /* ReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9F62C008C7700789C9F /* ReminderViewModel.swift */; };
 		99EBEA022C008CFA00789C9F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE9FF2C008CFA00789C9F /* HomeView.swift */; };
 		99EBEA032C008CFA00789C9F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA002C008CFA00789C9F /* HomeViewModel.swift */; };
 		99EBEA052C00CF4C00789C9F /* LifeVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA042C00CF4C00789C9F /* LifeVisionApp.swift */; };
@@ -75,8 +77,8 @@
 		99EBEA292C0144A800789C9F /* AuthRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA282C0144A800789C9F /* AuthRemoteService.swift */; };
 		99EBEA2B2C0144AF00789C9F /* AuthRemoteServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA2A2C0144AF00789C9F /* AuthRemoteServiceProtocol.swift */; };
 		99EBEA2D2C0146EC00789C9F /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA2C2C0146EC00789C9F /* Auth.swift */; };
-		99EBEA302C014D8000789C9F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA2F2C014D8000789C9F /* Task.swift */; };
-		99EBEA342C014DA400789C9F /* TaskRemoteServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA332C014DA400789C9F /* TaskRemoteServiceProtocol.swift */; };
+		99EBEA302C014D8000789C9F /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA2F2C014D8000789C9F /* Reminder.swift */; };
+		99EBEA342C014DA400789C9F /* ReminderRemoteServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBEA332C014DA400789C9F /* ReminderRemoteServiceProtocol.swift */; };
 		99F8B38A2C01CC610082A453 /* FirebaseConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3892C01CC610082A453 /* FirebaseConstant.swift */; };
 		99F8B38D2C01D2660082A453 /* StorageRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B38C2C01D2660082A453 /* StorageRemoteService.swift */; };
 		99F8B38F2C01D2720082A453 /* StorageRemoteServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B38E2C01D2720082A453 /* StorageRemoteServiceProtocol.swift */; };
@@ -88,17 +90,17 @@
 		99F8B3A62C067E9B0082A453 /* AuthErrorCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3A52C067E9B0082A453 /* AuthErrorCallback.swift */; };
 		99F8B3AA2C067F420082A453 /* UserLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3A92C067F420082A453 /* UserLocalService.swift */; };
 		99F8B3AC2C067F510082A453 /* UserLocalServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3AB2C067F510082A453 /* UserLocalServiceProtocol.swift */; };
-		99F8B3AF2C0681810082A453 /* TaskErrorCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3AE2C0681810082A453 /* TaskErrorCallback.swift */; };
-		99F8B3B22C0681DA0082A453 /* TaskLocalServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3B12C0681DA0082A453 /* TaskLocalServiceProtocol.swift */; };
-		99F8B3B42C0681E50082A453 /* TaskLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3B32C0681E50082A453 /* TaskLocalService.swift */; };
+		99F8B3AF2C0681810082A453 /* ReminderErrorCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3AE2C0681810082A453 /* ReminderErrorCallback.swift */; };
+		99F8B3B22C0681DA0082A453 /* ReminderLocalServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3B12C0681DA0082A453 /* ReminderLocalServiceProtocol.swift */; };
+		99F8B3B42C0681E50082A453 /* ReminderLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3B32C0681E50082A453 /* ReminderLocalService.swift */; };
 		99F8B3B72C06820F0082A453 /* StorageErrorCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3B62C06820F0082A453 /* StorageErrorCallback.swift */; };
 		99F8B3BB2C0738150082A453 /* StorageLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3BA2C0738150082A453 /* StorageLocalService.swift */; };
 		99F8B3BD2C07381F0082A453 /* StorageLocalServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3BC2C07381F0082A453 /* StorageLocalServiceProtocol.swift */; };
 		99F8B3BF2C07398E0082A453 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3BE2C07398E0082A453 /* UserRepository.swift */; };
 		99F8B3C22C0739B20082A453 /* UserRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3C12C0739B20082A453 /* UserRepositoryProtocol.swift */; };
-		99F8B3C52C073DB10082A453 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3C42C073DB10082A453 /* TaskRepository.swift */; };
-		99F8B3C72C073DBA0082A453 /* TaskRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3C62C073DBA0082A453 /* TaskRepositoryProtocol.swift */; };
-		99F8B3C92C0750B00082A453 /* TaskRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3C82C0750B00082A453 /* TaskRemoteService.swift */; };
+		99F8B3C52C073DB10082A453 /* ReminderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3C42C073DB10082A453 /* ReminderRepository.swift */; };
+		99F8B3C72C073DBA0082A453 /* ReminderRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3C62C073DBA0082A453 /* ReminderRepositoryProtocol.swift */; };
+		99F8B3C92C0750B00082A453 /* ReminderRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8B3C82C0750B00082A453 /* ReminderRemoteService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +126,8 @@
 		9904E3F72C0B915500172593 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		9904E3FA2C0D2B5900172593 /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
 		9904E3FC2C0D2B6F00172593 /* CalendarServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarServiceProtocol.swift; sourceTree = "<group>"; };
+		9904E3FE2C0F17C400172593 /* TimelineNowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineNowView.swift; sourceTree = "<group>"; };
+		9904E4022C0F8DAD00172593 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		995B09B12C08B412009A4FAC /* TimelineGraphicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGraphicView.swift; sourceTree = "<group>"; };
 		995B09B32C09089F009A4FAC /* TimelineLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineLayout.swift; sourceTree = "<group>"; };
 		995B09B52C091D92009A4FAC /* TimelineHourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineHourView.swift; sourceTree = "<group>"; };
@@ -167,12 +171,12 @@
 		99EBE9E52C008C5100789C9F /* CalendarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		99EBE9E92C008C6F00789C9F /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		99EBE9EA2C008C6F00789C9F /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
-		99EBE9EE2C008C7700789C9F /* TaskSectionConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskSectionConstant.swift; sourceTree = "<group>"; };
-		99EBE9F02C008C7700789C9F /* TaskDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDestination.swift; sourceTree = "<group>"; };
+		99EBE9EE2C008C7700789C9F /* ReminderSectionConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderSectionConstant.swift; sourceTree = "<group>"; };
+		99EBE9F02C008C7700789C9F /* ReminderDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderDestination.swift; sourceTree = "<group>"; };
 		99EBE9F22C008C7700789C9F /* RepeatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatView.swift; sourceTree = "<group>"; };
 		99EBE9F32C008C7700789C9F /* TagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
-		99EBE9F52C008C7700789C9F /* TaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
-		99EBE9F62C008C7700789C9F /* TaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		99EBE9F52C008C7700789C9F /* ReminderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
+		99EBE9F62C008C7700789C9F /* ReminderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderViewModel.swift; sourceTree = "<group>"; };
 		99EBE9FF2C008CFA00789C9F /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		99EBEA002C008CFA00789C9F /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		99EBEA042C00CF4C00789C9F /* LifeVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeVisionApp.swift; sourceTree = "<group>"; };
@@ -187,8 +191,8 @@
 		99EBEA282C0144A800789C9F /* AuthRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRemoteService.swift; sourceTree = "<group>"; };
 		99EBEA2A2C0144AF00789C9F /* AuthRemoteServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRemoteServiceProtocol.swift; sourceTree = "<group>"; };
 		99EBEA2C2C0146EC00789C9F /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
-		99EBEA2F2C014D8000789C9F /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		99EBEA332C014DA400789C9F /* TaskRemoteServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRemoteServiceProtocol.swift; sourceTree = "<group>"; };
+		99EBEA2F2C014D8000789C9F /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		99EBEA332C014DA400789C9F /* ReminderRemoteServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRemoteServiceProtocol.swift; sourceTree = "<group>"; };
 		99F8B3892C01CC610082A453 /* FirebaseConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstant.swift; sourceTree = "<group>"; };
 		99F8B38C2C01D2660082A453 /* StorageRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRemoteService.swift; sourceTree = "<group>"; };
 		99F8B38E2C01D2720082A453 /* StorageRemoteServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRemoteServiceProtocol.swift; sourceTree = "<group>"; };
@@ -200,17 +204,17 @@
 		99F8B3A52C067E9B0082A453 /* AuthErrorCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorCallback.swift; sourceTree = "<group>"; };
 		99F8B3A92C067F420082A453 /* UserLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalService.swift; sourceTree = "<group>"; };
 		99F8B3AB2C067F510082A453 /* UserLocalServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalServiceProtocol.swift; sourceTree = "<group>"; };
-		99F8B3AE2C0681810082A453 /* TaskErrorCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskErrorCallback.swift; sourceTree = "<group>"; };
-		99F8B3B12C0681DA0082A453 /* TaskLocalServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskLocalServiceProtocol.swift; sourceTree = "<group>"; };
-		99F8B3B32C0681E50082A453 /* TaskLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskLocalService.swift; sourceTree = "<group>"; };
+		99F8B3AE2C0681810082A453 /* ReminderErrorCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderErrorCallback.swift; sourceTree = "<group>"; };
+		99F8B3B12C0681DA0082A453 /* ReminderLocalServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderLocalServiceProtocol.swift; sourceTree = "<group>"; };
+		99F8B3B32C0681E50082A453 /* ReminderLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderLocalService.swift; sourceTree = "<group>"; };
 		99F8B3B62C06820F0082A453 /* StorageErrorCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageErrorCallback.swift; sourceTree = "<group>"; };
 		99F8B3BA2C0738150082A453 /* StorageLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageLocalService.swift; sourceTree = "<group>"; };
 		99F8B3BC2C07381F0082A453 /* StorageLocalServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageLocalServiceProtocol.swift; sourceTree = "<group>"; };
 		99F8B3BE2C07398E0082A453 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		99F8B3C12C0739B20082A453 /* UserRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryProtocol.swift; sourceTree = "<group>"; };
-		99F8B3C42C073DB10082A453 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
-		99F8B3C62C073DBA0082A453 /* TaskRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepositoryProtocol.swift; sourceTree = "<group>"; };
-		99F8B3C82C0750B00082A453 /* TaskRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRemoteService.swift; sourceTree = "<group>"; };
+		99F8B3C42C073DB10082A453 /* ReminderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepository.swift; sourceTree = "<group>"; };
+		99F8B3C62C073DBA0082A453 /* ReminderRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepositoryProtocol.swift; sourceTree = "<group>"; };
+		99F8B3C82C0750B00082A453 /* ReminderRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRemoteService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +276,7 @@
 				9904E3F22C0B430A00172593 /* View */,
 				995B09B72C0925FE009A4FAC /* Layout */,
 				995B09B82C092607009A4FAC /* Component */,
+				9904E4022C0F8DAD00172593 /* Timeline.swift */,
 				995B09B12C08B412009A4FAC /* TimelineGraphicView.swift */,
 			);
 			path = Timeline;
@@ -291,6 +296,7 @@
 				995B09BD2C0A84B0009A4FAC /* TimelineTaskView.swift */,
 				995B09B52C091D92009A4FAC /* TimelineHourView.swift */,
 				995B09BF2C0A8956009A4FAC /* TimelineDividerView.swift */,
+				9904E3FE2C0F17C400172593 /* TimelineNowView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -366,7 +372,7 @@
 		99EBE97B2C00846800789C9F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				99EBE9F72C008C7700789C9F /* Task */,
+				99EBE9F72C008C7700789C9F /* Reminder */,
 				99EBE97E2C00849000789C9F /* Root */,
 				99EBEA012C008CFA00789C9F /* Home */,
 				99EBE9EB2C008C6F00789C9F /* Search */,
@@ -601,7 +607,7 @@
 		99EBE9EF2C008C7700789C9F /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				99EBE9EE2C008C7700789C9F /* TaskSectionConstant.swift */,
+				99EBE9EE2C008C7700789C9F /* ReminderSectionConstant.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -609,7 +615,7 @@
 		99EBE9F12C008C7700789C9F /* Destination */ = {
 			isa = PBXGroup;
 			children = (
-				99EBE9F02C008C7700789C9F /* TaskDestination.swift */,
+				99EBE9F02C008C7700789C9F /* ReminderDestination.swift */,
 			);
 			path = Destination;
 			sourceTree = "<group>";
@@ -623,17 +629,17 @@
 			path = Link;
 			sourceTree = "<group>";
 		};
-		99EBE9F72C008C7700789C9F /* Task */ = {
+		99EBE9F72C008C7700789C9F /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
+				99EBE9F42C008C7700789C9F /* Link */,
 				99EBE9EF2C008C7700789C9F /* Constant */,
 				99EBE9F12C008C7700789C9F /* Destination */,
-				99EBE9F42C008C7700789C9F /* Link */,
-				99EBE9F52C008C7700789C9F /* TaskView.swift */,
-				99EBE9F62C008C7700789C9F /* TaskViewModel.swift */,
+				99EBE9F52C008C7700789C9F /* ReminderView.swift */,
+				99EBE9F62C008C7700789C9F /* ReminderViewModel.swift */,
 			);
-			name = Task;
-			path = "../../../../../../Desktop/Default App/Feature/Presentation/Task";
+			name = Reminder;
+			path = "../../../../../../Desktop/Default App/Feature/Presentation/Reminder";
 			sourceTree = "<group>";
 		};
 		99EBEA012C008CFA00789C9F /* Home */ = {
@@ -676,13 +682,13 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		99EBEA2E2C014D7300789C9F /* Task */ = {
+		99EBEA2E2C014D7300789C9F /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
-				99F8B3C82C0750B00082A453 /* TaskRemoteService.swift */,
-				99EBEA332C014DA400789C9F /* TaskRemoteServiceProtocol.swift */,
+				99F8B3C82C0750B00082A453 /* ReminderRemoteService.swift */,
+				99EBEA332C014DA400789C9F /* ReminderRemoteServiceProtocol.swift */,
 			);
-			path = Task;
+			path = Reminder;
 			sourceTree = "<group>";
 		};
 		99F8B3882C01CC480082A453 /* Constant */ = {
@@ -715,8 +721,8 @@
 			children = (
 				99F8B39F2C067DCF0082A453 /* Auth */,
 				99F8B3A82C067F270082A453 /* User */,
-				99F8B3B02C0681C70082A453 /* Task */,
 				99F8B3B82C0737BF0082A453 /* Storage */,
+				99F8B3B02C0681C70082A453 /* Reminder */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -726,8 +732,8 @@
 			children = (
 				99EBEA272C0144A000789C9F /* Auth */,
 				99EBEA132C013FF200789C9F /* User */,
-				99EBEA2E2C014D7300789C9F /* Task */,
 				99F8B38B2C01D2580082A453 /* Storage */,
+				99EBEA2E2C014D7300789C9F /* Reminder */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -747,7 +753,7 @@
 			isa = PBXGroup;
 			children = (
 				99F8B3C02C0739A70082A453 /* User */,
-				99F8B3C32C073DA20082A453 /* Task */,
+				99F8B3C32C073DA20082A453 /* Reminder */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -757,8 +763,8 @@
 			children = (
 				99F8B3A42C067E8F0082A453 /* Auth */,
 				99F8B3A72C067EA00082A453 /* User */,
-				99F8B3AD2C06816F0082A453 /* Task */,
 				99F8B3B52C0681FE0082A453 /* Storage */,
+				99F8B3AD2C06816F0082A453 /* Reminder */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -799,22 +805,22 @@
 			path = User;
 			sourceTree = "<group>";
 		};
-		99F8B3AD2C06816F0082A453 /* Task */ = {
+		99F8B3AD2C06816F0082A453 /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
-				99EBEA2F2C014D8000789C9F /* Task.swift */,
-				99F8B3AE2C0681810082A453 /* TaskErrorCallback.swift */,
+				99EBEA2F2C014D8000789C9F /* Reminder.swift */,
+				99F8B3AE2C0681810082A453 /* ReminderErrorCallback.swift */,
 			);
-			path = Task;
+			path = Reminder;
 			sourceTree = "<group>";
 		};
-		99F8B3B02C0681C70082A453 /* Task */ = {
+		99F8B3B02C0681C70082A453 /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
-				99F8B3B32C0681E50082A453 /* TaskLocalService.swift */,
-				99F8B3B12C0681DA0082A453 /* TaskLocalServiceProtocol.swift */,
+				99F8B3B32C0681E50082A453 /* ReminderLocalService.swift */,
+				99F8B3B12C0681DA0082A453 /* ReminderLocalServiceProtocol.swift */,
 			);
-			path = Task;
+			path = Reminder;
 			sourceTree = "<group>";
 		};
 		99F8B3B52C0681FE0082A453 /* Storage */ = {
@@ -843,13 +849,13 @@
 			path = User;
 			sourceTree = "<group>";
 		};
-		99F8B3C32C073DA20082A453 /* Task */ = {
+		99F8B3C32C073DA20082A453 /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
-				99F8B3C42C073DB10082A453 /* TaskRepository.swift */,
-				99F8B3C62C073DBA0082A453 /* TaskRepositoryProtocol.swift */,
+				99F8B3C42C073DB10082A453 /* ReminderRepository.swift */,
+				99F8B3C62C073DBA0082A453 /* ReminderRepositoryProtocol.swift */,
 			);
-			path = Task;
+			path = Reminder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -997,6 +1003,7 @@
 				99EBE9BB2C0088F200789C9F /* SectionItemEnum.swift in Sources */,
 				99EBE9D42C008A4900789C9F /* TermsAndConditionsView.swift in Sources */,
 				99EBEA262C0142D500789C9F /* DependencyPropertyWrapper.swift in Sources */,
+				9904E3FF2C0F17C400172593 /* TimelineNowView.swift in Sources */,
 				99EBE9D12C008A4900789C9F /* NotificationView.swift in Sources */,
 				99EBEA242C0142A800789C9F /* ServiceContainer.swift in Sources */,
 				99F8B38D2C01D2660082A453 /* StorageRemoteService.swift in Sources */,
@@ -1005,13 +1012,14 @@
 				9904E3F42C0B431400172593 /* TimelineHeaderView.swift in Sources */,
 				99F8B3B72C06820F0082A453 /* StorageErrorCallback.swift in Sources */,
 				99EBE9A72C0088B500789C9F /* ToggleDisclosureGroupView.swift in Sources */,
-				99EBE9F82C008C7700789C9F /* TaskSectionConstant.swift in Sources */,
+				99EBE9F82C008C7700789C9F /* ReminderSectionConstant.swift in Sources */,
 				99F8B3AA2C067F420082A453 /* UserLocalService.swift in Sources */,
+				9904E4032C0F8DAD00172593 /* Timeline.swift in Sources */,
 				99F8B3A62C067E9B0082A453 /* AuthErrorCallback.swift in Sources */,
 				99F8B3992C0237B90082A453 /* UserErrorCallback.swift in Sources */,
 				99EBE9CC2C008A4900789C9F /* AccountSectionConstant.swift in Sources */,
 				99EBE9D02C008A4900789C9F /* LanguageView.swift in Sources */,
-				99EBEA302C014D8000789C9F /* Task.swift in Sources */,
+				99EBEA302C014D8000789C9F /* Reminder.swift in Sources */,
 				99EBE9CD2C008A4900789C9F /* AccountDestination.swift in Sources */,
 				99EBE9EC2C008C6F00789C9F /* SearchView.swift in Sources */,
 				99EBE9B02C0088C400789C9F /* ToggleItemView.swift in Sources */,
@@ -1022,11 +1030,11 @@
 				99EBEA292C0144A800789C9F /* AuthRemoteService.swift in Sources */,
 				99F8B3922C01E0FC0082A453 /* Preferences.swift in Sources */,
 				99EBE9FB2C008C7700789C9F /* TagsView.swift in Sources */,
-				99F8B3AF2C0681810082A453 /* TaskErrorCallback.swift in Sources */,
+				99F8B3AF2C0681810082A453 /* ReminderErrorCallback.swift in Sources */,
 				99EBE99F2C00876200789C9F /* Language.swift in Sources */,
 				995B09C02C0A8956009A4FAC /* TimelineDividerView.swift in Sources */,
-				99F8B3B42C0681E50082A453 /* TaskLocalService.swift in Sources */,
-				99EBE9F92C008C7700789C9F /* TaskDestination.swift in Sources */,
+				99F8B3B42C0681E50082A453 /* ReminderLocalService.swift in Sources */,
+				99EBE9F92C008C7700789C9F /* ReminderDestination.swift in Sources */,
 				9904E3F82C0B915500172593 /* Date+Extension.swift in Sources */,
 				9904E3FD2C0D2B6F00172593 /* CalendarServiceProtocol.swift in Sources */,
 				99EBE9FA2C008C7700789C9F /* RepeatView.swift in Sources */,
@@ -1039,15 +1047,15 @@
 				99F8B3BF2C07398E0082A453 /* UserRepository.swift in Sources */,
 				99EBEA222C01428E00789C9F /* ServiceType.swift in Sources */,
 				99EBE9D22C008A4900789C9F /* PrivacyAndPolicyView.swift in Sources */,
-				99F8B3C52C073DB10082A453 /* TaskRepository.swift in Sources */,
-				99EBEA342C014DA400789C9F /* TaskRemoteServiceProtocol.swift in Sources */,
+				99F8B3C52C073DB10082A453 /* ReminderRepository.swift in Sources */,
+				99EBEA342C014DA400789C9F /* ReminderRemoteServiceProtocol.swift in Sources */,
 				99EBE9CF2C008A4900789C9F /* AboutUsView.swift in Sources */,
 				99F8B3C22C0739B20082A453 /* UserRepositoryProtocol.swift in Sources */,
 				99EBE9D32C008A4900789C9F /* ProfileView.swift in Sources */,
 				99EBE9D52C008A4900789C9F /* AccountView.swift in Sources */,
 				99EBE9AF2C0088C400789C9F /* TitleItemView.swift in Sources */,
 				99EBEA2D2C0146EC00789C9F /* Auth.swift in Sources */,
-				99EBE9FC2C008C7700789C9F /* TaskView.swift in Sources */,
+				99EBE9FC2C008C7700789C9F /* ReminderView.swift in Sources */,
 				9904E3FB2C0D2B5900172593 /* CalendarService.swift in Sources */,
 				99F8B3AC2C067F510082A453 /* UserLocalServiceProtocol.swift in Sources */,
 				99EBEA052C00CF4C00789C9F /* LifeVisionApp.swift in Sources */,
@@ -1059,9 +1067,9 @@
 				99EBE9AD2C0088C400789C9F /* MenuItemView.swift in Sources */,
 				99EBEA072C01352700789C9F /* Theme.swift in Sources */,
 				995B09BE2C0A84B0009A4FAC /* TimelineTaskView.swift in Sources */,
-				99F8B3C92C0750B00082A453 /* TaskRemoteService.swift in Sources */,
+				99F8B3C92C0750B00082A453 /* ReminderRemoteService.swift in Sources */,
 				99F8B3942C0210C60082A453 /* ProfileItemView.swift in Sources */,
-				99F8B3C72C073DBA0082A453 /* TaskRepositoryProtocol.swift in Sources */,
+				99F8B3C72C073DBA0082A453 /* ReminderRepositoryProtocol.swift in Sources */,
 				99EBE9B32C0088CA00789C9F /* DefaultView.swift in Sources */,
 				99EBE9BA2C0088F200789C9F /* SectionItem.swift in Sources */,
 				9904E3F62C0B8E1C00172593 /* Calendar+Extension.swift in Sources */,
@@ -1071,8 +1079,8 @@
 				99F8B3A12C067DDB0082A453 /* AuthLocalService.swift in Sources */,
 				99EBE9E82C008C5100789C9F /* CalendarViewModel.swift in Sources */,
 				99EBEA152C013FFF00789C9F /* UserRemoteService.swift in Sources */,
-				99EBE9FD2C008C7700789C9F /* TaskViewModel.swift in Sources */,
-				99F8B3B22C0681DA0082A453 /* TaskLocalServiceProtocol.swift in Sources */,
+				99EBE9FD2C008C7700789C9F /* ReminderViewModel.swift in Sources */,
+				99F8B3B22C0681DA0082A453 /* ReminderLocalServiceProtocol.swift in Sources */,
 				99EBE9802C00849C00789C9F /* RootView.swift in Sources */,
 				99EBEA022C008CFA00789C9F /* HomeView.swift in Sources */,
 			);

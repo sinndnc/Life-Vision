@@ -16,6 +16,18 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
+    func toHour() -> Double{
+        let calendar = Calendar.current
+        
+        let hour = calendar.component(.hour, from: self)
+        let minute = calendar.component(.minute, from: self)
+        
+        let fractional = Double(minute) / 100.0
+        let wholePart = Double(hour) + fractional
+
+        return wholePart.toTimePercentage()
+    }
+    
     func getThisMonthSpecificDay(day : Int) -> Date {
         let components:NSDateComponents = Calendar.current.dateComponents([.year, .month], from: self) as NSDateComponents
         components.day = 0
