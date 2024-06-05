@@ -25,7 +25,7 @@ extension Date {
         let fractional = Double(minute) / 100.0
         let wholePart = Double(hour) + fractional
 
-        return wholePart.toTimePercentage()
+        return wholePart
     }
     
     func getThisMonthSpecificDay(day : Int) -> Date {
