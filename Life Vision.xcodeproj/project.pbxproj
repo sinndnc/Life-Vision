@@ -15,6 +15,7 @@
 		9904E3FF2C0F17C400172593 /* TimelineNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9904E3FE2C0F17C400172593 /* TimelineNowView.swift */; };
 		9904E4032C0F8DAD00172593 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9904E4022C0F8DAD00172593 /* Timeline.swift */; };
 		9904E4082C10750D00172593 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9904E4072C10750D00172593 /* Double+Extension.swift */; };
+		9904E40A2C11C6FA00172593 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9904E4092C11C6FA00172593 /* UIState.swift */; };
 		995B09B22C08B412009A4FAC /* TimelineGraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B09B12C08B412009A4FAC /* TimelineGraphicView.swift */; };
 		995B09B42C09089F009A4FAC /* TimelineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B09B32C09089F009A4FAC /* TimelineLayout.swift */; };
 		995B09B62C091D92009A4FAC /* TimelineHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B09B52C091D92009A4FAC /* TimelineHourView.swift */; };
@@ -130,6 +131,7 @@
 		9904E3FE2C0F17C400172593 /* TimelineNowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineNowView.swift; sourceTree = "<group>"; };
 		9904E4022C0F8DAD00172593 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		9904E4072C10750D00172593 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		9904E4092C11C6FA00172593 /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
 		995B09B12C08B412009A4FAC /* TimelineGraphicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGraphicView.swift; sourceTree = "<group>"; };
 		995B09B32C09089F009A4FAC /* TimelineLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineLayout.swift; sourceTree = "<group>"; };
 		995B09B52C091D92009A4FAC /* TimelineHourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineHourView.swift; sourceTree = "<group>"; };
@@ -503,6 +505,7 @@
 			isa = PBXGroup;
 			children = (
 				99EBE9B52C0088F200789C9F /* SectionItem.swift */,
+				9904E4092C11C6FA00172593 /* UIState.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1042,6 +1045,7 @@
 				9904E3FD2C0D2B6F00172593 /* CalendarServiceProtocol.swift in Sources */,
 				99EBE9FA2C008C7700789C9F /* RepeatView.swift in Sources */,
 				99EBE9852C00864000789C9F /* UserDefaults+Extension.swift in Sources */,
+				9904E40A2C11C6FA00172593 /* UIState.swift in Sources */,
 				99EBEA202C01420000789C9F /* User.swift in Sources */,
 				99F8B3BD2C07381F0082A453 /* StorageLocalServiceProtocol.swift in Sources */,
 				995B09B62C091D92009A4FAC /* TimelineHourView.swift in Sources */,
