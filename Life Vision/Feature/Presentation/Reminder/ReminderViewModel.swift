@@ -9,10 +9,11 @@ import Foundation
 
 final class ReminderViewModel : ObservableObject{
     
-    @Published var titleText : String = ""
-    @Published var notesText : String = ""
+    let repeats = Repeat.list
+    let earlyReminders = EarlyReminder.list
     
-    @Published var date : Date = Date()
+    @Published var reminder : Reminder = Reminder()
+
 
     @Published var isPresented : Bool = false
     

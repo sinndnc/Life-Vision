@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ReminderView: View {
     
-    private let reminders : [String] = ["1 hour","2 hours","1 day","2 days","1 week","2 weeks"]
     @StateObject var viewModel : ReminderViewModel
     @State private var path : [ReminderDestination] = []
 
@@ -17,14 +16,14 @@ struct ReminderView: View {
         NavigationStack(path: $path){
             List {
                 Section{
-                    TitleItemView(text: $viewModel.titleText,placeholder: "Title")
-                    TitleItemView(text: $viewModel.notesText,placeholder: "Notes")
+                    TitleItemView(text: $viewModel.reminder.title, placeholder: "Title")
+                    TitleItemView(text: $viewModel.reminder.notes, placeholder: "Notes")
                 }
                 Section{
                     ToggleDisclosureGroupView(item: ReminderSectionConstant.date){
                         DatePicker(
                             "Date",
-                            selection: $viewModel.date,
+                            selection: $viewModel.reminder.start_date,
                             displayedComponents: [.date]
                         )
                         .datePickerStyle(.graphical)
@@ -32,7 +31,7 @@ struct ReminderView: View {
                     ToggleDisclosureGroupView(item: ReminderSectionConstant.time){
                         DatePicker(
                             "Time",
-                            selection: $viewModel.date,
+                            selection: $viewModel.reminder.start_date,
                             displayedComponents: [.hourAndMinute]
                         )
                         .datePickerStyle(.wheel)
@@ -40,14 +39,14 @@ struct ReminderView: View {
                 }
                 Section {
                     MenuItemView(
-                        menu: reminders,
+                        menu: viewModel.earlyReminders,
                         item: ReminderSectionConstant.EarlyReminder,
-                        selected: $viewModel.titleText
+                        selected: $viewModel.reminder.early_reminder
                     )
                     NavigationLinkItemView(
                         item: ReminderSectionConstant.repeat,
                         value: ReminderDestination.repeat,
-                        selected: "Never"
+                        selected: viewModel.reminder.repeat
                     )
                 }
                 Section{
