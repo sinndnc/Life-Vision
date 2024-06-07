@@ -56,6 +56,8 @@
 		997E9A032C13B678006F0FB5 /* TitleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E99F82C13B678006F0FB5 /* TitleItemView.swift */; };
 		997E9A042C13B678006F0FB5 /* ToggleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E99F92C13B678006F0FB5 /* ToggleItemView.swift */; };
 		997E9A052C13B678006F0FB5 /* DefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E99FB2C13B678006F0FB5 /* DefaultView.swift */; };
+		997E9A082C13B80A006F0FB5 /* EarlyReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A072C13B80A006F0FB5 /* EarlyReminder.swift */; };
+		997E9A0A2C13C791006F0FB5 /* Repeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A092C13C791006F0FB5 /* Repeat.swift */; };
 		99EBE9532C0083A300789C9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EBE9522C0083A300789C9F /* Assets.xcassets */; };
 		99EBE9562C0083A300789C9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EBE9552C0083A300789C9F /* Preview Assets.xcassets */; };
 		99EBE9602C0083A300789C9F /* Life_VisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE95F2C0083A300789C9F /* Life_VisionTests.swift */; };
@@ -172,6 +174,8 @@
 		997E99F82C13B678006F0FB5 /* TitleItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleItemView.swift; sourceTree = "<group>"; };
 		997E99F92C13B678006F0FB5 /* ToggleItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleItemView.swift; sourceTree = "<group>"; };
 		997E99FB2C13B678006F0FB5 /* DefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultView.swift; sourceTree = "<group>"; };
+		997E9A072C13B80A006F0FB5 /* EarlyReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarlyReminder.swift; sourceTree = "<group>"; };
+		997E9A092C13C791006F0FB5 /* Repeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repeat.swift; sourceTree = "<group>"; };
 		99EBE94B2C0083A200789C9F /* Life Vision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Life Vision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99EBE9522C0083A300789C9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99EBE9552C0083A300789C9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -334,8 +338,8 @@
 		997E992A2C127B7C006F0FB5 /* Link */ = {
 			isa = PBXGroup;
 			children = (
-				997E99282C127B7C006F0FB5 /* RepeatView.swift */,
 				997E99292C127B7C006F0FB5 /* TagsView.swift */,
+				997E99282C127B7C006F0FB5 /* RepeatView.swift */,
 			);
 			path = Link;
 			sourceTree = "<group>";
@@ -343,9 +347,9 @@
 		997E992D2C127B7C006F0FB5 /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
+				997E992A2C127B7C006F0FB5 /* Link */,
 				997E99252C127B7C006F0FB5 /* Constant */,
 				997E99272C127B7C006F0FB5 /* Destination */,
-				997E992A2C127B7C006F0FB5 /* Link */,
 				997E992B2C127B7C006F0FB5 /* ReminderView.swift */,
 				997E992C2C127B7C006F0FB5 /* ReminderViewModel.swift */,
 			);
@@ -387,11 +391,11 @@
 		997E99442C127B9B006F0FB5 /* Link */ = {
 			isa = PBXGroup;
 			children = (
+				997E99422C127B9B006F0FB5 /* ProfileView.swift */,
 				997E993E2C127B9B006F0FB5 /* AboutUsView.swift */,
 				997E993F2C127B9B006F0FB5 /* LanguageView.swift */,
 				997E99402C127B9B006F0FB5 /* NotificationView.swift */,
 				997E99412C127B9B006F0FB5 /* PrivacyAndPolicyView.swift */,
-				997E99422C127B9B006F0FB5 /* ProfileView.swift */,
 				997E99432C127B9B006F0FB5 /* TermsAndConditionsView.swift */,
 			);
 			path = Link;
@@ -400,10 +404,10 @@
 		997E99472C127B9B006F0FB5 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				997E99442C127B9B006F0FB5 /* Link */,
+				997E993D2C127B9B006F0FB5 /* Enum */,
 				997E993A2C127B9B006F0FB5 /* Constant */,
 				997E993C2C127B9B006F0FB5 /* Destination */,
-				997E993D2C127B9B006F0FB5 /* Enum */,
-				997E99442C127B9B006F0FB5 /* Link */,
 				997E99452C127B9B006F0FB5 /* AccountView.swift */,
 				997E99462C127B9B006F0FB5 /* AccountViewModel.swift */,
 			);
@@ -498,6 +502,15 @@
 			name = Component;
 			path = "Life Vision/Feature/Utils/Component";
 			sourceTree = SOURCE_ROOT;
+		};
+		997E9A062C13B7F9006F0FB5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				997E9A092C13C791006F0FB5 /* Repeat.swift */,
+				997E9A072C13B80A006F0FB5 /* EarlyReminder.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
 		};
 		99EBE9422C0083A200789C9F = {
 			isa = PBXGroup;
@@ -802,6 +815,7 @@
 		99F8B3AD2C06816F0082A453 /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
+				997E9A062C13B7F9006F0FB5 /* Entities */,
 				99EBEA2F2C014D8000789C9F /* Reminder.swift */,
 				99F8B3AE2C0681810082A453 /* ReminderErrorCallback.swift */,
 			);
@@ -1027,6 +1041,7 @@
 				997E99122C127AE2006F0FB5 /* TimelineDividerView.swift in Sources */,
 				99F8B3B42C0681E50082A453 /* ReminderLocalService.swift in Sources */,
 				9904E3FD2C0D2B6F00172593 /* CalendarServiceProtocol.swift in Sources */,
+				997E9A0A2C13C791006F0FB5 /* Repeat.swift in Sources */,
 				99EBE9852C00864000789C9F /* UserDefaults+Extension.swift in Sources */,
 				99EBEA202C01420000789C9F /* User.swift in Sources */,
 				99F8B3BD2C07381F0082A453 /* StorageLocalServiceProtocol.swift in Sources */,
@@ -1065,6 +1080,7 @@
 				997E99332C127B7C006F0FB5 /* ReminderViewModel.swift in Sources */,
 				99F8B3C72C073DBA0082A453 /* ReminderRepositoryProtocol.swift in Sources */,
 				997E99162C127AE2006F0FB5 /* TimelineLayout.swift in Sources */,
+				997E9A082C13B80A006F0FB5 /* EarlyReminder.swift in Sources */,
 				997E991B2C127AE2006F0FB5 /* HomeViewModel.swift in Sources */,
 				997E992F2C127B7C006F0FB5 /* ReminderDestination.swift in Sources */,
 				997E99182C127AE2006F0FB5 /* TimelineHeaderView.swift in Sources */,

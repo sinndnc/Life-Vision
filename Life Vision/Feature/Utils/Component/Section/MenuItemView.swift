@@ -19,8 +19,8 @@ struct MenuItemView<T : Hashable> : View {
                 Text(item.label)
                 Spacer()
                 Menu {
-                    Section{
-                        ForEach(menu,id: \.self){ option in
+                    if let option = menu.first{
+                        Section{
                             Button(action: {
                                 selected = option
                             }) {
@@ -28,6 +28,22 @@ struct MenuItemView<T : Hashable> : View {
                                 Spacer()
                                 if (selected == option) {
                                     Image(systemName: "checkmark")
+                                }
+                            }
+                        }
+                    }
+
+                    Section{
+                        ForEach(menu,id: \.self){ option in
+                            if(option != menu.first){
+                                Button(action: {
+                                    selected = option
+                                }) {
+                                    Text("\(option)".capitalized)
+                                    Spacer()
+                                    if (selected == option) {
+                                        Image(systemName: "checkmark")
+                                    }
                                 }
                             }
                         }

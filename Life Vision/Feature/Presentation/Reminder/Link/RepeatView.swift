@@ -13,7 +13,22 @@ struct RepeatView: View {
     @StateObject var viewModel : ReminderViewModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List{
+            Section{
+                ForEach(viewModel.repeats,id:\.self){ item in
+                    HStack{
+                        Button {
+                            viewModel.reminder.repeat = item
+                            path.removeAll()
+                        } label: {
+                            Text(item)
+                            Spacer()
+                            viewModel.reminder.repeat == item ? Image(systemName: "checkmark") : nil
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

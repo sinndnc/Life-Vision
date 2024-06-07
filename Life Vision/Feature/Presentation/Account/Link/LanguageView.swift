@@ -21,10 +21,7 @@ struct LanguageView: View {
                 }, label: {
                     Text(language.toString)
                     Spacer()
-                    if viewModel.language == language{
-                        Image(systemName: "checkmark")
-                            .foregroundColor(.blue)
-                    }
+                    viewModel.language == language ? Image(systemName: "checkmark") : nil
                 })
                 .buttonStyle(.plain)
             }
