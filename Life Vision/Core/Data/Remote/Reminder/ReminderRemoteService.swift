@@ -22,6 +22,7 @@ final class ReminderRemoteService : ReminderRemoteServiceProtocol{
     func fetch(onCompletion: @escaping (Result<[Reminder],ReminderErrorCallback>) -> Void ) throws {
         var reminders : [Reminder] = []
         guard let user = auth.currentUser else { throw UserErrorCallback.invalidUser }
+        
         firestore.collection(FirebaseConstant.users)
             .document(user.uid)
             .collection(FirebaseConstant.reminders)
@@ -42,6 +43,27 @@ final class ReminderRemoteService : ReminderRemoteServiceProtocol{
                     return onCompletion(.success(reminders))
                 }
             }
+    }
+    
+    func add(_ reminder: Reminder, onCompletion: @escaping (Result<String, ReminderErrorCallback>) -> Void) throws {
+        guard let user = auth.currentUser else { throw UserErrorCallback.invalidUser }
+        
+        do{
+           let response = try firestore.collection(FirebaseConstant.users)
+                .document(user.uid)
+                .collection(FirebaseConstant.reminders)
+                .addDocument(from: reminder){ result in
+                    if let error = result{
+                        onCompletion(.failure(.invalidType))
+                        print(error.localizedDescription)
+                    }
+                }
+            
+            onCompletion(.success(response.documentID))
+        }catch{
+            onCompletion(.failure(.invalidType))
+        }
+            
     }
     
 }

@@ -65,13 +65,13 @@ struct ReminderView: View {
                     }
                 }
             }
+            .toolbar(viewModel: viewModel)
             .navigationBarTitleDisplayMode(.inline)
             .localizedNavigationTitle(title: "Details")
             .navigationGraph(path: $path, viewModel: viewModel)
         }
     }
 }
-
 
 fileprivate extension View{
     
@@ -85,6 +85,23 @@ fileprivate extension View{
             }
         }
     }
+    
+    func toolbar(viewModel: ReminderViewModel) -> some View {
+        return toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button("Cancel") {
+                    viewModel.isPresented.toggle()
+                }
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Done") {
+                    viewModel.isPresented.toggle()
+                    viewModel.add(viewModel.reminder)
+                }
+            }
+        }
+    }
+    
 }
 
 #Preview {

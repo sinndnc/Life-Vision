@@ -23,5 +23,15 @@ final class ReminderRepository : ReminderRepositoryProtocol{
         }
     }
     
+    func add(_ reminder: Reminder, onCompletion: @escaping (Result<String, ReminderErrorCallback>) -> Void) {
+        do{
+            try remoteReminderService.add(reminder, onCompletion: onCompletion)
+        }catch is ReminderErrorCallback{
+            
+        }catch{
+            
+        }
+    }
+    
     
 }
