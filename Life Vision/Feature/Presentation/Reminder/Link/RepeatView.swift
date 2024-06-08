@@ -12,6 +12,7 @@ struct RepeatView: View {
     @Binding var path : [ReminderDestination]
     @StateObject var viewModel : ReminderViewModel
     
+    
     var body: some View {
         List{
             Section{
