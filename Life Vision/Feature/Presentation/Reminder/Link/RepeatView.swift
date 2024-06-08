@@ -21,10 +21,13 @@ struct RepeatView: View {
                             viewModel.reminder.repeat = item
                             path.removeAll()
                         } label: {
-                            Text(item)
-                            Spacer()
-                            viewModel.reminder.repeat == item ? Image(systemName: "checkmark") : nil
+                            HStack{
+                                Text(item)
+                                Spacer()
+                                viewModel.reminder.repeat == item ? Image(systemName: "checkmark") : nil
+                            }
                         }
+                        .buttonStyle(.plain)
                     }
                 }
             }

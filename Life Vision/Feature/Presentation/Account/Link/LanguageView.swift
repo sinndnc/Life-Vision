@@ -19,9 +19,11 @@ struct LanguageView: View {
                     viewModel.language = language
                     path.removeAll()
                 }, label: {
-                    Text(language.toString)
-                    Spacer()
-                    viewModel.language == language ? Image(systemName: "checkmark") : nil
+                    HStack{
+                        Text(language.toString)
+                        Spacer()
+                        viewModel.language == language ? Image(systemName: "checkmark") : nil
+                    }
                 })
                 .buttonStyle(.plain)
             }
