@@ -14,6 +14,7 @@ struct LanguageView: View {
 
     var body: some View {
         List{
+            Section{
             ForEach(Language.languages, id: \.self){ language in
                 Button(action: {
                     viewModel.language = language
@@ -26,6 +27,14 @@ struct LanguageView: View {
                     }
                 })
                 .buttonStyle(.plain)
+            }
+            }header: {
+                Text("Preferred Language")
+            }footer: {
+                HStack{
+                    Spacer()
+                    Text("You can choose more than one")
+                }
             }
         }
     }

@@ -15,7 +15,7 @@ final class AccountViewModel : ObservableObject {
     @AppStorage(Theme.key) var theme : Theme = UserDefaults.standard.theme
     @AppStorage(Language.key) var language : Language = UserDefaults.standard.language
     
-    @Published private(set) var user : User
+    @Published var user : User
     
     init(user: User) {
         self.user = user
