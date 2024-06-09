@@ -40,8 +40,8 @@ final class ReminderRemoteService : ReminderRemoteServiceProtocol{
                             print(error.localizedDescription)
                         }
                     }
-                    return onCompletion(.success(reminders))
                 }
+                return onCompletion(.success(reminders))
             }
     }
     

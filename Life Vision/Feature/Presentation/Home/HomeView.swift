@@ -9,13 +9,14 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject var viewModel : HomeViewModel
+    @ObservedObject var viewModel : HomeViewModel
     @StateObject var taskViewModel : ReminderViewModel = ReminderViewModel()
     
     var body: some View {
         NavigationStack{
             GeometryReader{ geo in
                 VStack(spacing: 0){
+                    TimelineFilterView(geo:geo,viewModel:viewModel)
                     TimelineHeaderView(geo: geo,viewModel:viewModel)
                     TimelineGraphicView(geo: geo,viewModel:viewModel)
                 }
@@ -26,7 +27,6 @@ struct HomeView: View {
         }
     }
 }
-
 
 
 fileprivate extension View{

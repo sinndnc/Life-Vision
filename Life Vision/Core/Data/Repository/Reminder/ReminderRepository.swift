@@ -16,7 +16,9 @@ final class ReminderRepository : ReminderRepositoryProtocol{
     func fetch(onCompletion: @escaping (Result<[Reminder], ReminderErrorCallback>) -> Void) {
         do{
             try remoteReminderService.fetch(onCompletion: onCompletion)
-        }catch is ReminderErrorCallback {
+        }catch ReminderErrorCallback.noConnection {
+            
+        }catch ReminderErrorCallback.invalidType {
             
         }catch{
             
@@ -26,8 +28,8 @@ final class ReminderRepository : ReminderRepositoryProtocol{
     func add(_ reminder: Reminder, onCompletion: @escaping (Result<String, ReminderErrorCallback>) -> Void) {
         do{
             try remoteReminderService.add(reminder, onCompletion: onCompletion)
-        }catch is ReminderErrorCallback{
-            
+        }catch ReminderErrorCallback.noConnection {
+            print()
         }catch{
             
         }

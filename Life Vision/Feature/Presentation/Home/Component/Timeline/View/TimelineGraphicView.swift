@@ -10,7 +10,7 @@ import SwiftUI
 struct TimelineGraphicView: View {
     
     var geo : GeometryProxy
-    @StateObject var viewModel : HomeViewModel
+    @ObservedObject var viewModel : HomeViewModel
 
     var body: some View {
         
@@ -22,12 +22,15 @@ struct TimelineGraphicView: View {
                 TimelineLayout(reminders: viewModel.reminders){
                     TimelineHourView(geo: geo)
                     TimelineDividerView(geo: geo)
-                    ForEach(viewModel.reminders,id: \.self) { reminder in
-                        TimelineTaskView(geo: geo,reminder: reminder)
-                    }
                     TimelineNowView(geo: geo)
+                    if(viewModel.reminders.isEmpty){
+                        ForEach(viewModel.reminders,id: \.self) { reminder in
+                            TimelineTaskView(geo: geo,reminder: reminder)
+                        }
+                    }
                 }
                 .onAppear {
+                    print(viewModel.reminders)
                     if (viewModel.graphicViewUIState == .initial){
                         proxy.scrollTo(hour,anchor: .center)
                         viewModel.graphicViewUIState = .success

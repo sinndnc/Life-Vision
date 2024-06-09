@@ -8,6 +8,7 @@
 import Foundation
 
 enum ReminderErrorCallback : Error {
+    case noUser
     case invalidType
+    case noConnection
 }
-

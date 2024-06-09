@@ -34,37 +34,32 @@ struct TimelineLayout: Layout {
         
         let hour = subviews[0]
         let divider = subviews[1]
+        let nowDivider = subviews[2]
 
         let hourSize = hour.sizeThatFits(.unspecified)
        
         hour.place(at: CGPoint(x: 0, y: Int(bounds.minY)), proposal: .unspecified)
         divider.place(at: CGPoint(x: Int(hourSize.width), y: Int(bounds.minY)), proposal: .unspecified)
         
+        let nowDividerHeight = (hourSize.height / 25) * Date().toHour().toTimePercentage() + bounds.minY
+        nowDivider.place(at: CGPoint(x: 0, y: nowDividerHeight), proposal: .unspecified)
+        
         
         for (index , subview) in subviews.enumerated(){
             
-            if index > 1 {
+            if index > 2 {
                 
-                var width = bounds.minX
                 var height = bounds.minY
-                
                 reminders.forEach { reminder in
                     let taskHeight = (hourSize.height / 25) * reminder.start_date.toHour()
-                    height = taskHeight
+                    height += taskHeight
                 }
-
-                let nowDividerHeight = (hourSize.height / 25) * Date().toHour().toTimePercentage()
-                
-                width = index == subviews.endIndex - 1 ? 0 : hourSize.width
-                height = index == subviews.endIndex - 1 ? nowDividerHeight : height
-
                 
                 subview.place(
-                    at: CGPoint(x: Int(width), y: Int(height)),
+                    at: CGPoint(x: Int(hourSize.width), y: Int(height)),
                     proposal: .unspecified
                 )
                  
-                width = bounds.minX
                 height = bounds.minY
                 
             }
@@ -82,10 +77,10 @@ struct TimelineLayout: Layout {
             TimelineLayout(reminders: reminders) {
                 TimelineHourView(geo: geo)
                 TimelineDividerView(geo: geo)
+                TimelineNowView(geo: geo)
                 ForEach(reminders,id: \.self){ reminder in
                     TimelineTaskView(geo: geo,reminder: reminder)
                 }
-                TimelineNowView(geo: geo)
             }
         }
     }

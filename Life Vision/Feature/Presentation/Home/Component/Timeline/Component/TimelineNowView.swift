@@ -14,19 +14,11 @@ struct TimelineNowView: View {
     var body: some View {
         
         let width = geo.size.width
-        
-        HStack(spacing: 0){
-            Text("now")
-                .font(.caption2)
-                .foregroundStyle(.red)
-                .padding(.horizontal,5)
-                .frame(width: width * 0.2,alignment: .trailing)
-            VStack{
-                Rectangle()
-                    .foregroundStyle(.red)
-                    .frame(width: width,height: 2)
-            }
-        }
+    
+        Rectangle()
+            .foregroundStyle(.red)
+            .frame(width: width,height: 0.75)
+            .zIndex(2)
     }
 }
 

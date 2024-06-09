@@ -14,13 +14,12 @@ struct RootView: View {
 
     @StateObject var viewModel : RootViewModel
     @State private var user : User = UserDefaults.standard.user
-    @StateObject private var homeViewModel : HomeViewModel = HomeViewModel()
     @StateObject private var searchViewModel : SearchViewModel = SearchViewModel()
     @StateObject private var calendarViewModel : CalendarViewModel = CalendarViewModel()
 
     var body: some View {
         TabView(selection: tabSelection()) {
-            HomeView(viewModel: homeViewModel)
+            HomeView(viewModel: HomeViewModel())
                 .tabview(tag: .home, text: "Home", image: "house")
             SearchView(viewModel: searchViewModel)
                 .tabview(tag: .search, text: "Search", image: "magnifyingglass")

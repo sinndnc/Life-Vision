@@ -58,6 +58,7 @@
 		997E9A052C13B678006F0FB5 /* DefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E99FB2C13B678006F0FB5 /* DefaultView.swift */; };
 		997E9A082C13B80A006F0FB5 /* EarlyReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A072C13B80A006F0FB5 /* EarlyReminder.swift */; };
 		997E9A0A2C13C791006F0FB5 /* Repeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A092C13C791006F0FB5 /* Repeat.swift */; };
+		997E9A0C2C150717006F0FB5 /* TimelineFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A0B2C150717006F0FB5 /* TimelineFilterView.swift */; };
 		99EBE9532C0083A300789C9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EBE9522C0083A300789C9F /* Assets.xcassets */; };
 		99EBE9562C0083A300789C9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EBE9552C0083A300789C9F /* Preview Assets.xcassets */; };
 		99EBE9602C0083A300789C9F /* Life_VisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE95F2C0083A300789C9F /* Life_VisionTests.swift */; };
@@ -176,6 +177,7 @@
 		997E99FB2C13B678006F0FB5 /* DefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultView.swift; sourceTree = "<group>"; };
 		997E9A072C13B80A006F0FB5 /* EarlyReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarlyReminder.swift; sourceTree = "<group>"; };
 		997E9A092C13C791006F0FB5 /* Repeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repeat.swift; sourceTree = "<group>"; };
+		997E9A0B2C150717006F0FB5 /* TimelineFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineFilterView.swift; sourceTree = "<group>"; };
 		99EBE94B2C0083A200789C9F /* Life Vision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Life Vision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99EBE9522C0083A300789C9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99EBE9552C0083A300789C9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -265,10 +267,10 @@
 		997E99052C127AE2006F0FB5 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				997E99012C127AE2006F0FB5 /* TimelineDividerView.swift */,
 				997E99022C127AE2006F0FB5 /* TimelineHourView.swift */,
 				997E99032C127AE2006F0FB5 /* TimelineNowView.swift */,
 				997E99042C127AE2006F0FB5 /* TimelineTaskView.swift */,
+				997E99012C127AE2006F0FB5 /* TimelineDividerView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -284,8 +286,9 @@
 		997E990A2C127AE2006F0FB5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				997E99082C127AE2006F0FB5 /* TimelineGraphicView.swift */,
+				997E9A0B2C150717006F0FB5 /* TimelineFilterView.swift */,
 				997E99092C127AE2006F0FB5 /* TimelineHeaderView.swift */,
+				997E99082C127AE2006F0FB5 /* TimelineGraphicView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -293,10 +296,9 @@
 		997E990C2C127AE2006F0FB5 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
-				997E99052C127AE2006F0FB5 /* Component */,
-				997E99072C127AE2006F0FB5 /* Layout */,
 				997E990A2C127AE2006F0FB5 /* View */,
-				997E990B2C127AE2006F0FB5 /* Timeline.swift */,
+				997E99072C127AE2006F0FB5 /* Layout */,
+				997E99052C127AE2006F0FB5 /* Component */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -457,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				997E99A22C1280D2006F0FB5 /* UIState.swift */,
+				997E990B2C127AE2006F0FB5 /* Timeline.swift */,
 				997E99A12C1280D2006F0FB5 /* SectionItem.swift */,
 			);
 			name = Entities;
@@ -1051,6 +1054,7 @@
 				997E9A042C13B678006F0FB5 /* ToggleItemView.swift in Sources */,
 				99F8B3BF2C07398E0082A453 /* UserRepository.swift in Sources */,
 				997E99EA2C13B63D006F0FB5 /* View+Extension.swift in Sources */,
+				997E9A0C2C150717006F0FB5 /* TimelineFilterView.swift in Sources */,
 				997E99EB2C13B63D006F0FB5 /* Date+Extension.swift in Sources */,
 				99EBEA222C01428E00789C9F /* ServiceType.swift in Sources */,
 				99F8B3C52C073DB10082A453 /* ReminderRepository.swift in Sources */,

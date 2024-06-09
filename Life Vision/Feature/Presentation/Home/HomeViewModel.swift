@@ -13,26 +13,26 @@ final class HomeViewModel : ObservableObject{
     @Service var calenderService : CalendarServiceProtocol
     @Service var reminderRepository : ReminderRepositoryProtocol
 
+    @Published var reminders : [Reminder] = []
+    @Published var viewUIState : UIState = .initial
     @Published var headerViewUIState : UIState = .initial
     @Published var graphicViewUIState : UIState = .initial
-    @Published private (set) var reminders : [Reminder] = []
 
-    var currentDay : Day { calenderService.getCurentDay }
-
-    init() {
+    init(){
         fetchReminders()
     }
     
-    func fetchReminders() {
+    func fetchReminders()  {
+        reminders.removeAll()
         reminderRepository.fetch{ result in
             switch result {
             case .success(let reminders):
-                print(reminders)
-                self.reminders.append(contentsOf: reminders)
+                self.reminders = reminders
+                self.viewUIState = .success
             case .failure(let failure):
+                self.viewUIState = .success
                 print(failure)
             }
         }
     }
-
 }
