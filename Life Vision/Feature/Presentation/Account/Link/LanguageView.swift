@@ -37,6 +37,7 @@ struct LanguageView: View {
                 }
             }
         }
+        .navigationTitle("Languages")
     }
     
 }

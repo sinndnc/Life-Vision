@@ -38,7 +38,10 @@ extension LifeVisionAppDelegate : UNUserNotificationCenterDelegate{
         //Calendar
         ServiceContainer.register(type: CalendarServiceProtocol.self, CalendarService())
 
+        //Notification
+        ServiceContainer.register(type: NotificationServiceProtocol.self, NotificationService())
         
+        //Auth
         ServiceContainer.register(type: AuthRemoteServiceProtocol.self, AuthRemoteService(auth: auth))
         //User
         ServiceContainer.register(type: UserRepositoryProtocol.self, UserRepository())

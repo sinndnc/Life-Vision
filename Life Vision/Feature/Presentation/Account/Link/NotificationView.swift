@@ -12,7 +12,11 @@ struct NotificationView: View {
     @StateObject var viewModel : AccountViewModel
     
     var body: some View {
-        Text("Hello, World!")
+        List {
+            Section{
+                Toggle("Notifications", isOn: .constant(true))
+            }
+        }
     }
 }
 

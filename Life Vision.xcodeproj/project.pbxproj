@@ -59,6 +59,9 @@
 		997E9A082C13B80A006F0FB5 /* EarlyReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A072C13B80A006F0FB5 /* EarlyReminder.swift */; };
 		997E9A0A2C13C791006F0FB5 /* Repeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A092C13C791006F0FB5 /* Repeat.swift */; };
 		997E9A0C2C150717006F0FB5 /* TimelineFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A0B2C150717006F0FB5 /* TimelineFilterView.swift */; };
+		997E9A102C170EF5006F0FB5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 997E9A0E2C170EF5006F0FB5 /* Localizable.strings */; };
+		997E9A132C170F33006F0FB5 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A122C170F33006F0FB5 /* NotificationService.swift */; };
+		997E9A152C170F3E006F0FB5 /* NotificationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A142C170F3E006F0FB5 /* NotificationServiceProtocol.swift */; };
 		99EBE9532C0083A300789C9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EBE9522C0083A300789C9F /* Assets.xcassets */; };
 		99EBE9562C0083A300789C9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EBE9552C0083A300789C9F /* Preview Assets.xcassets */; };
 		99EBE9602C0083A300789C9F /* Life_VisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE95F2C0083A300789C9F /* Life_VisionTests.swift */; };
@@ -178,6 +181,10 @@
 		997E9A072C13B80A006F0FB5 /* EarlyReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarlyReminder.swift; sourceTree = "<group>"; };
 		997E9A092C13C791006F0FB5 /* Repeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repeat.swift; sourceTree = "<group>"; };
 		997E9A0B2C150717006F0FB5 /* TimelineFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineFilterView.swift; sourceTree = "<group>"; };
+		997E9A0F2C170EF5006F0FB5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		997E9A112C170F1D006F0FB5 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		997E9A122C170F33006F0FB5 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		997E9A142C170F3E006F0FB5 /* NotificationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationServiceProtocol.swift; sourceTree = "<group>"; };
 		99EBE94B2C0083A200789C9F /* Life Vision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Life Vision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99EBE9522C0083A300789C9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99EBE9552C0083A300789C9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -515,6 +522,15 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		997E9A0D2C170ED1006F0FB5 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				997E9A122C170F33006F0FB5 /* NotificationService.swift */,
+				997E9A142C170F3E006F0FB5 /* NotificationServiceProtocol.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		99EBE9422C0083A200789C9F = {
 			isa = PBXGroup;
 			children = (
@@ -631,6 +647,7 @@
 				99EBE99A2C0086EF00789C9F /* Theme */,
 				9904E3F92C0D2B3900172593 /* Calendar */,
 				99EBE9992C0086DB00789C9F /* Language */,
+				997E9A0D2C170ED1006F0FB5 /* Notification */,
 				99F8B3902C01E0A80082A453 /* Preferences */,
 			);
 			path = Utils;
@@ -640,6 +657,7 @@
 			isa = PBXGroup;
 			children = (
 				99EBE99E2C00876200789C9F /* Language.swift */,
+				997E9A0E2C170EF5006F0FB5 /* Localizable.strings */,
 			);
 			path = Language;
 			sourceTree = "<group>";
@@ -983,6 +1001,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99EBE9562C0083A300789C9F /* Preview Assets.xcassets in Resources */,
+				997E9A102C170EF5006F0FB5 /* Localizable.strings in Resources */,
 				99EBE9532C0083A300789C9F /* Assets.xcassets in Resources */,
 				99EBEA102C013AC700789C9F /* GoogleService-Info.plist in Resources */,
 			);
@@ -1011,6 +1030,7 @@
 			files = (
 				99EBE97A2C00845300789C9F /* LifeVisionAppDelegate.swift in Sources */,
 				99EBEA262C0142D500789C9F /* DependencyPropertyWrapper.swift in Sources */,
+				997E9A132C170F33006F0FB5 /* NotificationService.swift in Sources */,
 				99EBEA242C0142A800789C9F /* ServiceContainer.swift in Sources */,
 				997E99312C127B7C006F0FB5 /* TagsView.swift in Sources */,
 				99F8B38D2C01D2660082A453 /* StorageRemoteService.swift in Sources */,
@@ -1098,6 +1118,7 @@
 				99EBEA152C013FFF00789C9F /* UserRemoteService.swift in Sources */,
 				997E99132C127AE2006F0FB5 /* TimelineHourView.swift in Sources */,
 				997E99552C127BAA006F0FB5 /* CalendarView.swift in Sources */,
+				997E9A152C170F3E006F0FB5 /* NotificationServiceProtocol.swift in Sources */,
 				99F8B3B22C0681DA0082A453 /* ReminderLocalServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1133,6 +1154,18 @@
 			targetProxy = 99EBE9662C0083A300789C9F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		997E9A0E2C170EF5006F0FB5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				997E9A0F2C170EF5006F0FB5 /* en */,
+				997E9A112C170F1D006F0FB5 /* tr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		99EBE96D2C0083A300789C9F /* Debug */ = {

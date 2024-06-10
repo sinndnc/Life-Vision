@@ -17,7 +17,7 @@ struct ProfileItemView: View {
     var body: some View {
         NavigationLink(value: value){
             if let user = user{
-                HStack(spacing: 10){
+                HStack(spacing: 15){
                     if let uiImage = UIImage(data: image){
                         Image(uiImage: uiImage)
                             .resizable()
@@ -26,19 +26,19 @@ struct ProfileItemView: View {
                             .background(.gray)
                             .clipShape(Circle())
                     }
-                    VStack(alignment: .leading,spacing: 5){
-                        HStack(spacing: 10){
+                    VStack(alignment: .leading){
+                        HStack(spacing: 5){
                             Text(user.name)
                                 .font(.title3)
+                                .fontWeight(.medium)
                             Text(user.surname)
                                 .font(.title3)
+                                .fontWeight(.medium)
                         }
                         Text("E-mail, Password, Purchase etc.")
                             .font(.footnote)
                     }
                 }
-            }else {
-                NoAccountProfileItemView()
             }
         }
     }
