@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import Combine
+import FirebaseFirestore
 
 struct HomeView: View {
     
-    @ObservedObject var viewModel : HomeViewModel
+    @State private var items: [Reminder] = []
+    @State private var cancellable: AnyCancellable?
+
+    @StateObject var viewModel : HomeViewModel
     @StateObject var taskViewModel : ReminderViewModel = ReminderViewModel()
     
     var body: some View {
@@ -20,6 +25,9 @@ struct HomeView: View {
                     TimelineHeaderView(geo: geo,viewModel:viewModel)
                     TimelineGraphicView(geo: geo,viewModel:viewModel)
                 }
+            }
+            .onAppear{
+                viewModel.fetchReminders()
             }
             .localizedNavigationTitle(title: "Home")
             .homeToolBar(taskViewModel: taskViewModel)

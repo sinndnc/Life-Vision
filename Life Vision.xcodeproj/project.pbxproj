@@ -62,6 +62,9 @@
 		997E9A102C170EF5006F0FB5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 997E9A0E2C170EF5006F0FB5 /* Localizable.strings */; };
 		997E9A132C170F33006F0FB5 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A122C170F33006F0FB5 /* NotificationService.swift */; };
 		997E9A152C170F3E006F0FB5 /* NotificationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A142C170F3E006F0FB5 /* NotificationServiceProtocol.swift */; };
+		997E9A182C18AE39006F0FB5 /* FirebaseReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A172C18AE39006F0FB5 /* FirebaseReceiver.swift */; };
+		997E9A1C2C1B1C24006F0FB5 /* ReminderCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A1B2C1B1C24006F0FB5 /* ReminderCategory.swift */; };
+		997E9A1F2C1CCCC2006F0FB5 /* SearchTaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A1E2C1CCCC2006F0FB5 /* SearchTaskItemView.swift */; };
 		99EBE9532C0083A300789C9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EBE9522C0083A300789C9F /* Assets.xcassets */; };
 		99EBE9562C0083A300789C9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EBE9552C0083A300789C9F /* Preview Assets.xcassets */; };
 		99EBE9602C0083A300789C9F /* Life_VisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE95F2C0083A300789C9F /* Life_VisionTests.swift */; };
@@ -185,6 +188,9 @@
 		997E9A112C170F1D006F0FB5 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		997E9A122C170F33006F0FB5 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		997E9A142C170F3E006F0FB5 /* NotificationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationServiceProtocol.swift; sourceTree = "<group>"; };
+		997E9A172C18AE39006F0FB5 /* FirebaseReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReceiver.swift; sourceTree = "<group>"; };
+		997E9A1B2C1B1C24006F0FB5 /* ReminderCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCategory.swift; sourceTree = "<group>"; };
+		997E9A1E2C1CCCC2006F0FB5 /* SearchTaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTaskItemView.swift; sourceTree = "<group>"; };
 		99EBE94B2C0083A200789C9F /* Life Vision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Life Vision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99EBE9522C0083A300789C9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99EBE9552C0083A300789C9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -368,6 +374,7 @@
 		997E99362C127B8D006F0FB5 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				997E9A1D2C1CCC8E006F0FB5 /* Component */,
 				997E99342C127B8D006F0FB5 /* SearchView.swift */,
 				997E99352C127B8D006F0FB5 /* SearchViewModel.swift */,
 			);
@@ -531,6 +538,22 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		997E9A162C18AE2D006F0FB5 /* Receiver */ = {
+			isa = PBXGroup;
+			children = (
+				997E9A172C18AE39006F0FB5 /* FirebaseReceiver.swift */,
+			);
+			path = Receiver;
+			sourceTree = "<group>";
+		};
+		997E9A1D2C1CCC8E006F0FB5 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				997E9A1E2C1CCCC2006F0FB5 /* SearchTaskItemView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		99EBE9422C0083A200789C9F = {
 			isa = PBXGroup;
 			children = (
@@ -624,7 +647,7 @@
 		99EBE97D2C00847E00789C9F /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				99F8B39C2C067C540082A453 /* Data */,
+				99F8B39C2C067C540082A453 /* Source */,
 				99EBE9862C00868F00789C9F /* Utils */,
 				99F8B3882C01CC480082A453 /* Constant */,
 				99EBE9832C00860B00789C9F /* Extension */,
@@ -644,6 +667,7 @@
 		99EBE9862C00868F00789C9F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				997E9A162C18AE2D006F0FB5 /* Receiver */,
 				99EBE99A2C0086EF00789C9F /* Theme */,
 				9904E3F92C0D2B3900172593 /* Calendar */,
 				99EBE9992C0086DB00789C9F /* Language */,
@@ -766,7 +790,7 @@
 			path = Remote;
 			sourceTree = "<group>";
 		};
-		99F8B39C2C067C540082A453 /* Data */ = {
+		99F8B39C2C067C540082A453 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				99F8B39E2C067DB00082A453 /* Entities */,
@@ -774,7 +798,7 @@
 				99F8B39B2C067C440082A453 /* Remote */,
 				99F8B39D2C067CDB0082A453 /* Repository */,
 			);
-			path = Data;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		99F8B39D2C067CDB0082A453 /* Repository */ = {
@@ -838,6 +862,7 @@
 			children = (
 				997E9A062C13B7F9006F0FB5 /* Entities */,
 				99EBEA2F2C014D8000789C9F /* Reminder.swift */,
+				997E9A1B2C1B1C24006F0FB5 /* ReminderCategory.swift */,
 				99F8B3AE2C0681810082A453 /* ReminderErrorCallback.swift */,
 			);
 			path = Reminder;
@@ -1071,6 +1096,7 @@
 				997E994E2C127B9B006F0FB5 /* ProfileView.swift in Sources */,
 				99EBEA2B2C0144AF00789C9F /* AuthRemoteServiceProtocol.swift in Sources */,
 				997E99A52C1280D2006F0FB5 /* UIState.swift in Sources */,
+				997E9A182C18AE39006F0FB5 /* FirebaseReceiver.swift in Sources */,
 				997E9A042C13B678006F0FB5 /* ToggleItemView.swift in Sources */,
 				99F8B3BF2C07398E0082A453 /* UserRepository.swift in Sources */,
 				997E99EA2C13B63D006F0FB5 /* View+Extension.swift in Sources */,
@@ -1084,6 +1110,7 @@
 				997E9A022C13B678006F0FB5 /* SegmentedItemView.swift in Sources */,
 				997E99302C127B7C006F0FB5 /* RepeatView.swift in Sources */,
 				997E994C2C127B9B006F0FB5 /* NotificationView.swift in Sources */,
+				997E9A1C2C1B1C24006F0FB5 /* ReminderCategory.swift in Sources */,
 				997E992E2C127B7C006F0FB5 /* ReminderSectionConstant.swift in Sources */,
 				99EBEA2D2C0146EC00789C9F /* Auth.swift in Sources */,
 				9904E3FB2C0D2B5900172593 /* CalendarService.swift in Sources */,
@@ -1112,6 +1139,7 @@
 				99EBEA1C2C0140EF00789C9F /* Theme+Extension.swift in Sources */,
 				997E99E92C13B63D006F0FB5 /* Double+Extension.swift in Sources */,
 				99F8B3A12C067DDB0082A453 /* AuthLocalService.swift in Sources */,
+				997E9A1F2C1CCCC2006F0FB5 /* SearchTaskItemView.swift in Sources */,
 				997E99192C127AE2006F0FB5 /* Timeline.swift in Sources */,
 				997E994D2C127B9B006F0FB5 /* PrivacyAndPolicyView.swift in Sources */,
 				997E9A002C13B678006F0FB5 /* NavigationLinkItemView.swift in Sources */,

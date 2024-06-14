@@ -36,7 +36,7 @@ struct ToggleDisclosureGroupStyle: DisclosureGroupStyle {
             configuration.label
         }
         .onChange(of: configuration.isExpanded) {
-            withAnimation(.linear) {
+            withAnimation {
                 configuration.isExpanded.toggle()
             }
         }

@@ -50,18 +50,17 @@ struct TimelineLayout: Layout {
             if index > 2 {
                 
                 var height = bounds.minY
-                reminders.forEach { reminder in
-                    let taskHeight = (hourSize.height / 25) * reminder.start_date.toHour()
-                    height += taskHeight
-                }
-                
+            
+                let taskHeight = (hourSize.height / 25) * reminders[index - 3].start_date.toHour()
+                height += taskHeight
+
                 subview.place(
                     at: CGPoint(x: Int(hourSize.width), y: Int(height)),
                     proposal: .unspecified
                 )
-                 
-                height = bounds.minY
                 
+                height = bounds.minY
+
             }
         }
     }
@@ -69,9 +68,15 @@ struct TimelineLayout: Layout {
 
 #Preview {
     GeometryReader{ geo in
-        let reminders : [Reminder] = [Reminder(title: "", start_date: .now, finish_date: .now),]
+        let reminders : [Reminder] = [
+            Reminder(title: "test", start_date: .now, finish_date: .now),
+            Reminder(title: "test 1 ", start_date: Calendar.current.date(byAdding: .hour, value: -2, to: .now)!, finish_date: .now),
+            Reminder(title: "test   1", start_date: Calendar.current.date(byAdding: .hour, value: -4, to: .now)!, finish_date: .now)
+
+        ]
     
         ScrollView {
+            
             ZStack{}
             .frame(width: 300,height: 100)
             TimelineLayout(reminders: reminders) {

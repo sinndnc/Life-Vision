@@ -13,26 +13,25 @@ struct RootView: View {
     @State private var selectedTab: TabEnum = .home
 
     @StateObject var viewModel : RootViewModel
-    @State private var user : User = UserDefaults.standard.user
-    @StateObject private var searchViewModel : SearchViewModel = SearchViewModel()
-    @StateObject private var calendarViewModel : CalendarViewModel = CalendarViewModel()
 
     var body: some View {
         TabView(selection: tabSelection()) {
             HomeView(viewModel: HomeViewModel())
                 .tabview(tag: .home, text: "Home", image: "house")
-            SearchView(viewModel: searchViewModel)
+            SearchView(viewModel: SearchViewModel())
                 .tabview(tag: .search, text: "Search", image: "magnifyingglass")
-            CalendarView(viewModel: calendarViewModel)
+            CalendarView(viewModel: CalendarViewModel())
                 .tabview(tag: .calendar, text: "Calendar", image: "calendar")
-            AccountView(viewModel : AccountViewModel(user: user))
+            AccountView(viewModel : AccountViewModel(user: viewModel.user))
                 .tabview(tag: .account, text: "Account", image: "person.fill")
         }
         .task {
-            do{
-                user = try await viewModel.userRepository.fetch().get()
-            }catch{
-                print(error)
+            let result = await viewModel.userRepository.fetch()
+            switch result {
+            case .success(let user):
+                viewModel.user = user
+            case .failure(let failure):
+                print(failure)
             }
         }
     }

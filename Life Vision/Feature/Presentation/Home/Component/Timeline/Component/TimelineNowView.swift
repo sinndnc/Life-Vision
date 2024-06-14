@@ -16,9 +16,9 @@ struct TimelineNowView: View {
         let width = geo.size.width
     
         Rectangle()
+            .zIndex(1)
             .foregroundStyle(.red)
             .frame(width: width,height: 0.75)
-            .zIndex(2)
     }
 }
 

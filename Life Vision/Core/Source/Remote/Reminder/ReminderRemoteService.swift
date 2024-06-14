@@ -20,7 +20,6 @@ final class ReminderRemoteService : ReminderRemoteServiceProtocol{
     }
     
     func fetch(onCompletion: @escaping (Result<[Reminder],ReminderErrorCallback>) -> Void ) throws {
-        var reminders : [Reminder] = []
         guard let user = auth.currentUser else { throw UserErrorCallback.invalidUser }
         
         firestore.collection(FirebaseConstant.users)
@@ -28,20 +27,24 @@ final class ReminderRemoteService : ReminderRemoteServiceProtocol{
             .collection(FirebaseConstant.reminders)
             .addSnapshotListener { snapshot, error in
                 if let snapshot = snapshot{
-                    for document in snapshot.documents{
-                        do{
+                    do{
+                        var reminders : [Reminder] = []
+                        for document in snapshot.documents{
                             let reminder = try document.data(as: Reminder.self)
+                            print(document)
                             reminders.append(reminder)
+                            onCompletion(.success(reminders))
                         }
-                        catch is ReminderErrorCallback{
-                            print(error)
-                        }
-                        catch{
-                            print(error.localizedDescription)
-                        }
+                     }
+                    catch is ReminderErrorCallback{
+                        print(error)
+                        onCompletion(.failure(ReminderErrorCallback.noUser))
+                    }
+                    catch{
+                        onCompletion(.failure(ReminderErrorCallback.noUser))
+                        print(error.localizedDescription)
                     }
                 }
-                return onCompletion(.success(reminders))
             }
     }
     

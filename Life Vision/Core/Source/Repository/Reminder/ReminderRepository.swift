@@ -8,20 +8,21 @@
 import Foundation
 
 
-final class ReminderRepository : ReminderRepositoryProtocol{
+final class ReminderRepository : ReminderRepositoryProtocol {
+    
     
     @Service private var localReminderService : ReminderLocalServiceProtocol
     @Service private var remoteReminderService : ReminderRemoteServiceProtocol
 
-    func fetch(onCompletion: @escaping (Result<[Reminder], ReminderErrorCallback>) -> Void) {
+    func fetch(onCompletion: @escaping (Result<[Reminder], ReminderErrorCallback>) -> Void)  {
         do{
             try remoteReminderService.fetch(onCompletion: onCompletion)
         }catch ReminderErrorCallback.noConnection {
-            
+            print("No connection")
         }catch ReminderErrorCallback.invalidType {
-            
+            print("invalidType")
         }catch{
-            
+            print(error)
         }
     }
     
@@ -29,7 +30,7 @@ final class ReminderRepository : ReminderRepositoryProtocol{
         do{
             try remoteReminderService.add(reminder, onCompletion: onCompletion)
         }catch ReminderErrorCallback.noConnection {
-            print()
+            print("No connection")
         }catch{
             
         }
