@@ -10,10 +10,9 @@ import SwiftUI
 struct TimelineHeaderView: View {
     
     var geo : GeometryProxy
+    @State var selected : Int = 0
     @StateObject var viewModel : HomeViewModel
 
-    let days = Calendar.current.getDaysOfMonth
-    
     var body: some View {
         let width = geo.size.width * 0.14
         let height = geo.size.height * 0.1
@@ -21,19 +20,25 @@ struct TimelineHeaderView: View {
         ScrollViewReader{ proxy in
             ScrollView(.horizontal,showsIndicators: false){
                 HStack{
-                    ForEach(1...days,id: \.self){ day in
-                        let textColor : Color = viewModel.calenderService.getCurentDay.number != day ? .gray : .white
-                        let background : Color? = viewModel.calenderService.getCurentDay.number != day ? nil : .blue
+                    ForEach(1...Calendar.current.getDaysOfMonth,id: \.self){ day in
+                        let currentDay = viewModel.calenderService.getCurentDay.number
+                        let border : Color = day == currentDay ? .blue : .white
                         let name = Date().getThisMonthSpecificDay(day: day).getDayNameOfMonth
-                        
-                        VStack(spacing: 10){
-                            Text(String(name))
-                                .font(.callout)
-                                .foregroundStyle(textColor)
-                            Text(String(day))
-                                .font(.callout)
-                                .fontWeight(.bold)
-                                .foregroundStyle(textColor)
+                        let textColor : Color = selected == day ? .white : day == currentDay ? .white : .gray
+                        let background : Color? = selected == day ? .blue : day == currentDay ? .blue.opacity(0.2) : nil
+
+                        Button {
+                            selected = day
+                        } label: {
+                            VStack(spacing: 10){
+                                Text(String(name))
+                                    .font(.callout)
+                                    .foregroundStyle(textColor)
+                                Text(String(day))
+                                    .font(.callout)
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(textColor)
+                            }
                         }
                         .id(day)
                         .frame(width: width,height: height)
@@ -45,8 +50,8 @@ struct TimelineHeaderView: View {
             }
             .onAppear{
                 if (viewModel.headerViewUIState == .initial){
-                    let day = viewModel.calenderService.getCurentDay.number
-                    proxy.scrollTo(day ,anchor: .center)
+                    selected = viewModel.calenderService.getCurentDay.number
+                    proxy.scrollTo(selected ,anchor: .center)
                     viewModel.headerViewUIState = .success
                 }
             }

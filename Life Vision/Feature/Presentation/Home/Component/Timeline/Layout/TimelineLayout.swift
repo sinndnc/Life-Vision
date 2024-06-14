@@ -51,7 +51,7 @@ struct TimelineLayout: Layout {
                 
                 var height = bounds.minY
             
-                let taskHeight = (hourSize.height / 25) * reminders[index - 3].start_date.toHour()
+                let taskHeight = (hourSize.height / 25) * reminders[index - 3].start_date.toHour().toTimePercentage()
                 height += taskHeight
 
                 subview.place(

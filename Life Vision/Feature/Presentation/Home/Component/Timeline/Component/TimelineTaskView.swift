@@ -30,11 +30,10 @@ struct TimelineTaskView: View {
             Spacer()
             Image(systemName:"circle")
         }
-        .padding(8)
+        .padding()
+        .frame(width: width,height: height)
         .background(.blue.opacity(0.5))
         .clipShape(RoundedRectangle(cornerRadius: 5))
-        .padding(5)
-        .frame(width: width,height: height)
     }
 }
 

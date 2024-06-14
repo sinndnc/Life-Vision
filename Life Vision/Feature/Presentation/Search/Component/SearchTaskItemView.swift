@@ -10,16 +10,25 @@ import SwiftUI
 struct SearchTaskItemView: View {
     
     var geo : GeometryProxy
+    var reminder : Reminder
     
     var body: some View {
         HStack(alignment: .bottom){
             VStack(alignment: .leading){
-                Text("plant the tree")
+                Text("Plant the tree")
+                    .fontWeight(.semibold)
                 Text("don't forget plase so important for me")
+                    .lineLimit(1)
+                    .font(.callout)
+                    .fontWeight(.medium)
+                    .foregroundStyle(.gray)
+                    .truncationMode(.tail)
             }
             Spacer()
-            Text("10:30 PM")
-                .font(.footnote)
+            HStack(spacing:5){
+                Text(reminder.start_date,style: .time)
+                    .font(.caption)
+            }
         }
         .frame(height: geo.size.height * 0.075 )
     }
@@ -27,6 +36,12 @@ struct SearchTaskItemView: View {
 
 #Preview {
     GeometryReader(content: { geometry in
-        SearchTaskItemView(geo:geometry)
+        SearchTaskItemView(
+            geo:geometry,
+            reminder: Reminder(
+                title: "Plant the tree",
+                notes: "don't forget plase so important for me"
+            )
+        )
     })
 }

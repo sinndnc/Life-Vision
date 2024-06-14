@@ -31,7 +31,6 @@ final class ReminderRemoteService : ReminderRemoteServiceProtocol{
                         var reminders : [Reminder] = []
                         for document in snapshot.documents{
                             let reminder = try document.data(as: Reminder.self)
-                            print(document)
                             reminders.append(reminder)
                             onCompletion(.success(reminders))
                         }
@@ -41,8 +40,8 @@ final class ReminderRemoteService : ReminderRemoteServiceProtocol{
                         onCompletion(.failure(ReminderErrorCallback.noUser))
                     }
                     catch{
-                        onCompletion(.failure(ReminderErrorCallback.noUser))
                         print(error.localizedDescription)
+                        onCompletion(.failure(ReminderErrorCallback.noUser))
                     }
                 }
             }

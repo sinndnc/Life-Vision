@@ -12,17 +12,17 @@ struct SearchView: View {
     @StateObject var viewModel : SearchViewModel
     
     var body: some View {
-        GeometryReader(content: { geo in
+        GeometryReader{ geo in
             NavigationStack{
                 List{
                     ForEach(viewModel.getCategories(),id:\.self){ category in
                         Section {
                             if(viewModel.hasItem(for: category)){
-                                ForEach(viewModel.getItems(for: category),id:\.self){ item in
-                                    SearchTaskItemView(geo:geo)
+                                ForEach(viewModel.getItems(for: category),id:\.self){ reminder in
+                                    SearchTaskItemView(geo:geo,reminder: reminder)
                                 }
                             }else{
-                                Text("no item for \(category) ")
+                                SearchDefaultItemView(category: category)
                             }
                         } header: {
                             Text("\(category)".capitalized)
@@ -30,12 +30,13 @@ struct SearchView: View {
                     }
                 }
                 .listStyle(.plain)
-                .searchable(text: $viewModel.searchable)
                 .localizedNavigationTitle(title: "Search")
+                .searchable(text: $viewModel.searchable, placement: .navigationBarDrawer(displayMode: .always))
             }
-        })
+        }
     }
 }
+
 
 
 

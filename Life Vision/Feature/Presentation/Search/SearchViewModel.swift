@@ -25,4 +25,5 @@ final class SearchViewModel : ObservableObject {
         return remindersByCategory[category] ?? []
     }
     
+    
 }

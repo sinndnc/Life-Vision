@@ -19,6 +19,12 @@ final class HomeViewModel : ObservableObject{
     @Published var headerViewUIState : UIState = .initial
     @Published var graphicViewUIState : UIState = .initial
     
+    @Published var selectedHeaderDay : Int = 0
+    
+    func selectDay(_ day : Int) {
+        selectedHeaderDay = day
+    }
+    
     func fetchReminders()  {
         reminderRepository.fetch { result in
             switch result {
