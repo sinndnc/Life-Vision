@@ -11,17 +11,16 @@ import CoreLocation
 
 final class NotificationService : NotificationServiceProtocol {
     
-    func scheduleLocationNotification() {
+    func scheduleLocationNotification(_ notification : LocationNotificaton) {
         let content = UNMutableNotificationContent()
-        content.title = "Location Reminder"
-        content.body = "You have arrived at your destination."
+        content.title = notification.title
+        content.body = notification.content
         content.sound = UNNotificationSound.default
-        content.categoryIdentifier = "MEETING_CATEGORY"
-
-        let center = CLLocationCoordinate2D(latitude: 37.334722, longitude: -122.008889)
-        let region = CLCircularRegion(center: center, radius: 100, identifier: "AppleHQ")
-        region.notifyOnEntry = true
-        region.notifyOnExit = false
+        content.categoryIdentifier = notification.categoryIdentifier
+        
+        let region = CLCircularRegion(center: notification.location, radius: 100, identifier: "AppleHQ")
+        region.notifyOnEntry = notification.notifyOnEntry
+        region.notifyOnExit = notification.notifyOnExit
 
         let trigger = UNLocationNotificationTrigger(region: region, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
@@ -33,14 +32,14 @@ final class NotificationService : NotificationServiceProtocol {
         }
     }
     
-    func scheduleTimeIntervalNotification() {
+    func scheduleTimeIntervalNotification(_ notification : TimeIntervalNotificaton) {
         let content = UNMutableNotificationContent()
-        content.title = "Interval Reminder"
-        content.body = "This is a reminder that triggers after a set time interval."
+        content.title = notification.title
+        content.body = notification.content
         content.sound = UNNotificationSound.default
-        content.categoryIdentifier = "MEETING_CATEGORY"
+        content.categoryIdentifier = notification.categoryIdentifier
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: notification.timeInterval, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
 
         UNUserNotificationCenter.current().add(request) { error in

@@ -10,7 +10,7 @@ import SwiftUI
 struct TimelineFilterView: View {
     
     var geo : GeometryProxy
-    @StateObject var viewModel : HomeViewModel
+    @StateObject var viewModel : CalendarViewModel
     
     var body: some View {
         HStack{
@@ -19,14 +19,15 @@ struct TimelineFilterView: View {
                 .fontWeight(.bold)
             Spacer()
             
-            Button(action: {
-                viewModel.notificationService.scheduleTimeIntervalNotification()
-            }, label: {
+            Button(
+                action: {
+                    
+                },
+                label: {
                 Image(systemName: "camera.filters")
             })
             .buttonStyle(.plain)
             .padding(10)
-
             
             Button(action: {
                 
@@ -43,6 +44,6 @@ struct TimelineFilterView: View {
 
 #Preview {
     GeometryReader(content: { geometry in
-        TimelineFilterView(geo: geometry, viewModel: HomeViewModel())
+        TimelineFilterView(geo: geometry, viewModel: CalendarViewModel())
     })
 }

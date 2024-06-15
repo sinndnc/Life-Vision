@@ -20,14 +20,9 @@ struct HomeView: View {
     var body: some View {
         NavigationStack{
             GeometryReader{ geo in
-                VStack(spacing: 0){
-                    TimelineFilterView(geo:geo,viewModel:viewModel)
-                    TimelineHeaderView(geo: geo,viewModel:viewModel)
-                    TimelineGraphicView(geo: geo,viewModel:viewModel)
+                List{
+                    
                 }
-            }
-            .onAppear{
-                viewModel.fetchReminders()
             }
             .localizedNavigationTitle(title: "Home")
             .homeToolBar(taskViewModel: taskViewModel)

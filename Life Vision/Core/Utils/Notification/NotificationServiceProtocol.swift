@@ -10,9 +10,9 @@ import UserNotifications
 
 protocol NotificationServiceProtocol{
         
-    func scheduleLocationNotification()
+    func scheduleLocationNotification(_ notification : LocationNotificaton)
 
-    func scheduleTimeIntervalNotification()
+    func scheduleTimeIntervalNotification(_ notification : TimeIntervalNotificaton)
     
     func requestAuthorization()
 

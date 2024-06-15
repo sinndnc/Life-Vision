@@ -12,10 +12,32 @@ struct CalendarView: View {
     @StateObject var viewModel : CalendarViewModel
     
     var body: some View {
+        
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: .now)
+        
         NavigationStack{
-            ScrollView{
+            GeometryReader{geo in
+                VStack{
+                    TimelineHeaderView(geo: geo,viewModel:viewModel)
+                    ScrollViewReader { proxy in
+                        ScrollView{
+                            TimelineGraphicView(geo: geo,viewModel:viewModel)
+                        }
+                        .onAppear {
+                            if (viewModel.graphicViewUIState == .initial){
+                                proxy.scrollTo(hour,anchor: .center)
+                                viewModel.graphicViewUIState = .success
+                            }
+                        }
+                    }
+                }
             }
-            .localizedNavigationTitle(title: "Calendar")
+            .searchable(text: .constant(""))
+            .localizedNavigationTitle(title: "December 2024")
+        }
+        .onAppear{
+            viewModel.fetchReminders()
         }
     }
 }

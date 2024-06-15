@@ -11,7 +11,7 @@ struct TimelineHeaderView: View {
     
     var geo : GeometryProxy
     @State var selected : Int = 0
-    @StateObject var viewModel : HomeViewModel
+    @StateObject var viewModel : CalendarViewModel
 
     var body: some View {
         let width = geo.size.width * 0.14
@@ -61,6 +61,6 @@ struct TimelineHeaderView: View {
 
 #Preview {
     GeometryReader(content: { geometry in
-        TimelineHeaderView(geo: geometry,viewModel: HomeViewModel())
+        TimelineHeaderView(geo: geometry,viewModel: CalendarViewModel())
     })
 }

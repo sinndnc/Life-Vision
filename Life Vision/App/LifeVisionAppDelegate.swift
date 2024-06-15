@@ -12,7 +12,7 @@ import CoreLocation
 import FirebaseStorage
 import FirebaseFirestore
 
-class LifeVisionAppDelegate : NSObject, UIApplicationDelegate , UNUserNotificationCenterDelegate {
+class LifeVisionAppDelegate : NSObject, UIApplicationDelegate , UNUserNotificationCenterDelegate, CLLocationManagerDelegate  {
     
     let notificationDelegate = LifeVisionNotificationDelegate.shared
 
