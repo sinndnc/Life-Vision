@@ -21,8 +21,9 @@ struct HomeView: View {
         NavigationStack{
             GeometryReader{ geo in
                 List{
-                    
+                    CountdownView(geo: geo)
                 }
+                .listStyle(.plain)
             }
             .localizedNavigationTitle(title: "Home")
             .homeToolBar(taskViewModel: taskViewModel)
