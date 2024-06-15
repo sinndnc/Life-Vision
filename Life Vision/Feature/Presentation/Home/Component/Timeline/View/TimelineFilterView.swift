@@ -20,7 +20,7 @@ struct TimelineFilterView: View {
             Spacer()
             
             Button(action: {
-                
+                viewModel.notificationService.scheduleTimeIntervalNotification()
             }, label: {
                 Image(systemName: "camera.filters")
             })

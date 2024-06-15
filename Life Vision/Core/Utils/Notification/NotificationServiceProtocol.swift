@@ -6,7 +6,14 @@
 //
 
 import Foundation
+import UserNotifications
 
 protocol NotificationServiceProtocol{
+        
+    func scheduleLocationNotification()
+
+    func scheduleTimeIntervalNotification()
     
+    func requestAuthorization()
+
 }

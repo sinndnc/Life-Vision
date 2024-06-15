@@ -8,24 +8,48 @@
 import SwiftUI
 import FirebaseCore
 import FirebaseAuth
-import FirebaseFirestore
+import CoreLocation
 import FirebaseStorage
+import FirebaseFirestore
 
-class LifeVisionAppDelegate : NSObject, UIApplicationDelegate {
+class LifeVisionAppDelegate : NSObject, UIApplicationDelegate , UNUserNotificationCenterDelegate {
     
+    let notificationDelegate = LifeVisionNotificationDelegate.shared
+
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
     ) -> Bool {
         
         setupDependencyContainer()
+        notificationDelegate.requestPermissions()
         
         return true
     }
     
+    
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse,
+        withCompletionHandler completionHandler: @escaping () -> Void)
+    {
+        notificationDelegate.userNotificationCenter(center, didReceive: response, withCompletionHandler: completionHandler)
+    }
+    
+    
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    {
+        notificationDelegate.userNotificationCenter(center, willPresent: notification, withCompletionHandler: completionHandler)
+    }
+    
+   
 }
 
-extension LifeVisionAppDelegate : UNUserNotificationCenterDelegate{
+extension LifeVisionAppDelegate  {
+    
     
     func setupDependencyContainer() {
         FirebaseApp.configure()
@@ -34,13 +58,10 @@ extension LifeVisionAppDelegate : UNUserNotificationCenterDelegate{
         let auth = FirebaseAuth.Auth.auth()
         let firestore = Firestore.firestore()
         
-        
         //Calendar
         ServiceContainer.register(type: CalendarServiceProtocol.self, CalendarService())
-
         //Notification
         ServiceContainer.register(type: NotificationServiceProtocol.self, NotificationService())
-        
         //Auth
         ServiceContainer.register(type: AuthRemoteServiceProtocol.self, AuthRemoteService(auth: auth))
         //User
@@ -54,5 +75,5 @@ extension LifeVisionAppDelegate : UNUserNotificationCenterDelegate{
         //Storage
         ServiceContainer.register(type: StorageRemoteServiceProtocol.self, StorageRemoteService(auth: auth, storage: storage, firestore: firestore))
     }
-    
+
 }

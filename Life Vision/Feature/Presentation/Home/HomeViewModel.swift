@@ -12,18 +12,14 @@ final class HomeViewModel : ObservableObject{
     
     @Service var calenderService : CalendarServiceProtocol
     @Service var reminderRepository : ReminderRepositoryProtocol
-
+    @Service var notificationService : NotificationServiceProtocol
+    
     @Published var reminders : [Reminder] = []
     
     @Published var viewUIState : UIState = .initial
     @Published var headerViewUIState : UIState = .initial
     @Published var graphicViewUIState : UIState = .initial
     
-    @Published var selectedHeaderDay : Int = 0
-    
-    func selectDay(_ day : Int) {
-        selectedHeaderDay = day
-    }
     
     func fetchReminders()  {
         reminderRepository.fetch { result in
@@ -35,5 +31,6 @@ final class HomeViewModel : ObservableObject{
             }
         }
     }
+    
     
 }

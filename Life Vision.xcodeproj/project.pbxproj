@@ -66,6 +66,7 @@
 		997E9A1C2C1B1C24006F0FB5 /* ReminderCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A1B2C1B1C24006F0FB5 /* ReminderCategory.swift */; };
 		997E9A1F2C1CCCC2006F0FB5 /* SearchTaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A1E2C1CCCC2006F0FB5 /* SearchTaskItemView.swift */; };
 		997E9A212C1CD296006F0FB5 /* SearchDefaultItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A202C1CD296006F0FB5 /* SearchDefaultItemView.swift */; };
+		997E9A232C1D8F3F006F0FB5 /* LifeVisionNotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A222C1D8F3F006F0FB5 /* LifeVisionNotificationDelegate.swift */; };
 		99EBE9532C0083A300789C9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EBE9522C0083A300789C9F /* Assets.xcassets */; };
 		99EBE9562C0083A300789C9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EBE9552C0083A300789C9F /* Preview Assets.xcassets */; };
 		99EBE9602C0083A300789C9F /* Life_VisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE95F2C0083A300789C9F /* Life_VisionTests.swift */; };
@@ -193,6 +194,7 @@
 		997E9A1B2C1B1C24006F0FB5 /* ReminderCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCategory.swift; sourceTree = "<group>"; };
 		997E9A1E2C1CCCC2006F0FB5 /* SearchTaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTaskItemView.swift; sourceTree = "<group>"; };
 		997E9A202C1CD296006F0FB5 /* SearchDefaultItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDefaultItemView.swift; sourceTree = "<group>"; };
+		997E9A222C1D8F3F006F0FB5 /* LifeVisionNotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeVisionNotificationDelegate.swift; sourceTree = "<group>"; };
 		99EBE94B2C0083A200789C9F /* Life Vision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Life Vision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99EBE9522C0083A300789C9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99EBE9552C0083A300789C9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -621,6 +623,7 @@
 			children = (
 				99EBEA042C00CF4C00789C9F /* LifeVisionApp.swift */,
 				99EBE9792C00845300789C9F /* LifeVisionAppDelegate.swift */,
+				997E9A222C1D8F3F006F0FB5 /* LifeVisionNotificationDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -1133,6 +1136,7 @@
 				99F8B3C92C0750B00082A453 /* ReminderRemoteService.swift in Sources */,
 				997E99332C127B7C006F0FB5 /* ReminderViewModel.swift in Sources */,
 				99F8B3C72C073DBA0082A453 /* ReminderRepositoryProtocol.swift in Sources */,
+				997E9A232C1D8F3F006F0FB5 /* LifeVisionNotificationDelegate.swift in Sources */,
 				997E99162C127AE2006F0FB5 /* TimelineLayout.swift in Sources */,
 				997E9A082C13B80A006F0FB5 /* EarlyReminder.swift in Sources */,
 				997E991B2C127AE2006F0FB5 /* HomeViewModel.swift in Sources */,
