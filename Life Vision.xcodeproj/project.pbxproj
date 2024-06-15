@@ -68,6 +68,7 @@
 		997E9A212C1CD296006F0FB5 /* SearchDefaultItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A202C1CD296006F0FB5 /* SearchDefaultItemView.swift */; };
 		997E9A232C1D8F3F006F0FB5 /* LifeVisionNotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A222C1D8F3F006F0FB5 /* LifeVisionNotificationDelegate.swift */; };
 		997E9A252C1DD1D2006F0FB5 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E9A242C1DD1D2006F0FB5 /* Notification.swift */; };
+		997E9A292C1E09E1006F0FB5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 997E9A282C1E09E1006F0FB5 /* README.md */; };
 		99EBE9532C0083A300789C9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EBE9522C0083A300789C9F /* Assets.xcassets */; };
 		99EBE9562C0083A300789C9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EBE9552C0083A300789C9F /* Preview Assets.xcassets */; };
 		99EBE9602C0083A300789C9F /* Life_VisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBE95F2C0083A300789C9F /* Life_VisionTests.swift */; };
@@ -197,6 +198,7 @@
 		997E9A202C1CD296006F0FB5 /* SearchDefaultItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDefaultItemView.swift; sourceTree = "<group>"; };
 		997E9A222C1D8F3F006F0FB5 /* LifeVisionNotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeVisionNotificationDelegate.swift; sourceTree = "<group>"; };
 		997E9A242C1DD1D2006F0FB5 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		997E9A282C1E09E1006F0FB5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		99EBE94B2C0083A200789C9F /* Life Vision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Life Vision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99EBE9522C0083A300789C9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99EBE9552C0083A300789C9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -573,6 +575,7 @@
 		99EBE9422C0083A200789C9F = {
 			isa = PBXGroup;
 			children = (
+				997E9A282C1E09E1006F0FB5 /* README.md */,
 				99EBEA0F2C013AC700789C9F /* GoogleService-Info.plist */,
 				99EBE94D2C0083A200789C9F /* Life Vision */,
 				99EBE95E2C0083A300789C9F /* Life VisionTests */,
@@ -1044,6 +1047,7 @@
 			files = (
 				99EBE9562C0083A300789C9F /* Preview Assets.xcassets in Resources */,
 				997E9A102C170EF5006F0FB5 /* Localizable.strings in Resources */,
+				997E9A292C1E09E1006F0FB5 /* README.md in Resources */,
 				99EBE9532C0083A300789C9F /* Assets.xcassets in Resources */,
 				99EBEA102C013AC700789C9F /* GoogleService-Info.plist in Resources */,
 			);
