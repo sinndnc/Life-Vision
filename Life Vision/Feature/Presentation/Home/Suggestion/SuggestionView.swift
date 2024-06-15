@@ -1,0 +1,46 @@
+//
+//  SuggestionView.swift
+//  Life Vision
+//
+//  Created by Sinan Dinç on 15.06.2024.
+//
+
+import SwiftUI
+
+struct SuggestionView: View {
+    
+    var geo : GeometryProxy
+    
+    var body: some View {
+        VStack(){
+            HStack{
+                Text("Suggestions")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                Spacer()
+            }
+            HStack{
+                ForEach(1...4,id: \.self){ number in
+                    Image(systemName: "location")
+                        .padding()
+                        .frame(width: geo.size.width * 0.2)
+                        .background(.red.opacity(0.2))
+                        .clipShape(Circle())
+                }
+            }
+            .frame(width: geo.size.width)
+            
+        }
+        .padding()
+        .frame(
+            width: geo.size.width,
+            height: geo.size.height * 0.3
+        )
+    }
+}
+
+#Preview {
+    GeometryReader { geo in
+        SuggestionView(geo: geo)
+    }
+}

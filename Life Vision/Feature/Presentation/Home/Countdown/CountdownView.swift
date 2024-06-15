@@ -15,7 +15,12 @@ struct CountdownView: View {
         
         VStack{
             HStack(content: {
-                Text("Countdown to: Plant the there")
+                VStack(alignment: .leading){
+                    Text("Countdown to:")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                    Text("Plant the there")
+                }
                 Spacer()
 
             })
