@@ -35,9 +35,11 @@ struct TimelineLayout: Layout {
         let hour = subviews[0]
         let divider = subviews[1]
         let nowDivider = subviews[2]
+        let reminder = subviews[3]
 
         let hourSize = hour.sizeThatFits(.unspecified)
-       
+        let reminderSize = reminder.sizeThatFits(.unspecified)
+        
         hour.place(at: CGPoint(x: 0, y: Int(bounds.minY)), proposal: .unspecified)
         divider.place(at: CGPoint(x: Int(hourSize.width), y: Int(bounds.minY)), proposal: .unspecified)
         
@@ -46,14 +48,19 @@ struct TimelineLayout: Layout {
         
         
         for (index , subview) in subviews.enumerated(){
+            let firstIndex = 3
             
             if index > 2 {
                 
                 var height = bounds.minY
             
-                let taskHeight = (hourSize.height / 25) * reminders[index - 3].start_date.toHour().toTimePercentage()
+                let reminder = reminders[index - firstIndex].start_date.toHour().toTimePercentage()
+                let taskHeight = (hourSize.height / 25) * reminder
                 height += taskHeight
 
+            
+                
+                
                 subview.place(
                     at: CGPoint(x: Int(hourSize.width), y: Int(height)),
                     proposal: .unspecified

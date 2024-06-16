@@ -10,6 +10,7 @@ import SwiftUI
 struct SuggestionView: View {
     
     var geo : GeometryProxy
+    var viewModel : HomeViewModel
     
     var body: some View {
         VStack(){
@@ -21,11 +22,7 @@ struct SuggestionView: View {
             }
             HStack{
                 ForEach(1...4,id: \.self){ number in
-                    Image(systemName: "location")
-                        .padding()
-                        .frame(width: geo.size.width * 0.2)
-                        .background(.red.opacity(0.2))
-                        .clipShape(Circle())
+                   LocationSuggestion(geo: geo)
                 }
             }
             .frame(width: geo.size.width)
@@ -41,6 +38,6 @@ struct SuggestionView: View {
 
 #Preview {
     GeometryReader { geo in
-        SuggestionView(geo: geo)
+        SuggestionView(geo: geo, viewModel: HomeViewModel())
     }
 }

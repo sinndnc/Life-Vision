@@ -21,8 +21,8 @@ struct HomeView: View {
         NavigationStack{
             GeometryReader{ geo in
                 List{
-                    CountdownView(geo: geo)
-                    SuggestionView(geo: geo)
+                    CountdownView(geo: geo,viewModel: viewModel)
+                    //SuggestionView(geo: geo,viewModel: viewModel)
                 }
                 .listStyle(.plain)
             }

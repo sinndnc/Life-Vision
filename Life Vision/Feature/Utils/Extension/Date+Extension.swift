@@ -16,7 +16,7 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
-    func toHour() -> Double{
+    func toHour() -> Double {
         let calendar = Calendar.current
         
         let hour = calendar.component(.hour, from: self)
