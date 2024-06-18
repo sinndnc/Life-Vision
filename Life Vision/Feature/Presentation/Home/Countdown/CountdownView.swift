@@ -29,7 +29,6 @@ struct CountdownView: View {
         .onReceive(timer) { interval in
             let timeInterval = viewModel.reminders.last!.start_date.timeIntervalSince(interval)
             if timeInterval > 0 {
-                print(timeInterval)
             }
         }
     }

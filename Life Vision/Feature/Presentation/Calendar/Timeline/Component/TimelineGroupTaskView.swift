@@ -18,10 +18,6 @@ struct TimelineGroupTaskView: View {
         
         let startHour = reminders.first!.start_date.toHour()
         let finishHour = reminders.last!.finish_date.toHour()
-        
-        let start_date = String(format: "%.2f", startHour)
-        let finish_date = String(format: "%.2f", finishHour)
-        
         let taskHourInterval = finishHour - startHour
         
         let width = geo.size.width * 0.8
