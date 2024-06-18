@@ -18,6 +18,8 @@ struct CountdownHeaderView: View {
                     .font(.title2)
                     .fontWeight(.bold)
                 Text(title)
+                    .font(.callout)
+                    .fontWeight(.semibold)
             }
             Spacer()
         })

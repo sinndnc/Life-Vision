@@ -22,7 +22,7 @@ struct HomeView: View {
             GeometryReader{ geo in
                 List{
                     CountdownView(geo: geo,viewModel: viewModel)
-                    //SuggestionView(geo: geo,viewModel: viewModel)
+                    WorkSpaceView(viewModel: viewModel)
                 }
                 .listStyle(.plain)
             }

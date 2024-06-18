@@ -11,7 +11,7 @@ struct TimelineGraphicView: View {
     
     var geo : GeometryProxy
     @StateObject var viewModel : CalendarViewModel
-
+    
     var body: some View {
         
         let groupedReminders = groupOverlappingReminders(viewModel.classifiedReminders[viewModel.selectedHeaderDay] ?? [])
@@ -30,9 +30,9 @@ struct TimelineGraphicView: View {
                 }
             }
         }
-        
     }
 }
+
 
 func rangesIntersect(_ range1: ClosedRange<Date>, _ range2: ClosedRange<Date>) -> Bool {
     return range1.overlaps(range2)

@@ -13,9 +13,6 @@ extension Calendar {
         let range = self.range(of: .day, in: .month, for: .now)!
         let daysOfMonth = range.count
         return daysOfMonth
-    }
-    
-    
-    
+    }    
 }
 

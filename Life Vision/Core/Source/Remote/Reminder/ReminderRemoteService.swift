@@ -72,8 +72,7 @@ final class ReminderRemoteService : ReminderRemoteServiceProtocol{
         }
     }
     
-    
-    func classifyRemindersByDay(reminders : [Reminder]) -> [Int: [Reminder]] {
+    private func classifyRemindersByDay(reminders : [Reminder]) -> [Int: [Reminder]] {
         
         var classifiedReminders: [Int: [Reminder]] = [:]
         
@@ -87,21 +86,9 @@ final class ReminderRemoteService : ReminderRemoteServiceProtocol{
         }
         
         return classifiedReminders
-        
-//        var sortedClassifiedReminders = classifiedReminders.keys.sorted()
-//        
-//        for day in sortedClassifiedReminders {
-//            if let remindersForDay = classifiedReminders[day] {
-//                print("Gün: \(day)")
-//                for reminder in remindersForDay {
-//                    print("Etkinlik: \(reminder.title), Tarih: \(reminder.start_date)")
-//                }
-//            }
-//        }
     }
     
-    
-    func filterByDate(_ timestamps : [Timestamp]) {
+    func filterByDate(_ timestamps : [Timestamp]) -> ( [Date], [Date], [Date]) {
         var yesterday: [Date] = []
         var today: [Date] = []
         var tomorrow: [Date] = []
@@ -121,7 +108,8 @@ final class ReminderRemoteService : ReminderRemoteServiceProtocol{
                 inWeekend.append(date)
             }
         }
-           
+
+        return (today,tomorrow,inWeekend)
     }
     
 }

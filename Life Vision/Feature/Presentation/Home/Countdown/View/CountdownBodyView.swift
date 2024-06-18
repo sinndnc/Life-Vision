@@ -7,28 +7,25 @@
 
 import SwiftUI
 
+
 struct CountdownBodyView: View {
     
     var geo : GeometryProxy
-    var countdown : Countdown
-    
-    var body: some View {
-        
-        let numbers = [countdown.day,countdown.hour,countdown.minute,countdown.seconds]
+    var viewModel : HomeViewModel
 
+    var body: some View {
         HStack(spacing: 10){
-            ForEach(numbers,id: \.self){ number in
-               CountdownItemView(geo: geo, number: number)
+            let items = [viewModel.countdown.day,viewModel.countdown.hour,viewModel.countdown.minute,viewModel.countdown.second]
+            ForEach(items, id: \.1) { value in
+                CountdownItemView(geo: geo, number: value.0, type: value.1)
             }
         }
     }
+    
 }
 
 #Preview {
     GeometryReader{ geo in
-        CountdownBodyView(
-            geo: geo,
-            countdown: Countdown(day: 1, hour: 12, minute: 42, seconds: 33)
-        )
+        CountdownBodyView(geo: geo,viewModel: HomeViewModel())
     }
 }

@@ -10,17 +10,26 @@ import Foundation
 
 final class HomeViewModel : ObservableObject{
     
+    @Service var calendarService : CalendarServiceProtocol
     @Service var reminderRepository : ReminderRepositoryProtocol
     
-    @Published var reminders : [Reminder] = []
-    @Published var countdown : Countdown = Countdown(day: 1, hour: 13, minute: 34, seconds: 12)
+    //CountDown
+    @Published var countdown : Countdown = Countdown()
+    @Published var upComingReminder : Reminder = Reminder()
+    //Reminders
+    @Published var classifiedReminders : [Int :[Reminder]] = [:]
+    //WorkSpace
+    @Published var workSpaceCategorySelected : WorkSpaceCategory = .today
+    @Published var workSpaceCategories : [WorkSpaceCategory] = [.completed,.inProgress,.today,.tomorrow,.inWeek,.inMonth,.scheduled]
     
     func fetchReminders()  {
         reminderRepository.fetch { result in
             switch result {
-            case .success(var classfiedReminders):
-                let sortedReminders = classfiedReminders[17]?.sorted(by: { $0.start_date < $1.start_date })
-                self.reminders = sortedReminders ?? []
+            case .success(let classfiedReminders):
+                self.classifiedReminders = classfiedReminders
+                let currentDay = self.calendarService.getCurentDay.number
+                self.upComingReminder = classfiedReminders[currentDay]?.sorted(by: { $0.start_date > $1.start_date }).first ?? Reminder()
+                self.countdown = self.upComingReminder.start_date.timeIntervalSinceNow.formatTimeInterval()
             case .failure(let failure):
                 print(failure)
             }

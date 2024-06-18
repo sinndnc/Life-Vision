@@ -12,13 +12,12 @@ struct CountdownView: View {
     var geo : GeometryProxy
     var viewModel : HomeViewModel
     
-    var body: some View {
-        
-        let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
+    @State var timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
 
-        VStack{
-            CountdownHeaderView(title: "viewModel.countdown.")
-            CountdownBodyView(geo: geo, countdown: viewModel.countdown)
+    var body: some View {
+        VStack(spacing: 10){
+            CountdownHeaderView(title: viewModel.upComingReminder.title)
+            CountdownBodyView(geo: geo, viewModel: viewModel)
             CountdownBottomView()
         }
         .padding()
@@ -27,8 +26,9 @@ struct CountdownView: View {
             height: geo.size.height * 0.3
         )
         .onReceive(timer) { interval in
-            let timeInterval = viewModel.reminders.last!.start_date.timeIntervalSince(interval)
+            let timeInterval = viewModel.upComingReminder.start_date.timeIntervalSinceNow
             if timeInterval > 0 {
+                viewModel.countdown = timeInterval.formatTimeInterval()
             }
         }
     }

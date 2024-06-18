@@ -12,6 +12,8 @@ struct CountdownBottomView: View {
         HStack(content: {
             Spacer()
             Text("after")
+                .font(.title2)
+                .fontWeight(.bold)
         })
     }
 }
