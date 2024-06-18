@@ -13,11 +13,14 @@ struct TimelineTaskView: View {
     var reminder : Reminder
 
     var body: some View {
-        let width = geo.size.width * 0.8
-        let height = geo.size.height * 0.1
+        
+        let taskHourInterval = reminder.finish_date.toHour() - reminder.start_date.toHour()
         
         let start_date = String(format: "%.2f", reminder.start_date.toHour())
         let finish_date = String(format: "%.2f", reminder.finish_date.toHour())
+        
+        let width = geo.size.width * 0.8
+        let height = geo.size.height * 0.1 * taskHourInterval
         
         HStack(alignment: .center){
             VStack(alignment: .leading,spacing: 0) {
@@ -34,6 +37,16 @@ struct TimelineTaskView: View {
         .frame(width: width,height: height)
         .background(.blue.opacity(0.5))
         .clipShape(RoundedRectangle(cornerRadius: 5))
+        .contextMenu {
+            Button("show all tasks") {
+                
+            }
+        }preview: {
+            VStack {
+                TimelineTaskView(geo: geo, reminder: reminder)
+            }
+            .padding()
+        }
     }
 }
 

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TimelineNowView: View {
+struct TimelineNowDividerView: View {
     
     var geo : GeometryProxy
     
@@ -24,6 +24,6 @@ struct TimelineNowView: View {
 
 #Preview {
     GeometryReader(content: { geometry in
-        TimelineNowView(geo: geometry)
+        TimelineNowDividerView(geo: geometry)
     })
 }

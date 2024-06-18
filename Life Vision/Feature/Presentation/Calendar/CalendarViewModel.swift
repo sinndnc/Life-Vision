@@ -23,8 +23,9 @@ final class CalendarViewModel : ObservableObject {
     func fetchReminders()  {
         reminderRepository.fetch { result in
             switch result {
-            case .success(let reminders):
-                self.reminders = reminders
+            case .success(var reminders):
+                let sortedReminders = reminders.sorted(by: { $0.start_date < $1.start_date })
+                self.reminders = sortedReminders
             case .failure(let failure):
                 print(failure)
             }

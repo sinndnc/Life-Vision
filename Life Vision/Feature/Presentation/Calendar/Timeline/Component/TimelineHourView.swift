@@ -34,6 +34,6 @@ struct TimelineHourView: View {
 #Preview {
     GeometryReader(content: { geometry in
         TimelineHourView(geo: geometry)
-        TimelineNowView(geo: geometry)
+        TimelineNowDividerView(geo: geometry)
     })
 }

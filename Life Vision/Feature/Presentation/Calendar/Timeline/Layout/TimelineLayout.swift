@@ -35,52 +35,44 @@ struct TimelineLayout: Layout {
         let hour = subviews[0]
         let divider = subviews[1]
         let nowDivider = subviews[2]
-        let reminder = subviews[3]
 
         let hourSize = hour.sizeThatFits(.unspecified)
-        let reminderSize = reminder.sizeThatFits(.unspecified)
-        
+
         hour.place(at: CGPoint(x: 0, y: Int(bounds.minY)), proposal: .unspecified)
         divider.place(at: CGPoint(x: Int(hourSize.width), y: Int(bounds.minY)), proposal: .unspecified)
         
         let nowDividerHeight = (hourSize.height / 25) * Date().toHour().toTimePercentage() + bounds.minY
         nowDivider.place(at: CGPoint(x: 0, y: nowDividerHeight), proposal: .unspecified)
         
+        let remainingSubviews = subviews.dropFirst(3)
+
+        for (index , subview) in remainingSubviews.enumerated(){
         
-        for (index , subview) in subviews.enumerated(){
-            let firstIndex = 3
-            
-            if index > 2 {
-                
-                var height = bounds.minY
-            
-                let reminder = reminders[index - firstIndex].start_date.toHour().toTimePercentage()
-                let taskHeight = (hourSize.height / 25) * reminder
-                height += taskHeight
+            let elementHeight = bounds.minY
+            let hourHeight = (hourSize.height / 25)
 
-            
-                
-                
-                subview.place(
-                    at: CGPoint(x: Int(hourSize.width), y: Int(height)),
-                    proposal: .unspecified
-                )
-                
-                height = bounds.minY
+            let currentElement = reminders[index]
+            let currentElementHeight = hourHeight * currentElement.start_date.convertHourPercentage
 
-            }
+            subview.place(
+                at: CGPoint(x: Int(hourSize.width), y: Int(elementHeight + currentElementHeight)),
+                proposal: .unspecified
+            )
         }
     }
 }
+
 
 #Preview {
     GeometryReader{ geo in
         let reminders : [Reminder] = [
             Reminder(title: "test", start_date: .now, finish_date: .now),
             Reminder(title: "test 1 ", start_date: Calendar.current.date(byAdding: .hour, value: -2, to: .now)!, finish_date: .now),
-            Reminder(title: "test   1", start_date: Calendar.current.date(byAdding: .hour, value: -4, to: .now)!, finish_date: .now)
+            Reminder(title: "test   1", start_date: Calendar.current.date(byAdding: .hour, value: -1, to: .now)!, finish_date: .now),
+            Reminder(title: "test   1", start_date: Calendar.current.date(byAdding: .minute, value: -30, to: .now)!, finish_date: .now)
 
         ]
+        let mergedReminders = mergeOverlappingReminders(reminders)
     
         ScrollView {
             
@@ -89,8 +81,8 @@ struct TimelineLayout: Layout {
             TimelineLayout(reminders: reminders) {
                 TimelineHourView(geo: geo)
                 TimelineDividerView(geo: geo)
-                TimelineNowView(geo: geo)
-                ForEach(reminders,id: \.self){ reminder in
+                TimelineNowDividerView(geo: geo)
+                ForEach(mergedReminders,id: \.self){ reminder in
                     TimelineTaskView(geo: geo,reminder: reminder)
                 }
             }

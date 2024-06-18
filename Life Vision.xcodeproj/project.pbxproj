@@ -15,9 +15,10 @@
 		995D7E792C1F40E50031C1A1 /* CountdownBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D7E782C1F40E50031C1A1 /* CountdownBodyView.swift */; };
 		995D7E7B2C1F427B0031C1A1 /* CountdownBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D7E7A2C1F427B0031C1A1 /* CountdownBottomView.swift */; };
 		995D7E7E2C1F43CF0031C1A1 /* LocationSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D7E7D2C1F43CF0031C1A1 /* LocationSuggestion.swift */; };
+		995D7E802C201F670031C1A1 /* TimelineGroupTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D7E7F2C201F670031C1A1 /* TimelineGroupTaskView.swift */; };
 		997E99122C127AE2006F0FB5 /* TimelineDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E99012C127AE2006F0FB5 /* TimelineDividerView.swift */; };
 		997E99132C127AE2006F0FB5 /* TimelineHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E99022C127AE2006F0FB5 /* TimelineHourView.swift */; };
-		997E99142C127AE2006F0FB5 /* TimelineNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E99032C127AE2006F0FB5 /* TimelineNowView.swift */; };
+		997E99142C127AE2006F0FB5 /* TimelineNowDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E99032C127AE2006F0FB5 /* TimelineNowDividerView.swift */; };
 		997E99152C127AE2006F0FB5 /* TimelineTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E99042C127AE2006F0FB5 /* TimelineTaskView.swift */; };
 		997E99162C127AE2006F0FB5 /* TimelineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E99062C127AE2006F0FB5 /* TimelineLayout.swift */; };
 		997E99172C127AE2006F0FB5 /* TimelineGraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E99082C127AE2006F0FB5 /* TimelineGraphicView.swift */; };
@@ -156,9 +157,10 @@
 		995D7E782C1F40E50031C1A1 /* CountdownBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownBodyView.swift; sourceTree = "<group>"; };
 		995D7E7A2C1F427B0031C1A1 /* CountdownBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownBottomView.swift; sourceTree = "<group>"; };
 		995D7E7D2C1F43CF0031C1A1 /* LocationSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSuggestion.swift; sourceTree = "<group>"; };
+		995D7E7F2C201F670031C1A1 /* TimelineGroupTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGroupTaskView.swift; sourceTree = "<group>"; };
 		997E99012C127AE2006F0FB5 /* TimelineDividerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineDividerView.swift; sourceTree = "<group>"; };
 		997E99022C127AE2006F0FB5 /* TimelineHourView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineHourView.swift; sourceTree = "<group>"; };
-		997E99032C127AE2006F0FB5 /* TimelineNowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineNowView.swift; sourceTree = "<group>"; };
+		997E99032C127AE2006F0FB5 /* TimelineNowDividerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineNowDividerView.swift; sourceTree = "<group>"; };
 		997E99042C127AE2006F0FB5 /* TimelineTaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTaskView.swift; sourceTree = "<group>"; };
 		997E99062C127AE2006F0FB5 /* TimelineLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineLayout.swift; sourceTree = "<group>"; };
 		997E99082C127AE2006F0FB5 /* TimelineGraphicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineGraphicView.swift; sourceTree = "<group>"; };
@@ -339,9 +341,10 @@
 			isa = PBXGroup;
 			children = (
 				997E99022C127AE2006F0FB5 /* TimelineHourView.swift */,
-				997E99032C127AE2006F0FB5 /* TimelineNowView.swift */,
 				997E99042C127AE2006F0FB5 /* TimelineTaskView.swift */,
 				997E99012C127AE2006F0FB5 /* TimelineDividerView.swift */,
+				995D7E7F2C201F670031C1A1 /* TimelineGroupTaskView.swift */,
+				997E99032C127AE2006F0FB5 /* TimelineNowDividerView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -1168,7 +1171,7 @@
 				997E99152C127AE2006F0FB5 /* TimelineTaskView.swift in Sources */,
 				997E99512C127B9B006F0FB5 /* AccountViewModel.swift in Sources */,
 				997E99492C127B9B006F0FB5 /* AccountDestination.swift in Sources */,
-				997E99142C127AE2006F0FB5 /* TimelineNowView.swift in Sources */,
+				997E99142C127AE2006F0FB5 /* TimelineNowDividerView.swift in Sources */,
 				997E99562C127BAA006F0FB5 /* CalendarViewModel.swift in Sources */,
 				997E99EC2C13B63D006F0FB5 /* Calendar+Extension.swift in Sources */,
 				997E9A252C1DD1D2006F0FB5 /* Notification.swift in Sources */,
@@ -1228,6 +1231,7 @@
 				99F8B3C92C0750B00082A453 /* ReminderRemoteService.swift in Sources */,
 				997E99332C127B7C006F0FB5 /* ReminderViewModel.swift in Sources */,
 				99F8B3C72C073DBA0082A453 /* ReminderRepositoryProtocol.swift in Sources */,
+				995D7E802C201F670031C1A1 /* TimelineGroupTaskView.swift in Sources */,
 				997E9A232C1D8F3F006F0FB5 /* LifeVisionNotificationDelegate.swift in Sources */,
 				995D7E772C1F406A0031C1A1 /* CountdownHeaderView.swift in Sources */,
 				997E99162C127AE2006F0FB5 /* TimelineLayout.swift in Sources */,
