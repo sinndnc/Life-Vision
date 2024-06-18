@@ -9,13 +9,13 @@ import SwiftUI
 
 struct WorkSpaceBodyView: View {
     
-    var viewModel : HomeViewModel
+    @StateObject var viewModel : HomeViewModel
     
     var body: some View {
         
         ScrollView(.vertical) {
             VStack(alignment: .center, content: {
-                ForEach(viewModel.classifiedReminders[15] ?? [],id:\.self){ reminder in
+                ForEach(viewModel.classifiedReminders[18] ?? [],id:\.self){ reminder in
                     WorkSpaceItemView(reminder: reminder)
                 }
             })

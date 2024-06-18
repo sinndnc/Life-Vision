@@ -10,7 +10,7 @@ import SwiftUI
 struct WorkSpaceCategoryItemView: View {
 
     var category : WorkSpaceCategory
-    var viewModel : HomeViewModel
+    @StateObject var viewModel : HomeViewModel
     
     var body: some View {
         
