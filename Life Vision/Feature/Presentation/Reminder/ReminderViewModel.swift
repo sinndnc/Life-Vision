@@ -22,7 +22,7 @@ final class ReminderViewModel : ObservableObject{
         reminderRepository.add(reminder) { result in
             switch result {
             case .success(let documentID):
-                let timeInterval = reminder.start_date.timeIntervalSinceNow
+                let timeInterval = self.reminder.start_date.timeIntervalSinceNow
                 let notification = TimeIntervalNotificaton(
                     title: reminder.title,
                     content: reminder.notes,

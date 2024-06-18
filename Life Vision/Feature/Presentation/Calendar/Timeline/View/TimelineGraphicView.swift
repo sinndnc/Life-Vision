@@ -14,10 +14,10 @@ struct TimelineGraphicView: View {
 
     var body: some View {
         
-        let groupedReminders = groupOverlappingReminders(viewModel.reminders)
+        let groupedReminders = groupOverlappingReminders(viewModel.classifiedReminders[viewModel.selectedHeaderDay] ?? [])
         let sortedGroupedReminders = groupedReminders.keys.sorted(by: { $0.start_date < $1.start_date })
         
-        TimelineLayout(reminders: viewModel.reminders) {
+        TimelineLayout(reminders: sortedGroupedReminders) {
             TimelineHourView(geo: geo)
             TimelineDividerView(geo: geo)
             TimelineNowDividerView(geo: geo)
@@ -30,6 +30,7 @@ struct TimelineGraphicView: View {
                 }
             }
         }
+        
     }
 }
 
@@ -65,7 +66,7 @@ func groupOverlappingReminders(_ reminders: [Reminder]) -> [Reminder: [Reminder]
 
 #Preview {
     GeometryReader(content: { geometry in
-        TimelineGraphicView(geo: geometry,viewModel: CalendarViewModel())
+        TimelineGraphicView(geo: geometry, viewModel: CalendarViewModel())
     })
 }
 

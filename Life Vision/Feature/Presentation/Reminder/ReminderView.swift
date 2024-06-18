@@ -96,6 +96,8 @@ fileprivate extension View{
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Done") {
                     viewModel.isPresented.toggle()
+                    viewModel.reminder.start_date = Calendar.current.date(byAdding: .hour, value: 1, to: .now)!
+                    viewModel.reminder.finish_date = Calendar.current.date(byAdding: .hour, value: 2, to: .now)!
                     viewModel.add(viewModel.reminder)
                 }
             }

@@ -11,8 +11,8 @@ import FirebaseFirestore
 protocol ReminderRemoteServiceProtocol {
     
     var firestore : Firestore { get }
-    
-    func fetch(onCompletion: @escaping (Result<[Reminder],ReminderErrorCallback>) -> Void ) throws 
+        
+    func fetch(onCompletion: @escaping (Result<[Int : [Reminder]],ReminderErrorCallback>) -> Void ) throws
     
     func add(_ reminder: Reminder, onCompletion: @escaping (Result<String, ReminderErrorCallback>) -> Void ) throws
 }

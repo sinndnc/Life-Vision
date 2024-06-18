@@ -10,7 +10,6 @@ import SwiftUI
 struct TimelineHeaderView: View {
     
     var geo : GeometryProxy
-    @State var selected : Int = 0
     @StateObject var viewModel : CalendarViewModel
 
     var body: some View {
@@ -23,11 +22,11 @@ struct TimelineHeaderView: View {
                     ForEach(1...Calendar.current.getDaysOfMonth,id: \.self){ day in
                         let currentDay = viewModel.calenderService.getCurentDay.number
                         let name = Date().getThisMonthSpecificDay(day: day).getDayNameOfMonth
-                        let textColor : Color = selected == day ? .white : day == currentDay ? .white : .gray
-                        let background : Color? = selected == day ? .blue : day == currentDay ? .blue.opacity(0.2) : nil
+                        let textColor : Color = viewModel.selectedHeaderDay == day ? .white : day == currentDay ? .white : .gray
+                        let background : Color? = viewModel.selectedHeaderDay == day ? .blue : day == currentDay ? .blue.opacity(0.2) : nil
 
                         Button {
-                            selected = day
+                            viewModel.selectedHeaderDay = day
                         } label: {
                             VStack(spacing: 10){
                                 Text(String(name))
@@ -49,8 +48,7 @@ struct TimelineHeaderView: View {
             }
             .onAppear{
                 if (viewModel.headerViewUIState == .initial){
-                    selected = viewModel.calenderService.getCurentDay.number
-                    proxy.scrollTo(selected ,anchor: .center)
+                    proxy.scrollTo(viewModel.selectedHeaderDay ,anchor: .center)
                     viewModel.headerViewUIState = .success
                 }
             }

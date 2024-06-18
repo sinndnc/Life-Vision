@@ -18,9 +18,9 @@ final class HomeViewModel : ObservableObject{
     func fetchReminders()  {
         reminderRepository.fetch { result in
             switch result {
-            case .success(var reminders):
-                let sortedReminders = reminders.sorted(by: { $0.start_date < $1.start_date })
-                self.reminders = sortedReminders
+            case .success(var classfiedReminders):
+                let sortedReminders = classfiedReminders[17]?.sorted(by: { $0.start_date < $1.start_date })
+                self.reminders = sortedReminders ?? []
             case .failure(let failure):
                 print(failure)
             }

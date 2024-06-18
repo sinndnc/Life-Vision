@@ -10,7 +10,7 @@ import SwiftUI
 struct CalendarView: View {
     
     @StateObject var viewModel : CalendarViewModel
-    
+
     var body: some View {
         
         let calendar = Calendar.current
@@ -19,10 +19,10 @@ struct CalendarView: View {
         NavigationStack{
             GeometryReader{geo in
                 VStack(spacing:0){
-                    TimelineHeaderView(geo: geo,viewModel:viewModel)
+                    TimelineHeaderView(geo: geo, viewModel:viewModel)
                     ScrollViewReader { proxy in
                         ScrollView{
-                            TimelineGraphicView(geo: geo,viewModel:viewModel)
+                            TimelineGraphicView(geo: geo, viewModel:viewModel)
                         }
                         .onAppear {
                             if (viewModel.graphicViewUIState == .initial){

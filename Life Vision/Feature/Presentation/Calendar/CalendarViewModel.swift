@@ -12,20 +12,25 @@ final class CalendarViewModel : ObservableObject {
     
     @Service var calenderService : CalendarServiceProtocol
     @Service var reminderRepository : ReminderRepositoryProtocol
-    
-    @Published var reminders : [Reminder] = []
+        
+    @Published var selectedHeaderDay : Int = 0
     
     @Published var viewUIState : UIState = .initial
     @Published var headerViewUIState : UIState = .initial
     @Published var graphicViewUIState : UIState = .initial
+
+    @Published var classifiedReminders : [Int :[Reminder]] = [:]
+
     
+    init(){
+        selectedHeaderDay = calenderService.getCurentDay.number
+    }
     
     func fetchReminders()  {
         reminderRepository.fetch { result in
             switch result {
-            case .success(var reminders):
-                let sortedReminders = reminders.sorted(by: { $0.start_date < $1.start_date })
-                self.reminders = sortedReminders
+            case .success(let classifiedReminders):
+                self.classifiedReminders = classifiedReminders
             case .failure(let failure):
                 print(failure)
             }
