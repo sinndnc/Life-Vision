@@ -30,6 +30,9 @@ struct HomeView: View {
             .homeToolBar(taskViewModel: taskViewModel)
             .taskView(isPresented: $taskViewModel.isPresented,taskViewModel: taskViewModel)
         }
+        .task {
+            viewModel.fetchReminders()
+        }
     }
 }
 

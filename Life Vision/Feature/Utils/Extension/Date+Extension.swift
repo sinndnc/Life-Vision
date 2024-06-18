@@ -25,7 +25,6 @@ extension Date {
         let fractional = Double(minute) / 100.0
         let wholePart = Double(hour) + fractional
 
-        print(wholePart)
         return wholePart
     }
     

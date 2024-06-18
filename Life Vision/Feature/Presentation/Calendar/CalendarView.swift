@@ -18,7 +18,7 @@ struct CalendarView: View {
         
         NavigationStack{
             GeometryReader{geo in
-                VStack{
+                VStack(spacing:0){
                     TimelineHeaderView(geo: geo,viewModel:viewModel)
                     ScrollViewReader { proxy in
                         ScrollView{

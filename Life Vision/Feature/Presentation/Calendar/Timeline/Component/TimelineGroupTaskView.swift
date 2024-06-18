@@ -12,18 +12,27 @@ struct TimelineGroupTaskView: View {
     var geo : GeometryProxy
     var reminders : [Reminder]
     
-    var body: some View {
-        let width = geo.size.width * 0.8
-        let height = geo.size.height * 0.1
-        
-        let firstElementHeight = reminders[0].start_date.convertHourPercentage
-        let secondElementHeight = reminders[1].start_date.convertHourPercentage
+    @State var isPresented : Bool = false
 
+    var body: some View {
+        
+        let startHour = reminders.first!.start_date.toHour()
+        let finishHour = reminders.last!.finish_date.toHour()
+        
+        let start_date = String(format: "%.2f", startHour)
+        let finish_date = String(format: "%.2f", finishHour)
+        
+        let taskHourInterval = finishHour - startHour
+        
+        let width = geo.size.width * 0.8
+        let height = geo.size.height * 0.1 * taskHourInterval
+        
+        
         HStack(alignment: .center){
             VStack(alignment: .leading) {
-                Text("2 Group tasks")
+                Text("You have \(reminders.count) task here")
                     .font(.headline)
-                Text("hold press to see all tasks")
+                Text("Long press to see all details")
                     .font(.footnote)
                     .fontWeight(.semibold)
             }
@@ -35,17 +44,24 @@ struct TimelineGroupTaskView: View {
         .background(.blue.opacity(0.5))
         .clipShape(RoundedRectangle(cornerRadius: 5))
         .contextMenu {
-            Button("show all tasks") {
-                
+            Button("Show details") {
+                isPresented.toggle()
             }
         }preview: {
-            VStack {
-                ForEach(reminders,id:\.self){ reminder in
-                    TimelineTaskView(geo: geo, reminder: reminder)
+            ScrollView{
+                VStack{
+                    ForEach(reminders,id:\.self){ reminder in
+                        TimelineTaskView(geo: geo, reminder: reminder)
+                    }
                 }
             }
             .padding()
         }
+        .sheet(isPresented: $isPresented, content: {
+            List(reminders,id: \.self) { reminder in
+                SearchTaskItemView(geo: geo, reminder: reminder)
+            }
+        })
     }
 }
 

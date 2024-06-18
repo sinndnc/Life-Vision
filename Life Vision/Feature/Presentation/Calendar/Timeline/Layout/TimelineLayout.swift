@@ -72,8 +72,10 @@ struct TimelineLayout: Layout {
             Reminder(title: "test   1", start_date: Calendar.current.date(byAdding: .minute, value: -30, to: .now)!, finish_date: .now)
 
         ]
-        let mergedReminders = mergeOverlappingReminders(reminders)
-    
+        
+        let groupedReminders = groupOverlappingReminders(reminders)
+        let sortedGroupedReminders = groupedReminders.keys.sorted(by: { $0.start_date < $1.start_date })
+        
         ScrollView {
             
             ZStack{}
@@ -82,8 +84,13 @@ struct TimelineLayout: Layout {
                 TimelineHourView(geo: geo)
                 TimelineDividerView(geo: geo)
                 TimelineNowDividerView(geo: geo)
-                ForEach(mergedReminders,id: \.self){ reminder in
-                    TimelineTaskView(geo: geo,reminder: reminder)
+                ForEach(sortedGroupedReminders,id:\.self) { key in
+                    let reminders = groupedReminders[key]!
+                    if(reminders.count == 1){
+                        TimelineTaskView(geo: geo, reminder: reminders.first!)
+                    }else{
+                        TimelineGroupTaskView(geo: geo, reminders: reminders)
+                    }
                 }
             }
         }

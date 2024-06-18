@@ -14,6 +14,8 @@ struct CountdownView: View {
     
     var body: some View {
         
+        let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
+
         VStack{
             CountdownHeaderView(title: "viewModel.countdown.")
             CountdownBodyView(geo: geo, countdown: viewModel.countdown)
@@ -24,6 +26,12 @@ struct CountdownView: View {
             width: geo.size.width,
             height: geo.size.height * 0.3
         )
+        .onReceive(timer) { interval in
+            let timeInterval = viewModel.reminders.last!.start_date.timeIntervalSince(interval)
+            if timeInterval > 0 {
+                print(timeInterval)
+            }
+        }
     }
 }
 

@@ -12,96 +12,56 @@ struct TimelineGraphicView: View {
     var geo : GeometryProxy
     @StateObject var viewModel : CalendarViewModel
 
-    @State var hasIntersectWithAfter : Bool = false
-    @State var hasIntersectWithBefore: Bool = false
-
     var body: some View {
         
-        let mergedReminders = mergeOverlappingReminders(viewModel.reminders)
-
+        let groupedReminders = groupOverlappingReminders(viewModel.reminders)
+        let sortedGroupedReminders = groupedReminders.keys.sorted(by: { $0.start_date < $1.start_date })
+        
         TimelineLayout(reminders: viewModel.reminders) {
             TimelineHourView(geo: geo)
             TimelineDividerView(geo: geo)
             TimelineNowDividerView(geo: geo)
-            ForEach(mergedReminders,id: \.self) { reminder in
-               
-                TimelineTaskView(geo: geo, reminder: reminder)
-                
+            ForEach(sortedGroupedReminders,id:\.self) { key in
+                let reminders = groupedReminders[key]!
+                if(reminders.count == 1){
+                    TimelineTaskView(geo: geo, reminder: reminders.first!)
+                }else{
+                    TimelineGroupTaskView(geo: geo, reminders: reminders)
+                }
             }
         }
     }
 }
 
+func rangesIntersect(_ range1: ClosedRange<Date>, _ range2: ClosedRange<Date>) -> Bool {
+    return range1.overlaps(range2)
+}
 
-func mergeOverlappingReminders(_ reminders: [Reminder]) -> [Reminder] {
-    if reminders.isEmpty { return [] }
+func groupOverlappingReminders(_ reminders: [Reminder]) -> [Reminder: [Reminder]] {
+    if reminders.isEmpty { return [:] }
     
     let sortedReminders = reminders.sorted { $0.start_date < $1.start_date }
-    var mergedReminders: [Reminder] = []
-    var currentReminder = sortedReminders[0]
-    //var groupdedMergedReminders : [Reminder : [Reminder]] = [:]
+    var groupedReminders: [Reminder: [Reminder]] = [:]
+    var currentGroup: [Reminder] = [sortedReminders[0]]
     
     for reminder in sortedReminders.dropFirst() {
+        let currentRange = currentGroup.first!.start_date...currentGroup.first!.finish_date
+        let nextRange = reminder.start_date...reminder.finish_date
         
-        let reminderRange = reminder.start_date...reminder.finish_date
-        let currentRange = currentReminder.start_date...currentReminder.finish_date
-        
-        if reminderRange.overlaps(currentRange) {
-            
-            currentReminder.finish_date = max(currentReminder.finish_date, reminder.finish_date)
+        if rangesIntersect(currentRange, nextRange) {
+            currentGroup.append(reminder)
+            currentGroup[0].finish_date = max(currentGroup.last!.finish_date, reminder.finish_date)
         } else {
-            mergedReminders.append(currentReminder)
-            currentReminder = reminder
+            groupedReminders[currentGroup.first!] = currentGroup
+            currentGroup = [reminder]
         }
     }
     
-    mergedReminders.append(currentReminder)
+    groupedReminders[currentGroup.first!] = currentGroup
     
-    return mergedReminders
+    return groupedReminders
 }
 
-//
-//let before = index > 0 ? viewModel.reminders[index - 1] : nil
-//let after = index < viewModel.reminders.count - 1 ? viewModel.reminders[index + 1] : nil
-//
-//if let afterElement = after{
-//    
-//    let dateRange = currentElement.start_date...currentElement.finish_date
-//    let hasIntersect = dateRange.contains(afterElement.start_date)
-//
-//    if hasIntersect{
-//        TimelineGroupTaskView(geo: geo,reminders: [currentElement,afterElement])
-//            .onAppear{
-//                hasIntersectWithAfter = true
-//            }
-//    }else{
-//        TimelineTaskView(geo: geo,reminder: currentElement)
-//            .onAppear{
-//                hasIntersectWithAfter = false
-//            }
-//    }
-//    
-//    if let beforeElement = before{
-//        
-//    }
-//}else{
-//    if let beforeElement = before{
-//        let dateRange = beforeElement.start_date...beforeElement.finish_date
-//        let hasIntersect = dateRange.contains(currentElement.start_date)
-//        
-//        if hasIntersect{
-//            TimelineGroupTaskView(geo: geo,reminders: [beforeElement,currentElement])
-//                .onAppear{
-//                    hasIntersectWithAfter = true
-//                }
-//        }else{
-//            TimelineTaskView(geo: geo,reminder: currentElement)
-//                .onAppear{
-//                    hasIntersectWithAfter = false
-//                }
-//        }
-//    }
-//}
 
 #Preview {
     GeometryReader(content: { geometry in

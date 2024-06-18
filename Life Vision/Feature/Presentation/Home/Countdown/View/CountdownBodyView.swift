@@ -14,13 +14,8 @@ struct CountdownBodyView: View {
     
     var body: some View {
         
-        let numbers = [
-            countdown.day,
-            countdown.hour,
-            countdown.minute,
-            countdown.seconds
-        ]
-        
+        let numbers = [countdown.day,countdown.hour,countdown.minute,countdown.seconds]
+
         HStack(spacing: 10){
             ForEach(numbers,id: \.self){ number in
                CountdownItemView(geo: geo, number: number)

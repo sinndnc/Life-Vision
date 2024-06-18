@@ -22,7 +22,6 @@ struct TimelineHeaderView: View {
                 HStack{
                     ForEach(1...Calendar.current.getDaysOfMonth,id: \.self){ day in
                         let currentDay = viewModel.calenderService.getCurentDay.number
-                        let border : Color = day == currentDay ? .blue : .white
                         let name = Date().getThisMonthSpecificDay(day: day).getDayNameOfMonth
                         let textColor : Color = selected == day ? .white : day == currentDay ? .white : .gray
                         let background : Color? = selected == day ? .blue : day == currentDay ? .blue.opacity(0.2) : nil

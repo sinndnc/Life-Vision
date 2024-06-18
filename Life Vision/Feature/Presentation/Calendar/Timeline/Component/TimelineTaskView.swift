@@ -11,7 +11,7 @@ struct TimelineTaskView: View {
     
     var geo : GeometryProxy
     var reminder : Reminder
-
+    
     var body: some View {
         
         let taskHourInterval = reminder.finish_date.toHour() - reminder.start_date.toHour()
