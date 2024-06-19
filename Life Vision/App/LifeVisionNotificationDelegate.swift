@@ -23,7 +23,7 @@ class LifeVisionNotificationDelegate : NSObject, UNUserNotificationCenterDelegat
         print("Notification willPresent with userInfo: \(userInfo)")
                 
         // Present the notification alert, sound, and badge even if the app is in the foreground
-        completionHandler([.banner, .sound, .badge])
+        completionHandler([.banner, .sound, .badge,])
     }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {

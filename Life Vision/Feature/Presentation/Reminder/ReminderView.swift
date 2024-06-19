@@ -22,19 +22,33 @@ struct ReminderView: View {
                 Section{
                     ToggleDisclosureGroupView(item: ReminderSectionConstant.date){
                         DatePicker(
-                            "Date",
+                            "Start date:",
                             selection: $viewModel.reminder.start_date,
                             displayedComponents: [.date]
                         )
-                        .datePickerStyle(.graphical)
+                        .datePickerStyle(.compact)
+                        DatePicker(
+                            "Finish date:",
+                            selection: $viewModel.reminder.finish_date,
+                            displayedComponents: [.date]
+                        )
+                        .datePickerStyle(.compact)
                     }
                     ToggleDisclosureGroupView(item: ReminderSectionConstant.time){
-                        DatePicker(
-                            "Time",
-                            selection: $viewModel.reminder.start_date,
-                            displayedComponents: [.hourAndMinute]
-                        )
-                        .datePickerStyle(.wheel)
+                        VStack{
+                            DatePicker(
+                                "Start time:",
+                                selection: $viewModel.reminder.start_date,
+                                displayedComponents: [.hourAndMinute]
+                            )
+                            .datePickerStyle(.compact)
+                            DatePicker(
+                                "Finish time:",
+                                selection: $viewModel.reminder.finish_date,
+                                displayedComponents: [.hourAndMinute]
+                            )
+                            .datePickerStyle(.compact)
+                        }
                     }
                 }
                 Section {
@@ -96,10 +110,9 @@ fileprivate extension View{
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Done") {
                     viewModel.isPresented.toggle()
-                    viewModel.reminder.start_date = Calendar.current.date(byAdding: .hour, value: 1, to: .now)!
-                    viewModel.reminder.finish_date = Calendar.current.date(byAdding: .hour, value: 2, to: .now)!
                     viewModel.add(viewModel.reminder)
                 }
+                .disabled(viewModel.reminder.title.isEmpty)
             }
         }
     }

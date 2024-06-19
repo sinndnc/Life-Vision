@@ -17,6 +17,7 @@ struct NotificationView: View {
                 Toggle("Notifications", isOn: .constant(true))
             }
         }
+        .localizedNavigationTitle(title: "Notifications")
     }
 }
 

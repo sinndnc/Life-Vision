@@ -14,7 +14,18 @@ struct TagsView: View {
     
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            Section {
+                HStack{
+                    TagItemView()
+                    Spacer()
+                }
+            }
+            Section{
+                TextField("Add new Tag", text: $viewModel.tagTextfield)
+            }
+        }
+        .localizedNavigationTitle(title: "Tags")
     }
 }
 

@@ -25,6 +25,13 @@ struct ProfileItemView: View {
                             .frame(width: 60,height: 60)
                             .background(.gray)
                             .clipShape(Circle())
+                    }else{
+                        Image("DefaultImage")
+                            .resizable()
+                            .scaledToFit()
+                            .background(.gray)
+                            .clipShape(Circle())
+                            .frame(width: 60,height: 60)
                     }
                     VStack(alignment: .leading){
                         HStack(spacing: 5){

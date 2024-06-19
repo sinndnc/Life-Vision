@@ -46,12 +46,12 @@ func groupOverlappingReminders(_ reminders: [Reminder]) -> [Reminder: [Reminder]
     var currentGroup: [Reminder] = [sortedReminders[0]]
     
     for reminder in sortedReminders.dropFirst() {
-        let currentRange = currentGroup.first!.start_date...currentGroup.first!.finish_date
+        
+        var currentRange = currentGroup.first!.start_date...currentGroup.last!.finish_date
         let nextRange = reminder.start_date...reminder.finish_date
         
         if rangesIntersect(currentRange, nextRange) {
             currentGroup.append(reminder)
-            currentGroup[0].finish_date = max(currentGroup.last!.finish_date, reminder.finish_date)
         } else {
             groupedReminders[currentGroup.first!] = currentGroup
             currentGroup = [reminder]

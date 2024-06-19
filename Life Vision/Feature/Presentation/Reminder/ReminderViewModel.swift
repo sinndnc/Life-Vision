@@ -16,8 +16,9 @@ final class ReminderViewModel : ObservableObject{
     @Service private var notificationService : NotificationServiceProtocol
 
     @Published var isPresented : Bool = false
+    @Published var tagTextfield : String = ""
     @Published var reminder : Reminder = Reminder()
-
+    
     func add(_ reminder : Reminder){
         reminderRepository.add(reminder) { result in
             switch result {
@@ -29,9 +30,8 @@ final class ReminderViewModel : ObservableObject{
                     categoryIdentifier: "test",
                     timeInterval: timeInterval
                 )
+                self.reminder = Reminder()
                 self.scheduleTimeIntervalNotification(notification)
-                print(timeInterval)
-                print(documentID)
             case .failure(let failure):
                 print(failure)
             }
