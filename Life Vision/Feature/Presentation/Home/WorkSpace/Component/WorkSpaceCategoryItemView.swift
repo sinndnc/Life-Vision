@@ -9,12 +9,12 @@ import SwiftUI
 
 struct WorkSpaceCategoryItemView: View {
 
-    var category : WorkSpaceCategory
+    var category : ReminderCategory
     @StateObject var viewModel : HomeViewModel
     
     var body: some View {
         
-        var isSelected = viewModel.workSpaceCategorySelected == category
+        let isSelected = viewModel.workSpaceCategorySelected == category
         
         Button(action: {
             viewModel.workSpaceCategorySelected = category

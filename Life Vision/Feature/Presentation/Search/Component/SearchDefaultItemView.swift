@@ -19,5 +19,5 @@ struct SearchDefaultItemView: View {
 }
 
 #Preview {
-    SearchDefaultItemView(category: .tommorrow)
+    SearchDefaultItemView(category: .today)
 }

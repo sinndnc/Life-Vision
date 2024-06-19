@@ -24,11 +24,25 @@ extension Date {
         
         let fractional = Double(minute) / 100.0
         let wholePart = Double(hour) + fractional
-
         return wholePart
     }
     
     var convertHourPercentage : Double { self.toHour().toTimePercentage() }
+    
+    var isToday: Bool {
+        return Calendar.current.isDateInToday(self)
+    }
+
+    var isTomorrow: Bool {
+        return Calendar.current.isDateInTomorrow(self)
+    }
+
+    var isInWeek: Bool {
+        guard let endOfWeek = Calendar.current.date(byAdding: .day, value: 7, to: Date()) else {
+            return false
+        }
+        return self < endOfWeek
+    }
     
     func getThisMonthSpecificDay(day : Int) -> Date {
         let components:NSDateComponents = Calendar.current.dateComponents([.year, .month], from: self) as NSDateComponents

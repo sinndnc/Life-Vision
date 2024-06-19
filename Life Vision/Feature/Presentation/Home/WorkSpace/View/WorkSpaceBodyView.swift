@@ -15,7 +15,8 @@ struct WorkSpaceBodyView: View {
         
         ScrollView(.vertical) {
             VStack(alignment: .center, content: {
-                ForEach(viewModel.classifiedReminders[18] ?? [],id:\.self){ reminder in
+                let reminders = viewModel.classifiedReminders
+                ForEach(viewModel.reminderRepository.filterTasks(reminders: reminders, by: viewModel.workSpaceCategorySelected),id:\.self){ reminder in
                     WorkSpaceItemView(reminder: reminder)
                 }
             })

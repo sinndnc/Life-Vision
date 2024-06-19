@@ -15,4 +15,5 @@ struct Reminder : Codable , Hashable {
     var finish_date : Date = .now
     var `repeat` : String = "Never"
     var early_reminder : String = "None"
+    var isCompleted: Bool = false
 }

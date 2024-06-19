@@ -19,8 +19,9 @@ final class HomeViewModel : ObservableObject{
     //Reminders
     @Published var classifiedReminders : [Int :[Reminder]] = [:]
     //WorkSpace
-    @Published var workSpaceCategorySelected : WorkSpaceCategory = .today
-    @Published var workSpaceCategories : [WorkSpaceCategory] = [.completed,.inProgress,.today,.tomorrow,.inWeek,.inMonth,.scheduled]
+    @Published var filteredTasksByCategory : [Reminder] = []
+    @Published var workSpaceCategorySelected : ReminderCategory = .today
+    @Published var workSpaceCategories : [ReminderCategory] = [.completed,.inProgress,.today,.tomorrow,.inWeek,.scheduled]
     
     func fetchReminders()  {
         reminderRepository.fetch { result in
@@ -35,6 +36,11 @@ final class HomeViewModel : ObservableObject{
             }
         }
     }
+    
+    
+    
+    
+    
     
     
 }

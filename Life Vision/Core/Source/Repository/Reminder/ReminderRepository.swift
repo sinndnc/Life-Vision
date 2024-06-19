@@ -36,4 +36,7 @@ final class ReminderRepository : ReminderRepositoryProtocol {
         }
     }
     
+    func filterTasks(reminders: [Int: [Reminder]], by status: ReminderCategory) -> [Reminder] {
+        return remoteReminderService.filterTasks(reminders: reminders, by: status)
+    }
 }

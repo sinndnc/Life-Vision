@@ -88,28 +88,31 @@ final class ReminderRemoteService : ReminderRemoteServiceProtocol{
         return classifiedReminders
     }
     
-    func filterByDate(_ timestamps : [Timestamp]) -> ( [Date], [Date], [Date]) {
-        var yesterday: [Date] = []
-        var today: [Date] = []
-        var tomorrow: [Date] = []
-        var inWeekend : [Date] = []
-         
-        let calendar = Calendar.current
-           
-        for timestamp in timestamps {
-            let date = timestamp.dateValue()
-            if calendar.isDateInYesterday(date) {
-                yesterday.append(date)
-            } else if calendar.isDateInToday(date) {
-                today.append(date)
-            } else if calendar.isDateInTomorrow(date) {
-                tomorrow.append(date)
-            }else if calendar.isDateInWeekend(date){
-                inWeekend.append(date)
+    
+    func filterTasks(reminders: [Int: [Reminder]], by status: ReminderCategory) -> [Reminder] {
+        
+        let flattedReminders = reminders.flatMap { $0.value }
+        
+        return flattedReminders.filter { reminder in
+            switch status {
+            case .inProgress:
+                return inProgress(reminder.start_date,reminder.finish_date)
+            case .today:
+                return reminder.start_date.isToday
+            case .tomorrow:
+                return  reminder.start_date.isTomorrow
+            case .inWeek:
+                return reminder.start_date.isInWeek
+            case .scheduled:
+                return reminder.start_date > .now
+            case .completed:
+                return reminder.finish_date < .now
             }
         }
-
-        return (today,tomorrow,inWeekend)
+    }
+    
+    private func inProgress(_ start_date: Date,_ finish_date : Date) -> Bool {
+        return start_date < .now  && .now < finish_date
     }
     
 }

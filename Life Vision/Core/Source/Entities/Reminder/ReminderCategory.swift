@@ -8,8 +8,10 @@
 import Foundation
 
 enum ReminderCategory : Comparable , Hashable {
-    case today
-    case tommorrow
-    case schedule
     case completed
+    case inProgress
+    case today
+    case tomorrow
+    case inWeek
+    case scheduled
 }

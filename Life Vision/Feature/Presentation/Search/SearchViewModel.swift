@@ -11,7 +11,7 @@ import SwiftUI
 final class SearchViewModel : ObservableObject {
     
     @Published var searchable : String = ""
-    @Published var remindersByCategory : [ReminderCategory: [Reminder]] = [.today : [Reminder()],.tommorrow : [],.schedule : [],.completed : []]
+    @Published var remindersByCategory : [ReminderCategory: [Reminder]] = [.today : [Reminder()],.tomorrow : [],.scheduled : [],.completed : []]
    
     func getCategories() -> [ReminderCategory] {
         return remindersByCategory.keys.sorted()
