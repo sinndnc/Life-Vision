@@ -37,10 +37,31 @@ final class HomeViewModel : ObservableObject{
         }
     }
     
+    func filterReminders(reminders: [Int: [Reminder]], by status: ReminderCategory) -> [Reminder] {
+        
+        let flattedReminders = reminders.flatMap { $0.value }
+        
+        return flattedReminders.filter { reminder in
+            switch status {
+            case .inProgress:
+                return inProgress(reminder.start_date,reminder.finish_date)
+            case .today:
+                return reminder.start_date.isToday
+            case .tomorrow:
+                return  reminder.start_date.isTomorrow
+            case .inWeek:
+                return reminder.start_date.isInWeek
+            case .scheduled:
+                return reminder.start_date > .now
+            case .completed:
+                return reminder.finish_date < .now
+            }
+        }
+    }
     
-    
-    
-    
+    private func inProgress(_ start_date: Date,_ finish_date : Date) -> Bool {
+        return start_date < .now  && .now < finish_date
+    }
     
     
 }

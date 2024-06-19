@@ -10,19 +10,38 @@ import SwiftUI
 
 final class SearchViewModel : ObservableObject {
     
+    @Service var reminderRepository : ReminderRepositoryProtocol
+    
     @Published var searchable : String = ""
-    @Published var remindersByCategory : [ReminderCategory: [Reminder]] = [.today : [Reminder()],.tomorrow : [],.scheduled : [],.completed : []]
+    @Published var filteredTasksByCategories : [ReminderCategory : [Reminder]] = [:]
    
-    func getCategories() -> [ReminderCategory] {
-        return remindersByCategory.keys.sorted()
+    init(){ fetchReminders() }
+    
+    func fetchReminders()  {
+        reminderRepository.fetch { result in
+            switch result {
+            case .success(let classfiedReminders):
+                self.filteredTasksByCategories = self.filteredRemindersByCategories(reminders: classfiedReminders)
+            case .failure(let failure):
+                print(failure)
+            }
+        }
     }
     
-    func hasItem(for category: ReminderCategory) -> Bool {
-        return !remindersByCategory[category]!.isEmpty
-    }
-    
-    func getItems(for category: ReminderCategory) -> [Reminder] {
-        return remindersByCategory[category] ?? []
+    func filteredRemindersByCategories(reminders: [Int: [Reminder]]) -> [ReminderCategory: [Reminder]] {
+        var categorizedReminders: [ReminderCategory: [Reminder]] = [:]
+        
+        for (_, remindersArray) in reminders {
+            for reminder in remindersArray {
+                let category = ReminderCategory.category(for: reminder)
+                if categorizedReminders[category] != nil {
+                    categorizedReminders[category]?.append(reminder)
+                } else {
+                    categorizedReminders[category] = [reminder]
+                }
+            }
+        }
+        return categorizedReminders
     }
     
     

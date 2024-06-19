@@ -15,19 +15,17 @@ struct SearchView: View {
         GeometryReader{ geo in
             NavigationStack{
                 List{
-                    ForEach(viewModel.getCategories(),id:\.self){ category in
+                    ForEach(Array(viewModel.filteredTasksByCategories),id:\.key){ (category , reminders) in
                         Section {
-                            if(viewModel.hasItem(for: category)){
-                                ForEach(viewModel.getItems(for: category),id:\.self){ reminder in
-                                    SearchTaskItemView(geo:geo,reminder: reminder)
-                                }
-                            }else{
-                                SearchDefaultItemView(category: category)
+                            ForEach(reminders,id:\.self){ reminder in
+                                SearchTaskItemView(geo:geo,reminder: reminder)
                             }
                         } header: {
                             Text("\(category)".capitalized)
                         }
                     }
+                    
+                    
                 }
                 .listStyle(.plain)
                 .localizedNavigationTitle(title: "Search")

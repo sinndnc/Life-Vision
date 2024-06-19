@@ -15,9 +15,9 @@ struct SearchTaskItemView: View {
     var body: some View {
         HStack(alignment: .bottom){
             VStack(alignment: .leading){
-                Text("Plant the tree")
+                Text(reminder.title)
                     .fontWeight(.semibold)
-                Text("don't forget plase so important for me")
+                Text(reminder.notes)
                     .lineLimit(1)
                     .font(.callout)
                     .fontWeight(.medium)
@@ -26,7 +26,7 @@ struct SearchTaskItemView: View {
             }
             Spacer()
             HStack(spacing:5){
-                Text(reminder.start_date,style: .time)
+                Text(reminder.start_date,style: .date)
                     .font(.caption)
             }
         }
