@@ -67,7 +67,6 @@ struct TimelineLayout: Layout {
     GeometryReader{ geo in
           
         let reminders : [Reminder] = [
-            Reminder(title: "test", start_date: .now, finish_date: .now),
             Reminder(title: "test 1 ", start_date: Calendar.current.date(byAdding: .hour, value: -2, to: .now)!, finish_date: .now),
             Reminder(title: "test   1", start_date: Calendar.current.date(byAdding: .hour, value: -1, to: .now)!, finish_date: .now),
             Reminder(title: "test   1", start_date: Calendar.current.date(byAdding: .minute, value: -30, to: .now)!, finish_date: .now)
