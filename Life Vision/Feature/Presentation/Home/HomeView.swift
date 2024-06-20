@@ -11,11 +11,8 @@ import FirebaseFirestore
 
 struct HomeView: View {
     
-    @State private var items: [Reminder] = []
-    @State private var cancellable: AnyCancellable?
-
     @StateObject var viewModel : HomeViewModel
-    @StateObject var taskViewModel : ReminderViewModel = ReminderViewModel()
+    @StateObject var taskViewModel : ReminderViewModel = ReminderViewModel(reminder: Reminder())
     
     var body: some View {
         NavigationStack{
@@ -30,17 +27,14 @@ struct HomeView: View {
             .homeToolBar(taskViewModel: taskViewModel)
             .taskView(isPresented: $taskViewModel.isPresented,taskViewModel: taskViewModel)
         }
-        .task {
-            viewModel.fetchReminders()
-        }
+        .task { viewModel.fetchReminders() }
     }
 }
 
 
 fileprivate extension View{
     
-    func taskView(isPresented : Binding<Bool> ,taskViewModel : ReminderViewModel) -> some View {
-        
+    func taskView(isPresented : Binding<Bool>,taskViewModel : ReminderViewModel) -> some View {
         return sheet(
             isPresented: isPresented,
             onDismiss: {},

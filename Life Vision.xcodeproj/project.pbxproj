@@ -23,6 +23,7 @@
 		995D7E962C2232890031C1A1 /* WorkSpaceHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D7E952C2232890031C1A1 /* WorkSpaceHeaderView.swift */; };
 		995D7E982C2232EB0031C1A1 /* WorkSpaceBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D7E972C2232EB0031C1A1 /* WorkSpaceBodyView.swift */; };
 		995D7E9C2C236EE30031C1A1 /* TagItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D7E9B2C236EE30031C1A1 /* TagItemView.swift */; };
+		995D7EA52C24666D0031C1A1 /* ReminderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D7EA42C24666D0031C1A1 /* ReminderDetailView.swift */; };
 		997E99122C127AE2006F0FB5 /* TimelineDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E99012C127AE2006F0FB5 /* TimelineDividerView.swift */; };
 		997E99132C127AE2006F0FB5 /* TimelineHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E99022C127AE2006F0FB5 /* TimelineHourView.swift */; };
 		997E99142C127AE2006F0FB5 /* TimelineNowDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E99032C127AE2006F0FB5 /* TimelineNowDividerView.swift */; };
@@ -171,6 +172,7 @@
 		995D7E952C2232890031C1A1 /* WorkSpaceHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceHeaderView.swift; sourceTree = "<group>"; };
 		995D7E972C2232EB0031C1A1 /* WorkSpaceBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceBodyView.swift; sourceTree = "<group>"; };
 		995D7E9B2C236EE30031C1A1 /* TagItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItemView.swift; sourceTree = "<group>"; };
+		995D7EA42C24666D0031C1A1 /* ReminderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailView.swift; sourceTree = "<group>"; };
 		997E99012C127AE2006F0FB5 /* TimelineDividerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineDividerView.swift; sourceTree = "<group>"; };
 		997E99022C127AE2006F0FB5 /* TimelineHourView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineHourView.swift; sourceTree = "<group>"; };
 		997E99032C127AE2006F0FB5 /* TimelineNowDividerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineNowDividerView.swift; sourceTree = "<group>"; };
@@ -395,6 +397,22 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
+		995D7E9D2C2371920031C1A1 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				995D7EA42C24666D0031C1A1 /* ReminderDetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		995D7EA02C238C4E0031C1A1 /* Repeat */ = {
+			isa = PBXGroup;
+			children = (
+				997E99282C127B7C006F0FB5 /* RepeatView.swift */,
+			);
+			path = Repeat;
+			sourceTree = "<group>";
+		};
 		997E99052C127AE2006F0FB5 /* Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -466,7 +484,8 @@
 			isa = PBXGroup;
 			children = (
 				995D7E992C236EC30031C1A1 /* Tag */,
-				997E99282C127B7C006F0FB5 /* RepeatView.swift */,
+				995D7E9D2C2371920031C1A1 /* Detail */,
+				995D7EA02C238C4E0031C1A1 /* Repeat */,
 			);
 			path = Link;
 			sourceTree = "<group>";
@@ -1256,6 +1275,7 @@
 				997E99EA2C13B63D006F0FB5 /* View+Extension.swift in Sources */,
 				997E9A0C2C150717006F0FB5 /* TimelineFilterView.swift in Sources */,
 				997E99EB2C13B63D006F0FB5 /* Date+Extension.swift in Sources */,
+				995D7EA52C24666D0031C1A1 /* ReminderDetailView.swift in Sources */,
 				99EBEA222C01428E00789C9F /* ServiceType.swift in Sources */,
 				995D7E792C1F40E50031C1A1 /* CountdownBodyView.swift in Sources */,
 				99F8B3C52C073DB10082A453 /* ReminderRepository.swift in Sources */,

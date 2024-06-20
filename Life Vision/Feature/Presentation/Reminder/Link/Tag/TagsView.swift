@@ -9,9 +9,7 @@ import SwiftUI
 
 struct TagsView: View {
     
-    @Binding var path : [ReminderDestination]
     @StateObject var viewModel : ReminderViewModel
-    
     
     var body: some View {
         List {
@@ -30,5 +28,5 @@ struct TagsView: View {
 }
 
 #Preview {
-    TagsView(path: .constant([]), viewModel: ReminderViewModel())
+    TagsView(viewModel: ReminderViewModel(reminder: Reminder()))
 }

@@ -7,6 +7,29 @@
 
 import SwiftUI
 
+struct NavigationLinkDestinationView<Content : View> : View {
+    
+    
+    var item : SectionItem
+    var selected : String = ""
+    @ViewBuilder let content: Content
+
+    var body: some View {
+        NavigationLink(destination: content ) {
+            Label(
+                title: {
+                    Text(item.label)
+                    Spacer()
+                    Text(selected)
+                        .foregroundStyle(.gray)
+                },
+                icon: { Image(systemName: item.image) }
+            )
+        }
+    }
+}
+
+
 struct NavigationLinkItemView: View {
     
     var item : SectionItem
@@ -24,10 +47,10 @@ struct NavigationLinkItemView: View {
                 },
                 icon: { Image(systemName: item.image) }
             )
-            
         }
     }
 }
+
 
 #Preview {
     NavigationLinkItemView(item: SectionItem(label: "Repeat", image: "repeat"), value: AccountDestination.profile)

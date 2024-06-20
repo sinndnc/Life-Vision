@@ -62,7 +62,6 @@ struct AccountView: View {
 fileprivate extension View{
 
     func navigationGraph(path : Binding<[AccountDestination]>,viewModel: AccountViewModel) -> some View {
-
         return navigationDestination(for: AccountDestination.self) { destination in
             switch destination {
             case .profile:

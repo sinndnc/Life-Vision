@@ -9,9 +9,7 @@ import SwiftUI
 
 struct RepeatView: View {
     
-    @Binding var path : [ReminderDestination]
     @StateObject var viewModel : ReminderViewModel
-    
     
     var body: some View {
         List{
@@ -20,7 +18,6 @@ struct RepeatView: View {
                     HStack{
                         Button {
                             viewModel.reminder.repeat = item
-                            path.removeAll()
                         } label: {
                             HStack{
                                 Text(item)
@@ -37,5 +34,5 @@ struct RepeatView: View {
 }
 
 #Preview {
-    RepeatView(path: .constant([]), viewModel: ReminderViewModel())
+    RepeatView(viewModel: ReminderViewModel(reminder: Reminder()))
 }

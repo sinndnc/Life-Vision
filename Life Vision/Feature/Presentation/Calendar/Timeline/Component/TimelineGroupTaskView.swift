@@ -54,12 +54,40 @@ struct TimelineGroupTaskView: View {
             .padding()
         }
         .sheet(isPresented: $isPresented, content: {
-            List(reminders,id: \.self) { reminder in
-                SearchTaskItemView(geo: geo, reminder: reminder)
+            NavigationStack{
+                List(reminders,id: \.self) { reminder in
+                    let viewModel = ReminderViewModel(reminder: reminder)
+                    NavigationLink(
+                        destination:{
+                            ReminderDetailView(viewModel: viewModel)
+                                .toolbar(viewModel: viewModel)
+                        }
+                    ){
+                        SearchTaskItemView(geo: geo, reminder: reminder)
+                    }
+                }
+                .navigationBarTitleDisplayMode(.large)
+                .localizedNavigationTitle(title: "Reminders")
             }
         })
     }
 }
+
+fileprivate extension View{
+   
+    func toolbar(viewModel: ReminderViewModel) -> some View {
+        return toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Update") {
+                    viewModel.update()
+                }
+                .disabled(viewModel.reminder.title.isEmpty)
+            }
+        }
+    }
+    
+}
+
 
 #Preview {
     GeometryReader { geometry in
