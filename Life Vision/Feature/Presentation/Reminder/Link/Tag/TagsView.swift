@@ -9,8 +9,10 @@ import SwiftUI
 
 struct TagsView: View {
     
-    @StateObject var viewModel : ReminderViewModel
-    
+    @Binding var reminder : Reminder
+    @State var tagTextfield : String = ""
+
+
     var body: some View {
         List {
             Section {
@@ -20,7 +22,7 @@ struct TagsView: View {
                 }
             }
             Section{
-                TextField("Add new Tag", text: $viewModel.tagTextfield)
+                TextField("Add new Tag", text: $tagTextfield)
             }
         }
         .localizedNavigationTitle(title: "Tags")
@@ -28,5 +30,5 @@ struct TagsView: View {
 }
 
 #Preview {
-    TagsView(viewModel: ReminderViewModel(reminder: Reminder()))
+    TagsView(reminder: .constant(Reminder()))
 }

@@ -26,6 +26,18 @@ final class CalendarViewModel : ObservableObject {
         selectedHeaderDay = calenderService.getCurentDay.number
     }
     
+    
+    func update(_ reminder : Reminder){
+        reminderRepository.update(reminder) { result in
+            switch result {
+            case .success(let documentID):
+                print(documentID)
+            case .failure(let failure):
+                print(failure)
+            }
+        }
+    }
+    
     func fetchReminders()  {
         reminderRepository.fetch { result in
             switch result {

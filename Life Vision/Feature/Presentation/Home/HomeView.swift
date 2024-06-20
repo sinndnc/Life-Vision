@@ -12,7 +12,7 @@ import FirebaseFirestore
 struct HomeView: View {
     
     @StateObject var viewModel : HomeViewModel
-    @StateObject var taskViewModel : ReminderViewModel = ReminderViewModel(reminder: Reminder())
+    @StateObject var taskViewModel : ReminderViewModel = ReminderViewModel()
     
     var body: some View {
         NavigationStack{

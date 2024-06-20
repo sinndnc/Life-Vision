@@ -9,12 +9,13 @@ import SwiftUI
 
 struct ReminderView: View {
     
+    @State var reminder : Reminder = Reminder()
     @StateObject var viewModel : ReminderViewModel
 
     var body: some View {
-        NavigationStack(){
-            ReminderDetailView(viewModel: viewModel)
-                .toolbar(viewModel: viewModel)
+        NavigationStack{
+            ReminderDetailView(reminder: $reminder)
+                .toolbar(viewModel: viewModel,reminder: reminder)
         }
     }
     
@@ -22,7 +23,7 @@ struct ReminderView: View {
 
 fileprivate extension View{
    
-    func toolbar(viewModel: ReminderViewModel) -> some View {
+    func toolbar(viewModel: ReminderViewModel,reminder: Reminder) -> some View {
         return toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button("Cancel") {
@@ -32,9 +33,9 @@ fileprivate extension View{
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Add") {
                     viewModel.isPresented.toggle()
-                    viewModel.add()
+                    viewModel.add(reminder)
                 }
-                .disabled(viewModel.reminder.title.isEmpty)
+                .disabled(reminder.title.isEmpty)
             }
         }
     }
@@ -42,5 +43,5 @@ fileprivate extension View{
 }
 
 #Preview {
-    ReminderView(viewModel: ReminderViewModel(reminder: Reminder()))
+    ReminderView(viewModel: ReminderViewModel())
 }

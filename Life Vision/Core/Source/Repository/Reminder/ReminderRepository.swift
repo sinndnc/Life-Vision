@@ -26,13 +26,24 @@ final class ReminderRepository : ReminderRepositoryProtocol {
         }
     }
     
+    func update(_ reminder : Reminder,onCompletion: @escaping (Result<String,ReminderErrorCallback>) -> Void) {
+        do{
+            try remoteReminderService.update(reminder, onCompletion: onCompletion)
+        }catch ReminderErrorCallback.noConnection {
+            print("No connection")
+        }catch{
+            print(error)
+        }
+    }
+
+    
     func add(_ reminder: Reminder, onCompletion: @escaping (Result<String, ReminderErrorCallback>) -> Void) {
         do{
             try remoteReminderService.add(reminder, onCompletion: onCompletion)
         }catch ReminderErrorCallback.noConnection {
             print("No connection")
         }catch{
-            
+            print(error)
         }
     }
 }

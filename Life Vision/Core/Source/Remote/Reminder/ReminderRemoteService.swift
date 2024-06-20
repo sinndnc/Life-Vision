@@ -52,30 +52,48 @@ final class ReminderRemoteService : ReminderRemoteServiceProtocol{
             }
     }
     
-    func add(_ reminder: Reminder, onCompletion: @escaping (Result<String, ReminderErrorCallback>) -> Void) throws {
+    func update(_ reminder : Reminder,onCompletion: @escaping (Result<String,ReminderErrorCallback>) -> Void) throws {
+            
         guard let user = auth.currentUser else { throw UserErrorCallback.invalidUser }
         
         do{
-           let response = try firestore.collection(FirebaseConstant.users)
-                .document(user.uid)
-                .collection(FirebaseConstant.reminders)
-                .addDocument(from: reminder){ result in
-                    if let error = result{
-                        onCompletion(.failure(.invalidType))
-                        print(error.localizedDescription)
-                    }
+            try firestore.collection(FirebaseConstant.users)
+            .document(user.uid)
+            .collection(FirebaseConstant.reminders)
+            .document(reminder.uid)
+            .setData(from:reminder){ result in
+                if let error = result{
+                    onCompletion(.failure(.invalidType))
+                    print(error.localizedDescription)
                 }
-            
-            onCompletion(.success(response.documentID))
+            }
+            onCompletion(.success(reminder.uid))
         }catch{
             onCompletion(.failure(.invalidType))
         }
     }
     
+    func add(_ reminder: Reminder, onCompletion: @escaping (Result<String, ReminderErrorCallback>) -> Void) throws {
+        guard let user = auth.currentUser else { throw UserErrorCallback.invalidUser }
+        
+        do{
+            try firestore.collection(FirebaseConstant.users)
+                .document(user.uid)
+                .collection(FirebaseConstant.reminders)
+                .document(reminder.uid)
+                .setData(from: reminder){ result in
+                    if let error = result{
+                        onCompletion(.failure(.invalidType))
+                        print(error.localizedDescription)
+                    }
+                }
+        }
+    }
+        
     private func classifyRemindersByDay(reminders : [Reminder]) -> [Int: [Reminder]] {
         
         var classifiedReminders: [Int: [Reminder]] = [:]
-        
+            
         for reminder in reminders {
             let day = Calendar.current.component(.day, from: reminder.start_date)
             if classifiedReminders[day] != nil {
@@ -84,9 +102,9 @@ final class ReminderRemoteService : ReminderRemoteServiceProtocol{
                 classifiedReminders[day] = [reminder]
             }
         }
-        
+            
         return classifiedReminders
     }
     
-    
+
 }

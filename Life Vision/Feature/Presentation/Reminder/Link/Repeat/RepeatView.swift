@@ -9,20 +9,20 @@ import SwiftUI
 
 struct RepeatView: View {
     
-    @StateObject var viewModel : ReminderViewModel
-    
+    @Binding var reminder : Reminder
+
     var body: some View {
         List{
             Section{
-                ForEach(viewModel.repeats,id:\.self){ item in
+                ForEach(Repeat.list,id:\.self){ item in
                     HStack{
                         Button {
-                            viewModel.reminder.repeat = item
+                            reminder.repeat = item
                         } label: {
                             HStack{
                                 Text(item)
                                 Spacer()
-                                viewModel.reminder.repeat == item ? Image(systemName: "checkmark") : nil
+                                reminder.repeat == item ? Image(systemName: "checkmark") : nil
                             }
                         }
                         .buttonStyle(.plain)
@@ -34,5 +34,5 @@ struct RepeatView: View {
 }
 
 #Preview {
-    RepeatView(viewModel: ReminderViewModel(reminder: Reminder()))
+    RepeatView(reminder: .constant(Reminder()))
 }

@@ -9,6 +9,7 @@ import Foundation
 
 
 struct Reminder : Codable , Hashable {
+    var uid : String = UUID().uuidString
     var title : String = ""
     var notes : String = ""
     var start_date : Date = .now

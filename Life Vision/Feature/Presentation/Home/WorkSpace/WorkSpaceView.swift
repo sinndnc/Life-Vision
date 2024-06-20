@@ -16,6 +16,7 @@ struct WorkSpaceView: View {
             WorkSpaceHeaderView(viewModel: viewModel)
             WorkSpaceBodyView(viewModel: viewModel)
         })
+        .padding(.vertical)
     }
 }
 

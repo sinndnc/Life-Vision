@@ -13,4 +13,6 @@ protocol ReminderRepositoryProtocol {
             
     func add(_ reminder : Reminder,onCompletion : (@escaping (Result<String,ReminderErrorCallback>) -> Void))
     
+    func update(_ reminder : Reminder,onCompletion: (@escaping (Result<String,ReminderErrorCallback>) -> Void))
+
 }

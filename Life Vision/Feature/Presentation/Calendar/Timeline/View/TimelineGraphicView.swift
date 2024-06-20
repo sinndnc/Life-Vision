@@ -26,7 +26,7 @@ struct TimelineGraphicView: View {
                 if(reminders.count == 1){
                     TimelineTaskView(geo: geo, reminder: reminders.first!)
                 }else{
-                    TimelineGroupTaskView(geo: geo, reminders: reminders)
+                    TimelineGroupTaskView(geo: geo, reminders: reminders,viewModel: viewModel)
                 }
             }
         }

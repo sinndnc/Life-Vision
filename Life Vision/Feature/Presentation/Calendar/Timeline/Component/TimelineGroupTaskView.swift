@@ -10,9 +10,10 @@ import SwiftUI
 struct TimelineGroupTaskView: View {
     
     var geo : GeometryProxy
-    var reminders : [Reminder]
-    
+    @State var reminders : [Reminder]
     @State var isPresented : Bool = false
+    @StateObject var viewModel : CalendarViewModel
+    
 
     var body: some View {
         
@@ -55,15 +56,20 @@ struct TimelineGroupTaskView: View {
         }
         .sheet(isPresented: $isPresented, content: {
             NavigationStack{
-                List(reminders,id: \.self) { reminder in
-                    let viewModel = ReminderViewModel(reminder: reminder)
+                List($reminders,id: \.self) { reminder in
                     NavigationLink(
                         destination:{
-                            ReminderDetailView(viewModel: viewModel)
-                                .toolbar(viewModel: viewModel)
+                            ReminderDetailView(reminder: reminder)
+                                .toolbar {
+                                    ToolbarItem(placement: .topBarTrailing) {
+                                        Button("Update") {
+                                            viewModel.update(reminder.wrappedValue)
+                                        }
+                                    }
+                                }
                         }
                     ){
-                        SearchTaskItemView(geo: geo, reminder: reminder)
+                        SearchTaskItemView(geo: geo, reminder: reminder.wrappedValue)
                     }
                 }
                 .navigationBarTitleDisplayMode(.large)
@@ -73,26 +79,13 @@ struct TimelineGroupTaskView: View {
     }
 }
 
-fileprivate extension View{
-   
-    func toolbar(viewModel: ReminderViewModel) -> some View {
-        return toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button("Update") {
-                    viewModel.update()
-                }
-                .disabled(viewModel.reminder.title.isEmpty)
-            }
-        }
-    }
-    
-}
+
 
 
 #Preview {
     GeometryReader { geometry in
         let reminders = [Reminder(),Reminder()]
-        TimelineGroupTaskView(geo:geometry,reminders: reminders)
+        TimelineGroupTaskView(geo:geometry,reminders: reminders, viewModel: CalendarViewModel())
     }
 }
 

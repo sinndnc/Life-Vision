@@ -9,25 +9,25 @@ import SwiftUI
 
 struct ReminderDetailView: View {
     
-    @StateObject var viewModel : ReminderViewModel
+    @Binding var reminder : Reminder
 
     var body: some View {
         List {
             Section{
-                TitleItemView(text: $viewModel.reminder.title, placeholder: "Title")
-                TitleItemView(text: $viewModel.reminder.notes, placeholder: "Notes")
+                TitleItemView(text: $reminder.title, placeholder: "Title")
+                TitleItemView(text: $reminder.notes, placeholder: "Notes")
             }
             Section{
                 ToggleDisclosureGroupView(item: ReminderSectionConstant.date){
                     DatePicker(
                         "Start date:",
-                        selection: $viewModel.reminder.start_date,
+                        selection: $reminder.start_date,
                         displayedComponents: [.date]
                     )
                     .datePickerStyle(.compact)
                     DatePicker(
                         "Finish date:",
-                        selection: $viewModel.reminder.finish_date,
+                        selection: $reminder.finish_date,
                         displayedComponents: [.date]
                     )
                     .datePickerStyle(.compact)
@@ -36,13 +36,13 @@ struct ReminderDetailView: View {
                     VStack{
                         DatePicker(
                             "Start time:",
-                            selection: $viewModel.reminder.start_date,
+                            selection: $reminder.start_date,
                             displayedComponents: [.hourAndMinute]
                         )
                         .datePickerStyle(.compact)
                         DatePicker(
                             "Finish time:",
-                            selection: $viewModel.reminder.finish_date,
+                            selection: $reminder.finish_date,
                             displayedComponents: [.hourAndMinute]
                         )
                         .datePickerStyle(.compact)
@@ -51,15 +51,15 @@ struct ReminderDetailView: View {
             }
             Section {
                 MenuItemView(
-                    menu: viewModel.earlyReminders,
+                    menu: EarlyReminder.list,
                     item: ReminderSectionConstant.EarlyReminder,
-                    selected: $viewModel.reminder.early_reminder
+                    selected: $reminder.early_reminder
                 )
                 NavigationLinkDestinationView(
                     item: ReminderSectionConstant.repeat,
-                    selected: viewModel.reminder.repeat,
+                    selected: reminder.repeat,
                     content: {
-                        RepeatView(viewModel: viewModel)
+                        RepeatView(reminder: $reminder)
                     }
                 )
             }
@@ -68,7 +68,7 @@ struct ReminderDetailView: View {
                     item: ReminderSectionConstant.tag,
                     selected: "0 selected",
                     content: {
-                        TagsView(viewModel: viewModel)
+                        TagsView(reminder: $reminder)
                     }
                 )
             }
@@ -87,5 +87,5 @@ struct ReminderDetailView: View {
 }
 
 #Preview {
-    ReminderDetailView(viewModel: ReminderViewModel(reminder: Reminder()))
+    ReminderDetailView(reminder: .constant(Reminder()))
 }
