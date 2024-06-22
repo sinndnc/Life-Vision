@@ -23,7 +23,14 @@ struct NavigationLinkDestinationView<Content : View> : View {
                     Text(selected)
                         .foregroundStyle(.gray)
                 },
-                icon: { Image(systemName: item.image) }
+                icon: { 
+                    Image(systemName: item.image)
+                        .padding(5)
+                        .font(.footnote)
+                        .background(item.color)
+                        .foregroundStyle(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                }
             )
         }
     }
@@ -45,7 +52,14 @@ struct NavigationLinkItemView: View {
                     Text(selected)
                         .foregroundStyle(.gray)
                 },
-                icon: { Image(systemName: item.image) }
+                icon: {
+                    Image(systemName: item.image)
+                        .padding(5)
+                        .font(.footnote)
+                        .background(item.color)
+                        .foregroundStyle(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                }
             )
         }
     }
@@ -53,5 +67,5 @@ struct NavigationLinkItemView: View {
 
 
 #Preview {
-    NavigationLinkItemView(item: SectionItem(label: "Repeat", image: "repeat"), value: AccountDestination.profile)
+    NavigationLinkItemView(item: SectionItem(label: "Repeat", image: "repeat",color: .cyan), value: AccountDestination.profile)
 }

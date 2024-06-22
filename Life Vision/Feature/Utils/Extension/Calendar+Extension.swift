@@ -14,5 +14,9 @@ extension Calendar {
         let daysOfMonth = range.count
         return daysOfMonth
     }    
+    
+    
+    var default_finish_date : Date { self.date(byAdding: .hour, value: 1, to: .now)!
+    }
 }
 

@@ -29,7 +29,27 @@ struct SearchView: View {
                 }
                 .listStyle(.plain)
                 .localizedNavigationTitle(title: "Search")
-                .searchable(text: $viewModel.searchable, placement: .navigationBarDrawer(displayMode: .always))
+                .searchable(text: $viewModel.searchable, placement: .navigationBarDrawer(displayMode: .always)
+                )
+                .toolbar{
+                    ToolbarItem(placement: .topBarTrailing) {
+                        HStack{
+                            Menu {
+                                Button("menu item 1", action: {})
+                                Button("menu item 2", action: {})
+                            } label: {
+                                Image(systemName: "tag")
+                            }
+
+                            Menu {
+                                Button("menu item 1", action: {})
+                                Button("menu item 2", action: {})
+                            } label: {
+                                Image(systemName: "line.horizontal.3.decrease.circle")
+                            }
+                        }
+                    }
+                }
             }
         }
     }

@@ -10,7 +10,7 @@ import SwiftUI
 struct TagItemView: View {
     var body: some View {
         Text("#Dental")
-            .padding(10)
+            .padding(5)
             .font(.callout)
             .background(.blue)
             .fontWeight(.semibold)

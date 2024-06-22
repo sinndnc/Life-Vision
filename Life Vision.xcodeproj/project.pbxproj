@@ -13,6 +13,8 @@
 		990DCFAE2C24CEA600891FCA /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990DCFAD2C24CEA600891FCA /* Date+Extension.swift */; };
 		990DCFB02C24CEBD00891FCA /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990DCFAF2C24CEBD00891FCA /* Double+Extension.swift */; };
 		990DCFB22C24CECF00891FCA /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990DCFB12C24CECF00891FCA /* View+Extension.swift */; };
+		991D28DD2C25FE0900CB1ACF /* TimeInterval+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991D28DC2C25FE0900CB1ACF /* TimeInterval+Extension.swift */; };
+		991E57D52C2608A400F4DB23 /* ReminderAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991E57D42C2608A400F4DB23 /* ReminderAddView.swift */; };
 		995D7E742C1F3E0D0031C1A1 /* CountdownItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D7E732C1F3E0D0031C1A1 /* CountdownItemView.swift */; };
 		995D7E772C1F406A0031C1A1 /* CountdownHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D7E762C1F406A0031C1A1 /* CountdownHeaderView.swift */; };
 		995D7E792C1F40E50031C1A1 /* CountdownBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D7E782C1F40E50031C1A1 /* CountdownBodyView.swift */; };
@@ -160,6 +162,8 @@
 		990DCFAD2C24CEA600891FCA /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		990DCFAF2C24CEBD00891FCA /* Double+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		990DCFB12C24CECF00891FCA /* View+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		991D28DC2C25FE0900CB1ACF /* TimeInterval+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extension.swift"; sourceTree = "<group>"; };
+		991E57D42C2608A400F4DB23 /* ReminderAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderAddView.swift; sourceTree = "<group>"; };
 		995D7E732C1F3E0D0031C1A1 /* CountdownItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownItemView.swift; sourceTree = "<group>"; };
 		995D7E762C1F406A0031C1A1 /* CountdownHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownHeaderView.swift; sourceTree = "<group>"; };
 		995D7E782C1F40E50031C1A1 /* CountdownBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownBodyView.swift; sourceTree = "<group>"; };
@@ -328,10 +332,19 @@
 				990DCFAD2C24CEA600891FCA /* Date+Extension.swift */,
 				990DCFAF2C24CEBD00891FCA /* Double+Extension.swift */,
 				990DCFA22C24CE5C00891FCA /* Calendar+Extension.swift */,
+				991D28DC2C25FE0900CB1ACF /* TimeInterval+Extension.swift */,
 			);
 			name = Extension;
 			path = "Life Vision/Feature/Utils/Extension";
 			sourceTree = SOURCE_ROOT;
+		};
+		991E57D32C26088D00F4DB23 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				991E57D42C2608A400F4DB23 /* ReminderAddView.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
 		};
 		995D7E722C1F3DF40031C1A1 /* Component */ = {
 			isa = PBXGroup;
@@ -491,6 +504,7 @@
 		997E992A2C127B7C006F0FB5 /* Link */ = {
 			isa = PBXGroup;
 			children = (
+				991E57D32C26088D00F4DB23 /* Add */,
 				995D7E992C236EC30031C1A1 /* Tag */,
 				995D7E9D2C2371920031C1A1 /* Detail */,
 				995D7EA02C238C4E0031C1A1 /* Repeat */,
@@ -619,12 +633,12 @@
 		997E99FA2C13B678006F0FB5 /* Section */ = {
 			isa = PBXGroup;
 			children = (
-				997E99F42C13B678006F0FB5 /* MenuItemView.swift */,
-				997E99F52C13B678006F0FB5 /* NavigationLinkItemView.swift */,
-				997E99F62C13B678006F0FB5 /* ProfileItemView.swift */,
-				997E99F72C13B678006F0FB5 /* SegmentedItemView.swift */,
 				997E99F82C13B678006F0FB5 /* TitleItemView.swift */,
+				997E99F42C13B678006F0FB5 /* MenuItemView.swift */,
+				997E99F62C13B678006F0FB5 /* ProfileItemView.swift */,
 				997E99F92C13B678006F0FB5 /* ToggleItemView.swift */,
+				997E99F72C13B678006F0FB5 /* SegmentedItemView.swift */,
+				997E99F52C13B678006F0FB5 /* NavigationLinkItemView.swift */,
 			);
 			path = Section;
 			sourceTree = "<group>";
@@ -1224,6 +1238,7 @@
 				995D7E912C22307F0031C1A1 /* WorkSpaceCategoryItemView.swift in Sources */,
 				997E99502C127B9B006F0FB5 /* AccountView.swift in Sources */,
 				997E99382C127B8D006F0FB5 /* SearchViewModel.swift in Sources */,
+				991E57D52C2608A400F4DB23 /* ReminderAddView.swift in Sources */,
 				99EBEA302C014D8000789C9F /* Reminder.swift in Sources */,
 				997E994B2C127B9B006F0FB5 /* LanguageView.swift in Sources */,
 				997E99152C127AE2006F0FB5 /* TimelineTaskView.swift in Sources */,
@@ -1281,6 +1296,7 @@
 				997E9A012C13B678006F0FB5 /* ProfileItemView.swift in Sources */,
 				995D7E962C2232890031C1A1 /* WorkSpaceHeaderView.swift in Sources */,
 				99EBEA052C00CF4C00789C9F /* LifeVisionApp.swift in Sources */,
+				991D28DD2C25FE0900CB1ACF /* TimeInterval+Extension.swift in Sources */,
 				99F8B3BB2C0738150082A453 /* StorageLocalService.swift in Sources */,
 				997E994F2C127B9B006F0FB5 /* TermsAndConditionsView.swift in Sources */,
 				995D7E742C1F3E0D0031C1A1 /* CountdownItemView.swift in Sources */,

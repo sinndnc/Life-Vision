@@ -39,7 +39,7 @@ fileprivate extension View{
             isPresented: isPresented,
             onDismiss: {},
             content: {
-                ReminderView(viewModel: taskViewModel)
+                ReminderAddView(viewModel: taskViewModel)
             }
         )
     }

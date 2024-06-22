@@ -16,12 +16,19 @@ struct ToggleItemView: View {
         Toggle(isOn: $isOn, label: {
             Label(
                 title: { Text(item.label) },
-                icon: { Image(systemName: item.image) }
+                icon: {
+                    Image(systemName: item.image)
+                        .padding(5)
+                        .font(.footnote)
+                        .background(item.color)
+                        .foregroundStyle(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                }
             )
         })
     }
 }
 
 #Preview {
-    ToggleItemView(isOn: .constant(false), item: SectionItem(label: "Theme", image: "globe"))
+    ToggleItemView(isOn: .constant(false), item: SectionItem(label: "Theme", image: "globe",color: .green))
 }

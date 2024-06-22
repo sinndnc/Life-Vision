@@ -13,7 +13,7 @@ struct TimelineGroupTaskView: View {
     @State var reminders : [Reminder]
     @State var isPresented : Bool = false
     @StateObject var viewModel : CalendarViewModel
-    
+
 
     var body: some View {
         
@@ -26,19 +26,40 @@ struct TimelineGroupTaskView: View {
         
         
         HStack(alignment: .center){
+            Rectangle()
+                .frame(width: 2)
+                .foregroundStyle(.pink)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
             VStack(alignment: .leading) {
                 Text("You have \(reminders.count) task here")
-                    .font(.headline)
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .foregroundStyle(.white)
                 Text("Long press to see all details")
                     .font(.footnote)
-                    .fontWeight(.semibold)
+                    .fontWeight(.regular)
+                    .foregroundStyle(.gray)
             }
             Spacer()
-            Image(systemName:"info.circle")
+            HStack(spacing: 1){
+                Text("+")
+                    .font(.callout)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                Text("\(reminders.count)")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.white)
+            }
+            .padding(10)
+            .background(.gray)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
         }
-        .padding()
+        .zIndex(1)
+        .padding(.vertical,5)
+        .padding(.horizontal,5)
         .frame(width: width,height: height)
-        .background(.blue.opacity(0.5))
+        .background(.black)
         .clipShape(RoundedRectangle(cornerRadius: 5))
         .contextMenu {
             Button("Show details") {
@@ -60,13 +81,6 @@ struct TimelineGroupTaskView: View {
                     NavigationLink(
                         destination:{
                             ReminderDetailView(reminder: reminder)
-                                .toolbar {
-                                    ToolbarItem(placement: .topBarTrailing) {
-                                        Button("Update") {
-                                            viewModel.update(reminder.wrappedValue)
-                                        }
-                                    }
-                                }
                         }
                     ){
                         SearchTaskItemView(geo: geo, reminder: reminder.wrappedValue)

@@ -91,6 +91,7 @@ struct TimelineLayout: Layout {
                         TimelineGroupTaskView(geo: geo, reminders: reminders,viewModel: CalendarViewModel())
                     }
                 }
+            
             }
         }
     }

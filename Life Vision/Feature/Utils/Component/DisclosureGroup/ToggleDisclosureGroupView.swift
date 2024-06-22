@@ -20,7 +20,14 @@ struct ToggleDisclosureGroupView<Content : View> : View {
             label: {
                 Label(
                     title: { Text(item.label) },
-                    icon: { Image(systemName: item.image) }
+                    icon: {
+                        Image(systemName: item.image)
+                            .padding(5)
+                            .font(.footnote)
+                            .background(item.color)
+                            .foregroundStyle(.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 5))
+                    }
                 )
             }
         )
@@ -48,7 +55,7 @@ struct ToggleDisclosureGroupStyle: DisclosureGroupStyle {
 
 #Preview {
     ToggleDisclosureGroupView(
-        item: SectionItem(label: "Date",image: "calendar")
+        item: SectionItem(label: "Date",image: "calendar",color: .brown)
     ){
         DatePicker("Date", selection: .constant(.now))
     }

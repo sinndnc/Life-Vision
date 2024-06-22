@@ -10,7 +10,8 @@ import SwiftUI
 struct TimelineTaskView: View {
     
     var geo : GeometryProxy
-    var reminder : Reminder
+    @State var reminder : Reminder
+    @State var isPresented : Bool = false
     
     var body: some View {
         
@@ -23,35 +24,48 @@ struct TimelineTaskView: View {
         let height = geo.size.height * 0.1 * taskHourInterval
         
         HStack(alignment: .center){
-            VStack(alignment: .leading,spacing: 0) {
+            Rectangle()
+                .frame(width: 2)
+                .foregroundStyle(.pink)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+            VStack(alignment: .leading) {
                 Text(reminder.title)
-                    .font(.headline)
-                Text("\(start_date) - \(finish_date)")
-                    .font(.footnote)
-                    .fontWeight(.semibold)
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .foregroundStyle(.white)
+                Spacer()
+                Text("\(start_date)-\(finish_date)")
+                    .font(.caption2)
+                    .foregroundStyle(.white)
             }
             Spacer()
-            Image(systemName:"circle")
+            Image(systemName: "info.circle")
+                .foregroundStyle(.white)
         }
-        .padding()
+        .zIndex(1)
+        .padding(.vertical,5)
+        .padding(.horizontal,10)
         .frame(width: width,height: height)
-        .background(.blue.opacity(0.5))
+        .background(.black)
         .clipShape(RoundedRectangle(cornerRadius: 5))
-        .contextMenu {
-            Button("show all tasks") {
-                
+        .sheet(isPresented: $isPresented, content: {
+            NavigationStack {
+                ReminderDetailView(reminder: $reminder)
+                    .toolbar{
+                        ToolbarItem(placement: .topBarLeading) {
+                            Button("Cancel") {
+                                isPresented.toggle()
+                            }
+                        }
+                    }
             }
-        }preview: {
-            VStack {
-                TimelineTaskView(geo: geo, reminder: reminder)
-            }
-            .padding()
-        }
+        })
+        .onTapGesture { isPresented.toggle() }
     }
 }
 
 #Preview {
     GeometryReader(content: { geometry in
-        TimelineTaskView(geo: geometry,reminder: Reminder(title: "test title", start_date: .now, finish_date: .now))
+        TimelineTaskView(geo: geometry,reminder: Reminder(title: "Practice with neptün",notes: "don't forget to get the balss",tags: ["Dental","Tennis"]))
     })
 }

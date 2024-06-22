@@ -28,7 +28,7 @@ struct CountdownView: View {
         .onReceive(timer) { interval in
             let timeInterval = viewModel.upComingReminder.start_date.timeIntervalSinceNow
             if timeInterval > 0 {
-                viewModel.countdown = timeInterval.formatTimeInterval()
+                viewModel.countdown = timeInterval.toCountDown()
             }
         }
     }

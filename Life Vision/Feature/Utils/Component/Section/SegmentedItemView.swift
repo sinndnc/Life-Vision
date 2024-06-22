@@ -28,6 +28,11 @@ struct SegmentedItemView<T : Hashable> : View {
             },
             icon: {
                 Image(systemName: item.image)
+                    .padding(5)
+                    .font(.footnote)
+                    .background(item.color)
+                    .foregroundStyle(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 5))
             }
         )
     }

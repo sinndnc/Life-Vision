@@ -31,7 +31,7 @@ final class HomeViewModel : ObservableObject{
                 let currentDay = self.calendarService.getCurentDay.number
                 let filteredclassfiedReminders = classfiedReminders[currentDay]?.filter { $0.start_date > Date() } ?? []
                 self.upComingReminder = filteredclassfiedReminders.sorted { $0.start_date < $1.start_date }.first ?? Reminder()
-                self.countdown = self.upComingReminder.start_date.timeIntervalSinceNow.formatTimeInterval()
+                self.countdown = self.upComingReminder.start_date.timeIntervalSinceNow.toCountDown()
             case .failure(let failure):
                 print(failure)
             }

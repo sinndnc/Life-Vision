@@ -16,7 +16,7 @@ struct TimelineNowDividerView: View {
         let width = geo.size.width
     
         Rectangle()
-            .zIndex(1)
+            .zIndex(2)
             .foregroundStyle(.red)
             .frame(width: width,height: 0.75)
     }
