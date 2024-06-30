@@ -19,7 +19,7 @@ struct HomeView: View {
             GeometryReader{ geo in
                 List{
                     CountdownView(geo: geo,viewModel: viewModel)
-                    WorkSpaceView(viewModel: viewModel)
+                    WorkSpaceView(geo: geo,viewModel: viewModel)
                 }
                 .listStyle(.plain)
             }
@@ -27,7 +27,6 @@ struct HomeView: View {
             .homeToolBar(taskViewModel: taskViewModel)
             .taskView(isPresented: $taskViewModel.isPresented,taskViewModel: taskViewModel)
         }
-        .task { viewModel.fetchReminders() }
     }
 }
 

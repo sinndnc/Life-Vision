@@ -9,16 +9,18 @@ import SwiftUI
 
 struct WorkSpaceBodyView: View {
     
+    var geo : GeometryProxy
     @StateObject var viewModel : HomeViewModel
     
     var body: some View {
         
         ScrollView(.vertical) {
             VStack(alignment: .center, content: {
-                let reminders = viewModel.classifiedReminders
-                let filteredReminders = viewModel.filterReminders(reminders: reminders, by: viewModel.workSpaceCategorySelected)
+                let reminders = viewModel.reminders
+                let selected = viewModel.selectedCategory
+                let filteredReminders = viewModel.filterReminders(reminders: reminders, by: selected)
                 ForEach(filteredReminders,id:\.self){ reminder in
-                    WorkSpaceItemView(reminder: reminder)
+                    WorkSpaceItemView(geo: geo,reminder: reminder)
                 }
             })
         }
@@ -26,5 +28,7 @@ struct WorkSpaceBodyView: View {
 }
 
 #Preview {
-    WorkSpaceBodyView(viewModel: HomeViewModel())
+    GeometryReader(content: { geometry in
+        WorkSpaceBodyView(geo : geometry ,viewModel: HomeViewModel())
+    })
 }

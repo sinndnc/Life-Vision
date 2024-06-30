@@ -12,26 +12,27 @@ final class HomeViewModel : ObservableObject{
     
     @Service var calendarService : CalendarServiceProtocol
     @Service var reminderRepository : ReminderRepositoryProtocol
-    
-    //CountDown
-    @Published var countdown : Countdown = Countdown()
-    @Published var upComingReminder : Reminder = Reminder()
+
+    //Countdown
+    @Published var upcoming : Reminder? = nil
+    @Published var countDown : Countdown? = nil
+
     //Reminders
-    @Published var classifiedReminders : [Int :[Reminder]] = [:]
+    @Published var reminders : [Int :[Reminder]] = [:]
     //WorkSpace
-    @Published var filteredTasksByCategory : [Reminder] = []
-    @Published var workSpaceCategorySelected : ReminderCategory = .today
-    @Published var workSpaceCategories : [ReminderCategory] = [.completed,.inProgress,.today,.tomorrow,.inWeek,.scheduled]
+    @Published var selectedCategory : ReminderCategory = .today
     
-    func fetchReminders()  {
+    init(){
+        fetchReminders()
+    }
+    
+   private func fetchReminders(){
         reminderRepository.fetch { result in
             switch result {
-            case .success(let classfiedReminders):
-                self.classifiedReminders = classfiedReminders
-                let currentDay = self.calendarService.getCurentDay.number
-                let filteredclassfiedReminders = classfiedReminders[currentDay]?.filter { $0.start_date > Date() } ?? []
-                self.upComingReminder = filteredclassfiedReminders.sorted { $0.start_date < $1.start_date }.first ?? Reminder()
-                self.countdown = self.upComingReminder.start_date.timeIntervalSinceNow.toCountDown()
+            case .success(let reminders):
+                self.reminders = reminders
+                let filtered = reminders.flatMap{ $0.value }.filter { $0.start_date > .now }
+                self.upcoming = filtered.sorted { $0.start_date < $1.start_date }.first
             case .failure(let failure):
                 print(failure)
             }
@@ -40,7 +41,7 @@ final class HomeViewModel : ObservableObject{
     
     func filterReminders(reminders: [Int: [Reminder]], by status: ReminderCategory) -> [Reminder] {
         
-        let flattedReminders = reminders.flatMap { $0.value }
+        let flattedReminders = reminders.flatMap { $0.value }.sorted{ $0.start_date < $1.start_date }
         
         return flattedReminders.filter { reminder in
             switch status {

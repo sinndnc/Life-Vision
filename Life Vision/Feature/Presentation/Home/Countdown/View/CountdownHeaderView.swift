@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CountdownHeaderView: View {
     
-    var title : String
+    var reminder : Reminder?
     
     var body: some View {
         HStack(content: {
@@ -17,9 +17,11 @@ struct CountdownHeaderView: View {
                 Text("Countdown to:")
                     .font(.title2)
                     .fontWeight(.bold)
-                Text(title)
-                    .font(.callout)
-                    .fontWeight(.semibold)
+                if let reminder = reminder{
+                    Text(reminder.title)
+                        .font(.callout)
+                        .fontWeight(.semibold)
+                }
             }
             Spacer()
         })
@@ -27,5 +29,5 @@ struct CountdownHeaderView: View {
 }
 
 #Preview {
-    CountdownHeaderView(title: "Plant the there")
+    CountdownHeaderView()
 }

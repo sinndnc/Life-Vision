@@ -12,23 +12,42 @@ final class SearchViewModel : ObservableObject {
     
     @Service var reminderRepository : ReminderRepositoryProtocol
     
-    @Published var searchable : String = ""
-    @Published var filteredTasksByCategories : [ReminderCategory : [Reminder]] = [:]
+    @Published var reminders : [ReminderCategory : [Reminder]] = [:]
    
-    init(){ fetchReminders() }
+    init(){ 
+        fetchReminders()
+    }
     
     func fetchReminders()  {
         reminderRepository.fetch { result in
             switch result {
             case .success(let classfiedReminders):
-                self.filteredTasksByCategories = self.filteredRemindersByCategories(reminders: classfiedReminders)
+                self.reminders = self.categoryFilter(reminders: classfiedReminders)
             case .failure(let failure):
                 print(failure)
             }
         }
     }
     
-    func filteredRemindersByCategories(reminders: [Int: [Reminder]]) -> [ReminderCategory: [Reminder]] {
+    func searchFilter(_ query : String ,_ reminders : [ReminderCategory : [Reminder]]) -> [ReminderCategory: [Reminder]]  {
+        guard !query.isEmpty else { return reminders }
+
+        var filteredReminders: [ReminderCategory: [Reminder]] = [:]
+
+        for (category, reminderList) in reminders {
+                let matchingReminders = reminderList.filter { reminder in
+                    reminder.title.lowercased().contains(query.lowercased()) ||
+                    reminder.notes.lowercased().contains(query.lowercased())
+                }
+                if !matchingReminders.isEmpty {
+                    filteredReminders[category] = matchingReminders
+                }
+            }
+        
+        return filteredReminders
+    }
+    
+    private func categoryFilter(reminders: [Int: [Reminder]]) -> [ReminderCategory: [Reminder]] {
         var categorizedReminders: [ReminderCategory: [Reminder]] = [:]
         
         for (_, remindersArray) in reminders {

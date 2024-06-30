@@ -9,13 +9,15 @@ import SwiftUI
 
 struct SearchView: View {
     
+    @State private var searchQuery: String = ""
     @StateObject var viewModel : SearchViewModel
-    
+
     var body: some View {
-        GeometryReader{ geo in
-            NavigationStack{
+        NavigationStack{
+            GeometryReader{ geo in
                 List{
-                    ForEach(Array(viewModel.filteredTasksByCategories),id:\.key){ (category , reminders) in
+                    ForEach(
+                        Array(viewModel.searchFilter(searchQuery,viewModel.reminders)),id:\.key){ (category , reminders) in
                         Section {
                             ForEach(reminders,id:\.self){ reminder in
                                 SearchTaskItemView(geo:geo,reminder: reminder)
@@ -29,18 +31,15 @@ struct SearchView: View {
                 }
                 .listStyle(.plain)
                 .localizedNavigationTitle(title: "Search")
-                .searchable(text: $viewModel.searchable, placement: .navigationBarDrawer(displayMode: .always)
-                )
+                .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always))
                 .toolbar{
                     ToolbarItem(placement: .topBarTrailing) {
                         HStack{
                             Menu {
-                                Button("menu item 1", action: {})
                                 Button("menu item 2", action: {})
                             } label: {
                                 Image(systemName: "tag")
                             }
-
                             Menu {
                                 Button("menu item 1", action: {})
                                 Button("menu item 2", action: {})

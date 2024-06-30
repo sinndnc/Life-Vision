@@ -11,10 +11,10 @@ enum ReminderSectionConstant{
     static let date = SectionItem(label: "Date", image: "calendar",color: .red)
     static let time = SectionItem(label: "Time", image: "clock",color: .blue)
     
-    static let `repeat` = SectionItem(label: "Repeat", image: "repeat",color: .gray)
+    static let `repeat` = SectionItem(label: "Repeat", image: "repeat",color: .green)
     static let EarlyReminder = SectionItem(label: "Early Reminder", image: "bell.fill",color: .purple)
     
-    static let tag = SectionItem(label: "Tags", image: "tag.fill",color: .gray)
+    static let tag = SectionItem(label: "Tags", image: "tag.fill",color: .pink)
     
     static let location = SectionItem(label: "Location", image: "location.fill",color: .blue)
     

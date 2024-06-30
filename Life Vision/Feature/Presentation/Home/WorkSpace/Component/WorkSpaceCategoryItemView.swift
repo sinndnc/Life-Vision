@@ -14,10 +14,10 @@ struct WorkSpaceCategoryItemView: View {
     
     var body: some View {
         
-        let isSelected = viewModel.workSpaceCategorySelected == category
+        let isSelected = viewModel.selectedCategory == category
         
         Button(action: {
-            viewModel.workSpaceCategorySelected = category
+            viewModel.selectedCategory = category
         }, label: {
             Text("\(category)".capitalized)
                 .font(.callout)

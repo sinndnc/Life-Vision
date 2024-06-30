@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CalendarView: View {
     
+    @State private var searchQuery: String = ""
     @StateObject var viewModel : CalendarViewModel
 
     var body: some View {
@@ -18,17 +19,15 @@ struct CalendarView: View {
         
         NavigationStack{
             GeometryReader{geo in
-                VStack(spacing:0){
-                    TimelineHeaderView(geo: geo, viewModel:viewModel)
-                    ScrollViewReader { proxy in
-                        ScrollView{
-                            TimelineGraphicView(geo: geo, viewModel:viewModel)
-                        }
-                        .onAppear {
-                            if (viewModel.graphicViewUIState == .initial){
-                                proxy.scrollTo(hour,anchor: .center)
-                                viewModel.graphicViewUIState = .success
-                            }
+                ScrollViewReader { proxy in
+                    ScrollView{
+                        TimelineHeaderView(geo: geo, viewModel:viewModel)
+                        TimelineGraphicView(geo: geo, viewModel:viewModel)
+                    }
+                    .onAppear {
+                        if (viewModel.graphicViewUIState == .initial) {
+                            proxy.scrollTo(hour,anchor: .center)
+                            viewModel.graphicViewUIState = .success
                         }
                     }
                 }

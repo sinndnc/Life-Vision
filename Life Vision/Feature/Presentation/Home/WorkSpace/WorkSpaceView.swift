@@ -9,17 +9,20 @@ import SwiftUI
 
 struct WorkSpaceView: View {
  
+    var geo : GeometryProxy
     @StateObject var viewModel : HomeViewModel
     
     var body: some View {
         VStack(alignment: .leading,spacing: 10,content: {
             WorkSpaceHeaderView(viewModel: viewModel)
-            WorkSpaceBodyView(viewModel: viewModel)
+            WorkSpaceBodyView(geo: geo,viewModel: viewModel)
         })
         .padding(.vertical)
     }
 }
 
 #Preview {
-    WorkSpaceView(viewModel: HomeViewModel())
+    GeometryReader { geometry in
+        WorkSpaceView(geo: geometry, viewModel: HomeViewModel())
+    }
 }

@@ -13,14 +13,29 @@ struct CountdownBodyView: View {
     var geo : GeometryProxy
     var viewModel : HomeViewModel
 
+
     var body: some View {
         HStack(spacing: 10){
-            let items = [viewModel.countdown.day,viewModel.countdown.hour,viewModel.countdown.minute,viewModel.countdown.second]
-            ForEach(items, id: \.1) { value in
-                CountdownItemView(geo: geo, number: value.0, type: value.1)
+            ForEach(CountdownEnum.allCases, id: \.self) { item in
+                switch item {
+                case .day:
+                    CountdownItemView(geo: geo, value: viewModel.countDown?.day, maxItemValue: 30)
+                case .hour:
+                    CountdownItemView(geo: geo, value: viewModel.countDown?.hour, maxItemValue: 24)
+                case .minute:
+                    CountdownItemView(geo: geo, value: viewModel.countDown?.minute, maxItemValue: 60)
+                case .second:
+                    CountdownItemView(geo: geo, value: viewModel.countDown?.second, maxItemValue: 60)
+                }
             }
         }
+        
+      
     }
+    
+
+    
+
     
 }
 

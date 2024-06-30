@@ -16,7 +16,7 @@ struct CountdownView: View {
 
     var body: some View {
         VStack(spacing: 10){
-            CountdownHeaderView(title: viewModel.upComingReminder.title)
+            CountdownHeaderView(reminder: viewModel.upcoming)
             CountdownBodyView(geo: geo, viewModel: viewModel)
             CountdownBottomView()
         }
@@ -26,12 +26,15 @@ struct CountdownView: View {
             height: geo.size.height * 0.3
         )
         .onReceive(timer) { interval in
-            let timeInterval = viewModel.upComingReminder.start_date.timeIntervalSinceNow
-            if timeInterval > 0 {
-                viewModel.countdown = timeInterval.toCountDown()
+            if let upcoming = viewModel.upcoming{
+                let timeInterval = upcoming.start_date.timeIntervalSinceNow
+                if timeInterval > 0 {
+                    viewModel.countDown = upcoming.start_date.timeIntervalSinceNow.toCountdown
+                }
             }
         }
     }
+        
 }
 
 #Preview {

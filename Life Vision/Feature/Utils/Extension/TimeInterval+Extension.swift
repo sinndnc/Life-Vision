@@ -9,17 +9,15 @@ import Foundation
 
 
 extension TimeInterval{
-    
-    func toCountDown() -> Countdown{
+
+    var toCountdown : Countdown {
         let totalSeconds = Int(self)
-        let days = totalSeconds / (24 * 3600)
-        let remainingAfterDays = totalSeconds % (24 * 3600)
-        let hours = remainingAfterDays / 3600
-        let remainingAfterHours = remainingAfterDays % 3600
-        let minutes = remainingAfterHours / 60
-        let seconds = remainingAfterHours % 60
-            
-        return Countdown(day: (days,"days"), hour: (hours,"Hours"), minute: (minutes,"Minutes"), second: (seconds,"Seconds"))
+        
+        let seconds = totalSeconds % 60
+        let minutes = (totalSeconds / 60) % 60
+        let hours = (totalSeconds / 3600) % 24
+        let days = totalSeconds / 86400
+        
+        return Countdown(day: days, hour: hours, minute: minutes, second: seconds)
     }
-    
 }

@@ -9,33 +9,86 @@ import SwiftUI
 
 struct WorkSpaceItemView: View {
     
+    var geo : GeometryProxy
     var reminder : Reminder
     
     var body: some View {
-        VStack(alignment: .leading,spacing: 10, content: {
-            Text(reminder.title)
-                .font(.subheadline)
-                .fontWeight(.medium)
-            HStack(content: {
+        VStack(alignment: .leading, content: {
+            HStack{
+                Circle()
+                    .frame(width: 5,height: 5)
+                    .foregroundStyle(.yellow)
+                Text("Medium")
+                    .font(.footnote)
+                    .fontWeight(.medium)
+                    .foregroundStyle(.yellow)
+                Spacer()
+                Text("#Dental")
+                    .padding(5)
+                    .font(.caption)
+                    .background(.blue)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+            }
+            VStack(alignment: .leading){
+                Text(reminder.title)
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.white)
                 Text(reminder.notes)
                     .font(.footnote)
                     .fontWeight(.medium)
                     .foregroundStyle(.gray)
-                Spacer()
-                Text("\(reminder.start_date)")
+            }
+            HStack{
+                Text(reminder.start_date,style: .time)
                     .font(.footnote)
                     .fontWeight(.medium)
                     .foregroundStyle(.gray)
-                Image(systemName: "person")
-            })
+                Text("-")
+                    .font(.footnote)
+                    .fontWeight(.medium)
+                    .foregroundStyle(.gray)
+                Text(reminder.finish_date,style: .time)
+                    .font(.footnote)
+                    .fontWeight(.medium)
+                    .foregroundStyle(.gray)
+                Spacer()
+                HStack(spacing: -10){
+                    Image(systemName: "person")
+                        .foregroundColor(.white)
+                        .padding(5)
+                        .background(.blue)
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(.black, lineWidth: 1))
+
+                    Image(systemName: "person")
+                        .foregroundColor(.white)
+                        .padding(5)
+                        .background(.blue)
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(.black, lineWidth: 1))
+                    
+                    Image(systemName: "person")
+                        .foregroundColor(.white)
+                        .padding(5)
+                        .background(.blue)
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(.black, lineWidth: 1))
+                }
+            }
         })
-        .padding()
-        .background(.gray.opacity(0.2))
+        .padding(10)
+        .background(.black.opacity(1))
         .clipShape(RoundedRectangle(cornerRadius: 15))
+        .frame(height: geo.size.height * 0.2)
     }
     
 }
 
 #Preview {
-    WorkSpaceItemView(reminder: Reminder())
+    GeometryReader(content: { geometry in
+        WorkSpaceItemView(geo: geometry,reminder: Reminder(title: "Color palette selection",notes: "Create a hormonuious color scheme"))
+    })
 }
