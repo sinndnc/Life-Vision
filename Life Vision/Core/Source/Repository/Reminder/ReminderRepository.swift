@@ -11,8 +11,8 @@ import Foundation
 final class ReminderRepository : ReminderRepositoryProtocol {
     
     
-    @Service private var localReminderService : ReminderLocalServiceProtocol
-    @Service private var remoteReminderService : ReminderRemoteServiceProtocol
+    @Inject private var localReminderService : ReminderLocalServiceProtocol
+    @Inject private var remoteReminderService : ReminderRemoteServiceProtocol
 
     func fetch(onCompletion: @escaping (Result<[Int : [Reminder]],ReminderErrorCallback>) -> Void ) {
         do{

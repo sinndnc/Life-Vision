@@ -80,7 +80,7 @@ struct TimelineGroupTaskView: View {
                 List($reminders,id: \.self) { reminder in
                     NavigationLink(
                         destination:{
-                            ReminderDetailView(reminder: reminder)
+                            ReminderDetailView(geo:geo,reminder: reminder)
                         }
                     ){
                         SearchTaskItemView(geo: geo, reminder: reminder.wrappedValue)

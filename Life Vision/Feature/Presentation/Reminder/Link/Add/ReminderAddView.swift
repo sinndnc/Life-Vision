@@ -14,22 +14,11 @@ struct ReminderAddView: View {
     
     var body: some View {
         NavigationStack{
-            ReminderView(reminder: $reminder)
-                .toolbar(viewModel: viewModel,reminder: reminder)
-        }
-    }
-}
-
-fileprivate extension View{
-   
-    func toolbar(viewModel: ReminderViewModel,reminder: Reminder) -> some View {
-        return toolbar {
-            ToolbarItem(placement: .topBarLeading) {
+            ReminderView(reminder: $reminder){
                 Button("Cancel") {
                     viewModel.isPresented.toggle()
                 }
-            }
-            ToolbarItem(placement: .topBarTrailing) {
+            }trailing: {
                 Button("Add") {
                     viewModel.isPresented.toggle()
                     viewModel.add(reminder)
@@ -38,8 +27,8 @@ fileprivate extension View{
             }
         }
     }
-    
 }
+
 
 #Preview {
     ReminderAddView(viewModel: ReminderViewModel())

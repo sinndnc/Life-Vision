@@ -10,7 +10,7 @@ import SwiftUI
 
 final class SearchViewModel : ObservableObject {
     
-    @Service var reminderRepository : ReminderRepositoryProtocol
+    @Inject var reminderRepository : ReminderRepositoryProtocol
     
     @Published var reminders : [ReminderCategory : [Reminder]] = [:]
    

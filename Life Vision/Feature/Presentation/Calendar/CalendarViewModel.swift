@@ -10,8 +10,8 @@ import Foundation
 
 final class CalendarViewModel : ObservableObject {
     
-    @Service var calenderService : CalendarServiceProtocol
-    @Service var reminderRepository : ReminderRepositoryProtocol
+    @Inject var calenderService : CalendarServiceProtocol
+    @Inject var reminderRepository : ReminderRepositoryProtocol
         
     @Published var selectedHeaderDay : Int = 0
     

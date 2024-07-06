@@ -16,6 +16,8 @@ struct LifeVisionApp : App {
     @AppStorage(Theme.key) private var theme : Theme = UserDefaults.standard.theme
     @UIApplicationDelegateAdaptor(LifeVisionAppDelegate.self) private var delegate
     
+  
+    
     var body: some Scene {
         WindowGroup {
             RootView(viewModel: viewModel)
@@ -24,4 +26,5 @@ struct LifeVisionApp : App {
     }
     
 }
+
 

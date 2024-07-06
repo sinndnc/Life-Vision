@@ -9,19 +9,19 @@ import Foundation
 
 
 @propertyWrapper
-struct Service<Service> {
+struct Inject<Inject> {
     
-    var service: Service
+    var inject: Inject
     
     init(_ dependencyType: ServiceType = .newInstance) {
-        guard let service = ServiceContainer.resolve(dependencyType: dependencyType, Service.self) else {
-            fatalError("No dependency of type \(String(describing: Service.self)) registered!")
+        guard let inject = ServiceContainer.resolve(dependencyType: dependencyType, Inject.self) else {
+            fatalError("No dependency of type \(String(describing: Inject.self)) registered!")
         }
-        self.service = service
+        self.inject = inject
     }
     
-    var wrappedValue: Service {
-        get { self.service }
-        mutating set { service = newValue }
+    var wrappedValue: Inject {
+        get { self.inject }
+        mutating set { inject = newValue }
     }
 }

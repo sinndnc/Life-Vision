@@ -50,14 +50,8 @@ struct TimelineTaskView: View {
         .clipShape(RoundedRectangle(cornerRadius: 5))
         .sheet(isPresented: $isPresented, content: {
             NavigationStack {
-                ReminderDetailView(reminder: $reminder)
-                    .toolbar{
-                        ToolbarItem(placement: .topBarLeading) {
-                            Button("Cancel") {
-                                isPresented.toggle()
-                            }
-                        }
-                    }
+                ReminderDetailView(geo:geo,reminder: $reminder)
+                    
             }
         })
         .onTapGesture { isPresented.toggle() }

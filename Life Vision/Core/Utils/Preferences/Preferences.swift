@@ -11,7 +11,9 @@ import Foundation
 struct Preferences{
     
     static let name = "name"
-    static let surname = "surname"
     static let image = "image"
-    
+    static let surname = "surname"
+    static let notification = "notification"
+    static let notifications = "notifications"
+
 }

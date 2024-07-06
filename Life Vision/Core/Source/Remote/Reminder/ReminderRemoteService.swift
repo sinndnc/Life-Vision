@@ -24,7 +24,8 @@ final class ReminderRemoteService : ReminderRemoteServiceProtocol{
 
         var reminders : [Reminder] = []
         var classifiedReminders : [Int : [Reminder]] = [:]
-
+        
+        
         firestore.collection(FirebaseConstant.users)
             .document(user.uid)
             .collection(FirebaseConstant.reminders)
@@ -61,13 +62,14 @@ final class ReminderRemoteService : ReminderRemoteServiceProtocol{
             .document(user.uid)
             .collection(FirebaseConstant.reminders)
             .document(reminder.uid)
-            .setData(from:reminder){ result in
+            .setData(from: reminder){ result in
                 if let error = result{
                     onCompletion(.failure(.invalidType))
                     print(error.localizedDescription)
+                }else{
+                    onCompletion(.success(reminder.uid))
                 }
             }
-            onCompletion(.success(reminder.uid))
         }catch{
             onCompletion(.failure(.invalidType))
         }

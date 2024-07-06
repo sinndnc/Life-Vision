@@ -36,11 +36,10 @@ extension UserDefaults {
         }
         set{
             UserDefaults.standard.set(newValue, forKey: Preferences.image)
-
         }
     }
     
-    var user : User {
+    var user : User{
         get{
             let defaultUser = User(mail: "default@mail.com", name: "default", surname: "")
             let userData = UserDefaults.standard.value(forKey: User.key) as? Data ?? Data()
@@ -53,5 +52,22 @@ extension UserDefaults {
             }
         }
     }
+       
+    var notification : Bool {
+        get{
+            return UserDefaults.standard.bool(forKey: Preferences.notification)
+        }
+        set{
+            UserDefaults.standard.set(newValue, forKey: Preferences.notification)
+        }
+    }
     
+    var notifications : Data {
+        get{
+            return UserDefaults.standard.data(forKey: Preferences.notifications) ?? Data()
+        }
+        set{
+            UserDefaults.standard.set(newValue, forKey: Preferences.notifications)
+        }
+    }
 }

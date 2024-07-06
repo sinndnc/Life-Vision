@@ -16,7 +16,7 @@ struct ToggleDisclosureGroupView<Content : View> : View {
     var body: some View {
         DisclosureGroup(
 //            isExpanded : $isExpanded,
-            content: {content},
+            content: { content },
             label: {
                 Label(
                     title: { Text(item.label) },

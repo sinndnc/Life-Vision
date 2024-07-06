@@ -29,6 +29,8 @@
 		995D7E982C2232EB0031C1A1 /* WorkSpaceBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D7E972C2232EB0031C1A1 /* WorkSpaceBodyView.swift */; };
 		995D7E9C2C236EE30031C1A1 /* TagItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D7E9B2C236EE30031C1A1 /* TagItemView.swift */; };
 		995D7EA52C24666D0031C1A1 /* ReminderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D7EA42C24666D0031C1A1 /* ReminderDetailView.swift */; };
+		997DA01B2C39EF1800354CCF /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DA01A2C39EF1800354CCF /* Dictionary+Extension.swift */; };
+		997DA01D2C39EFC700354CCF /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DA01C2C39EFC700354CCF /* Data+Extension.swift */; };
 		997E99122C127AE2006F0FB5 /* TimelineDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E99012C127AE2006F0FB5 /* TimelineDividerView.swift */; };
 		997E99132C127AE2006F0FB5 /* TimelineHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E99022C127AE2006F0FB5 /* TimelineHourView.swift */; };
 		997E99142C127AE2006F0FB5 /* TimelineNowDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E99032C127AE2006F0FB5 /* TimelineNowDividerView.swift */; };
@@ -180,6 +182,8 @@
 		995D7E972C2232EB0031C1A1 /* WorkSpaceBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceBodyView.swift; sourceTree = "<group>"; };
 		995D7E9B2C236EE30031C1A1 /* TagItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItemView.swift; sourceTree = "<group>"; };
 		995D7EA42C24666D0031C1A1 /* ReminderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailView.swift; sourceTree = "<group>"; };
+		997DA01A2C39EF1800354CCF /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
+		997DA01C2C39EFC700354CCF /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		997E99012C127AE2006F0FB5 /* TimelineDividerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineDividerView.swift; sourceTree = "<group>"; };
 		997E99022C127AE2006F0FB5 /* TimelineHourView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineHourView.swift; sourceTree = "<group>"; };
 		997E99032C127AE2006F0FB5 /* TimelineNowDividerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineNowDividerView.swift; sourceTree = "<group>"; };
@@ -839,8 +843,8 @@
 		99EBE97D2C00847E00789C9F /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				99F8B39C2C067C540082A453 /* Source */,
 				99EBE9862C00868F00789C9F /* Utils */,
+				99F8B39C2C067C540082A453 /* Source */,
 				99F8B3882C01CC480082A453 /* Constant */,
 				99EBE9832C00860B00789C9F /* Extension */,
 			);
@@ -850,7 +854,9 @@
 		99EBE9832C00860B00789C9F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				997DA01C2C39EFC700354CCF /* Data+Extension.swift */,
 				99EBE9DD2C008AEB00789C9F /* Theme+Extension.swift */,
+				997DA01A2C39EF1800354CCF /* Dictionary+Extension.swift */,
 				99EBE9842C00864000789C9F /* UserDefaults+Extension.swift */,
 			);
 			path = Extension;
@@ -1254,6 +1260,7 @@
 				99EBEA262C0142D500789C9F /* DependencyPropertyWrapper.swift in Sources */,
 				997E9A132C170F33006F0FB5 /* NotificationService.swift in Sources */,
 				99EBEA242C0142A800789C9F /* ServiceContainer.swift in Sources */,
+				997DA01D2C39EFC700354CCF /* Data+Extension.swift in Sources */,
 				997E99312C127B7C006F0FB5 /* TagsView.swift in Sources */,
 				99F8B38D2C01D2660082A453 /* StorageRemoteService.swift in Sources */,
 				995D7E8F2C22302D0031C1A1 /* WorkSpaceItemView.swift in Sources */,
@@ -1344,6 +1351,7 @@
 				997E9A232C1D8F3F006F0FB5 /* LifeVisionNotificationDelegate.swift in Sources */,
 				995D7E982C2232EB0031C1A1 /* WorkSpaceBodyView.swift in Sources */,
 				995D7E772C1F406A0031C1A1 /* CountdownHeaderView.swift in Sources */,
+				997DA01B2C39EF1800354CCF /* Dictionary+Extension.swift in Sources */,
 				997E99162C127AE2006F0FB5 /* TimelineLayout.swift in Sources */,
 				990DCFAE2C24CEA600891FCA /* Date+Extension.swift in Sources */,
 				997E9A082C13B80A006F0FB5 /* EarlyReminder.swift in Sources */,

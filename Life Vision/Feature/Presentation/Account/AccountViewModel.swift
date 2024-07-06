@@ -10,8 +10,9 @@ import SwiftUI
 
 final class AccountViewModel : ObservableObject {
     
-    @Service var userRepository : UserRepositoryProtocol
-    
+    @Inject var userRepository : UserRepositoryProtocol
+    @Inject var notificationService : NotificationServiceProtocol
+
     @AppStorage(Theme.key) var theme : Theme = UserDefaults.standard.theme
     @AppStorage(Language.key) var language : Language = UserDefaults.standard.language
     
@@ -19,7 +20,6 @@ final class AccountViewModel : ObservableObject {
     
     init(user: User) {
         self.user = user
-    }
-    
+    }    
 
 }

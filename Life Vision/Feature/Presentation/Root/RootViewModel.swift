@@ -9,12 +9,16 @@ import Foundation
 
 final class RootViewModel : ObservableObject{
     
-    @Service var authService : AuthRemoteServiceProtocol
-    @Service var userRepository : UserRepositoryProtocol
-    @Service var storageService : StorageRemoteServiceProtocol
-    @Service var reminderRepository : ReminderRepositoryProtocol
-    
+    @Inject var authService : AuthRemoteServiceProtocol
+    @Inject var userRepository : UserRepositoryProtocol
+    @Inject var storageService : StorageRemoteServiceProtocol
+    @Inject var reminderRepository : ReminderRepositoryProtocol
+    @Inject var notificationService : NotificationServiceProtocol
     
     @Published var user : User = UserDefaults.standard.user
+    
+    init() {
+        notificationService.setCategories()
+    }
     
 }

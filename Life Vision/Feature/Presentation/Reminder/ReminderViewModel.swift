@@ -9,11 +9,12 @@ import Foundation
 
 final class ReminderViewModel : ObservableObject{
     
-    @Service private var reminderRepository : ReminderRepositoryProtocol
-    @Service private var notificationService : NotificationServiceProtocol
+    @Inject private var reminderRepository : ReminderRepositoryProtocol
+    @Inject private var notificationService : NotificationServiceProtocol
     
     @Published var isPresented : Bool = false
-    
+    @Published var reminder : Reminder = Reminder()
+
     func add(_ reminder : Reminder){
         reminderRepository.add(reminder) { result in
             switch result {
@@ -31,8 +32,8 @@ final class ReminderViewModel : ObservableObject{
         let notification = TimeIntervalNotificaton(
             title: reminder.title,
             content: reminder.notes,
-            categoryIdentifier: "test",
-            timeInterval: timeInterval
+            timeInterval: timeInterval, 
+            categoryIdentifier: Notification.MESSAGES
         )
         self.scheduleTimeIntervalNotification(notification)
     }

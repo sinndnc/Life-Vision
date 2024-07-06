@@ -10,8 +10,8 @@ import Foundation
 
 final class HomeViewModel : ObservableObject{
     
-    @Service var calendarService : CalendarServiceProtocol
-    @Service var reminderRepository : ReminderRepositoryProtocol
+    @Inject var calendarService : CalendarServiceProtocol
+    @Inject var reminderRepository : ReminderRepositoryProtocol
 
     //Countdown
     @Published var upcoming : Reminder? = nil
