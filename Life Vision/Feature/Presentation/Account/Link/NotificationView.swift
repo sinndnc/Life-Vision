@@ -10,12 +10,13 @@ import SwiftUI
 struct NotificationView: View {
     
     @StateObject var viewModel : AccountViewModel
+    @State var categories = UserDefaults.standard.categories
 
     var body: some View {
-        List($viewModel.categories, id: \.self) { $category in
+        List($categories, id: \.self) { $category in
             Section(header: Text(category.name)) {
                 Toggle(isOn: self.bindingForCategory(category)) {
-                    Text("Allow")
+                    Text("Pause")
                 }
                 ForEach($category.subCategories,id:\.self) { $subCategory in
                     Toggle(isOn: self.bindingForSubCategory(category,subCategory)) {
@@ -25,6 +26,7 @@ struct NotificationView: View {
                 }
             }
         }
+        .toolbarTitleDisplayMode(.large)
         .localizedNavigationTitle(title: "Notifications")
     }
 
@@ -33,9 +35,9 @@ struct NotificationView: View {
             return category.isAllowed
         } set: { newValue in
             withAnimation(.spring) {
-                if let index = viewModel.categories.firstIndex(of: category){
-                    viewModel.categories[index].isAllowed = newValue
-                    viewModel.saveCategories()
+                if let index = categories.firstIndex(of: category){
+                    categories[index].isAllowed = newValue
+                    viewModel.saveCategories(categories)
                 }
             }
         }
@@ -46,10 +48,10 @@ struct NotificationView: View {
             return subCategory.isAllowed
         } set: { newValue in
             withAnimation(.spring) {
-                if let index = viewModel.categories.firstIndex(of: category){
-                    if let subIndex = viewModel.categories[index].subCategories.firstIndex(of: subCategory) {
-                        viewModel.categories[index].subCategories[subIndex].isAllowed = newValue
-                        viewModel.saveCategories()
+                if let index = categories.firstIndex(of: category){
+                    if let subIndex = categories[index].subCategories.firstIndex(of: subCategory) {
+                        categories[index].subCategories[subIndex].isAllowed = newValue
+                        viewModel.saveCategories(categories)
                     }
                 }
             }

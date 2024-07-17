@@ -10,7 +10,7 @@ import SwiftUI
 struct CircularProgressView: View {
     var progress: Double // Value between 0.0 and 1.0
     var lineWidth: CGFloat = 10
-    var color: Color = .pink
+    var color: Color = .blue
     
     var body: some View {
         ZStack {

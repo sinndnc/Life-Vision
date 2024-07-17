@@ -11,8 +11,8 @@ import FirebaseFirestore
 
 struct HomeView: View {
     
+    @State var isPresented : Bool = false
     @StateObject var viewModel : HomeViewModel
-    @StateObject var reminderViewModel : ReminderViewModel = ReminderViewModel()
     
     var body: some View {
         NavigationStack{
@@ -23,9 +23,9 @@ struct HomeView: View {
                 }
                 .listStyle(.plain)
             }
+            .homeToolBar(isPresented: $isPresented)
             .localizedNavigationTitle(title: "Home")
-            .taskView(reminderViewModel: $reminderViewModel)
-            .homeToolBar(reminderViewModel: reminderViewModel)
+            .taskView(isPresented: $isPresented, onDissmis:{})
         }
     }
 }
@@ -33,38 +33,20 @@ struct HomeView: View {
 
 fileprivate extension View{
     
-    func taskView(reminderViewModel : ObservedObject<ReminderViewModel>.Wrapper) -> some View {
+    func taskView(isPresented : Binding<Bool>,  onDissmis : @escaping () -> Void ) -> some View {
         return sheet(
-            isPresented: reminderViewModel.isPresented,
-            onDismiss: {},
-            content: {
-                ReminderView(
-                    reminder: reminderViewModel.reminder,
-                    leading: {
-                        Button(action: {
-                            reminderViewModel.isPresented.wrappedValue.toggle()
-                        }, label: {
-                            Text("Cancel")
-                        })
-                        
-                    },
-                    trailing: {
-                        Button(action: {
-                        }, label: {
-                            Text("Done")
-                        })
-                    }
-                )
-            }
+            isPresented: isPresented,
+            onDismiss: { onDissmis() },
+            content: { ReminderAddView(viewModel: ReminderViewModel()) }
         )
     }
     
-    func homeToolBar(reminderViewModel: ReminderViewModel) -> some View {
+    func homeToolBar(isPresented : Binding<Bool>) -> some View {
         toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button (
                     action: {
-                        reminderViewModel.isPresented.toggle()
+                        isPresented.wrappedValue.toggle()
                     },label: {
                         Image(systemName: "calendar.badge.plus")
                     }

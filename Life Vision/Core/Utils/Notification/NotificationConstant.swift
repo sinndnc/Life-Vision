@@ -12,32 +12,32 @@ import CoreLocation
 struct NotificationConstant{   
     
     static let key = "notification_key"
-    
+
     static let category = "category"
     static let subCategory = "subCategory"
     
-    static let messages = "messages"
-    static let group_messages = "group messages"
-    static let private_messages = "private messages"
+    static let messages = "Messages"
+    static let group_messages = "Group Messages"
+    static let private_messages = "Private Messages"
     
-    
-    static let reminders = "reminders"
-    static let location_reminders = "location reminders"
-    static let scheduled_reminders = "scheduled reminders "
+    static let reminders = "Reminders"
+    static let location_reminders = "Location Reminders"
+    static let scheduled_reminders = "Scheduled Reminders "
     
     static let messagesSubCategories : [SubCategoryItem] = [
-        SubCategoryItem(name: "Group Messages", isAllowed: true),
-        SubCategoryItem(name: "Private Messages", isAllowed: true)
+        SubCategoryItem(name: group_messages, isAllowed: true),
+        SubCategoryItem(name: private_messages, isAllowed: true)
     ]
+    
     static let remindersSubCategories : [SubCategoryItem] = [
-        SubCategoryItem(name: "Location Reminders", isAllowed: true),
-        SubCategoryItem(name: "Scheduled Reminders", isAllowed: true)
+        SubCategoryItem(name: location_reminders, isAllowed: true),
+        SubCategoryItem(name: scheduled_reminders, isAllowed: true)
     ]
-    static let messagesCategories = CategoryItem(name: "Messages", isAllowed: true, subCategories: messagesSubCategories)
-    static let remindersCategories = CategoryItem(name: "Reminders", isAllowed: true, subCategories: remindersSubCategories)
+    
+    static let messagesCategories = CategoryItem(name: messages, isAllowed: true, subCategories: messagesSubCategories)
+    static let remindersCategories = CategoryItem(name: reminders, isAllowed: true, subCategories: remindersSubCategories)
     
     static let `default` : [CategoryItem] = [messagesCategories,remindersCategories]
-
 }
 
 

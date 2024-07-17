@@ -15,7 +15,6 @@ final class AccountViewModel : ObservableObject {
     @Inject var userRepository : UserRepositoryProtocol
     @Inject var notificationService : NotificationServiceProtocol
 
-    @Published var categories = UserDefaults.standard.categories
     @AppStorage(Theme.key) var theme : Theme = UserDefaults.standard.theme
     @AppStorage(Language.key) var language : Language = UserDefaults.standard.language
 
@@ -23,7 +22,7 @@ final class AccountViewModel : ObservableObject {
         self.user = user
     }
 
-    func saveCategories() {
+    func saveCategories(_ categories : [CategoryItem]) {
         do{
             let encoded = try JSONEncoder().encode(categories)
             UserDefaults.standard.setValue(encoded, forKey: Preferences.categories)

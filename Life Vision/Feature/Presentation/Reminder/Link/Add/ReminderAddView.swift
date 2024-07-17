@@ -11,16 +11,17 @@ struct ReminderAddView: View {
     
     @State var reminder : Reminder = Reminder()
     @StateObject var viewModel : ReminderViewModel
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationStack{
             ReminderView(reminder: $reminder){
                 Button("Cancel") {
-                    viewModel.isPresented.toggle()
+                    presentationMode.wrappedValue.dismiss()
                 }
             }trailing: {
                 Button("Add") {
-                    viewModel.isPresented.toggle()
+                    presentationMode.wrappedValue.dismiss()
                     viewModel.add(reminder)
                 }
                 .disabled(reminder.title.isEmpty)

@@ -8,13 +8,10 @@
 import Foundation
 
 final class ReminderViewModel : ObservableObject{
-    
+        
     @Inject private var reminderRepository : ReminderRepositoryProtocol
     @Inject private var notificationService : NotificationServiceProtocol
     
-    @Published var isPresented : Bool = false
-    @Published var reminder : Reminder = Reminder()
-
     func add(_ reminder : Reminder){
         reminderRepository.add(reminder) { result in
             switch result {
@@ -25,7 +22,6 @@ final class ReminderViewModel : ObservableObject{
             }
         }
     }
-    
     
     private func onSuccess(reminder : Reminder){
         let timeInterval = reminder.start_date.timeIntervalSinceNow

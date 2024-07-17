@@ -16,7 +16,6 @@ struct ReminderView<Leading:View,Trailing:View> : View {
 
     var body: some View {
         NavigationStack{
-            
             List {
                 Section{
                     TitleItemView(text: $reminder.title, placeholder: "Title")
