@@ -16,9 +16,5 @@ final class RootViewModel : ObservableObject{
     @Inject var notificationService : NotificationServiceProtocol
     
     @Published var user : User = UserDefaults.standard.user
-    
-    init() {
-        notificationService.setCategories()
-    }
-    
+
 }

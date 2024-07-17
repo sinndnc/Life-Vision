@@ -33,7 +33,8 @@ final class ReminderViewModel : ObservableObject{
             title: reminder.title,
             content: reminder.notes,
             timeInterval: timeInterval, 
-            categoryIdentifier: Notification.MESSAGES
+            category: NotificationConstant.messages,
+            subCategory: NotificationConstant.group_messages
         )
         self.scheduleTimeIntervalNotification(notification)
     }

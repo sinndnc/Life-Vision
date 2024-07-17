@@ -9,43 +9,51 @@ import SwiftUI
 
 struct NotificationView: View {
     
-    @State private var isDisabled = true
     @StateObject var viewModel : AccountViewModel
-    @AppStorage(Preferences.notification) private var notification : Bool = UserDefaults.standard.notification
-    @AppStorage(Preferences.notifications) private var storedDictionaryData: Data = UserDefaults.standard.notifications
-    
+
     var body: some View {
-        List {
-            Section{
-                Toggle("Notifications", isOn: $notification)
-            }footer: {
-                Text("You can close all notifications channel with this button")
-            }
-            ForEach(storedDictionaryData.decodeToDictionary().compactMap{$0.key}.sorted(),id:\.self){ category in
-                Section{
-                    let categories = storedDictionaryData.decodeToDictionary()[category] ?? [:]
-                    ForEach(Array(categories).sorted{$0.key > $1.key},id: \.key){ subCategory,value in
-                        Toggle("\(subCategory) Notifications",isOn: self.binding(key: category,subkey: subCategory))
-                            .disabled(!notification)
+        List($viewModel.categories, id: \.self) { $category in
+            Section(header: Text(category.name)) {
+                Toggle(isOn: self.bindingForCategory(category)) {
+                    Text("Allow")
+                }
+                ForEach($category.subCategories,id:\.self) { $subCategory in
+                    Toggle(isOn: self.bindingForSubCategory(category,subCategory)) {
+                        Text(subCategory.name)
                     }
-                }header: {
-                    Text(category)
+                    .disabled(!category.isAllowed)
                 }
             }
         }
         .localizedNavigationTitle(title: "Notifications")
-      
     }
-    
-    private func binding(key : String, subkey: String) -> Binding<Bool> {
-        Binding<Bool>(
-            get: { return storedDictionaryData.decodeToDictionary()[key]?[subkey] ?? false },
-            set: { newValue in
-                var decoded = storedDictionaryData.decodeToDictionary()
-                decoded[outerKey]?[subkey] = newValue
-                storedDictionaryData = decoded.encode()
+
+    func bindingForCategory(_ category: CategoryItem) -> Binding<Bool> {
+        Binding {
+            return category.isAllowed
+        } set: { newValue in
+            withAnimation(.spring) {
+                if let index = viewModel.categories.firstIndex(of: category){
+                    viewModel.categories[index].isAllowed = newValue
+                    viewModel.saveCategories()
+                }
             }
-        )
+        }
+    }  
+    
+    func bindingForSubCategory(_ category: CategoryItem,_ subCategory : SubCategoryItem) -> Binding<Bool> {
+        Binding {
+            return subCategory.isAllowed
+        } set: { newValue in
+            withAnimation(.spring) {
+                if let index = viewModel.categories.firstIndex(of: category){
+                    if let subIndex = viewModel.categories[index].subCategories.firstIndex(of: subCategory) {
+                        viewModel.categories[index].subCategories[subIndex].isAllowed = newValue
+                        viewModel.saveCategories()
+                    }
+                }
+            }
+        }
     }
 }
 

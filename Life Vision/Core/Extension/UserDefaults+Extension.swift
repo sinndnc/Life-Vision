@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension UserDefaults {
     
@@ -52,22 +53,58 @@ extension UserDefaults {
             }
         }
     }
-       
-    var notification : Bool {
-        get{
-            return UserDefaults.standard.bool(forKey: Preferences.notification)
-        }
-        set{
-            UserDefaults.standard.set(newValue, forKey: Preferences.notification)
-        }
-    }
     
-    var notifications : Data {
-        get{
-            return UserDefaults.standard.data(forKey: Preferences.notifications) ?? Data()
+    
+    var permissions : Binding<[PermissionItem]> {
+        Binding{
+            if let data = self.data(forKey: Preferences.permissions) {
+                do {
+                    let permissions = try JSONDecoder().decode([PermissionItem].self, from: data)
+                    return permissions
+                }
+                catch { print("decoded error : \(error)") }
+            }else{
+                do{
+                    let `default` = try JSONEncoder().encode(PermissionConstant.default)
+                    self.setValue(`default`, forKey: Preferences.permissions)
+                }
+                catch{ print("encoded error : \(error)") }
+            }
+            return PermissionConstant.default
         }
-        set{
-            UserDefaults.standard.set(newValue, forKey: Preferences.notifications)
+        set: { newValue in
+            do{
+                let encoded = try JSONEncoder().encode(newValue)
+                self.setValue(encoded, forKey: Preferences.permissions)
+            }
+            catch{ print("encoded error : \(error)") }
         }
     }
+
+    var categories : [CategoryItem] {
+        get{
+            if let data = self.data(forKey: Preferences.categories) {
+                do {
+                    let notifications = try JSONDecoder().decode([CategoryItem].self, from: data)
+                    return notifications
+                }
+                catch { print("decoded error : \(error)") }
+            }else{
+                do{
+                    let `default` = try JSONEncoder().encode(NotificationConstant.default)
+                    self.setValue(`default`, forKey: Preferences.categories)
+                }
+                catch{ print("encoded error : \(error)") }
+            }
+            return NotificationConstant.default
+        }
+        set{
+            do{
+                let encoded = try JSONEncoder().encode(newValue)
+                self.setValue(encoded, forKey: Preferences.categories)
+            }
+            catch{ print("encoded error : \(error)") }
+        }
+    }
+
 }

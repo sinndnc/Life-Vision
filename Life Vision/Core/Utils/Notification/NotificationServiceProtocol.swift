@@ -9,9 +9,7 @@ import Foundation
 import UserNotifications
 
 protocol NotificationServiceProtocol{
-        
-    func setCategories()
-    
+            
     func requestAuthorization()
     
     func scheduleLocationNotification(_ notification : LocationNotificaton)

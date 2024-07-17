@@ -11,12 +11,6 @@ import CoreLocation
 
 final class NotificationService : NotificationServiceProtocol {
     
-    func setCategories() {
-        let messages = UNNotificationCategory(identifier: Notification.message.id, actions: [], intentIdentifiers: [])
-        let reminders = UNNotificationCategory(identifier:Notification.reminder.id, actions: [], intentIdentifiers: [])
-        UNUserNotificationCenter.current().setNotificationCategories([messages,reminders])
-    }
-    
     func scheduleLocationNotification(_ notification : LocationNotificaton) {
         let content = UNMutableNotificationContent()
         content.title = notification.title
@@ -43,7 +37,11 @@ final class NotificationService : NotificationServiceProtocol {
         content.title = notification.title
         content.body = notification.content
         content.sound = UNNotificationSound.default
-        content.categoryIdentifier = notification.categoryIdentifier
+        content.userInfo = [
+            NotificationConstant.category : notification.category,
+            NotificationConstant.subCategory : notification.subCategory
+        ]
+        content.categoryIdentifier = notification.subCategory
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: notification.timeInterval, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
@@ -64,25 +62,4 @@ final class NotificationService : NotificationServiceProtocol {
             }
         }
     }
-    
-    
-    func initializeNotificationCategories() -> [String: [String:Bool]] {
-        var notifications : [String: [String:Bool]] = [:]
-
-        let keys = [Notification.MESSAGES]
-        let subkeys = [Notification.chat_messages,Notification.group_messages]
-        
-        for key in keys {
-            if notifications[key] == nil {
-                notifications[key] = [:]
-            }
-            for subkey in subkeys {
-                notifications[key]![subkey] = true
-            }
-        }
-        
-        return notifications
-    }
-    
-    
 }
