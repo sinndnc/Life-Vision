@@ -12,12 +12,10 @@ struct User : Codable {
     var mail : String
     var name : String
     var surname : String
-    
-    
-    static let key = "user"
+    var image : Data? = nil
     
     static func logout() {
-        UserDefaults.standard.removeObject(forKey: key)
+        UserDefaults.standard.removeObject(forKey: Preferences.user)
     }
     
 }

@@ -9,6 +9,7 @@ import Foundation
 
 struct Preferences{
     
+    static let user = "user"
     static let image = "image"
     static let categories = "categories"
     static let permissions = "permissions"

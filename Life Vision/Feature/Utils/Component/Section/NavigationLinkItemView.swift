@@ -15,7 +15,7 @@ struct NavigationLinkDestinationView<Content : View> : View {
     @ViewBuilder let content: Content
 
     var body: some View {
-        NavigationLink(destination: content ) {
+        NavigationLink(destination: content) {
             Label(
                 title: {
                     Text(item.label)
@@ -67,5 +67,7 @@ struct NavigationLinkItemView: View {
 
 
 #Preview {
-    NavigationLinkItemView(item: SectionItem(label: "Repeat", image: "repeat",color: .cyan), value: AccountDestination.profile)
+    NavigationLinkDestinationView(item: SectionItem(label: "Repeat", image: "repeat",color: .cyan)){
+        
+    }
 }

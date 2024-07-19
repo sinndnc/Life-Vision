@@ -16,6 +16,6 @@ protocol StorageRemoteServiceProtocol {
         
     func uploadImage()
 
-    func downloadImage()
+    func downloadImage() async throws -> Data
             
 }

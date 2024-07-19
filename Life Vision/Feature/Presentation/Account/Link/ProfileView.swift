@@ -10,34 +10,27 @@ import PhotosUI
 
 struct ProfileView: View {
     
+    var user : User
+    
+    @StateObject var viewModel : AccountViewModel
+    
     @State private var showDialog : Bool = false
     @State private var showPicker : Bool = false
     @State private var showCamera : Bool = false
     
-    @StateObject var viewModel : AccountViewModel
-    @AppStorage(Preferences.image) var image = UserDefaults.standard.image
-
     var body: some View {
         List {
             Section{
                 VStack(alignment: .center){
                     ZStack(alignment: .bottomTrailing){
-                        if let uiImage = UIImage(data: image){
+                        if let image = user.image, let uiImage = UIImage(data: image){
                             Image(uiImage: uiImage)
                                 .resizable()
                                 .scaledToFit()
                                 .background(.gray)
                                 .clipShape(Circle())
                                 .frame(width: 100,height: 100)
-                        }else{
-                            Image("DefaultImage")
-                                .resizable()
-                                .scaledToFit()
-                                .background(.gray)
-                                .clipShape(Circle())
-                                .frame(width: 100,height: 100)
                         }
-                    
                         Image(systemName: "photo")
                             .padding(5)
                             .tint(.black)
@@ -50,23 +43,23 @@ struct ProfileView: View {
                     }
                     .frame(width: 500)
                     HStack{
-                        Text(viewModel.user.name)
+                        Text(user.name)
                             .font(.title2)
                             .fontWeight(.bold)
-                        Text(viewModel.user.surname)
+                        Text(user.surname)
                             .font(.title2)
                             .fontWeight(.bold)
                     }
-                    Text(viewModel.user.mail)
+                    Text(user.mail)
                         .font(.subheadline)
                         .fontWeight(.medium)
                 }
             }
             .listRowBackground(Color.clear)
             Section {
-                TextField(viewModel.user.name, text: .constant(""))
-                TextField(viewModel.user.surname, text: .constant(""))
-                TextField(viewModel.user.mail, text: .constant(""))
+                TextField(user.name, text: .constant(""))
+                TextField(user.surname, text: .constant(""))
+                TextField(user.mail, text: .constant(""))
                 TextField("+90 536 636 0880", text: .constant(""))
             }header: {
                 Text("Personal information")
@@ -101,5 +94,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(viewModel: AccountViewModel(user: User(mail: "", name: "", surname: "")))
+    ProfileView(user: User(mail: "", name: "", surname: ""),viewModel: AccountViewModel(user:nil))
 }

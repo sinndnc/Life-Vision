@@ -10,6 +10,8 @@ import Foundation
 
 protocol UserLocalServiceProtocol{
     
-    func fetch()  -> User
+    func set(user : User)
+    
+    func fetch()  -> User?
     
 }

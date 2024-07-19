@@ -14,7 +14,9 @@ final class UserRemoteService : UserRemoteServiceProtocol {
     
     let firestore: Firestore
     let auth : FirebaseAuth.Auth
-        
+    
+    @Inject private var storageService : StorageRemoteServiceProtocol
+            
     init(auth: FirebaseAuth.Auth,firestore: Firestore) {
         self.auth = auth
         self.firestore = firestore
@@ -25,10 +27,10 @@ final class UserRemoteService : UserRemoteServiceProtocol {
         guard let auth = auth.currentUser else { throw UserErrorCallback.invalidUser }
         
         do{
-            let user = try await firestore.collection(FirebaseConstant.users)
-                .document(auth.uid)
-                .getDocument()
-                .data(as: User.self)
+            let reference = firestore.collection(FirebaseConstant.users).document(auth.uid)
+            var user = try await reference.getDocument().data(as: User.self)
+            user.image = try await storageService.downloadImage()
+                        
             return .success(user)
         }
         catch{

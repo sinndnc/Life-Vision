@@ -7,7 +7,6 @@
 import SwiftUI
 
 enum AccountDestination {
-    case profile
     case language
     case notification
     case privacyAndPolicy

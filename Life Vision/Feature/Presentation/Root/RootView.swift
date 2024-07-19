@@ -10,9 +10,8 @@ import SwiftUI
 
 struct RootView: View {
     
-    @State private var selectedTab: TabEnum = .home
-
     @StateObject var viewModel : RootViewModel
+    @State private var selectedTab: TabEnum = .home
 
     var body: some View {
         TabView(selection: tabSelection()) {
@@ -24,15 +23,6 @@ struct RootView: View {
                 .tabview(tag: .calendar, text: "Calendar", image: "calendar")
             AccountView(viewModel : AccountViewModel(user: viewModel.user))
                 .tabview(tag: .account, text: "Account", image: "person.fill")
-        }
-        .task {
-            let result = await viewModel.userRepository.fetch()
-            switch result {
-            case .success(let user):
-                viewModel.user = user
-            case .failure(let failure):
-                print(failure)
-            }
         }
     }
 }

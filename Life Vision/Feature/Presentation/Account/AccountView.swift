@@ -11,16 +11,18 @@ struct AccountView: View {
     
     @StateObject var viewModel : AccountViewModel
     @State private var path : [AccountDestination] = []
-    
 
     var body: some View {
         NavigationStack(path: $path){
             List {
                 Section{
-                    ProfileItemView(
-                        user : viewModel.user,
-                        value: AccountDestination.profile
-                    )
+                    if let user = viewModel.user{
+                        NavigationLink {
+                            ProfileView(user: user, viewModel: viewModel)
+                        }
+                        label: { ProfileItemView(user : user) }
+                    }
+                    else{ noUser }
                 }
                 Section{
                     SegmentedItemView(
@@ -37,6 +39,8 @@ struct AccountView: View {
                         item: AccountSectionConstant.notification,
                         value: AccountDestination.notification
                     )
+                }header: {
+                    Text("Preferences")
                 }
                 Section{
                     NavigationLinkItemView(
@@ -51,12 +55,25 @@ struct AccountView: View {
                         item: AccountSectionConstant.aboutUs,
                         value: AccountDestination.aboutUs
                     )
+                }header: {
+                    Text("Security")
                 }
             }
             .localizedNavigationTitle(title: "Account")
             .navigationGraph(path: $path, viewModel: viewModel)
         }
     }
+    
+    
+    @ViewBuilder
+    var noUser : some View {
+        ZStack {
+            NavigationLink(destination: ZStack{}) {
+                Text("No found user please sign in")
+            }
+        }
+    }
+    
 }
 
 fileprivate extension View{
@@ -64,8 +81,6 @@ fileprivate extension View{
     func navigationGraph(path : Binding<[AccountDestination]>,viewModel: AccountViewModel) -> some View {
         return navigationDestination(for: AccountDestination.self) { destination in
             switch destination {
-            case .profile:
-                ProfileView(viewModel: viewModel)
             case .language:
                 LanguageView(path: path,viewModel: viewModel)
             case .notification:
@@ -82,5 +97,5 @@ fileprivate extension View{
 }
 
 #Preview {
-    AccountView(viewModel: AccountViewModel(user: User(mail: "", name: "", surname: "")))
+    AccountView(viewModel: AccountViewModel(user:nil))
 }

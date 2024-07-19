@@ -16,8 +16,6 @@ final class StorageRemoteService : StorageRemoteServiceProtocol{
     let storage: Storage
     let firestore: Firestore
     let auth : FirebaseAuth.Auth
-
-    @AppStorage(Preferences.image) private var image : Data = UserDefaults.standard.image
     
     init(auth : FirebaseAuth.Auth,storage: Storage, firestore: Firestore) {
         self.auth = auth
@@ -25,23 +23,22 @@ final class StorageRemoteService : StorageRemoteServiceProtocol{
         self.firestore = firestore
     }
     
-    func downloadImage() {
+    func downloadImage() async throws -> Data {
         let maxSize : Int64 = 1 * 1024 * 1024
-        let reference = storage.reference(withPath: "images/\(auth.currentUser!.uid)/profile_image.jpg")
         
-        reference.getData(maxSize: maxSize ) { data, error  in
-            if let error = error { print(error) }
-            
-            if let data = data { self.image = data }
+        guard let user = auth.currentUser else { throw UserErrorCallback.invalidUser }
+        let reference = storage.reference(withPath: "images/\(user.uid)/profile_image.jpg")
+        
+        do {
+            return try await reference.data(maxSize: maxSize)
+        } catch {
+            print(error)
+            return Data()
         }
-        
     }
-    
     
     func uploadImage(){
         
     }
-    
-    
     
 }

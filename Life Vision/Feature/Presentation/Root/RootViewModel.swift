@@ -8,6 +8,8 @@
 import Foundation
 
 final class RootViewModel : ObservableObject{
+  
+    @Published var user : User? = nil
     
     @Inject var authService : AuthRemoteServiceProtocol
     @Inject var userRepository : UserRepositoryProtocol
@@ -15,6 +17,16 @@ final class RootViewModel : ObservableObject{
     @Inject var reminderRepository : ReminderRepositoryProtocol
     @Inject var notificationService : NotificationServiceProtocol
     
-    @Published var user : User = UserDefaults.standard.user
+    init() {
+        Task { @MainActor in
+            let result = await userRepository.fetch()
+            switch result {
+            case .success(let user):
+                self.user = user
+            case .failure(let failure):
+                print(failure)
+            }
+        }
+    }
 
 }

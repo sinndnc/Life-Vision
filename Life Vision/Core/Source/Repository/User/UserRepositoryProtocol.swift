@@ -11,6 +11,6 @@ import Foundation
 protocol UserRepositoryProtocol {
     
 
-    func fetch() async -> Result<User,UserErrorCallback>
+    func fetch() async -> Result<User?,UserErrorCallback>
     
 }

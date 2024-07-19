@@ -10,13 +10,14 @@ import Foundation
 
 final class UserLocalService : UserLocalServiceProtocol{
     
-    
-    func fetch() -> User {
-       return UserDefaults.standard.user
-        
-        
-        
+    func set(user : User) {
+        UserDefaults.standard.user = user
     }
     
+    func fetch() -> User? {
+        var user = UserDefaults.standard.user
+        user?.image = UserDefaults.standard.image
+        return user
+    }
     
 }

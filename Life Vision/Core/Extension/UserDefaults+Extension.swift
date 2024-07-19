@@ -31,26 +31,32 @@ extension UserDefaults {
     }
     
     //TODO: düzeltilecek
-    var image : Data {
+    var image : Data? {
         get {
-            UserDefaults.standard.data(forKey: Preferences.image) ?? Data()
+            UserDefaults.standard.data(forKey: Preferences.image)
         }
         set{
             UserDefaults.standard.set(newValue, forKey: Preferences.image)
         }
     }
     
-    var user : User{
+    var user : User?{
         get{
-            let defaultUser = User(mail: "default@mail.com", name: "default", surname: "")
-            let userData = UserDefaults.standard.value(forKey: User.key) as? Data ?? Data()
-            let user = try? PropertyListDecoder().decode(User.self, from: userData)
-            return user ?? defaultUser
+            if let data = self.data(forKey: Preferences.user){
+                do {
+                    let user = try PropertyListDecoder().decode(User.self, from: data)
+                    return user
+                }
+                catch{ print("encoded error : \(error)") }
+            }
+            return nil
         }
         set{
-            if let data = try? PropertyListEncoder().encode(newValue) {
-                UserDefaults.standard.set(data,forKey: User.key)
+            do{
+                let encoded = try JSONEncoder().encode(newValue)
+                self.setValue(encoded, forKey: Preferences.user)
             }
+            catch{ print("encoded error : \(error)") }
         }
     }
     
