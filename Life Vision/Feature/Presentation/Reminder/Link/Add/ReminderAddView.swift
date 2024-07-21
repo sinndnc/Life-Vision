@@ -19,7 +19,8 @@ struct ReminderAddView: View {
                 Button("Cancel") {
                     presentationMode.wrappedValue.dismiss()
                 }
-            }trailing: {
+            }
+            trailing: {
                 Button("Add") {
                     presentationMode.wrappedValue.dismiss()
                     viewModel.add(reminder)

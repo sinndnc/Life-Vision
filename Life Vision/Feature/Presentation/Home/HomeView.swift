@@ -17,11 +17,12 @@ struct HomeView: View {
     var body: some View {
         NavigationStack{
             GeometryReader{ geo in
-                List{
+                ScrollView{
+                    Divider()
                     CountdownView(geo: geo,viewModel: viewModel)
+                    Divider()
                     WorkSpaceView(geo: geo,viewModel: viewModel)
                 }
-                .listStyle(.plain)
             }
             .homeToolBar(isPresented: $isPresented)
             .localizedNavigationTitle(title: "Home")

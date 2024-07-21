@@ -12,19 +12,15 @@ import SwiftUI
 struct LifeVisionApp : App {
     
     @Environment(\.colorScheme) private var colorScheme
-    @StateObject private var viewModel : RootViewModel = RootViewModel()
-    @AppStorage(Theme.key) private var theme : Theme = UserDefaults.standard.theme
     @UIApplicationDelegateAdaptor(LifeVisionAppDelegate.self) private var delegate
-    
-  
+    @AppStorage(Theme.key) private var theme : Theme = UserDefaults.standard.theme
     
     var body: some Scene {
         WindowGroup {
-            RootView(viewModel: viewModel)
+            SplashView()
+                .environmentObject(RootViewModel())
                 .preferredColorScheme(theme.toColorScheme(colorScheme))
         }
     }
     
 }
-
-

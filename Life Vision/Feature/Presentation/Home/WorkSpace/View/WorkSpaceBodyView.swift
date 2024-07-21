@@ -19,8 +19,19 @@ struct WorkSpaceBodyView: View {
                 let reminders = viewModel.reminders
                 let selected = viewModel.selectedCategory
                 let filteredReminders = viewModel.filterReminders(reminders: reminders, by: selected)
-                ForEach(filteredReminders,id:\.self){ reminder in
-                    WorkSpaceItemView(geo: geo,reminder: reminder)
+                if !filteredReminders.isEmpty {
+                    ForEach(filteredReminders,id:\.self){ reminder in
+                        WorkSpaceItemView(geo: geo,reminder: reminder)
+                            .padding(.horizontal)
+                    }
+                }else{
+                    ZStack {
+                        Text("No task for \(selected.rawValue)")
+                            .font(.callout)
+                            .foregroundStyle(.gray)
+                    }
+                    .padding(.horizontal)
+                    .frame(width: geo.size.width)
                 }
             })
         }

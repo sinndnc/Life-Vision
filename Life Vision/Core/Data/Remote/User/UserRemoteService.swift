@@ -17,6 +17,9 @@ final class UserRemoteService : UserRemoteServiceProtocol {
     
     @Inject private var storageService : StorageRemoteServiceProtocol
             
+    
+    var isLogged : Bool { return auth.currentUser != nil }
+    
     init(auth: FirebaseAuth.Auth,firestore: Firestore) {
         self.auth = auth
         self.firestore = firestore

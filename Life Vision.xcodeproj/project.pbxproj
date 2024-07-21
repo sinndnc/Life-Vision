@@ -94,6 +94,10 @@
 		99A9B6FA2C440358006927B4 /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A9B6F92C440358006927B4 /* Permission.swift */; };
 		99A9B6FC2C4403A2006927B4 /* PermissionConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A9B6FB2C4403A2006927B4 /* PermissionConstant.swift */; };
 		99A9B6FE2C443225006927B4 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A9B6FD2C443225006927B4 /* Data+Extension.swift */; };
+		99B0BBCB2C4D5EB3008C3C0C /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0BBCA2C4D5EB3008C3C0C /* MapViewModel.swift */; };
+		99B0BBCE2C4D5F11008C3C0C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0BBCD2C4D5F11008C3C0C /* SplashView.swift */; };
+		99B0BBD02C4D5F19008C3C0C /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0BBCF2C4D5F19008C3C0C /* SplashViewModel.swift */; };
+		99D4F0AD2C4D134C009E1083 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D4F0AC2C4D134C009E1083 /* MapView.swift */; };
 		99E9E3382C275E0800F2F334 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9E3372C275E0800F2F334 /* CircularProgressView.swift */; };
 		99E9E33E2C31DEB100F2F334 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9E33D2C31DEB100F2F334 /* Countdown.swift */; };
 		99EBE9532C0083A300789C9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EBE9522C0083A300789C9F /* Assets.xcassets */; };
@@ -250,6 +254,10 @@
 		99A9B6F92C440358006927B4 /* Permission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
 		99A9B6FB2C4403A2006927B4 /* PermissionConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionConstant.swift; sourceTree = "<group>"; };
 		99A9B6FD2C443225006927B4 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		99B0BBCA2C4D5EB3008C3C0C /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		99B0BBCD2C4D5F11008C3C0C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		99B0BBCF2C4D5F19008C3C0C /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		99D4F0AC2C4D134C009E1083 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		99E9E3372C275E0800F2F334 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		99E9E33D2C31DEB100F2F334 /* Countdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
 		99EBE94B2C0083A200789C9F /* Life Vision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Life Vision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -516,8 +524,8 @@
 		997E992A2C127B7C006F0FB5 /* Link */ = {
 			isa = PBXGroup;
 			children = (
-				991E57D32C26088D00F4DB23 /* Add */,
 				995D7E992C236EC30031C1A1 /* Tag */,
+				991E57D32C26088D00F4DB23 /* Add */,
 				995D7E9D2C2371920031C1A1 /* Detail */,
 				995D7EA02C238C4E0031C1A1 /* Repeat */,
 			);
@@ -736,6 +744,24 @@
 			path = Permissions;
 			sourceTree = "<group>";
 		};
+		99B0BBCC2C4D5F07008C3C0C /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				99B0BBCD2C4D5F11008C3C0C /* SplashView.swift */,
+				99B0BBCF2C4D5F19008C3C0C /* SplashViewModel.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		99D4F0A92C4D132E009E1083 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				99D4F0AC2C4D134C009E1083 /* MapView.swift */,
+				99B0BBCA2C4D5EB3008C3C0C /* MapViewModel.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		99E9E3362C275DE400F2F334 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
@@ -835,12 +861,14 @@
 		99EBE97B2C00846800789C9F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				99B0BBCC2C4D5F07008C3C0C /* Splash */,
+				99D4F0A92C4D132E009E1083 /* Map */,
 				997E997F2C127DB5006F0FB5 /* Root */,
-				997E992D2C127B7C006F0FB5 /* Reminder */,
 				997E99112C127AE2006F0FB5 /* Home */,
 				997E99362C127B8D006F0FB5 /* Search */,
 				997E99472C127B9B006F0FB5 /* Account */,
 				997E99542C127BAA006F0FB5 /* Calendar */,
+				997E992D2C127B7C006F0FB5 /* Reminder */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -858,7 +886,7 @@
 			isa = PBXGroup;
 			children = (
 				99EBE9862C00868F00789C9F /* Utils */,
-				99F8B39C2C067C540082A453 /* Source */,
+				99F8B39C2C067C540082A453 /* Data */,
 				99F8B3882C01CC480082A453 /* Constant */,
 				99EBE9832C00860B00789C9F /* Extension */,
 			);
@@ -993,7 +1021,7 @@
 			path = Remote;
 			sourceTree = "<group>";
 		};
-		99F8B39C2C067C540082A453 /* Source */ = {
+		99F8B39C2C067C540082A453 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				99F8B39E2C067DB00082A453 /* Entities */,
@@ -1001,7 +1029,7 @@
 				99F8B39B2C067C440082A453 /* Remote */,
 				99F8B39D2C067CDB0082A453 /* Repository */,
 			);
-			path = Source;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		99F8B39D2C067CDB0082A453 /* Repository */ = {
@@ -1272,6 +1300,7 @@
 				99EBEA1E2C01417500789C9F /* UserRemoteServiceProtocol.swift in Sources */,
 				99F8B38F2C01D2720082A453 /* StorageRemoteServiceProtocol.swift in Sources */,
 				995D7E942C2232260031C1A1 /* WorkSpaceCategory.swift in Sources */,
+				99B0BBCE2C4D5F11008C3C0C /* SplashView.swift in Sources */,
 				997E99322C127B7C006F0FB5 /* ReminderView.swift in Sources */,
 				99F8B3B72C06820F0082A453 /* StorageErrorCallback.swift in Sources */,
 				997E99372C127B8D006F0FB5 /* SearchView.swift in Sources */,
@@ -1363,6 +1392,7 @@
 				990DCFAE2C24CEA600891FCA /* Date+Extension.swift in Sources */,
 				997E9A082C13B80A006F0FB5 /* EarlyReminder.swift in Sources */,
 				997E991B2C127AE2006F0FB5 /* HomeViewModel.swift in Sources */,
+				99D4F0AD2C4D134C009E1083 /* MapView.swift in Sources */,
 				997DA01F2C3AD00C00354CCF /* Notification.swift in Sources */,
 				997E992F2C127B7C006F0FB5 /* ReminderDestination.swift in Sources */,
 				997E99182C127AE2006F0FB5 /* TimelineHeaderView.swift in Sources */,
@@ -1375,12 +1405,14 @@
 				997E994D2C127B9B006F0FB5 /* PrivacyAndPolicyView.swift in Sources */,
 				997E9A002C13B678006F0FB5 /* NavigationLinkItemView.swift in Sources */,
 				99EBEA152C013FFF00789C9F /* UserRemoteService.swift in Sources */,
+				99B0BBCB2C4D5EB3008C3C0C /* MapViewModel.swift in Sources */,
 				997E9A212C1CD296006F0FB5 /* SearchDefaultItemView.swift in Sources */,
 				997E99132C127AE2006F0FB5 /* TimelineHourView.swift in Sources */,
 				995D7E7B2C1F427B0031C1A1 /* CountdownBottomView.swift in Sources */,
 				997E99552C127BAA006F0FB5 /* CalendarView.swift in Sources */,
 				997E9A152C170F3E006F0FB5 /* NotificationServiceProtocol.swift in Sources */,
 				99F8B3B22C0681DA0082A453 /* ReminderLocalServiceProtocol.swift in Sources */,
+				99B0BBD02C4D5F19008C3C0C /* SplashViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

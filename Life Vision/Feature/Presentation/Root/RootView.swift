@@ -11,7 +11,7 @@ import SwiftUI
 struct RootView: View {
     
     @StateObject var viewModel : RootViewModel
-    @State private var selectedTab: TabEnum = .home
+    @State private var selectedTab: TabEnum = .map
 
     var body: some View {
         TabView(selection: tabSelection()) {
@@ -19,6 +19,8 @@ struct RootView: View {
                 .tabview(tag: .home, text: "Home", image: "house")
             SearchView(viewModel: SearchViewModel())
                 .tabview(tag: .search, text: "Search", image: "magnifyingglass")
+            MapView(viewModel: MapViewModel())
+                .tabview(tag: .map, text: "Map", image: "map.fill")
             CalendarView(viewModel: CalendarViewModel())
                 .tabview(tag: .calendar, text: "Calendar", image: "calendar")
             AccountView(viewModel : AccountViewModel(user: viewModel.user))

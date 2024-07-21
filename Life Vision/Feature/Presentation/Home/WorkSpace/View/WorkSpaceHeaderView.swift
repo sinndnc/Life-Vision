@@ -14,6 +14,7 @@ struct WorkSpaceHeaderView: View {
     var body: some View {
         Text("My Workspace")
             .font(.title3)
+            .padding(.horizontal)
             .fontWeight(.semibold)
         ScrollView(.horizontal,showsIndicators: false) {
             HStack(alignment: .center, content: {
@@ -21,8 +22,8 @@ struct WorkSpaceHeaderView: View {
                     WorkSpaceCategoryItemView(category: category, viewModel: viewModel)
                 }
             })
+            .padding()
         }
-
     }
 }
 

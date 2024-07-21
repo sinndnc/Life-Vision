@@ -10,6 +10,7 @@ import Foundation
 
 protocol UserRepositoryProtocol {
     
+    var isLogged : Bool { get }
 
     func fetch() async -> Result<User?,UserErrorCallback>
     

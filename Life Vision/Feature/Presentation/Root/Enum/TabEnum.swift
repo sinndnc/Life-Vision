@@ -9,9 +9,9 @@ import Foundation
 
 
 enum TabEnum{
+    case map
     case home
     case search
-    case calendar
     case account
-    
+    case calendar
 }

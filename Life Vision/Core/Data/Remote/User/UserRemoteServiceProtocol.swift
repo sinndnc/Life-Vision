@@ -11,6 +11,8 @@ import FirebaseFirestore
 
 protocol UserRemoteServiceProtocol{
         
+    var isLogged : Bool { get }
+
     var firestore: Firestore { get }
     
     var auth : FirebaseAuth.Auth { get }

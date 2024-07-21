@@ -13,6 +13,8 @@ final class UserRepository : UserRepositoryProtocol , ObservableObject {
     @Inject private var userLocalService : UserLocalServiceProtocol
     @Inject private var userRemoteService : UserRemoteServiceProtocol
     
+    var isLogged : Bool { return userRemoteService.isLogged }
+    
     func fetch() async -> Result<User?,UserErrorCallback> {
         do{
             let result = try await userRemoteService.fetch()
