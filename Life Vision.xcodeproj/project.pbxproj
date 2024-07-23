@@ -98,6 +98,9 @@
 		99B0BBCE2C4D5F11008C3C0C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0BBCD2C4D5F11008C3C0C /* SplashView.swift */; };
 		99B0BBD02C4D5F19008C3C0C /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0BBCF2C4D5F19008C3C0C /* SplashViewModel.swift */; };
 		99D4F0AD2C4D134C009E1083 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D4F0AC2C4D134C009E1083 /* MapView.swift */; };
+		99D98D252C4F86C500C5AA59 /* web3swift in Frameworks */ = {isa = PBXBuildFile; productRef = 99D98D242C4F86C500C5AA59 /* web3swift */; };
+		99D98D282C4F885600C5AA59 /* BlockchainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D98D272C4F885600C5AA59 /* BlockchainService.swift */; };
+		99D98D2A2C4F887C00C5AA59 /* BlockchainServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D98D292C4F887C00C5AA59 /* BlockchainServiceProtocol.swift */; };
 		99E9E3382C275E0800F2F334 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9E3372C275E0800F2F334 /* CircularProgressView.swift */; };
 		99E9E33E2C31DEB100F2F334 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9E33D2C31DEB100F2F334 /* Countdown.swift */; };
 		99EBE9532C0083A300789C9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EBE9522C0083A300789C9F /* Assets.xcassets */; };
@@ -258,6 +261,8 @@
 		99B0BBCD2C4D5F11008C3C0C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		99B0BBCF2C4D5F19008C3C0C /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		99D4F0AC2C4D134C009E1083 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		99D98D272C4F885600C5AA59 /* BlockchainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockchainService.swift; sourceTree = "<group>"; };
+		99D98D292C4F887C00C5AA59 /* BlockchainServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockchainServiceProtocol.swift; sourceTree = "<group>"; };
 		99E9E3372C275E0800F2F334 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		99E9E33D2C31DEB100F2F334 /* Countdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
 		99EBE94B2C0083A200789C9F /* Life Vision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Life Vision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -316,6 +321,7 @@
 				99EBEA0A2C013A1700789C9F /* FirebaseAuth in Frameworks */,
 				99EBEA0C2C013A1700789C9F /* FirebaseFirestore in Frameworks */,
 				99EBEA0E2C013A1700789C9F /* FirebaseStorage in Frameworks */,
+				99D98D252C4F86C500C5AA59 /* web3swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,6 +768,15 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		99D98D262C4F883300C5AA59 /* Blockchain */ = {
+			isa = PBXGroup;
+			children = (
+				99D98D272C4F885600C5AA59 /* BlockchainService.swift */,
+				99D98D292C4F887C00C5AA59 /* BlockchainServiceProtocol.swift */,
+			);
+			path = Blockchain;
+			sourceTree = "<group>";
+		};
 		99E9E3362C275DE400F2F334 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
@@ -909,6 +924,7 @@
 				99EBE99A2C0086EF00789C9F /* Theme */,
 				9904E3F92C0D2B3900172593 /* Calendar */,
 				99EBE9992C0086DB00789C9F /* Language */,
+				99D98D262C4F883300C5AA59 /* Blockchain */,
 				997E9A0D2C170ED1006F0FB5 /* Notification */,
 				99A9B6F82C440347006927B4 /* Permissions */,
 			);
@@ -1163,6 +1179,7 @@
 				99EBEA092C013A1700789C9F /* FirebaseAuth */,
 				99EBEA0B2C013A1700789C9F /* FirebaseFirestore */,
 				99EBEA0D2C013A1700789C9F /* FirebaseStorage */,
+				99D98D242C4F86C500C5AA59 /* web3swift */,
 			);
 			productName = "Life Vision";
 			productReference = 99EBE94B2C0083A200789C9F /* Life Vision.app */;
@@ -1239,6 +1256,7 @@
 			mainGroup = 99EBE9422C0083A200789C9F;
 			packageReferences = (
 				99EBEA082C013A1700789C9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				99D98D232C4F86C500C5AA59 /* XCRemoteSwiftPackageReference "web3swift" */,
 			);
 			productRefGroup = 99EBE94C2C0083A200789C9F /* Products */;
 			projectDirPath = "";
@@ -1294,6 +1312,7 @@
 				99EBEA262C0142D500789C9F /* DependencyPropertyWrapper.swift in Sources */,
 				997E9A132C170F33006F0FB5 /* NotificationService.swift in Sources */,
 				99EBEA242C0142A800789C9F /* ServiceContainer.swift in Sources */,
+				99D98D2A2C4F887C00C5AA59 /* BlockchainServiceProtocol.swift in Sources */,
 				997E99312C127B7C006F0FB5 /* TagsView.swift in Sources */,
 				99F8B38D2C01D2660082A453 /* StorageRemoteService.swift in Sources */,
 				995D7E8F2C22302D0031C1A1 /* WorkSpaceItemView.swift in Sources */,
@@ -1375,6 +1394,7 @@
 				99EBEA052C00CF4C00789C9F /* LifeVisionApp.swift in Sources */,
 				991D28DD2C25FE0900CB1ACF /* TimeInterval+Extension.swift in Sources */,
 				99F8B3BB2C0738150082A453 /* StorageLocalService.swift in Sources */,
+				99D98D282C4F885600C5AA59 /* BlockchainService.swift in Sources */,
 				997E994F2C127B9B006F0FB5 /* TermsAndConditionsView.swift in Sources */,
 				995D7E742C1F3E0D0031C1A1 /* CountdownItemView.swift in Sources */,
 				997E99172C127AE2006F0FB5 /* TimelineGraphicView.swift in Sources */,
@@ -1756,6 +1776,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		99D98D232C4F86C500C5AA59 /* XCRemoteSwiftPackageReference "web3swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/web3swift-team/web3swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.1;
+			};
+		};
 		99EBEA082C013A1700789C9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1767,6 +1795,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		99D98D242C4F86C500C5AA59 /* web3swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99D98D232C4F86C500C5AA59 /* XCRemoteSwiftPackageReference "web3swift" */;
+			productName = web3swift;
+		};
 		99EBEA092C013A1700789C9F /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 99EBEA082C013A1700789C9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

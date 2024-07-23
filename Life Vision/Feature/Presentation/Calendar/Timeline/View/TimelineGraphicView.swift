@@ -47,7 +47,7 @@ func groupOverlappingReminders(_ reminders: [Reminder]) -> [Reminder: [Reminder]
     
     for reminder in sortedReminders.dropFirst() {
         
-        var currentRange = currentGroup.first!.start_date...currentGroup.last!.finish_date
+        let currentRange = currentGroup.first!.start_date...currentGroup.last!.finish_date
         let nextRange = reminder.start_date...reminder.finish_date
         
         if rangesIntersect(currentRange, nextRange) {

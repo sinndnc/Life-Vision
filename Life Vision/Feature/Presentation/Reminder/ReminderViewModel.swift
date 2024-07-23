@@ -15,7 +15,7 @@ final class ReminderViewModel : ObservableObject{
     func add(_ reminder : Reminder){
         reminderRepository.add(reminder) { result in
             switch result {
-            case .success(let documentID):
+            case .success(_):
                 self.onSuccess(reminder: reminder)
             case .failure(let failure):
                 print(failure)
