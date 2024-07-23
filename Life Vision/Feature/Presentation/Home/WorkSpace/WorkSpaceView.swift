@@ -13,11 +13,21 @@ struct WorkSpaceView: View {
     @StateObject var viewModel : HomeViewModel
     
     var body: some View {
-        VStack(alignment: .leading,spacing: 10,content: {
-            WorkSpaceHeaderView(viewModel: viewModel)
-            WorkSpaceBodyView(geo: geo,viewModel: viewModel)
-        })
-        .padding(.vertical)
+        ZStack{
+            LinearGradient(
+                colors: [.red, .teal, .blue, .black, .indigo, .red],
+                startPoint: .bottomLeading,
+                endPoint: .topTrailing
+            )
+            .blur(radius: 30,opaque: true)
+            VStack(alignment: .leading,spacing: 10,content: {
+                WorkSpaceHeaderView(viewModel: viewModel)
+                WorkSpaceBodyView(geo: geo,viewModel: viewModel)
+            })
+            .padding(.vertical)
+
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 20))
     }
 }
 

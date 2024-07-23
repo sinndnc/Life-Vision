@@ -16,6 +16,7 @@ struct WorkSpaceHeaderView: View {
             .font(.title3)
             .padding(.horizontal)
             .fontWeight(.semibold)
+            .foregroundStyle(.white)
         ScrollView(.horizontal,showsIndicators: false) {
             HStack(alignment: .center, content: {
                 ForEach(ReminderCategory.allCases,id:\.self) { category in

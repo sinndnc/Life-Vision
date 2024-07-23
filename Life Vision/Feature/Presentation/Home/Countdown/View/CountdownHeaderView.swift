@@ -17,10 +17,12 @@ struct CountdownHeaderView: View {
                 Text("Countdown to:")
                     .font(.title2)
                     .fontWeight(.bold)
+                    .foregroundStyle(.white)
                 if let reminder = reminder{
                     Text(reminder.title)
                         .font(.callout)
                         .fontWeight(.semibold)
+                        .foregroundStyle(.white)
                 }
             }
             Spacer()

@@ -20,19 +20,16 @@ struct WorkSpaceCategoryItemView: View {
             viewModel.selectedCategory = category
         }, label: {
             Text("\(category)".capitalized)
+                .padding(3)
                 .font(.callout)
                 .fontWeight(.medium)
-                .foregroundStyle(.black)
+                .foregroundStyle(.white)
+                .background(isSelected ? .white.opacity(0.35) : .clear)
+                .clipShape(RoundedRectangle(cornerRadius: 7))
         })
         .padding(5)
-        .overlay{
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(.gray.opacity(0.5), lineWidth: 1.5)
-        }
-        .background(isSelected ? .gray.opacity(0.2) : .white)
         .clipShape(RoundedRectangle(cornerRadius: 10))
     }
-    
 }
 
 #Preview {

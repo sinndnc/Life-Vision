@@ -11,7 +11,7 @@ import SwiftUI
 struct RootView: View {
     
     @StateObject var viewModel : RootViewModel
-    @State private var selectedTab: TabEnum = .map
+    @State private var selectedTab: TabEnum = .home
 
     var body: some View {
         TabView(selection: tabSelection()) {

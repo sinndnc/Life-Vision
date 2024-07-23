@@ -12,21 +12,33 @@ import FirebaseFirestore
 struct HomeView: View {
     
     @State var isPresented : Bool = false
+    @State var uIState : UIState = .initial
     @StateObject var viewModel : HomeViewModel
     
     var body: some View {
         NavigationStack{
             GeometryReader{ geo in
                 ScrollView{
-                    Divider()
-                    CountdownView(geo: geo,viewModel: viewModel)
-                    Divider()
-                    WorkSpaceView(geo: geo,viewModel: viewModel)
+                    if uIState == .success {
+                        CountdownView(geo: geo,viewModel: viewModel)
+                            .transition(.move(edge: .top))
+                        WorkSpaceView(geo: geo,viewModel: viewModel)
+                            .transition(.move(edge: .bottom))
+                    }
+                }
+                .onAppear{
+                    if(uIState == .initial){
+                        withAnimation {
+                            uIState = .success
+                        }
+                    }
                 }
             }
             .homeToolBar(isPresented: $isPresented)
             .localizedNavigationTitle(title: "Home")
             .taskView(isPresented: $isPresented, onDissmis:{})
+            
+            
         }
     }
 }
@@ -45,13 +57,23 @@ fileprivate extension View{
     func homeToolBar(isPresented : Binding<Bool>) -> some View {
         toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button (
-                    action: {
-                        isPresented.wrappedValue.toggle()
-                    },label: {
-                        Image(systemName: "calendar.badge.plus")
-                    }
-                )
+                    Button (
+                        action: {
+                            isPresented.wrappedValue.toggle()
+                        },label: {
+                            ZStack{
+                                AngularGradient(
+                                    colors: [.red, .teal, .blue, .black, .indigo, .red],
+                                    center: .center)
+                                Image(systemName: "calendar.badge.plus")
+                                    .padding(5)
+                                    .foregroundStyle(.white)
+                            }
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                        }
+                    )
+                
+               
             }
         }
     }

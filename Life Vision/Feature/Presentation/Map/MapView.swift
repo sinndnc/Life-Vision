@@ -15,16 +15,6 @@ struct MapView: View {
     var body: some View {
         ZStack(alignment: .top) {
             Map{}
-            
-            HStack {
-                Spacer()
-                Text("test")
-                Spacer()
-            }
-            .background(.white)
-            .padding()
-            .frame(width: 390,height: 100)
-            
         }
     }
 }

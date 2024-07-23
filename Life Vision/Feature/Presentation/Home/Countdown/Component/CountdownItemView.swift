@@ -19,12 +19,12 @@ struct CountdownItemView: View {
             Text(String(format:"%0.2d",Int(value ?? 0)))
                 .font(.title3)
                 .fontWeight(.semibold)
+                .foregroundStyle(.white)
         }
         .frame(
             width: geo.size.width * 0.2,
             height: geo.size.height * 0.1
         )
-        .background(.black.opacity(0.1))
         .clipShape(Circle())
     }
     

@@ -14,6 +14,7 @@ struct CountdownBottomView: View {
             Text("after")
                 .font(.title2)
                 .fontWeight(.bold)
+                .foregroundStyle(.white)
         })
     }
 }

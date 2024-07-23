@@ -15,14 +15,11 @@ struct CircularProgressView: View {
     var body: some View {
         ZStack {
             Circle()
-                .stroke(lineWidth: lineWidth)
-                .opacity(0.3)
-                .foregroundColor(color)
-            
-            Circle()
-                .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
-                .stroke(style: StrokeStyle(lineWidth: lineWidth, lineCap: .square, lineJoin: .bevel))
-                .foregroundColor(color)
+                .strokeBorder(
+                    AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center, startAngle: .zero, endAngle: .degrees(360)),
+                    lineWidth: 7
+                )
+                .shadow(color: .purple, radius: 10)
                 .rotationEffect(Angle(degrees: 270.0))
                 .animation(.linear, value: progress)
         }

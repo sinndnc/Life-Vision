@@ -13,28 +13,38 @@ struct WorkSpaceBodyView: View {
     @StateObject var viewModel : HomeViewModel
     
     var body: some View {
-        
         ScrollView(.vertical) {
-            VStack(alignment: .center, content: {
-                let reminders = viewModel.reminders
-                let selected = viewModel.selectedCategory
-                let filteredReminders = viewModel.filterReminders(reminders: reminders, by: selected)
-                if !filteredReminders.isEmpty {
-                    ForEach(filteredReminders,id:\.self){ reminder in
-                        WorkSpaceItemView(geo: geo,reminder: reminder)
-                            .padding(.horizontal)
+            VStack(
+                alignment: .center,
+                content: {
+                    let reminders = viewModel.reminders
+                    let selected = viewModel.selectedCategory
+                    let filteredReminders = viewModel.filterReminders(reminders: reminders, by: selected)
+                    if !filteredReminders.isEmpty {
+                        ForEach(filteredReminders,id:\.self){ reminder in
+                            WorkSpaceItemView(geo: geo,reminder: reminder)
+                                .padding(.horizontal)
+                        }
+                    }else{
+                        noTaskView(selected: selected)
                     }
-                }else{
-                    ZStack {
-                        Text("No task for \(selected.rawValue)")
-                            .font(.callout)
-                            .foregroundStyle(.gray)
-                    }
-                    .padding(.horizontal)
-                    .frame(width: geo.size.width)
                 }
-            })
+            )
         }
+    }
+    
+    @ViewBuilder
+    func noTaskView(selected : ReminderCategory) -> some View {
+        VStack {
+            Text("No task for \(selected.rawValue)")
+                .font(.callout)
+                .foregroundStyle(.gray)
+        }
+        .padding(.horizontal)
+        .frame(
+            width: geo.size.width,
+            height: geo.size.height * 0.5
+        )
     }
 }
 
