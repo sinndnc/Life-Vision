@@ -29,6 +29,10 @@
 		995D7E982C2232EB0031C1A1 /* WorkSpaceBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D7E972C2232EB0031C1A1 /* WorkSpaceBodyView.swift */; };
 		995D7E9C2C236EE30031C1A1 /* TagItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D7E9B2C236EE30031C1A1 /* TagItemView.swift */; };
 		995D7EA52C24666D0031C1A1 /* ReminderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D7EA42C24666D0031C1A1 /* ReminderDetailView.swift */; };
+		9976324D2C554A3700E4CECF /* ReminderDetailEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9976324C2C554A3700E4CECF /* ReminderDetailEnum.swift */; };
+		997632502C554A9600E4CECF /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9976324F2C554A9600E4CECF /* CommentsView.swift */; };
+		997632522C554ACF00E4CECF /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997632512C554ACF00E4CECF /* LocationsView.swift */; };
+		997632552C554B0800E4CECF /* OnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997632542C554B0800E4CECF /* OnBoardView.swift */; };
 		997DA01F2C3AD00C00354CCF /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DA01E2C3AD00C00354CCF /* Notification.swift */; };
 		997E99122C127AE2006F0FB5 /* TimelineDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E99012C127AE2006F0FB5 /* TimelineDividerView.swift */; };
 		997E99132C127AE2006F0FB5 /* TimelineHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E99022C127AE2006F0FB5 /* TimelineHourView.swift */; };
@@ -191,6 +195,10 @@
 		995D7E972C2232EB0031C1A1 /* WorkSpaceBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceBodyView.swift; sourceTree = "<group>"; };
 		995D7E9B2C236EE30031C1A1 /* TagItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItemView.swift; sourceTree = "<group>"; };
 		995D7EA42C24666D0031C1A1 /* ReminderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailView.swift; sourceTree = "<group>"; };
+		9976324C2C554A3700E4CECF /* ReminderDetailEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailEnum.swift; sourceTree = "<group>"; };
+		9976324F2C554A9600E4CECF /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
+		997632512C554ACF00E4CECF /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
+		997632542C554B0800E4CECF /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
 		997DA01E2C3AD00C00354CCF /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		997E99012C127AE2006F0FB5 /* TimelineDividerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineDividerView.swift; sourceTree = "<group>"; };
 		997E99022C127AE2006F0FB5 /* TimelineHourView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineHourView.swift; sourceTree = "<group>"; };
@@ -447,6 +455,8 @@
 		995D7E9D2C2371920031C1A1 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				9976324B2C554A2300E4CECF /* Enum */,
+				9976324E2C554A8700E4CECF /* Views */,
 				995D7EA42C24666D0031C1A1 /* ReminderDetailView.swift */,
 			);
 			path = Detail;
@@ -458,6 +468,24 @@
 				997E99282C127B7C006F0FB5 /* RepeatView.swift */,
 			);
 			path = Repeat;
+			sourceTree = "<group>";
+		};
+		9976324B2C554A2300E4CECF /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				9976324C2C554A3700E4CECF /* ReminderDetailEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		9976324E2C554A8700E4CECF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				997632542C554B0800E4CECF /* OnBoardView.swift */,
+				997632512C554ACF00E4CECF /* LocationsView.swift */,
+				9976324F2C554A9600E4CECF /* CommentsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		997E99052C127AE2006F0FB5 /* Component */ = {
@@ -1336,6 +1364,7 @@
 				997E994B2C127B9B006F0FB5 /* LanguageView.swift in Sources */,
 				997E99152C127AE2006F0FB5 /* TimelineTaskView.swift in Sources */,
 				997E99512C127B9B006F0FB5 /* AccountViewModel.swift in Sources */,
+				9976324D2C554A3700E4CECF /* ReminderDetailEnum.swift in Sources */,
 				997E99492C127B9B006F0FB5 /* AccountDestination.swift in Sources */,
 				997E99142C127AE2006F0FB5 /* TimelineNowDividerView.swift in Sources */,
 				997E99562C127BAA006F0FB5 /* CalendarViewModel.swift in Sources */,
@@ -1346,6 +1375,7 @@
 				99EBEA292C0144A800789C9F /* AuthRemoteService.swift in Sources */,
 				99F8B3AF2C0681810082A453 /* ReminderErrorCallback.swift in Sources */,
 				995D7E9C2C236EE30031C1A1 /* TagItemView.swift in Sources */,
+				997632522C554ACF00E4CECF /* LocationsView.swift in Sources */,
 				997E99812C127DB5006F0FB5 /* RootView.swift in Sources */,
 				99EBE99F2C00876200789C9F /* Language.swift in Sources */,
 				99A9B6FC2C4403A2006927B4 /* PermissionConstant.swift in Sources */,
@@ -1384,6 +1414,7 @@
 				99EBEA2D2C0146EC00789C9F /* Auth.swift in Sources */,
 				9904E3FB2C0D2B5900172593 /* CalendarService.swift in Sources */,
 				997E99482C127B9B006F0FB5 /* AccountSectionConstant.swift in Sources */,
+				997632502C554A9600E4CECF /* CommentsView.swift in Sources */,
 				99F8B3AC2C067F510082A453 /* UserLocalServiceProtocol.swift in Sources */,
 				997E99802C127DB5006F0FB5 /* TabEnum.swift in Sources */,
 				997E99822C127DB5006F0FB5 /* RootViewModel.swift in Sources */,
@@ -1410,6 +1441,7 @@
 				995D7E772C1F406A0031C1A1 /* CountdownHeaderView.swift in Sources */,
 				997E99162C127AE2006F0FB5 /* TimelineLayout.swift in Sources */,
 				990DCFAE2C24CEA600891FCA /* Date+Extension.swift in Sources */,
+				997632552C554B0800E4CECF /* OnBoardView.swift in Sources */,
 				997E9A082C13B80A006F0FB5 /* EarlyReminder.swift in Sources */,
 				997E991B2C127AE2006F0FB5 /* HomeViewModel.swift in Sources */,
 				99D4F0AD2C4D134C009E1083 /* MapView.swift in Sources */,

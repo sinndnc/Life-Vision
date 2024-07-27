@@ -12,11 +12,13 @@ struct ReminderDetailView: View {
     var geo : GeometryProxy
     @Binding var reminder : Reminder
     @Environment(\.presentationMode) var presentationMode
+    @State var selected : ReminderDetailEnum = .comments
+    @State var menu : [String] = ["Comments", "OnBoard","Locations"]
 
     var body: some View {
         NavigationStack{
             ScrollView{
-                VStack(alignment: .leading,spacing:15){
+                VStack(alignment: .leading){
                     Text(reminder.title)
                         .font(.title2)
                         .fontWeight(.medium)
@@ -24,7 +26,6 @@ struct ReminderDetailView: View {
                         Text("Status")
                             .font(.footnote)
                             .foregroundStyle(.gray)
-                            .frame(width: geo.size.width * 0.2,alignment: .leading)
                         Text("On Progress")
                             .font(.footnote)
                     }
@@ -54,30 +55,23 @@ struct ReminderDetailView: View {
                         HStack{
                             ForEach(reminder.tags,id:\.self){tag in
                                 Text(tag)
-                                    .padding(2)
+                                    .padding(.horizontal,5)
+                                    .padding(.vertical,3)
                                     .font(.footnote)
+                                    .fontWeight(.medium)
                                     .background(.yellow.opacity(0.5))
-                                    .clipShape(RoundedRectangle(cornerRadius: 3))
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
                             }
                         }
                     }
-                    VStack(alignment:.leading){
-                        HStack{
-                            Text("Notes")
-                                .font(.footnote)
-                                .foregroundStyle(.gray)
-                            Spacer()
-                        }
-                        Text(reminder.notes)
-                            .padding(7)
-                            .font(.footnote)
-                            .overlay(RoundedRectangle(cornerRadius: 5).stroke(.gray.opacity(0.5), lineWidth: 1))
-                    }
-                    .padding(1)
+                   
                 }
+                .frame(
+                    width: geo.size.width,
+                    height: geo.size.height * 0.25
+                )
             }
         }
-        .padding()
         .toolbar{
             ToolbarItem(placement: .topBarLeading) {
                 Button("Back") {

@@ -19,8 +19,8 @@ struct RootView: View {
                 .tabview(tag: .home, text: "Home", image: "house")
             SearchView(viewModel: SearchViewModel())
                 .tabview(tag: .search, text: "Search", image: "magnifyingglass")
-            MapView(viewModel: MapViewModel())
-                .tabview(tag: .map, text: "Map", image: "map.fill")
+//            MapView(viewModel: MapViewModel())
+//                .tabview(tag: .map, text: "Map", image: "map.fill")
             CalendarView(viewModel: CalendarViewModel())
                 .tabview(tag: .calendar, text: "Calendar", image: "calendar")
             AccountView(viewModel : AccountViewModel(user: viewModel.user))
@@ -54,7 +54,8 @@ struct tabViewModifier : ViewModifier {
     func body(content: Content) -> some View {
         content
             .tag(tag)
-            .tabItem {Label(LocalizedStringKey(text), systemImage: image)}
+            .tabItem {
+                Label(LocalizedStringKey(text), systemImage: image)}
     }
 }
 

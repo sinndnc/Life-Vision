@@ -13,12 +13,27 @@ struct TimelineNowDividerView: View {
     
     var body: some View {
         
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: .now)
+        let minute = calendar.component(.minute, from: .now)
+        
         let width = geo.size.width
-    
-        Rectangle()
-            .zIndex(2)
-            .foregroundStyle(.red)
-            .frame(width: width,height: 0.75)
+
+        HStack{
+            Text("\(hour):\(minute)")
+                .font(.footnote)
+                .fontWeight(.medium)
+                .padding(.horizontal,5)
+                .background(.red)
+                .foregroundStyle(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 25))
+            Rectangle()
+                .foregroundStyle(.red)
+        }
+        .padding(.leading,5)
+        .frame(width: width,height: 0.75)
+        .zIndex(2)
+
     }
 }
 

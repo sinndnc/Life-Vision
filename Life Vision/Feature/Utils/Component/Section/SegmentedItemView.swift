@@ -19,7 +19,7 @@ struct SegmentedItemView<T : Hashable> : View {
             title: {
                 Text(item.label)
                 Spacer()
-                Picker("test",selection: $selected) {
+                Picker("",selection: $selected) {
                     ForEach(menu,id:\.self) { item in
                         Text("\(item)")
                     }

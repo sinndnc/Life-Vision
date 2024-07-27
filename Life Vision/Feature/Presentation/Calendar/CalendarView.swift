@@ -19,15 +19,17 @@ struct CalendarView: View {
         
         NavigationStack{
             GeometryReader{geo in
-                ScrollViewReader { proxy in
-                    ScrollView{
-                        TimelineHeaderView(geo: geo, viewModel:viewModel)
-                        TimelineGraphicView(geo: geo, viewModel:viewModel)
-                    }
-                    .onAppear {
-                        if (viewModel.graphicViewUIState == .initial) {
-                            proxy.scrollTo(hour,anchor: .center)
-                            viewModel.graphicViewUIState = .success
+                VStack{
+                    TimelineHeaderView(geo: geo, viewModel:viewModel)
+                    ScrollViewReader { proxy in
+                        ScrollView{
+                            TimelineGraphicView(geo: geo, viewModel:viewModel)
+                        }
+                        .onAppear {
+                            if (viewModel.graphicViewUIState == .initial) {
+                                proxy.scrollTo(hour,anchor: .center)
+                                viewModel.graphicViewUIState = .success
+                            }
                         }
                     }
                 }

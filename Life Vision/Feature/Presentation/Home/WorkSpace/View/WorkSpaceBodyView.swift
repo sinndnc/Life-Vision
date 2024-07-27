@@ -20,10 +20,12 @@ struct WorkSpaceBodyView: View {
                     let reminders = viewModel.reminders
                     let selected = viewModel.selectedCategory
                     let filteredReminders = viewModel.filterReminders(reminders: reminders, by: selected)
+                    
                     if !filteredReminders.isEmpty {
                         ForEach(filteredReminders,id:\.self){ reminder in
                             WorkSpaceItemView(geo: geo,reminder: reminder)
                                 .padding(.horizontal)
+                                .transition(.scale)
                         }
                     }else{
                         noTaskView(selected: selected)
