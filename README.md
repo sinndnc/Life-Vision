@@ -2,10 +2,9 @@
 # Life Vision
 
 ## Screenshots
-![Project Screenshot](images/CalendarView.png)
-![Project Screenshot](images/SearchView.png)
-![Project Screenshot](images/ProfileView.png)
-![Project Screenshot](images/ReminderView.png)
+![Project Screenshot](images/Screenshot1.png)
+![Project Screenshot](images/Screenshot2.png)
+![Project Screenshot](images/Screenshot3.png)
 
 ## License
 Information about the project's license.
