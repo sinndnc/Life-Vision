@@ -21,9 +21,9 @@ struct HomeView: View {
                 ScrollView{
                     if uIState == .success {
                         CountdownView(geo: geo,viewModel: viewModel)
-                            .transition(.move(edge: .top))
+                            .transition(.scale)
                         WorkSpaceView(geo: geo,viewModel: viewModel)
-                            .transition(.move(edge: .bottom))
+                            .transition(.scale)
                     }
                 }
                 .onAppear{

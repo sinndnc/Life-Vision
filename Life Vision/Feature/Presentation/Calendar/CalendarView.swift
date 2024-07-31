@@ -35,6 +35,7 @@ struct CalendarView: View {
                 }
             }
             .searchable(text: .constant(""))
+            .navigationBarTitleDisplayMode(.inline)
             .localizedNavigationTitle(title: "December 2024")
         }
         .onAppear{
